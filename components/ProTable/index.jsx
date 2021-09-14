@@ -74,9 +74,10 @@ const ProTable = ({
       })
   })
 
-  // 跨页保存选择行
+  // 保存选择行
   const rowSelection = () => {
-    const { key, preserve, rows, setRows } = pRowSelection
+    // preserve: 是否跨页保存
+    const { key, preserve = true, rows, setRows } = pRowSelection
     return {
       selectedRowKeys: rows.map(i => i[key]),
       onChange: (selectedRowKeys, selectedRows) => {
