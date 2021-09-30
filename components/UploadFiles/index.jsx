@@ -20,7 +20,6 @@ const UploadFiles = ({
   fileSize,
   sizeWarning,
   fieldProps,
-  callback,
   ...props
 }) => {
   const [visible, setVisible] = useState(false)
@@ -29,7 +28,8 @@ const UploadFiles = ({
 
   // 预览
   const handlePreview = async file => {
-    if (!file.url && !file.preview) file.preview = await getBase64(file.originFileObj)
+    if (!file.url && !file.preview)
+      file.preview = await getBase64(file.originFileObj)
 
     setPreviewImg(file.url || file.preview)
     setVisible(true)
@@ -37,11 +37,15 @@ const UploadFiles = ({
 
   // 上传前校验
   const beforeUpload = ({ type, size }) => {
-    const fileVerify = (fileTypeList || ['image/jpeg', 'image/png', 'image/webp']).includes(type)
-    if (!fileVerify) message.warning(typeWarning || '仅支持jpg、png、webp图片类型')
+    const fileVerify = (
+      fileTypeList || ['image/jpeg', 'image/png', 'image/webp']
+    ).includes(type)
+    if (!fileVerify)
+      message.warning(typeWarning || '仅支持jpg、png、webp图片类型')
 
     const sizeVerify = size / 1024 / 1024 < (fileSize || 5)
-    if (!sizeVerify) message.warning(sizeWarning || `图片大小不能超过${fileSize || 5}M`)
+    if (!sizeVerify)
+      message.warning(sizeWarning || `图片大小不能超过${fileSize || 5}M`)
     return fileVerify && sizeVerify
   }
 
@@ -60,8 +64,8 @@ const UploadFiles = ({
   return (
     <>
       <ProFormUploadButton
-        name="upload"
-        label="Upload"
+        name='upload'
+        label='Upload'
         action={`${APP_BASE_URL}/api/Admin/File/Upload`}
         max={1}
         beforeUpload={beforeUpload}
@@ -78,8 +82,13 @@ const UploadFiles = ({
         {...props}
       />
 
-      <Modal visible={visible} footer={null} onCancel={_ => setVisible(false)} width="50%">
-        <img src={previewImg} alt="picture" style={{ width: '100%' }} />
+      <Modal
+        visible={visible}
+        footer={null}
+        onCancel={_ => setVisible(false)}
+        width='50%'
+      >
+        <img src={previewImg} alt='picture' style={{ width: '100%' }} />
       </Modal>
     </>
   )

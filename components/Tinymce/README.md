@@ -31,16 +31,16 @@ export default function Demo() {
 
 ## 内置属性
 
-| 属性             | 说明                 | 类型     | 是否必传 | 默认值                                              |
-| ---------------- | -------------------- | -------- | -------- | --------------------------------------------------- |
-| height           | 高度                 | String   | false    | 500px                                               |
-| editor           | 编辑文本             | String   | true     |                                                     |
-| setEditor        | 文本回调             | Function | true     |                                                     |
-| tinymceScriptSrc | CDN 地址或本地包地址 | String   | false    | //cdn.jsdelivr.net/npm/tinymce@5.9.2/tinymce.min.js |
+| 属性             | 说明                 | 类型       | 是否必传 | 默认值                                              |
+| ---------------- | -------------------- | ---------- | -------- | --------------------------------------------------- |
+| height           | 高度                 | `String`   | false    | 500px                                               |
+| editor           | 编辑文本             | `String`   | true     |                                                     |
+| setEditor        | 文本回调             | `Function` | true     |                                                     |
+| tinymceScriptSrc | CDN 地址或本地包地址 | `String`   | false    | //cdn.jsdelivr.net/npm/tinymce@5.9.2/tinymce.min.js |
 
 > tinymceScriptSrc 根据使用版本自行修改：
 > 其余属性均会传递给 Tinymce 组件。
 
 ## 更新时间
 
-该文档最后更新于： 2021-09-30 PM 17:49
+该文档最后更新于： 2021-09-30 PM 16:10

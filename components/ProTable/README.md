@@ -101,17 +101,17 @@ export default function Demo() {
 
 ## 内置属性
 
-| 属性          | 说明                                          | 类型                                                                                                                                   | 是否必传 | 默认值 |
-| ------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------ |
-| current       | 当前页数                                      | Number                                                                                                                                 | false    | 1      |
-| size          | 每页条数                                      | Number                                                                                                                                 | false    | 10     |
-| data          | 返回数据格式：{ totalSize: Number, list: [] } | Promise                                                                                                                                | true     |
-| card          | 是否采用 Card 包裹组件                        | boolean                                                                                                                                | false    | true   |
-| title         | Card 组件 title 属性                          | string\|ReactNode                                                                                                                      | false    | null   |
-| callback      | 获取数据与方法                                | function                                                                                                                               | false    |        |
-| pagination    | 分页组件属性                                  | Object                                                                                                                                 | false    |        |
-| pageChange    | 页码条数变化前回调                            | Function                                                                                                                               | false    |        |
-| pRowSelection | 因 antd 3.x 版本无跨页保存选择行而封装        | Object: { key<`String`>: Table 绑定的属性, preserve<`Boolean`>: 是否跨页保存, rows<`Array`>: 选择行, setRows<`Function`>: 设置选择行 } | false    |        |
+| 属性          | 说明                                            | 类型                                                                                                                                   | 是否必传   | 默认值 |
+| ------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ | ---- |
+| current       | 当前页数                                        | `Number`                                                                                                                               | false      | 1      |
+| size          | 每页条数                                        | `Number`                                                                                                                               | false      | 10     |
+| data          | 返回数据格式：{ totalSize: `Number`, list: [] } | `Promise`                                                                                                                              | true       |
+| card          | 是否采用 Card 包裹组件                          | `Boolean`                                                                                                                              | false      | true   |
+| title         | Card 组件 title 属性                            | `String                                                                                                                                | ReactNode` | false  | null |
+| callback      | 获取数据与方法                                  | `Function`                                                                                                                             | false      |        |
+| pagination    | 分页组件属性                                    | `Object`                                                                                                                               | false      |        |
+| pageChange    | 页码条数变化前回调                              | `Function`                                                                                                                             | false      |        |
+| pRowSelection | 因 antd 3.x 版本无跨页保存选择行而封装          | Object: { key<`String`>: Table 绑定的属性, preserve<`Boolean`>: 是否跨页保存, rows<`Array`>: 选择行, setRows<`Function`>: 设置选择行 } | false      |        |
 
 > Table 的 rowKey 属性默认为行数据的 id 属性 (rowKey={row => row.id})；
 > 其余属性均会传递给 Table 组件。
@@ -121,7 +121,7 @@ export default function Demo() {
 > 你可能需要为了与后端提供的接口返回结果一致而去修改以下代码：
 > (需要注意的是，这里的修改是全局性的，意味着整个项目所有使用该 ProTable 组件都需要遵守这个返回结果定义的字段。)
 
-修改 `@/components/ProTable/index.js` 第 34 行起
+修改 `@/components/ProTable/index.jsx` 第 34 行起
 
 ```js
 // 刷新

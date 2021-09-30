@@ -6,7 +6,7 @@
 >
 > 主要针对项目接口返回数据字段与官方定义字段不一做处理，并增加删除最后一项时自动翻页功能；
 
-该 `UltraTable` 由 [@Neo](https://github.com/Matrix-The-One) 完成封装
+该 `UltraTable` 由 [@Neo](https://github.com/Matrix-The-One) 完成封装。
 
 ## 例子
 
@@ -189,115 +189,50 @@ export default Notice
 
 | 属性        | 说明                       | 类型     | 是否必传 | 默认值 |
 | ----------- | -------------------------- | -------- | -------- | ------ |
-| setProTable | 获取 ProTable 组件实例     | Function | false    |        |
-| requestFn   | 请求方法（需返回 Promise） | Function | true     |        |
+| setProTable | 获取 ProTable 组件实例     | `Function` | false    |        |
+| requestFn   | 请求方法（需返回 Promise） | `Function` | true     |        |
 
-> Table 的 rowKey 属性默认为行数据的 id 属性 (rowKey={row => row.id})
-> 其余属性均会传递给 Table 组件
+> ProTable 的 rowKey 属性默认为行数据的 id 属性 (rowKey={row => row.id})；
+> 其余属性均会传递给 ProTable 组件。
 
 ## 注意事项
 
-> 你可能需要为了与后端提供的接口返回结果一致而去修改以下代码：
-> (需要注意的是，这里的修改是全局性的，意味着整个项目所有使用该 ProTable 组件都需要遵守这个返回结果定义的字段。)
+> 你需要为了与后端提供的接口而去修改以下代码：
+> (需要注意的是，这里的修改是全局性的，意味着整个项目所有使用该 UltraTable 组件都需要遵守这个返回结果定义的字段。)
 
-修改 `@/components/ProTable/index.js` 第 34 行起
+修改 `@/components/UltraTable/index.jsx` 第 16 行起
 
 ```js
 // 刷新
-const refresh = useSyncCallback(_ => {
-  const { current, size } = pagination
-  setLoading(true)
-  const result = data({ current, size })
-  if (
-    (typeof result === 'object' || typeof result === 'function') &&
-    typeof result.then === 'function'
-  ) {
-    result.then(({ totalSize, list }) => {
-      // 删除最后一项时, 自动翻页
-      if (!list.length && pagination.current > 1)
-        return setPagination({
-          ...pagination,
-          current: pagination.current - 1,
-        })
-
-      // totalSize: 总数量, list: 列表数据
-      setPagination({ ...pagination, totalSize })
-      setList(list)
-      setLoading(false)
-      cb()
-    })
-  }
+requestFn({
+  PageIndex: current,
+  PageSize: pageSize,
+  ...params,
+  current: void 0,
+  pageSize: void 0,
 })
-```
-
-返回 JSON 例子：
-
-```json
-{
-  "code": 200,
-  "createTime": "2021-08-20T17:20:40.618",
-  "data": {
-    "list": [
-      {
-        "adminToken": null,
-        "avatar": "1212212",
-        "createTime": "2021-08-11 02:39:29",
-        "email": "7777777@qq.com",
-        "id": 1,
-        "mobile": "13566624148",
-        "modifyTime": "2021-08-12 00:34:33",
-        "name": "超级管理员",
-        "username": "admin"
-      },
-      {
-        "adminToken": null,
-        "avatar": "",
-        "createTime": "2021-08-18 23:14:04",
-        "email": "coderljw@dingtalk.com",
-        "id": 6,
-        "mobile": "13627978798",
-        "modifyTime": "2021-08-18 23:14:04",
-        "name": "五条悟",
-        "username": "5t5"
-      }
-    ],
-    "size": 1,
-    "totalCurrent": 1,
-    "totalSize": 11
-  },
-  "errorMsg": ""
-}
-```
-
-## 其他
-
-`useSyncCallback`（在 useState 改变值之后获取最新的状态，可以理解为 Vue 中的$nextTick）
-
-```jsx
-import { useEffect, useState, useCallback } from 'react'
-
-const useSyncCallback = callback => {
-  const [proxyState, setProxyState] = useState(false)
-
-  const fn = useCallback(() => {
-    setProxyState(true)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [proxyState])
-
-  useEffect(() => {
-    if (proxyState) {
-      setProxyState(false)
-      callback()
+  .then(({ data: { data, totalCount } }) => {
+    // 删除最后一项自动跳转上一页
+    if (!data.length && proTable.current.pageInfo.current > 1) {
+      proTable.current.pageInfo.current -= 1
+      proTable.current.reload()
+      return resolve()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [proxyState])
-
-  return fn
-}
-
-export default useSyncCallback
+    resolve({
+      success: true,
+      data,
+      total: totalCount,
+    })
+  })
+  .catch(_ =>
+    resolve({
+      success: false,
+      data: [],
+      total: 0,
+    })
+  )
 ```
 
 ## 更新时间
 
-该文档最后更新于： 2021-08-31 PM 17:49
+该文档最后更新于： 2021-09-30 PM 16:47
