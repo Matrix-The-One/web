@@ -27,7 +27,6 @@ const ProTable = ({
     _ => {
       refresh()
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [page.current, page.size]
   )
 

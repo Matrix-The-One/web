@@ -2,11 +2,11 @@
 
 ## 封装说明
 
-> 基础的使用方式与 API 与 [官方版(Table)](https://3x.ant.design/components/table-cn/) 本一致，在其基础上，封装了加载数据的方法。
+> 基础的使用方式与 API 与 [官方版(Table)](https://3x.ant.design/components/table-cn/) 基本一致，在其基础上，封装了加载数据的方法。
 >
-> 你无需在你是用表格的页面进行分页逻辑处理，仅需向 ProTable 组件传递绑定 `data={Promise}` 对象即可
+> 你无需在你是用表格的页面进行分页逻辑处理，仅需向 ProTable 组件传递绑定 `data={Promise}` 对象即可。
 
-该 `ProTable` 由 [@Neo](https://github.com/Matrix-The-One) 完成封装
+该 `ProTable` 由 [@Neo](https://github.com/Matrix-The-One) 完成封装。
 
 ## 例子
 
@@ -97,7 +97,7 @@ export default function Demo() {
 
 ## 内置方法
 
-通过 `callback` 获取 `{ page, list, setList, refresh, refreshFirst }`（页面状态、列表数据、设置列表数据方法、刷新列表方法、刷新至第一页方法）
+通过 `callback` 获取 `{ page, list, setList, refresh, refreshFirst }`（页面状态、列表数据、设置列表数据方法、刷新列表方法、刷新至第一页方法）。
 
 ## 内置属性
 
@@ -113,8 +113,8 @@ export default function Demo() {
 | pageChange    | 页码条数变化前回调                            | Function                                                                                                                               | false    |        |
 | pRowSelection | 因 antd 3.x 版本无跨页保存选择行而封装        | Object: { key<`String`>: Table 绑定的属性, preserve<`Boolean`>: 是否跨页保存, rows<`Array`>: 选择行, setRows<`Function`>: 设置选择行 } | false    |        |
 
-> Table 的 rowKey 属性默认为行数据的 id 属性 (rowKey={row => row.id})
-> 其余属性均会传递给 Table 组件
+> Table 的 rowKey 属性默认为行数据的 id 属性 (rowKey={row => row.id})；
+> 其余属性均会传递给 Table 组件。
 
 ## 注意事项
 
