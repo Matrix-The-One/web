@@ -21,7 +21,7 @@ import { Editor } from '@tinymce/tinymce-react'
 import zh_CN from '@/assets/tinymce/zh_CN'
 import 'tinymce/skins/ui/oxide/skin.min.css'
 import 'tinymce/skins/ui/oxide/content.inline.min.css'
-import storage from 'store'
+import storage from '@/utils/storage'
 import { ACCESS_TOKEN } from '@/utils/types'
 
 const Tinymce = ({ height = '500px', editor, setEditor, ...props }) => {

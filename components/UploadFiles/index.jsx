@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ProFormUploadButton } from '@ant-design/pro-form'
 import { Modal, message } from 'antd'
-import storage from 'store'
+import storage from '@/utils/storage'
 import { ACCESS_TOKEN } from '@/utils/types'
 
 // 转base64
