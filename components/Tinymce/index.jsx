@@ -4,6 +4,7 @@ import 'tinymce/themes/silver/theme' // 主题
 import 'tinymce/icons/default' // 图标
 // import 'tinymce/plugins/code' // code
 // import 'tinymce/plugins/emoticons' // 表情
+import 'tinymce/plugins/paste' // 粘贴
 import 'tinymce/plugins/advlist' // 高级列表
 import 'tinymce/plugins/autolink' // 自动链接
 import 'tinymce/plugins/link' // 超链接
@@ -59,15 +60,17 @@ const Tinymce = ({ height = '500px', editor, setEditor, ...props }) => {
           },
         })
         const { code, data, errorMsg } = await response.json()
-        if (code === 200) success(data[0].url)
+        if (code === 200) success(data[0])
         else failure(errorMsg || '上传失败')
       } catch (err) {
         failure(err || '上传失败')
       }
     },
+    paste_data_images: true,
     content_css: false,
+    image_class_list: null,
     plugins:
-      'advlist autolink lists charmap wordcount hr link image imagetools insertdatetime fullscreen table lineheight',
+      'advlist autolink lists paste charmap wordcount hr link image imagetools insertdatetime fullscreen table lineheight',
     toolbar: `undo redo | forecolor  backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | formatselect | fontselect | removeformat formats hr charmap lineheight table | link image insertdatetime fullscreen`,
     branding: false,
     contextmenu: 'link image imagetools table spellchecker bold copy',
@@ -83,7 +86,7 @@ const Tinymce = ({ height = '500px', editor, setEditor, ...props }) => {
       initialValue={editor}
       onEditorChange={value => setContent(value)}
       onBlur={_ => setEditor(content)}
-      tinymceScriptSrc='//cdn.jsdelivr.net/npm/tinymce@5.9.2/tinymce.min.js'
+      tinymceScriptSrc="//cdn.jsdelivr.net/npm/tinymce@5.9.2/tinymce.min.js"
       {...props}
     />
   )
