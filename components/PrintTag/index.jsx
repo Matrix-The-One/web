@@ -23,7 +23,6 @@ const PrintTag = ({ form, visible, hidden, currentRow }) => {
       QRCodeValue: spuCode,
     })
     setTimeout(draw)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const draw = () => {
