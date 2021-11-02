@@ -1,0 +1,85 @@
+.pay-input {
+  position: absolute;
+  z-index: -1;
+  width: 300px;
+}
+.qr-scanner {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #111;
+  @0f3-color: #0f3;
+  .common {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    content: '';
+    border: 3px solid transparent;
+  }
+  .box {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    width: 300px;
+    max-width: 300px;
+    height: 300px;
+    max-height: 300px;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(0, 255, 51, 0.2);
+    background: url('@/assets/images/qrcode.jpg') center/cover no-repeat;
+    &:before {
+      .common;
+      top: 0;
+      left: 0;
+      border-top-color: @0f3-color;
+      border-left-color: @0f3-color;
+    }
+    &:after {
+      .common;
+      top: 0;
+      right: 0;
+      border-top-color: @0f3-color;
+      border-right-color: @0f3-color;
+    }
+    .line {
+      width: 100%;
+      height: calc(100% - 2px);
+      transform: translateY(-100%);
+      animation: radar-beam 2s infinite;
+      animation-timing-function: cubic-bezier(0.53, 0, 0.43, 0.99);
+      animation-delay: 1.4s;
+      border-bottom: 3px solid @0f3-color;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 255, 51, 0) 43%,
+        @0f3-color 211%
+      );
+    }
+    .angle {
+      &:before {
+        .common;
+        bottom: 0;
+        left: 0;
+        border-left-color: @0f3-color;
+        border-bottom-color: @0f3-color;
+      }
+      &:after {
+        .common;
+        right: 0;
+        bottom: 0;
+        border-right-color: @0f3-color;
+        border-bottom-color: @0f3-color;
+      }
+    }
+  }
+  @keyframes radar-beam {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
