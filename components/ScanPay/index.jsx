@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Modal, Input } from 'antd'
-import styles from './ScanPay.less'
+import styles from './index.less'
 import { useRequestAop } from '@/hooks'
 import { orderPay } from '@/api/order'
 
