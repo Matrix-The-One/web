@@ -6,8 +6,8 @@
     <link>https://www.matrixtheone.ga/web/</link>
     <description>兴趣使然的英雄</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 17 Dec 2022 17:28:45 GMT</pubDate>
-    <lastBuildDate>Sat, 17 Dec 2022 17:28:45 GMT</lastBuildDate>
+    <pubDate>Sat, 17 Dec 2022 17:39:22 GMT</pubDate>
+    <lastBuildDate>Sat, 17 Dec 2022 17:39:22 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>区块链</category>
@@ -22975,6 +22975,281 @@ a<span>.</span>index<span>++</span>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>Array</title>
+      <link>https://www.matrixtheone.ga/web/note/js/Array-2/</link>
+      <guid>https://www.matrixtheone.ga/web/note/js/Array-2/</guid>
+      <source url="https://www.matrixtheone.ga/web/rss.xml">Array</source>
+      <category>JS 基础</category>
+      <pubDate>Sat, 17 Dec 2022 17:01:46 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="_1-array-any-array-of-any"> 1. Array(any...) &amp; Array.of(any...)</h2>
+<ul>
+<li>
+<p>构造函数创建数组。</p>
+</li>
+<li>
+<p>Array.of(3) 创建一个具有单个元素 3 的数组，而 Array(3) 创建一个长度为 3 的空数组。</p>
+</li>
+</ul>
+<div><pre><code><span>Array</span><span>(</span><span>)</span> <span>// => []</span>
+<span>Array</span><span>(</span><span>2</span><span>)</span> <span>// => [empty × 2] （不可遍历！）</span>
+<span>Array</span><span>(</span><span>2</span><span>,</span> <span>9</span><span>)</span> <span>// => [2, 9]</span>
+
+Array<span>.</span><span>of</span><span>(</span><span>)</span> <span>// => []</span>
+Array<span>.</span><span>of</span><span>(</span><span>2</span><span>)</span> <span>// => [2]</span>
+Array<span>.</span><span>of</span><span>(</span><span>2</span><span>,</span> <span>9</span><span>)</span> <span>// => [2, 9]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_2-array-from-arraylike-iterable-callback-this"> 2. Array.from(arrayLike | iterable, callback, this)</h2>
+<ul>
+<li>
+<p>将类数组或可迭代对象转换为数组。</p>
+</li>
+<li>
+<p>第二个参数可传递一个回调函数。</p>
+</li>
+</ul>
+<div><pre><code><span>const</span> ary <span>=</span> <span>{</span>
+  <span>0</span><span>:</span> <span>'姜姒'</span><span>,</span>
+  <span>1</span><span>:</span> <span>'徐扶墙'</span><span>,</span>
+  <span>length</span><span>:</span> <span>2</span><span>,</span>
+<span>}</span>
+
+Array<span>.</span><span>from</span><span>(</span>ary<span>)</span> <span>// => ['姜姒', '徐扶墙']</span>
+Array<span>.</span><span>from</span><span>(</span><span>'jack'</span><span>)</span> <span>// => => ['j', 'a', 'c', 'k']</span>
+
+Array<span>.</span><span>from</span><span>(</span>ary<span>,</span> <span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> <span><span>`</span><span><span>${</span>item<span>}</span></span><span>7</span><span>`</span></span><span>)</span> <span>// => ['姜姒7', '徐扶墙7']</span>
+
+<span>// 快速创建指定长度数组（可遍历）</span>
+Array<span>.</span><span>from</span><span>(</span><span>{</span> <span>length</span><span>:</span> <span>2</span> <span>}</span><span>)</span> <span>// => [undefined, undefined]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h2 id="_3-array-isarray-any"> 3. Array.isArray(any)</h2>
+<ul>
+<li>判断是否为数组。</li>
+</ul>
+<div><pre><code>Array<span>.</span><span>isArray</span><span>(</span><span>[</span><span>]</span><span>)</span> <span>// => true</span>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="_4-join-string"> 4. join(string)</h2>
+<ul>
+<li>
+<p>默认以逗号连接数组每一项。</p>
+</li>
+<li>
+<p>数组中的 null 与 undefined 会转换为空字符串。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>null</span><span>,</span> <span>3</span><span>,</span> <span>undefined</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>join</span><span>(</span><span>)</span> <span>// => '1,,3,,5'</span>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="_5-concat-any"> 5. concat(any...)</h2>
+<ul>
+<li>可以连接任意类型数据。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>]</span><span>.</span><span>concat</span><span>(</span><span>[</span><span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>,</span> <span>[</span><span>6</span><span>,</span> <span>7</span><span>]</span><span>)</span> <span>// => [1, 2, 3, 4, 5, 6, 7]</span>
+
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>]</span><span>.</span><span>concat</span><span>(</span><span>'777'</span><span>,</span> <span>new</span> <span>Date</span><span>(</span><span>)</span><span>)</span> <span>// => [1, 2, '777', Thu Jan 01 1970 00:00:00 GMT+0800 (中国标准时间)]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="_6-slice-beginindex-endindex"> 6.slice(beginIndex, endIndex)</h2>
+<ul>
+<li>从开始索引截取至结束索引，若结束索引未指定，截取至末尾，负数反序截取（包含开始索引，不包含结束索引）。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>slice</span><span>(</span><span>1</span><span>)</span> <span>// => [2, 3, 4, 5]</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>slice</span><span>(</span><span>1</span><span>,</span> <span>3</span><span>)</span> <span>// => [2, 3]</span>
+
+<span>// 开始索引溢出，返回空数组</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>slice</span><span>(</span><span>7</span><span>)</span> <span>// => []</span>
+<span>// 取数组最后一项</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>slice</span><span>(</span><span>-</span><span>1</span><span>)</span><span>[</span><span>0</span><span>]</span> <span>// => 5</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_7-fill-any-startindex-endindex"> 7. fill(any, startIndex, endIndex)</h2>
+<ul>
+<li>
+<p>默认以 undefined 填充数组每一项。</p>
+</li>
+<li>
+<p>第二个参数为开始索引，第三个参数项为结束索引（包含开始索引，不包含结束索引）。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>fill</span><span>(</span><span>7</span><span>)</span> <span>// => [7, 7, 7, 7, 7]</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>fill</span><span>(</span><span>)</span> <span>// [undefined, undefined, undefined, undefined, undefined]</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>fill</span><span>(</span><span>7</span><span>,</span> <span>2</span><span>,</span> <span>4</span><span>)</span> <span>// => [1, 2, 7, 7, 5]</span>
+
+<span>// 快速创建指定长度数组</span>
+<span>Array</span><span>(</span><span>7</span><span>)</span><span>.</span><span>fill</span><span>(</span><span>7</span><span>)</span> <span>// => [7, 7, 7, 7, 7, 7, 7]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_8-flat-depth"> 8. flat(depth)</h2>
+<ul>
+<li>默认扁平化一级。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>,</span> <span>[</span><span>2</span><span>,</span> <span>3</span><span>,</span> <span>[</span><span>4</span><span>,</span> <span>5</span><span>]</span><span>]</span><span>]</span><span>.</span><span>flat</span><span>(</span><span>)</span> <span>// => [1, 2, 3, [4, 5]]</span>
+<span>[</span><span>1</span><span>,</span> <span>,</span> <span>[</span><span>2</span><span>,</span> <span>3</span><span>,</span> <span>[</span><span>4</span><span>,</span> <span>5</span><span>]</span><span>]</span><span>]</span><span>.</span><span>flat</span><span>(</span><span>Infinity</span><span>)</span> <span>// => [1, 2, 3, 4, 5]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="_9-flatmap-callback-this"> 9. flatMap(callback, this)</h2>
+<ul>
+<li>与 map 连着深度值为 1 的 flat 几乎相同（<code>flatMap = ary =&gt; ary.flat().map(_ =&gt; _)</code>）。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>,</span> <span>[</span><span>2</span><span>,</span> <span>3</span><span>,</span> <span>[</span><span>4</span><span>,</span> <span>5</span><span>]</span><span>]</span><span>]</span><span>.</span><span>flatMap</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item<span>)</span> <span>// => [1, 2, 3, [4, 5]]</span>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="_10-indexof-element-beginindex"> 10. indexOf(element, beginIndex)</h2>
+<ul>
+<li>
+<p>返回元素首次出现的索引位置，未找到返回 -1。</p>
+</li>
+<li>
+<p>第二个参数为开始查找位置。</p>
+</li>
+<li>
+<p>当查找数组中是否存在 NaN 时为返回 -1。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>indexOf</span><span>(</span><span>3</span><span>)</span> <span>// => 2</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>indexOf</span><span>(</span><span>3</span><span>,</span> <span>5</span><span>)</span> <span>// => -1</span>
+
+<span>[</span><span>NaN</span><span>]</span><span>.</span><span>indexOf</span><span>(</span><span>NaN</span><span>)</span> <span>// => -1</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_11-lastindexof-element-endindex"> 11. lastIndexOf(element, endIndex)</h2>
+<ul>
+<li>
+<p>返回元素最后出现的索引位置，未找到返回 -1。</p>
+</li>
+<li>
+<p>第二个参数为截止查找位置。</p>
+</li>
+<li>
+<p>当查找数组中是否存在 NaN 时为返回 -1。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>lastIndexOf</span><span>(</span><span>3</span><span>)</span> <span>// => 4</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>lastIndexOf</span><span>(</span><span>3</span><span>,</span> <span>3</span><span>)</span> <span>// => 2</span>
+
+<span>[</span><span>NaN</span><span>]</span><span>.</span><span>lastIndexOf</span><span>(</span><span>NaN</span><span>)</span> <span>// => -1</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_12-includes-element-beginindex"> 12. includes(element, beginIndex)</h2>
+<ul>
+<li>
+<p>判断数组中是否存在指定元素，解决了 indexOf() 方法，当数组中存在 NaN 的情况。</p>
+</li>
+<li>
+<p>第二个参数指定开始查找索引。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>includes</span><span>(</span><span>2</span><span>)</span> <span>// => true</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>includes</span><span>(</span><span>2</span><span>,</span> <span>2</span><span>)</span> <span>// => false</span>
+
+<span>[</span><span>NaN</span><span>]</span><span>.</span><span>includes</span><span>(</span><span>NaN</span><span>)</span> <span>// => true</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_13-find-callback-this"> 13. find(callback, this)</h2>
+<ul>
+<li>返回第一个满足条件的项，都不满足返回 undefined。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>find</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>>=</span> <span>3</span><span>)</span> <span>// => 3</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>find</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>===</span> <span>7</span><span>)</span> <span>// => undefined</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="_14-findindex-callback-this"> 14. findIndex(callback, this)</h2>
+<ul>
+<li>
+<p>返回第一个满足条件项的索引，都不满足返回-1。</p>
+</li>
+<li>
+<p>与 indexOf 的区别是传递一个回调函数。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>findIndex</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>>=</span> <span>3</span><span>)</span> <span>// => 2</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>findIndex</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>===</span> <span>7</span><span>)</span> <span>// => -1</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="_15-foreach-callback-this"> 15. forEach(callback, this)</h2>
+<ul>
+<li>遍历数组，返回 undefined。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>forEach</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> console<span>.</span><span>log</span><span>(</span>item <span>*</span> <span>2</span><span>)</span><span>)</span> <span>// => undefined</span>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="_16-map-callback-this"> 16. map(callback, this)</h2>
+<ul>
+<li>遍历数组，返回结果项组成的新数组。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>map</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>*</span> <span>2</span><span>)</span> <span>//  => [2, 4, 6, 8, 10]</span>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="_17-every-callback-this"> 17. every(callback, this)</h2>
+<ul>
+<li>
+<p>检测数组中是否每一项都满足条件。</p>
+</li>
+<li>
+<p>空数组会返回 true（使用时先判断下是否为空数组哟！）</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>every</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>></span> <span>3</span><span>)</span> <span>// => false</span>
+<span>[</span><span>]</span><span>.</span><span>every</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>></span> <span>3</span><span>)</span> <span>// => true</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="_18-some-callback-this"> 18. some(callback, this)</h2>
+<ul>
+<li>
+<p>检测数组中是否有一项满足条件。</p>
+</li>
+<li>
+<p>空数组会返回 false。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>some</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>></span> <span>3</span><span>)</span> <span>// => true</span>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="_19-filter-callback-this"> 19. filter(callback, this)</h2>
+<ul>
+<li>根据指定条件过滤出新数组。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>filter</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>></span> <span>2</span><span>)</span> <span>// => [3, 4, 5]</span>
+
+<span>// 过滤假值</span>
+<span>[</span><span>false</span><span>,</span> <span>null</span><span>,</span> <span>undefined</span><span>,</span> <span>NaN</span><span>,</span> <span>0</span><span>,</span> <span>0n</span><span>,</span> <span>''</span><span>,</span> document<span>.</span>all<span>,</span> <span>7</span><span>]</span><span>.</span><span>filter</span><span>(</span>Boolean<span>)</span> <span>// => [7]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_20-reduce-callback-initvalue"> 20. reduce(callback, initValue)</h2>
+<ul>
+<li>
+<p>神奇的 reduce，第二个参数为初始值，不传时会拿第零个元素作为初始值。</p>
+</li>
+<li>
+<p>在空数组上调用，且未提供初始值，会报错（使用时最好写上初始值哟！）。</p>
+</li>
+<li>
+<p><a href="https://juejin.cn/post/6916087983808626701" target="_blank" rel="noopener noreferrer">以前我没得选，现在我只想用 Array.prototype.reduce - 尼克陈</a></p>
+</li>
+</ul>
+<div><pre><code><span>// total：上一个回调函数的返回值；current：当前项的值；currentIndex：当前项的索引；</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>reduce</span><span>(</span><span>(</span><span>total<span>,</span> current<span>,</span> currentIndex</span><span>)</span> <span>=></span> total <span>+</span> current<span>)</span> <span>// => 15</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>reduce</span><span>(</span><span>(</span><span>total<span>,</span> current<span>,</span> currentIndex</span><span>)</span> <span>=></span> total <span>+</span> current<span>,</span> <span>7</span><span>)</span> <span>// => 22</span>
+
+<span>[</span><span>]</span><span>.</span><span>reduce</span><span>(</span><span>(</span><span>total<span>,</span> current<span>,</span> currentIndex</span><span>)</span> <span>=></span> total <span>+</span> current<span>)</span> <span>// Uncaught TypeError: Reduce of empty array with no initial value</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="_21-reduceright-callback-initvalue"> 21. reduceRight(callback, initValue)</h2>
+<ul>
+<li>
+<p>与 reduce 类似，不过从最后一项开始累加，不传初始值时会拿最后一个元素作为初始值。</p>
+</li>
+<li>
+<p>在空数组上调用，且未提供初始值，会报错（使用时最好写上初始值哟！）。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>reduceRight</span><span>(</span><span>(</span><span>total<span>,</span> current<span>,</span> currentIndex</span><span>)</span> <span>=></span> total <span>+</span> current<span>)</span> <span>// => 15</span>
+
+<span>[</span><span>]</span><span>.</span><span>reduceRight</span><span>(</span><span>(</span><span>total<span>,</span> current<span>,</span> currentIndex</span><span>)</span> <span>=></span> total <span>+</span> current<span>)</span> <span>// Uncaught TypeError: Reduce of empty array with no initial value</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="_22-keys-values-entries"> 22. keys() &amp; values() &amp; entries()</h2>
+<ul>
+<li>返回由数组 index/value/[index, value] 组成的可迭代对象。</li>
+</ul>
+<div><pre><code><span>const</span> ary <span>=</span> <span>[</span><span>'jack'</span><span>,</span> <span>'pony'</span><span>,</span> <span>'coderljw'</span><span>]</span>
+
+<span>for</span> <span>(</span><span>const</span> index <span>of</span> ary<span>.</span><span>keys</span><span>(</span><span>)</span><span>)</span> console<span>.</span><span>log</span><span>(</span>index<span>)</span> <span>// 依次打印：0 -> 1 -> 2</span>
+
+<span>for</span> <span>(</span><span>const</span> value <span>of</span> ary<span>.</span><span>values</span><span>(</span><span>)</span><span>)</span> console<span>.</span><span>log</span><span>(</span>value<span>)</span> <span>// 依次打印：'jack' -> 'pony' -> 'coderljw'</span>
+
+<span>for</span> <span>(</span><span>const</span> <span>[</span>index<span>,</span> value<span>]</span> <span>of</span> ary<span>.</span><span>entries</span><span>(</span><span>)</span><span>)</span> console<span>.</span><span>log</span><span>(</span>index<span>,</span> value<span>)</span> <span>// => 依次打印：0 'jack' -> 1 'pony' -> 2 'coderljw'</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_23-at-index"> 23. at(index)</h2>
+<ul>
+<li>根据索引取值，默认索引为 0，负数反序取值（可简化通过 length 计算的索引）。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>at</span><span>(</span><span>-</span><span>1</span><span>)</span> <span>// => 5</span>
+</code></pre>
+<div><span>1</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>奇技淫巧</title>
       <link>https://www.matrixtheone.ga/web/note/js/Arts/</link>
       <guid>https://www.matrixtheone.ga/web/note/js/Arts/</guid>
@@ -26068,378 +26343,6 @@ Symbol<span>.</span><span>keyFor</span><span>(</span><span>Symbol</span><span>(<
 <div><span>1</span><br><span>2</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>Array</title>
-      <link>https://www.matrixtheone.ga/web/note/js/Array-2/</link>
-      <guid>https://www.matrixtheone.ga/web/note/js/Array-2/</guid>
-      <source url="https://www.matrixtheone.ga/web/rss.xml">Array</source>
-      <category>JS 基础</category>
-      <pubDate>Sat, 17 Dec 2022 17:01:46 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="_1-array-any-array-of-any"> 1. Array(any...) &amp; Array.of(any...)</h2>
-<ul>
-<li>
-<p>构造函数创建数组。</p>
-</li>
-<li>
-<p>Array.of(3) 创建一个具有单个元素 3 的数组，而 Array(3) 创建一个长度为 3 的空数组。</p>
-</li>
-</ul>
-<div><pre><code><span>Array</span><span>(</span><span>)</span> <span>// => []</span>
-<span>Array</span><span>(</span><span>2</span><span>)</span> <span>// => [empty × 2] （不可遍历！）</span>
-<span>Array</span><span>(</span><span>2</span><span>,</span> <span>9</span><span>)</span> <span>// => [2, 9]</span>
-
-Array<span>.</span><span>of</span><span>(</span><span>)</span> <span>// => []</span>
-Array<span>.</span><span>of</span><span>(</span><span>2</span><span>)</span> <span>// => [2]</span>
-Array<span>.</span><span>of</span><span>(</span><span>2</span><span>,</span> <span>9</span><span>)</span> <span>// => [2, 9]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_2-array-from-arraylike-iterable-callback-this"> 2. Array.from(arrayLike | iterable, callback, this)</h2>
-<ul>
-<li>
-<p>将类数组或可迭代对象转换为数组。</p>
-</li>
-<li>
-<p>第二个参数可传递一个回调函数。</p>
-</li>
-</ul>
-<div><pre><code><span>const</span> ary <span>=</span> <span>{</span>
-  <span>0</span><span>:</span> <span>'姜姒'</span><span>,</span>
-  <span>1</span><span>:</span> <span>'徐扶墙'</span><span>,</span>
-  <span>length</span><span>:</span> <span>2</span><span>,</span>
-<span>}</span>
-
-Array<span>.</span><span>from</span><span>(</span>ary<span>)</span> <span>// => ['姜姒', '徐扶墙']</span>
-Array<span>.</span><span>from</span><span>(</span><span>'jack'</span><span>)</span> <span>// => => ['j', 'a', 'c', 'k']</span>
-
-Array<span>.</span><span>from</span><span>(</span>ary<span>,</span> <span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> <span><span>`</span><span><span>${</span>item<span>}</span></span><span>7</span><span>`</span></span><span>)</span> <span>// => ['姜姒7', '徐扶墙7']</span>
-
-<span>// 快速创建指定长度数组（可遍历）</span>
-Array<span>.</span><span>from</span><span>(</span><span>{</span> <span>length</span><span>:</span> <span>2</span> <span>}</span><span>)</span> <span>// => [undefined, undefined]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h2 id="_3-array-isarray-any"> 3. Array.isArray(any)</h2>
-<ul>
-<li>判断是否为数组。</li>
-</ul>
-<div><pre><code>Array<span>.</span><span>isArray</span><span>(</span><span>[</span><span>]</span><span>)</span> <span>// => true</span>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="_4-join-string"> 4. join(string)</h2>
-<ul>
-<li>
-<p>默认以逗号连接数组每一项。</p>
-</li>
-<li>
-<p>数组中的 null 与 undefined 会转换为空字符串。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>null</span><span>,</span> <span>3</span><span>,</span> <span>undefined</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>join</span><span>(</span><span>)</span> <span>// => '1,,3,,5'</span>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="_5-concat-any"> 5. concat(any...)</h2>
-<ul>
-<li>可以连接任意类型数据。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>]</span><span>.</span><span>concat</span><span>(</span><span>[</span><span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>,</span> <span>[</span><span>6</span><span>,</span> <span>7</span><span>]</span><span>)</span> <span>// => [1, 2, 3, 4, 5, 6, 7]</span>
-
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>]</span><span>.</span><span>concat</span><span>(</span><span>'777'</span><span>,</span> <span>new</span> <span>Date</span><span>(</span><span>)</span><span>)</span> <span>// => [1, 2, '777', Thu Jan 01 1970 00:00:00 GMT+0800 (中国标准时间)]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="_6-slice-beginindex-endindex"> 6.slice(beginIndex, endIndex)</h2>
-<ul>
-<li>从开始索引截取至结束索引，若结束索引未指定，截取至末尾，负数反序截取（包含开始索引，不包含结束索引）。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>slice</span><span>(</span><span>1</span><span>)</span> <span>// => [2, 3, 4, 5]</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>slice</span><span>(</span><span>1</span><span>,</span> <span>3</span><span>)</span> <span>// => [2, 3]</span>
-
-<span>// 开始索引溢出，返回空数组</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>slice</span><span>(</span><span>7</span><span>)</span> <span>// => []</span>
-<span>// 取数组最后一项</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>slice</span><span>(</span><span>-</span><span>1</span><span>)</span><span>[</span><span>0</span><span>]</span> <span>// => 5</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_7-fill-any-startindex-endindex"> 7. fill(any, startIndex, endIndex)</h2>
-<ul>
-<li>
-<p>默认以 undefined 填充数组每一项。</p>
-</li>
-<li>
-<p>第二个参数为开始索引，第三个参数项为结束索引（包含开始索引，不包含结束索引）。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>fill</span><span>(</span><span>7</span><span>)</span> <span>// => [7, 7, 7, 7, 7]</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>fill</span><span>(</span><span>)</span> <span>// [undefined, undefined, undefined, undefined, undefined]</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>fill</span><span>(</span><span>7</span><span>,</span> <span>2</span><span>,</span> <span>4</span><span>)</span> <span>// => [1, 2, 7, 7, 5]</span>
-
-<span>// 快速创建指定长度数组</span>
-<span>Array</span><span>(</span><span>7</span><span>)</span><span>.</span><span>fill</span><span>(</span><span>7</span><span>)</span> <span>// => [7, 7, 7, 7, 7, 7, 7]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_8-flat-depth"> 8. flat(depth)</h2>
-<ul>
-<li>默认扁平化一级。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>,</span> <span>[</span><span>2</span><span>,</span> <span>3</span><span>,</span> <span>[</span><span>4</span><span>,</span> <span>5</span><span>]</span><span>]</span><span>]</span><span>.</span><span>flat</span><span>(</span><span>)</span> <span>// => [1, 2, 3, [4, 5]]</span>
-<span>[</span><span>1</span><span>,</span> <span>,</span> <span>[</span><span>2</span><span>,</span> <span>3</span><span>,</span> <span>[</span><span>4</span><span>,</span> <span>5</span><span>]</span><span>]</span><span>]</span><span>.</span><span>flat</span><span>(</span><span>Infinity</span><span>)</span> <span>// => [1, 2, 3, 4, 5]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="_9-flatmap-callback-this"> 9. flatMap(callback, this)</h2>
-<ul>
-<li>与 map 连着深度值为 1 的 flat 几乎相同（<code>flatMap = ary =&gt; ary.flat().map(_ =&gt; _)</code>）。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>,</span> <span>[</span><span>2</span><span>,</span> <span>3</span><span>,</span> <span>[</span><span>4</span><span>,</span> <span>5</span><span>]</span><span>]</span><span>]</span><span>.</span><span>flatMap</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item<span>)</span> <span>// => [1, 2, 3, [4, 5]]</span>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="_10-indexof-element-beginindex"> 10. indexOf(element, beginIndex)</h2>
-<ul>
-<li>
-<p>返回元素首次出现的索引位置，未找到返回 -1。</p>
-</li>
-<li>
-<p>第二个参数为开始查找位置。</p>
-</li>
-<li>
-<p>当查找数组中是否存在 NaN 时为返回 -1。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>indexOf</span><span>(</span><span>3</span><span>)</span> <span>// => 2</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>indexOf</span><span>(</span><span>3</span><span>,</span> <span>5</span><span>)</span> <span>// => -1</span>
-
-<span>[</span><span>NaN</span><span>]</span><span>.</span><span>indexOf</span><span>(</span><span>NaN</span><span>)</span> <span>// => -1</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_11-lastindexof-element-endindex"> 11. lastIndexOf(element, endIndex)</h2>
-<ul>
-<li>
-<p>返回元素最后出现的索引位置，未找到返回 -1。</p>
-</li>
-<li>
-<p>第二个参数为截止查找位置。</p>
-</li>
-<li>
-<p>当查找数组中是否存在 NaN 时为返回 -1。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>lastIndexOf</span><span>(</span><span>3</span><span>)</span> <span>// => 4</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>lastIndexOf</span><span>(</span><span>3</span><span>,</span> <span>3</span><span>)</span> <span>// => 2</span>
-
-<span>[</span><span>NaN</span><span>]</span><span>.</span><span>lastIndexOf</span><span>(</span><span>NaN</span><span>)</span> <span>// => -1</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_12-includes-element-beginindex"> 12. includes(element, beginIndex)</h2>
-<ul>
-<li>
-<p>判断数组中是否存在指定元素，解决了 indexOf() 方法，当数组中存在 NaN 的情况。</p>
-</li>
-<li>
-<p>第二个参数指定开始查找索引。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>includes</span><span>(</span><span>2</span><span>)</span> <span>// => true</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>includes</span><span>(</span><span>2</span><span>,</span> <span>2</span><span>)</span> <span>// => false</span>
-
-<span>[</span><span>NaN</span><span>]</span><span>.</span><span>includes</span><span>(</span><span>NaN</span><span>)</span> <span>// => true</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_13-find-callback-this"> 13. find(callback, this)</h2>
-<ul>
-<li>返回第一个满足条件的项，都不满足返回 undefined。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>find</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>>=</span> <span>3</span><span>)</span> <span>// => 3</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>find</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>===</span> <span>7</span><span>)</span> <span>// => undefined</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="_14-findindex-callback-this"> 14. findIndex(callback, this)</h2>
-<ul>
-<li>
-<p>返回第一个满足条件项的索引，都不满足返回-1。</p>
-</li>
-<li>
-<p>与 indexOf 的区别是传递一个回调函数。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>findIndex</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>>=</span> <span>3</span><span>)</span> <span>// => 2</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>3</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>findIndex</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>===</span> <span>7</span><span>)</span> <span>// => -1</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="_15-foreach-callback-this"> 15. forEach(callback, this)</h2>
-<ul>
-<li>遍历数组，返回 undefined。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>forEach</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> console<span>.</span><span>log</span><span>(</span>item <span>*</span> <span>2</span><span>)</span><span>)</span> <span>// => undefined</span>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="_16-map-callback-this"> 16. map(callback, this)</h2>
-<ul>
-<li>遍历数组，返回结果项组成的新数组。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>map</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>*</span> <span>2</span><span>)</span> <span>//  => [2, 4, 6, 8, 10]</span>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="_17-every-callback-this"> 17. every(callback, this)</h2>
-<ul>
-<li>
-<p>检测数组中是否每一项都满足条件。</p>
-</li>
-<li>
-<p>空数组会返回 true（使用时先判断下是否为空数组哟！）</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>every</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>></span> <span>3</span><span>)</span> <span>// => false</span>
-<span>[</span><span>]</span><span>.</span><span>every</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>></span> <span>3</span><span>)</span> <span>// => true</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="_18-some-callback-this"> 18. some(callback, this)</h2>
-<ul>
-<li>
-<p>检测数组中是否有一项满足条件。</p>
-</li>
-<li>
-<p>空数组会返回 false。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>some</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>></span> <span>3</span><span>)</span> <span>// => true</span>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="_19-filter-callback-this"> 19. filter(callback, this)</h2>
-<ul>
-<li>根据指定条件过滤出新数组。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>filter</span><span>(</span><span>(</span><span>item<span>,</span> index</span><span>)</span> <span>=></span> item <span>></span> <span>2</span><span>)</span> <span>// => [3, 4, 5]</span>
-
-<span>// 过滤假值</span>
-<span>[</span><span>false</span><span>,</span> <span>null</span><span>,</span> <span>undefined</span><span>,</span> <span>NaN</span><span>,</span> <span>0</span><span>,</span> <span>0n</span><span>,</span> <span>''</span><span>,</span> document<span>.</span>all<span>,</span> <span>7</span><span>]</span><span>.</span><span>filter</span><span>(</span>Boolean<span>)</span> <span>// => [7]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_20-reduce-callback-initvalue"> 20. reduce(callback, initValue)</h2>
-<ul>
-<li>
-<p>神奇的 reduce，第二个参数为初始值，不传时会拿第零个元素作为初始值。</p>
-</li>
-<li>
-<p>在空数组上调用，且未提供初始值，会报错（使用时最好写上初始值哟！）。</p>
-</li>
-<li>
-<p><a href="https://juejin.cn/post/6916087983808626701" target="_blank" rel="noopener noreferrer">以前我没得选，现在我只想用 Array.prototype.reduce - 尼克陈</a></p>
-</li>
-</ul>
-<div><pre><code><span>// total：上一个回调函数的返回值；current：当前项的值；currentIndex：当前项的索引；</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>reduce</span><span>(</span><span>(</span><span>total<span>,</span> current<span>,</span> currentIndex</span><span>)</span> <span>=></span> total <span>+</span> current<span>)</span> <span>// => 15</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>reduce</span><span>(</span><span>(</span><span>total<span>,</span> current<span>,</span> currentIndex</span><span>)</span> <span>=></span> total <span>+</span> current<span>,</span> <span>7</span><span>)</span> <span>// => 22</span>
-
-<span>[</span><span>]</span><span>.</span><span>reduce</span><span>(</span><span>(</span><span>total<span>,</span> current<span>,</span> currentIndex</span><span>)</span> <span>=></span> total <span>+</span> current<span>)</span> <span>// Uncaught TypeError: Reduce of empty array with no initial value</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="_21-reduceright-callback-initvalue"> 21. reduceRight(callback, initValue)</h2>
-<ul>
-<li>
-<p>与 reduce 类似，不过从最后一项开始累加，不传初始值时会拿最后一个元素作为初始值。</p>
-</li>
-<li>
-<p>在空数组上调用，且未提供初始值，会报错（使用时最好写上初始值哟！）。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>reduceRight</span><span>(</span><span>(</span><span>total<span>,</span> current<span>,</span> currentIndex</span><span>)</span> <span>=></span> total <span>+</span> current<span>)</span> <span>// => 15</span>
-
-<span>[</span><span>]</span><span>.</span><span>reduceRight</span><span>(</span><span>(</span><span>total<span>,</span> current<span>,</span> currentIndex</span><span>)</span> <span>=></span> total <span>+</span> current<span>)</span> <span>// Uncaught TypeError: Reduce of empty array with no initial value</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="_22-keys-values-entries"> 22. keys() &amp; values() &amp; entries()</h2>
-<ul>
-<li>返回由数组 index/value/[index, value] 组成的可迭代对象。</li>
-</ul>
-<div><pre><code><span>const</span> ary <span>=</span> <span>[</span><span>'jack'</span><span>,</span> <span>'pony'</span><span>,</span> <span>'coderljw'</span><span>]</span>
-
-<span>for</span> <span>(</span><span>const</span> index <span>of</span> ary<span>.</span><span>keys</span><span>(</span><span>)</span><span>)</span> console<span>.</span><span>log</span><span>(</span>index<span>)</span> <span>// 依次打印：0 -> 1 -> 2</span>
-
-<span>for</span> <span>(</span><span>const</span> value <span>of</span> ary<span>.</span><span>values</span><span>(</span><span>)</span><span>)</span> console<span>.</span><span>log</span><span>(</span>value<span>)</span> <span>// 依次打印：'jack' -> 'pony' -> 'coderljw'</span>
-
-<span>for</span> <span>(</span><span>const</span> <span>[</span>index<span>,</span> value<span>]</span> <span>of</span> ary<span>.</span><span>entries</span><span>(</span><span>)</span><span>)</span> console<span>.</span><span>log</span><span>(</span>index<span>,</span> value<span>)</span> <span>// => 依次打印：0 'jack' -> 1 'pony' -> 2 'coderljw'</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_23-at-index"> 23. at(index)</h2>
-<ul>
-<li>根据索引取值，默认索引为 0，负数反序取值（可简化通过 length 计算的索引）。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>at</span><span>(</span><span>-</span><span>1</span><span>)</span> <span>// => 5</span>
-</code></pre>
-<div><span>1</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Array</title>
-      <link>https://www.matrixtheone.ga/web/note/js/Array-1/</link>
-      <guid>https://www.matrixtheone.ga/web/note/js/Array-1/</guid>
-      <source url="https://www.matrixtheone.ga/web/rss.xml">Array</source>
-      <category>JS 基础</category>
-      <pubDate>Sat, 17 Dec 2022 17:01:46 GMT</pubDate>
-      <content:encoded><![CDATA[<div><p>提示</p>
-<p>会改变原数组</p>
-</div>
-<h2 id="_1-unshift-any-push-any"> 1. unshift(any...) &amp; push(any...)</h2>
-<ul>
-<li>在数组首/尾添加数据，返回添加后数组的长度。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>unshift</span><span>(</span><span>0</span><span>)</span> <span>// => 6</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>unshift</span><span>(</span><span>0</span><span>,</span> <span>7</span><span>)</span> <span>// => 7</span>
-
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>push</span><span>(</span><span>6</span><span>)</span> <span>// => 6</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>push</span><span>(</span><span>6</span><span>,</span> <span>7</span><span>)</span> <span>// => 7</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="_2-shift-pop"> 2. shift() &amp; pop()</h2>
-<ul>
-<li>删除数组第一项/最后一项，返回删除的值。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>shift</span><span>(</span><span>)</span> <span>// => 1</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>pop</span><span>(</span><span>)</span> <span>// => 5</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="_3-splice-startindex-length-additem"> 3. splice(startIndex, length, addItem...)</h2>
-<ul>
-<li>
-<p>可用于数组的增删改操作，返回删除项组成的数组。</p>
-</li>
-<li>
-<p>若删除长度未指定，删除至结束，负数反序计算。开始索引溢出，或删除长度为负数，等同于未操作数组</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>3</span><span>)</span> <span>// => [4, 5]</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>-</span><span>2</span><span>,</span> <span>1</span><span>)</span> <span>// => [4]</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>3</span><span>,</span> <span>2</span><span>,</span> <span>'jack'</span><span>,</span> <span>'love'</span><span>)</span> <span>// => [4, 5]</span>
-
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>6</span><span>)</span> <span>// => []</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>)</span> <span>// => []</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_4-reverse"> 4. reverse()</h2>
-<ul>
-<li>翻转数组。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>reverse</span><span>(</span><span>)</span>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="_5-sort-comparefunction"> 5. sort(compareFunction)</h2>
-<ul>
-<li>
-<p>默认把所有元素先转换为 String 再排序，按照第一个字符的 ASCII 值排序。</p>
-</li>
-<li>
-<p>compareFunction（比较器）：返回负数时，第一个参数排在前面；返回正数时，第二个参数排在前面。</p>
-</li>
-<li>
-<p>ECMAScript 没有定义用哪个排序算法，所以浏览器厂商可以自行去实现算法。自 ES10（EcmaScript 2019）起，规范要求 Array.prototype.sort 为稳定排序。</p>
-<blockquote>
-<ul>
-<li>Mozilla Firefox 使用归并排序作为 Array.prototype.sort 的实现（归并排序是稳定的）。</li>
-<li>Chrome 在 V8 引擎 7.0 版本前使用了一个快速排序的变体：插入排序和快速排序结合的排序算法。数组长度不超过 10 时，使用插入排序（在数组长度较短时插入排序更有效率），长度超过 10 使用优化的快速排序（快速排序是不稳定的）。在 7.0 版本之后采用了一种混合排序算法 TimSort：在数据量小的子数组中使用插入排序，然后再使用归并排序将有序的子数组进行合并排序。</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>)</span> <span>// => [15, 2, 3, 7]</span>
-<span>// 升序</span>
-<span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>(</span><span>a<span>,</span> b</span><span>)</span> <span>=></span> a <span>-</span> b<span>)</span> <span>// => [2, 3, 7, 15]</span>
-<span>// 降序</span>
-<span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>(</span><span>a<span>,</span> b</span><span>)</span> <span>=></span> b <span>-</span> a<span>)</span> <span>// => [15, 7, 3, 2]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><ul>
-<li>
-<p><a href="https://github.com/mqyqingfeng/Blog/issues/52" target="_blank" rel="noopener noreferrer">JavaScript 专题之解读 v8 排序源码 - 冴羽</a></p>
-</li>
-<li>
-<p><a href="https://www.pzijun.cn/blog/1/1.8.html#v8-%E7%A7%8D%E7%9A%84-array-prototype-sort" target="_blank" rel="noopener noreferrer">讲下 V8 sort 的大概思路，并手写一个 sort 的实现 - 前端瓶子君</a></p>
-</li>
-</ul>
-<h2 id="_6-copywithin-targetindex-beginindex-endindex"> 6. copyWithin(targetIndex, beginIndex, endIndex)</h2>
-<ul>
-<li>
-<p>从数组中复制一部分到数组的另一个位置，覆盖这个位置原来的值。</p>
-</li>
-<li>
-<p>未指定开始索引，开始索引则为 0，未指定结束索引，则截取自末尾（包含开始索引，不包含结束索引）。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>copyWithin</span><span>(</span><span>2</span><span>)</span> <span>// => [1, 2, 1, 2, 3]</span>
-
-<span>// 将索引位置 [1, 3) 的项，替换到索引位置为 [2, (2 + 3 - 1)) 的项上</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>copyWithin</span><span>(</span><span>2</span><span>,</span> <span>1</span><span>,</span> <span>3</span><span>)</span> <span>// => [1, 2, 2, 3, 5]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>你不知道的 JS（下）</title>
       <link>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol3/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol3/</guid>
@@ -26568,6 +26471,103 @@ it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 
 </ul>
 </blockquote>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>Array</title>
+      <link>https://www.matrixtheone.ga/web/note/js/Array-1/</link>
+      <guid>https://www.matrixtheone.ga/web/note/js/Array-1/</guid>
+      <source url="https://www.matrixtheone.ga/web/rss.xml">Array</source>
+      <category>JS 基础</category>
+      <pubDate>Sat, 17 Dec 2022 17:01:46 GMT</pubDate>
+      <content:encoded><![CDATA[<div><p>提示</p>
+<p>会改变原数组</p>
+</div>
+<h2 id="_1-unshift-any-push-any"> 1. unshift(any...) &amp; push(any...)</h2>
+<ul>
+<li>在数组首/尾添加数据，返回添加后数组的长度。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>unshift</span><span>(</span><span>0</span><span>)</span> <span>// => 6</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>unshift</span><span>(</span><span>0</span><span>,</span> <span>7</span><span>)</span> <span>// => 7</span>
+
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>push</span><span>(</span><span>6</span><span>)</span> <span>// => 6</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>push</span><span>(</span><span>6</span><span>,</span> <span>7</span><span>)</span> <span>// => 7</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="_2-shift-pop"> 2. shift() &amp; pop()</h2>
+<ul>
+<li>删除数组第一项/最后一项，返回删除的值。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>shift</span><span>(</span><span>)</span> <span>// => 1</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>pop</span><span>(</span><span>)</span> <span>// => 5</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="_3-splice-startindex-length-additem"> 3. splice(startIndex, length, addItem...)</h2>
+<ul>
+<li>
+<p>可用于数组的增删改操作，返回删除项组成的数组。</p>
+</li>
+<li>
+<p>若删除长度未指定，删除至结束，负数反序计算。开始索引溢出，或删除长度为负数，等同于未操作数组</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>3</span><span>)</span> <span>// => [4, 5]</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>-</span><span>2</span><span>,</span> <span>1</span><span>)</span> <span>// => [4]</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>3</span><span>,</span> <span>2</span><span>,</span> <span>'jack'</span><span>,</span> <span>'love'</span><span>)</span> <span>// => [4, 5]</span>
+
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>6</span><span>)</span> <span>// => []</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>)</span> <span>// => []</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_4-reverse"> 4. reverse()</h2>
+<ul>
+<li>翻转数组。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>reverse</span><span>(</span><span>)</span>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="_5-sort-comparefunction"> 5. sort(compareFunction)</h2>
+<ul>
+<li>
+<p>默认把所有元素先转换为 String 再排序，按照第一个字符的 ASCII 值排序。</p>
+</li>
+<li>
+<p>compareFunction（比较器）：返回负数时，第一个参数排在前面；返回正数时，第二个参数排在前面。</p>
+</li>
+<li>
+<p>ECMAScript 没有定义用哪个排序算法，所以浏览器厂商可以自行去实现算法。自 ES10（EcmaScript 2019）起，规范要求 Array.prototype.sort 为稳定排序。</p>
+<blockquote>
+<ul>
+<li>Mozilla Firefox 使用归并排序作为 Array.prototype.sort 的实现（归并排序是稳定的）。</li>
+<li>Chrome 在 V8 引擎 7.0 版本前使用了一个快速排序的变体：插入排序和快速排序结合的排序算法。数组长度不超过 10 时，使用插入排序（在数组长度较短时插入排序更有效率），长度超过 10 使用优化的快速排序（快速排序是不稳定的）。在 7.0 版本之后采用了一种混合排序算法 TimSort：在数据量小的子数组中使用插入排序，然后再使用归并排序将有序的子数组进行合并排序。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>)</span> <span>// => [15, 2, 3, 7]</span>
+<span>// 升序</span>
+<span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>(</span><span>a<span>,</span> b</span><span>)</span> <span>=></span> a <span>-</span> b<span>)</span> <span>// => [2, 3, 7, 15]</span>
+<span>// 降序</span>
+<span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>(</span><span>a<span>,</span> b</span><span>)</span> <span>=></span> b <span>-</span> a<span>)</span> <span>// => [15, 7, 3, 2]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><ul>
+<li>
+<p><a href="https://github.com/mqyqingfeng/Blog/issues/52" target="_blank" rel="noopener noreferrer">JavaScript 专题之解读 v8 排序源码 - 冴羽</a></p>
+</li>
+<li>
+<p><a href="https://www.pzijun.cn/blog/1/1.8.html#v8-%E7%A7%8D%E7%9A%84-array-prototype-sort" target="_blank" rel="noopener noreferrer">讲下 V8 sort 的大概思路，并手写一个 sort 的实现 - 前端瓶子君</a></p>
+</li>
+</ul>
+<h2 id="_6-copywithin-targetindex-beginindex-endindex"> 6. copyWithin(targetIndex, beginIndex, endIndex)</h2>
+<ul>
+<li>
+<p>从数组中复制一部分到数组的另一个位置，覆盖这个位置原来的值。</p>
+</li>
+<li>
+<p>未指定开始索引，开始索引则为 0，未指定结束索引，则截取自末尾（包含开始索引，不包含结束索引）。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>copyWithin</span><span>(</span><span>2</span><span>)</span> <span>// => [1, 2, 1, 2, 3]</span>
+
+<span>// 将索引位置 [1, 3) 的项，替换到索引位置为 [2, (2 + 3 - 1)) 的项上</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>copyWithin</span><span>(</span><span>2</span><span>,</span> <span>1</span><span>,</span> <span>3</span><span>)</span> <span>// => [1, 2, 2, 3, 5]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
