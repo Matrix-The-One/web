@@ -6,12 +6,12 @@
     <link>https://www.matrixtheone.ga/web/</link>
     <description>兴趣使然的英雄</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 20 Apr 2023 15:24:25 GMT</pubDate>
-    <lastBuildDate>Thu, 20 Apr 2023 15:24:25 GMT</lastBuildDate>
+    <pubDate>Sun, 23 Apr 2023 15:51:04 GMT</pubDate>
+    <lastBuildDate>Sun, 23 Apr 2023 15:51:04 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>区块链</category>
     <category>DAPP</category>
+    <category>区块链</category>
     <category>Solidity</category>
     <category>Command</category>
     <category>CSS</category>
@@ -41,280 +41,12 @@
     <category>Webpack</category>
     <category>JS 基础</category>
     <item>
-      <title>基本概念</title>
-      <link>https://www.matrixtheone.ga/web/blockChain/Basic/</link>
-      <guid>https://www.matrixtheone.ga/web/blockChain/Basic/</guid>
-      <source url="https://www.matrixtheone.ga/web/rss.xml">基本概念</source>
-      <category>区块链</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="_1-base58"> 1. Base58</h2>
-<p>Base58 是用于比特币（Bitcoin）中使用的一种独特的编码方式，主要用于产生 Bitcoin 的钱包地址。相比 Base64，Base58 不使用数字 &quot;0&quot;，字母大写 &quot;O&quot;，字母大写 &quot;I&quot;，和字母小写 &quot;l&quot;，以及 &quot;+&quot; 和 &quot;/&quot; 符号。</p>
-<ul>
-<li><a href="https://zh.wikipedia.org/wiki/Base58" target="_blank" rel="noopener noreferrer">Base58 - 维基百科</a></li>
-</ul>
-<h2 id="_2-哈希碰撞"> 2. 哈希碰撞</h2>
-<div><pre><code><span>const</span> <span>calculate</span> <span>=</span> <span>(</span><span>d<span>,</span> n</span><span>)</span> <span>=></span> <span>{</span>
-  <span>const</span> exponent <span>=</span> <span>(</span><span>-</span>n <span>*</span> <span>(</span>n <span>-</span> <span>1</span><span>)</span><span>)</span> <span>/</span> <span>(</span><span>2</span> <span>*</span> d<span>)</span>
-  <span>return</span> <span>1</span> <span>-</span> Math<span>.</span><span>E</span> <span>**</span> exponent
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><ul>
-<li><a href="https://www.ruanyifeng.com/blog/2018/09/hash-collision-and-birthday-attack.html" target="_blank" rel="noopener noreferrer">哈希碰撞与生日攻击 - 阮一峰</a></li>
-</ul>
-<h2 id="_3-数字签名"> 3. 数字签名</h2>
-<ul>
-<li>
-<p>数字签名的三个作用：防伪造，防篡改，防抵赖。</p>
-</li>
-<li>
-<p>比特币采用的 ECDSA 签名算法需要一个私钥和公钥组成的秘钥对：私钥本质上就是一个 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.8141em;"></span><span>1</span><span>～</span><span><span>2</span><span><span><span><span style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>256</span></span></span></span></span></span></span></span></span></span></span></span> 的随机数，公钥是由私钥根据 ECDSA 算法推算出来的，通过私钥可以很容易推算出公钥，所以不必保存公钥，但是，通过公钥无法反推私钥，只能暴力破解。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1311929746325537" target="_blank" rel="noopener noreferrer">P2P 交易原理 - 廖雪峰</a></p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207687429747616" target="_blank" rel="noopener noreferrer">签名 - 廖雪峰</a></p>
-</li>
-<li>
-<p><a href="https://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html" target="_blank" rel="noopener noreferrer">数字签名是什么？ - 阮一峰</a></p>
-</li>
-</ul>
-<h2 id="_4-公私钥与地址"> 4. 公私钥与地址</h2>
-<ul>
-<li>
-<p>比特币的公钥是根据私钥由 ECDSA 算法推算出来的，公钥有压缩和非压缩两种表示方法，可互相转换。比特币的地址是公钥哈希的编码，并不是公钥本身，通过公钥可推导出地址。通过地址不可推导出公钥，通过公钥不可推导出私钥。</p>
-<img :src="$withBase('/images/Block-Chain/比特币地址生成.png')" loading="lazy">
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1210215537429856" target="_blank" rel="noopener noreferrer">公钥和地址 - 廖雪峰</a></p>
-</li>
-<li>
-<p><a href="http://www.gobittest.appspot.com/Address" target="_blank" rel="noopener noreferrer">Addresses - Bitcoin Tests</a></p>
-</li>
-</ul>
-<h2 id="_5-比特币支付"> 5. 比特币支付</h2>
-<ul>
-<li>
-<p>比特币支付的本质是由程序触发的数字资产转移。比特币的支付脚本就是对输入的两个数据视作签名和公钥，然后先验证公钥哈希是否与地址相同，再根据公钥验证签名，这种标准脚本称之为 P2PKH（Pay to Public Key Hash）脚本。</p>
-</li>
-<li>
-<p>由此催生出了智能合约：当一个预先编好的条件被触发时，智能合约可以自动执行相应的程序，自动完成数字资产的转移。保险、贷款等金融活动在将来都可以以智能合约的形式执行。智能合约以程序来替代传统的纸质文件条款，并由计算机强制执行，将具有更高的更低的信任成本和运营成本。</p>
-</li>
-<li>
-<p>多重签名可以实现 N 个人持有私钥，其中 M 个人同意即可花费资金的功能。多重签名降低了单个私钥丢失的风险。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1311929802948641" target="_blank" rel="noopener noreferrer">可编程支付原理 - 廖雪峰</a></p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207315329092960" target="_blank" rel="noopener noreferrer">多重签名 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_6-utxo"> 6. UTXO</h2>
-<ul>
-<li>
-<p>比特币区块链使用 UTXO 模型，它没有账户这个概念。重建整个地址-余额数据库需要扫描整个区块链，并按每个交易依次更新记录，即可得到当前状态。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298275932480" target="_blank" rel="noopener noreferrer">UTXO 模型 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_7-merkle-tree"> 7. Merkle Tree</h2>
-<ul>
-<li>
-<p>梅克尔树是一种二叉树，能快速检查和归纳大量数据，可用于验证区块中交易记录的完整性，保证所有交易的不可篡改。</p>
-</li>
-<li>
-<p>Merkle Root 为 Merkle Tree 顶点，存储在区块头中。</p>
-<img :src="$withBase('/images/Block-Chain/Merkle Tree.png')" loading="lazy">
-</li>
-</ul>
-<h2 id="_8-segwit-地址"> 8. Segwit 地址</h2>
-<ul>
-<li>
-<p>Segwit 地址又称隔离见证地址。比特币延展性攻击的原因是 ECDSA 签名总是有两个有效签名，且可以相互计算。</p>
-</li>
-<li>
-<p>要解决延展性攻击的问题，有两个办法，一是对交易签名进行归一化（Normalize）。因为 ECDSA 签名后总有两个有效的签名 (r, s) 和 (r, -s mod N)，那只接受数值较小的那个签名，为此比特币引入了一个 SCRIPT_VERIFY_LOW_S 标志仅接受较小值的签名。</p>
-</li>
-<li>
-<p>另一个办法是把签名数据移到交易之外，这样交易本身的哈希就不会变化。不含签名的交易计算出的哈希称为 wtxid，为此引入了一种新的隔离见证地址。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207366165169216" target="_blank" rel="noopener noreferrer">Segwit 地址 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_9-分叉"> 9. 分叉</h2>
-<ul>
-<li>
-<p>伪·软分叉（不分叉）：旧节点接受新区块，新节点也接受旧区块。</p>
-</li>
-<li>
-<p>真·软分叉：旧节点接受新区块，新节点不接受旧区块。</p>
-<blockquote>
-<ol>
-<li>其实没分叉：新节点算力超过 50%。</li>
-<li>确实分叉了：新节点算力不到 50%。</li>
-</ol>
-</blockquote>
-</li>
-<li>
-<p>硬分叉：旧节点不接受新区块。</p>
-</li>
-<li>
-<p><a href="https://learnblockchain.cn/article/849" target="_blank" rel="noopener noreferrer">关于扩容与分叉（上）- maxdeath</a></p>
-</li>
-</ul>
-<h2 id="_10-隔离见证"> 10. 隔离见证</h2>
-<ul>
-<li>
-<p>比特币的格式里，允许用脚本来替换签名。签名大概占了交易大小的 2/3 空间（约 150 字节）。</p>
-</li>
-<li>
-<p>隔离见证区块：每笔交易都被分成了两部分：交易和见证（签名）。交易部分只有 100 字节左右，于是一个 1MB 的区块里面能放 10000 笔交易（原来是 4000 笔）。所有的见证部分，大约 1.5MB - 2MB，都被扔到了后面。</p>
-</li>
-<li>
-<p>特点：</p>
-<blockquote>
-<ul>
-<li>是软分叉甚至不分叉。</li>
-<li>理论上来讲可能提高 2-3 倍的交易量。</li>
-<li>支持闪电网络，可以将一部分交易挪到链下进行，减轻主链的负担。</li>
-<li>会降低比特币的安全性。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p><a href="https://learnblockchain.cn/article/849#%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81" target="_blank" rel="noopener noreferrer">隔离见证 - maxdeath</a></p>
-</li>
-<li>
-<p><a href="https://learnblockchain.cn/article/850" target="_blank" rel="noopener noreferrer">关于扩容与分叉（下）- maxdeath</a></p>
-</li>
-</ul>
-<h2 id="_11-hd-钱包"> 11. HD 钱包</h2>
-<ul>
-<li>
-<p>HD 钱包采用分层确定性算法通过根扩展私钥计算所有层级的所有子扩展私钥，继而得到扩展公钥和地址。</p>
-</li>
-<li>
-<p>可以通过普通衍生和硬化衍生两种方式计算扩展子私钥，后者更安全，但对应的扩展公钥无法计算硬化衍生的子扩展公钥。</p>
-</li>
-<li>
-<p>通过扩展公钥可以在没有扩展私钥的前提下计算所有普通子扩展公钥，此特性可实现观察钱包。</p>
-</li>
-<li>
-<p>HD 钱包通过 Bloom Filter 可以高效监控链上的所有地址，并根据是否是本地管理的地址决定如何计算钱包余额。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298278803712" target="_blank" rel="noopener noreferrer">HD 钱包 - 廖雪峰</a></p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1364939807653921" target="_blank" rel="noopener noreferrer">地址监控 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_12-助记词"> 12. 助记词</h2>
-<ul>
-<li>
-<p>BIP-39 规范通过使用助记词 + 口令来生成 HD 钱包的种子，用户只需记忆助记词和口令即可随时恢复 HD 钱包。生成助记词的过程是计算机随机产生的，用户只要记住这些助记词，就可以根据助记词推算出 HD 钱包的种子。</p>
-</li>
-<li>
-<p>助记词的意义就是作为私钥的备份。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207320517404448" target="_blank" rel="noopener noreferrer">助记词 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_13-以太坊"> 13. 以太坊</h2>
-<ul>
-<li>
-<p>以太坊采用账户余额模型，通常情况下一个以太坊地址已够用。如果要生成多个地址，可继续派生 m/44'/60'/0'/0/1、m/44'/60'/0'/0/2 等。</p>
-</li>
-<li>
-<p>以太坊的私钥和公钥采用和比特币一样的 ECDSA 算法和 secp256k1 曲线，并且可以复用比特币的 HD 钱包助记词。</p>
-</li>
-<li>
-<p>比特币每隔 2015 个区块调整挖矿难度。以太坊每个区块都会调整挖矿难度。</p>
-<blockquote>
-<p>比特币设计时本来打算每 2016 个区块调整一次难度，也就是两周一次，但是由于第一版代码的一个 bug，实际调整周期是 2015 个区块。</p>
-</blockquote>
-</li>
-<li>
-<p>地址生成。</p>
-<img :src="$withBase('/images/Block-Chain/以太坊地址生成.png')" loading="lazy">
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298477260480" target="_blank" rel="noopener noreferrer">以太坊/账户 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_14-智能合约"> 14. 智能合约</h2>
-<ul>
-<li>
-<p>所谓智能合约，就是一种运行在区块链上的程序（用脚本更形象点）。以太坊通过 EVM 虚拟机执行智能合约代码。</p>
-</li>
-<li>
-<p>合约被部署后将自动获得一个地址，并可像外部账户一样存取 Ether，还可以存储状态数据。只能被动地被外部账户调用，但在执行时可以调用其他合约的公共函数。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207297939801024" target="_blank" rel="noopener noreferrer">智能合约 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_15-术语"> 15. 术语</h2>
-<ul>
-<li>
-<p>手续费 = GasUsed * GasPrice</p>
-</li>
-<li>
-<p>GasUsed：Gas 实际消耗量。</p>
-<blockquote>
-<ul>
-<li>区块：所有交易消耗的 Gas 总量。</li>
-<li>交易：实际消耗的 Gas。一笔普通转账交易固定消耗 21000 Gas，也是最小 Gas 消耗量。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>GasPrice：Gas 消耗单价，用户交易前设置，矿工可根据 GasPrice 选择是否打包。</p>
-</li>
-<li>
-<p>GasLimit：Gas 可消耗上限。</p>
-<blockquote>
-<ul>
-<li>区块：所有交易 Gas 消耗上限，防止无法停止（死循环）的合约来阻塞网络。每个区块的矿工可调整区块 GasLimit，任意加减 1/2024（0.0976%）。</li>
-<li>交易：用户设置交易可消耗的 Gas 上限。如果实际 Gas 消耗超出用户设置的 GasLimit，那么该交易失败，消耗的 Gas 不会返还（消耗了算力）。如果实际 Gas 消耗小于用户设置的 GasLimit，那么超出的 Gas 会返还用户。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>Nonce：随机数。</p>
-<blockquote>
-<ul>
-<li>区块：工作量证明，也就是猜出的一个正确答案，代表挖矿成功。</li>
-<li>账户：防止多重交易（双花），交易自增长（消息调用不会增长）。如果用户自定义交易 Nonce 大于账户 Nonce + 1，那么交易会失败。如果一个区块上用户有两个交易的 Nonce 相同（自增长 Nonce），矿工可选择一笔交易打包，另一笔交易丢弃。矿工当然会选 GasPrice 高的那笔哟，这样可以在上一笔交易打包前，发出另一笔 Nonce 一样，但 GasPrice 较高的交易，来取消上一笔交易（看手速与运气的时候了）。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>代币标准：如果同一个集合的两个物品具有不同的特征，那么这两个物品是非同质的，而同质是指某个部分或数量可以被另一个同等部分或数量所代替。</p>
-<blockquote>
-<ul>
-<li>ERC20：同质代币（BNB 等），可置换、可细分。</li>
-<li>ERC721：非同质代币（CryptoKitties 等），不可置换、不可细分（Token 最小单位 1）。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p><a href="https://learnblockchain.cn/2018/01/11/guide" target="_blank" rel="noopener noreferrer">区块链技术入门学习指引 - Tiny 熊</a></p>
-</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Config</title>
       <link>https://www.matrixtheone.ga/web/blockChain/DAPP/Config/</link>
       <guid>https://www.matrixtheone.ga/web/blockChain/DAPP/Config/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Config</source>
       <category>DAPP</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-config"> 1. config</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/69888765/getting-netlify-build-error-when-importing-web3-in-nextjs-application-error" target="_blank" rel="noopener noreferrer">SSR 忽略 electron</a>。</li>
@@ -592,11 +324,279 @@
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br><span>56</span><br><span>57</span><br><span>58</span><br><span>59</span><br><span>60</span><br><span>61</span><br><span>62</span><br><span>63</span><br><span>64</span><br><span>65</span><br><span>66</span><br><span>67</span><br><span>68</span><br><span>69</span><br><span>70</span><br><span>71</span><br><span>72</span><br><span>73</span><br><span>74</span><br><span>75</span><br><span>76</span><br><span>77</span><br><span>78</span><br><span>79</span><br><span>80</span><br><span>81</span><br><span>82</span><br><span>83</span><br><span>84</span><br><span>85</span><br><span>86</span><br><span>87</span><br><span>88</span><br><span>89</span><br><span>90</span><br><span>91</span><br><span>92</span><br><span>93</span><br><span>94</span><br><span>95</span><br><span>96</span><br><span>97</span><br><span>98</span><br><span>99</span><br><span>100</span><br><span>101</span><br><span>102</span><br><span>103</span><br><span>104</span><br><span>105</span><br><span>106</span><br><span>107</span><br><span>108</span><br><span>109</span><br><span>110</span><br><span>111</span><br><span>112</span><br><span>113</span><br><span>114</span><br><span>115</span><br><span>116</span><br><span>117</span><br><span>118</span><br><span>119</span><br><span>120</span><br><span>121</span><br><span>122</span><br><span>123</span><br><span>124</span><br><span>125</span><br><span>126</span><br><span>127</span><br><span>128</span><br><span>129</span><br><span>130</span><br><span>131</span><br><span>132</span><br><span>133</span><br><span>134</span><br><span>135</span><br><span>136</span><br><span>137</span><br><span>138</span><br><span>139</span><br><span>140</span><br><span>141</span><br><span>142</span><br><span>143</span><br><span>144</span><br><span>145</span><br><span>146</span><br><span>147</span><br><span>148</span><br><span>149</span><br><span>150</span><br><span>151</span><br><span>152</span><br><span>153</span><br><span>154</span><br><span>155</span><br><span>156</span><br><span>157</span><br><span>158</span><br><span>159</span><br><span>160</span><br><span>161</span><br><span>162</span><br><span>163</span><br><span>164</span><br><span>165</span><br><span>166</span><br><span>167</span><br><span>168</span><br><span>169</span><br><span>170</span><br><span>171</span><br><span>172</span><br><span>173</span><br><span>174</span><br><span>175</span><br><span>176</span><br><span>177</span><br><span>178</span><br><span>179</span><br><span>180</span><br><span>181</span><br><span>182</span><br><span>183</span><br><span>184</span><br><span>185</span><br><span>186</span><br><span>187</span><br><span>188</span><br><span>189</span><br><span>190</span><br><span>191</span><br><span>192</span><br><span>193</span><br><span>194</span><br><span>195</span><br><span>196</span><br><span>197</span><br><span>198</span><br><span>199</span><br><span>200</span><br><span>201</span><br><span>202</span><br><span>203</span><br><span>204</span><br><span>205</span><br><span>206</span><br><span>207</span><br><span>208</span><br><span>209</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>基本概念</title>
+      <link>https://www.matrixtheone.ga/web/blockChain/Basic/</link>
+      <guid>https://www.matrixtheone.ga/web/blockChain/Basic/</guid>
+      <source url="https://www.matrixtheone.ga/web/rss.xml">基本概念</source>
+      <category>区块链</category>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="_1-base58"> 1. Base58</h2>
+<p>Base58 是用于比特币（Bitcoin）中使用的一种独特的编码方式，主要用于产生 Bitcoin 的钱包地址。相比 Base64，Base58 不使用数字 &quot;0&quot;，字母大写 &quot;O&quot;，字母大写 &quot;I&quot;，和字母小写 &quot;l&quot;，以及 &quot;+&quot; 和 &quot;/&quot; 符号。</p>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/Base58" target="_blank" rel="noopener noreferrer">Base58 - 维基百科</a></li>
+</ul>
+<h2 id="_2-哈希碰撞"> 2. 哈希碰撞</h2>
+<div><pre><code><span>const</span> <span>calculate</span> <span>=</span> <span>(</span><span>d<span>,</span> n</span><span>)</span> <span>=></span> <span>{</span>
+  <span>const</span> exponent <span>=</span> <span>(</span><span>-</span>n <span>*</span> <span>(</span>n <span>-</span> <span>1</span><span>)</span><span>)</span> <span>/</span> <span>(</span><span>2</span> <span>*</span> d<span>)</span>
+  <span>return</span> <span>1</span> <span>-</span> Math<span>.</span><span>E</span> <span>**</span> exponent
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><ul>
+<li><a href="https://www.ruanyifeng.com/blog/2018/09/hash-collision-and-birthday-attack.html" target="_blank" rel="noopener noreferrer">哈希碰撞与生日攻击 - 阮一峰</a></li>
+</ul>
+<h2 id="_3-数字签名"> 3. 数字签名</h2>
+<ul>
+<li>
+<p>数字签名的三个作用：防伪造，防篡改，防抵赖。</p>
+</li>
+<li>
+<p>比特币采用的 ECDSA 签名算法需要一个私钥和公钥组成的秘钥对：私钥本质上就是一个 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.8141em;"></span><span>1</span><span>～</span><span><span>2</span><span><span><span><span style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>256</span></span></span></span></span></span></span></span></span></span></span></span> 的随机数，公钥是由私钥根据 ECDSA 算法推算出来的，通过私钥可以很容易推算出公钥，所以不必保存公钥，但是，通过公钥无法反推私钥，只能暴力破解。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1311929746325537" target="_blank" rel="noopener noreferrer">P2P 交易原理 - 廖雪峰</a></p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207687429747616" target="_blank" rel="noopener noreferrer">签名 - 廖雪峰</a></p>
+</li>
+<li>
+<p><a href="https://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html" target="_blank" rel="noopener noreferrer">数字签名是什么？ - 阮一峰</a></p>
+</li>
+</ul>
+<h2 id="_4-公私钥与地址"> 4. 公私钥与地址</h2>
+<ul>
+<li>
+<p>比特币的公钥是根据私钥由 ECDSA 算法推算出来的，公钥有压缩和非压缩两种表示方法，可互相转换。比特币的地址是公钥哈希的编码，并不是公钥本身，通过公钥可推导出地址。通过地址不可推导出公钥，通过公钥不可推导出私钥。</p>
+<img :src="$withBase('/images/Block-Chain/比特币地址生成.png')" loading="lazy">
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1210215537429856" target="_blank" rel="noopener noreferrer">公钥和地址 - 廖雪峰</a></p>
+</li>
+<li>
+<p><a href="http://www.gobittest.appspot.com/Address" target="_blank" rel="noopener noreferrer">Addresses - Bitcoin Tests</a></p>
+</li>
+</ul>
+<h2 id="_5-比特币支付"> 5. 比特币支付</h2>
+<ul>
+<li>
+<p>比特币支付的本质是由程序触发的数字资产转移。比特币的支付脚本就是对输入的两个数据视作签名和公钥，然后先验证公钥哈希是否与地址相同，再根据公钥验证签名，这种标准脚本称之为 P2PKH（Pay to Public Key Hash）脚本。</p>
+</li>
+<li>
+<p>由此催生出了智能合约：当一个预先编好的条件被触发时，智能合约可以自动执行相应的程序，自动完成数字资产的转移。保险、贷款等金融活动在将来都可以以智能合约的形式执行。智能合约以程序来替代传统的纸质文件条款，并由计算机强制执行，将具有更高的更低的信任成本和运营成本。</p>
+</li>
+<li>
+<p>多重签名可以实现 N 个人持有私钥，其中 M 个人同意即可花费资金的功能。多重签名降低了单个私钥丢失的风险。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1311929802948641" target="_blank" rel="noopener noreferrer">可编程支付原理 - 廖雪峰</a></p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207315329092960" target="_blank" rel="noopener noreferrer">多重签名 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_6-utxo"> 6. UTXO</h2>
+<ul>
+<li>
+<p>比特币区块链使用 UTXO 模型，它没有账户这个概念。重建整个地址-余额数据库需要扫描整个区块链，并按每个交易依次更新记录，即可得到当前状态。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298275932480" target="_blank" rel="noopener noreferrer">UTXO 模型 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_7-merkle-tree"> 7. Merkle Tree</h2>
+<ul>
+<li>
+<p>梅克尔树是一种二叉树，能快速检查和归纳大量数据，可用于验证区块中交易记录的完整性，保证所有交易的不可篡改。</p>
+</li>
+<li>
+<p>Merkle Root 为 Merkle Tree 顶点，存储在区块头中。</p>
+<img :src="$withBase('/images/Block-Chain/Merkle Tree.png')" loading="lazy">
+</li>
+</ul>
+<h2 id="_8-segwit-地址"> 8. Segwit 地址</h2>
+<ul>
+<li>
+<p>Segwit 地址又称隔离见证地址。比特币延展性攻击的原因是 ECDSA 签名总是有两个有效签名，且可以相互计算。</p>
+</li>
+<li>
+<p>要解决延展性攻击的问题，有两个办法，一是对交易签名进行归一化（Normalize）。因为 ECDSA 签名后总有两个有效的签名 (r, s) 和 (r, -s mod N)，那只接受数值较小的那个签名，为此比特币引入了一个 SCRIPT_VERIFY_LOW_S 标志仅接受较小值的签名。</p>
+</li>
+<li>
+<p>另一个办法是把签名数据移到交易之外，这样交易本身的哈希就不会变化。不含签名的交易计算出的哈希称为 wtxid，为此引入了一种新的隔离见证地址。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207366165169216" target="_blank" rel="noopener noreferrer">Segwit 地址 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_9-分叉"> 9. 分叉</h2>
+<ul>
+<li>
+<p>伪·软分叉（不分叉）：旧节点接受新区块，新节点也接受旧区块。</p>
+</li>
+<li>
+<p>真·软分叉：旧节点接受新区块，新节点不接受旧区块。</p>
+<blockquote>
+<ol>
+<li>其实没分叉：新节点算力超过 50%。</li>
+<li>确实分叉了：新节点算力不到 50%。</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<p>硬分叉：旧节点不接受新区块。</p>
+</li>
+<li>
+<p><a href="https://learnblockchain.cn/article/849" target="_blank" rel="noopener noreferrer">关于扩容与分叉（上）- maxdeath</a></p>
+</li>
+</ul>
+<h2 id="_10-隔离见证"> 10. 隔离见证</h2>
+<ul>
+<li>
+<p>比特币的格式里，允许用脚本来替换签名。签名大概占了交易大小的 2/3 空间（约 150 字节）。</p>
+</li>
+<li>
+<p>隔离见证区块：每笔交易都被分成了两部分：交易和见证（签名）。交易部分只有 100 字节左右，于是一个 1MB 的区块里面能放 10000 笔交易（原来是 4000 笔）。所有的见证部分，大约 1.5MB - 2MB，都被扔到了后面。</p>
+</li>
+<li>
+<p>特点：</p>
+<blockquote>
+<ul>
+<li>是软分叉甚至不分叉。</li>
+<li>理论上来讲可能提高 2-3 倍的交易量。</li>
+<li>支持闪电网络，可以将一部分交易挪到链下进行，减轻主链的负担。</li>
+<li>会降低比特币的安全性。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><a href="https://learnblockchain.cn/article/849#%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81" target="_blank" rel="noopener noreferrer">隔离见证 - maxdeath</a></p>
+</li>
+<li>
+<p><a href="https://learnblockchain.cn/article/850" target="_blank" rel="noopener noreferrer">关于扩容与分叉（下）- maxdeath</a></p>
+</li>
+</ul>
+<h2 id="_11-hd-钱包"> 11. HD 钱包</h2>
+<ul>
+<li>
+<p>HD 钱包采用分层确定性算法通过根扩展私钥计算所有层级的所有子扩展私钥，继而得到扩展公钥和地址。</p>
+</li>
+<li>
+<p>可以通过普通衍生和硬化衍生两种方式计算扩展子私钥，后者更安全，但对应的扩展公钥无法计算硬化衍生的子扩展公钥。</p>
+</li>
+<li>
+<p>通过扩展公钥可以在没有扩展私钥的前提下计算所有普通子扩展公钥，此特性可实现观察钱包。</p>
+</li>
+<li>
+<p>HD 钱包通过 Bloom Filter 可以高效监控链上的所有地址，并根据是否是本地管理的地址决定如何计算钱包余额。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298278803712" target="_blank" rel="noopener noreferrer">HD 钱包 - 廖雪峰</a></p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1364939807653921" target="_blank" rel="noopener noreferrer">地址监控 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_12-助记词"> 12. 助记词</h2>
+<ul>
+<li>
+<p>BIP-39 规范通过使用助记词 + 口令来生成 HD 钱包的种子，用户只需记忆助记词和口令即可随时恢复 HD 钱包。生成助记词的过程是计算机随机产生的，用户只要记住这些助记词，就可以根据助记词推算出 HD 钱包的种子。</p>
+</li>
+<li>
+<p>助记词的意义就是作为私钥的备份。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207320517404448" target="_blank" rel="noopener noreferrer">助记词 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_13-以太坊"> 13. 以太坊</h2>
+<ul>
+<li>
+<p>以太坊采用账户余额模型，通常情况下一个以太坊地址已够用。如果要生成多个地址，可继续派生 m/44'/60'/0'/0/1、m/44'/60'/0'/0/2 等。</p>
+</li>
+<li>
+<p>以太坊的私钥和公钥采用和比特币一样的 ECDSA 算法和 secp256k1 曲线，并且可以复用比特币的 HD 钱包助记词。</p>
+</li>
+<li>
+<p>比特币每隔 2015 个区块调整挖矿难度。以太坊每个区块都会调整挖矿难度。</p>
+<blockquote>
+<p>比特币设计时本来打算每 2016 个区块调整一次难度，也就是两周一次，但是由于第一版代码的一个 bug，实际调整周期是 2015 个区块。</p>
+</blockquote>
+</li>
+<li>
+<p>地址生成。</p>
+<img :src="$withBase('/images/Block-Chain/以太坊地址生成.png')" loading="lazy">
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298477260480" target="_blank" rel="noopener noreferrer">以太坊/账户 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_14-智能合约"> 14. 智能合约</h2>
+<ul>
+<li>
+<p>所谓智能合约，就是一种运行在区块链上的程序（用脚本更形象点）。以太坊通过 EVM 虚拟机执行智能合约代码。</p>
+</li>
+<li>
+<p>合约被部署后将自动获得一个地址，并可像外部账户一样存取 Ether，还可以存储状态数据。只能被动地被外部账户调用，但在执行时可以调用其他合约的公共函数。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207297939801024" target="_blank" rel="noopener noreferrer">智能合约 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_15-术语"> 15. 术语</h2>
+<ul>
+<li>
+<p>手续费 = GasUsed * GasPrice</p>
+</li>
+<li>
+<p>GasUsed：Gas 实际消耗量。</p>
+<blockquote>
+<ul>
+<li>区块：所有交易消耗的 Gas 总量。</li>
+<li>交易：实际消耗的 Gas。一笔普通转账交易固定消耗 21000 Gas，也是最小 Gas 消耗量。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>GasPrice：Gas 消耗单价，用户交易前设置，矿工可根据 GasPrice 选择是否打包。</p>
+</li>
+<li>
+<p>GasLimit：Gas 可消耗上限。</p>
+<blockquote>
+<ul>
+<li>区块：所有交易 Gas 消耗上限，防止无法停止（死循环）的合约来阻塞网络。每个区块的矿工可调整区块 GasLimit，任意加减 1/2024（0.0976%）。</li>
+<li>交易：用户设置交易可消耗的 Gas 上限。如果实际 Gas 消耗超出用户设置的 GasLimit，那么该交易失败，消耗的 Gas 不会返还（消耗了算力）。如果实际 Gas 消耗小于用户设置的 GasLimit，那么超出的 Gas 会返还用户。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>Nonce：随机数。</p>
+<blockquote>
+<ul>
+<li>区块：工作量证明，也就是猜出的一个正确答案，代表挖矿成功。</li>
+<li>账户：防止多重交易（双花），交易自增长（消息调用不会增长）。如果用户自定义交易 Nonce 大于账户 Nonce + 1，那么交易会失败。如果一个区块上用户有两个交易的 Nonce 相同（自增长 Nonce），矿工可选择一笔交易打包，另一笔交易丢弃。矿工当然会选 GasPrice 高的那笔哟，这样可以在上一笔交易打包前，发出另一笔 Nonce 一样，但 GasPrice 较高的交易，来取消上一笔交易（看手速与运气的时候了）。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>代币标准：如果同一个集合的两个物品具有不同的特征，那么这两个物品是非同质的，而同质是指某个部分或数量可以被另一个同等部分或数量所代替。</p>
+<blockquote>
+<ul>
+<li>ERC20：同质代币（BNB 等），可置换、可细分。</li>
+<li>ERC721：非同质代币（CryptoKitties 等），不可置换、不可细分（Token 最小单位 1）。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><a href="https://learnblockchain.cn/2018/01/11/guide" target="_blank" rel="noopener noreferrer">区块链技术入门学习指引 - Tiny 熊</a></p>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>DAPP</title>
       <link>https://www.matrixtheone.ga/web/blockChain/DAPP/</link>
       <guid>https://www.matrixtheone.ga/web/blockChain/DAPP/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">DAPP</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/不能说的秘密.webp')">
 ]]></content:encoded>
     </item>
@@ -606,7 +606,7 @@
       <guid>https://www.matrixtheone.ga/web/blockChain/DAPP/Utils/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Utils</source>
       <category>DAPP</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-comparetoken"> 1. compareToken</h2>
 <ul>
 <li>判断代币是否足够。</li>
@@ -624,135 +624,12 @@
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>区块链</title>
-      <link>https://www.matrixtheone.ga/web/blockChain/</link>
-      <guid>https://www.matrixtheone.ga/web/blockChain/</guid>
-      <source url="https://www.matrixtheone.ga/web/rss.xml">区块链</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
-      <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/黑客帝国.webp')">
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Solidity</title>
-      <link>https://www.matrixtheone.ga/web/blockChain/Solidity/</link>
-      <guid>https://www.matrixtheone.ga/web/blockChain/Solidity/</guid>
-      <source url="https://www.matrixtheone.ga/web/rss.xml">Solidity</source>
-      <category>Solidity</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>Docker</title>
-      <link>https://www.matrixtheone.ga/web/command/Docker/</link>
-      <guid>https://www.matrixtheone.ga/web/command/Docker/</guid>
-      <source url="https://www.matrixtheone.ga/web/rss.xml">Docker</source>
-      <category>Command</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="reference"> <a href="https://docs.docker.com/reference/" target="_blank" rel="noopener noreferrer">reference</a></h2>
-<ul>
-<li>
-<p><code>docker version</code> 查看 docker 版本信息</p>
-</li>
-<li>
-<p><code>docker info</code> 查看 docker 的系统信息，包含镜像和容器数量</p>
-</li>
-<li>
-<p><code>docker pull 镜像名称:版本</code> 拉取镜像</p>
-</li>
-<li>
-<p><code>docker rmi -f 镜像ID</code> 删除指定镜像</p>
-</li>
-<li>
-<p><code>docker rmi -f 镜像ID 镜像ID</code> 删除多个镜像</p>
-</li>
-<li>
-<p><code>docker rmi -f $(docker images -aq)</code> 删除全部镜像</p>
-</li>
-<li>
-<p><code>docker ps</code> 查看运行中的容器</p>
-</li>
-<li>
-<p><code>docker ps -a</code> 查看包含历史运行过的容器</p>
-</li>
-<li>
-<p><code>docker run tomcat</code> 以 tomcat 镜像运行容器，<code>docker run -it tomcat /bin/bash</code> 运行并进入容器</p>
-<blockquote>
-<ul>
-<li><code>-d</code> 后台方式运行</li>
-<li><code>-it</code> 使用交互式运行</li>
-<li><code>-p</code> 端口映射，主机端口:容器端口</li>
-<li><code>-v</code> 挂载数据卷，主机路径:容器路径</li>
-<li><code>-e</code> 环境配置</li>
-<li><code>exit</code> 停止运行并退出容器</li>
-<li><code>Ctrl + P + Q</code> 不停止运行退出容器</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p><code>docker rm 容器ID</code> 删除已停止的容器</p>
-</li>
-<li>
-<p><code>docker rm -f 容器ID</code> 删除运行中/已停止的容器</p>
-</li>
-<li>
-<p><code>docker rm -f $(docker ps -aq)</code> 删除全部容器</p>
-</li>
-<li>
-<p><code>docker ps -a -q|xargs docker rm</code> 删除全部容器</p>
-</li>
-<li>
-<p><code>docker start 容器ID</code> 启动容器</p>
-</li>
-<li>
-<p><code>docker restart 容器ID</code> 重新启动容器</p>
-</li>
-<li>
-<p><code>docker stop 容器ID</code> 停止运行的容器</p>
-</li>
-<li>
-<p><code>docker kill 容器ID</code> 杀死运行的容器</p>
-</li>
-<li>
-<p><code>docker top 容器ID</code> 查看容器中进程的信息</p>
-</li>
-<li>
-<p><code>docker inspect 镜像ID/容器ID</code> 查看镜像/容器的元数据</p>
-</li>
-<li>
-<p><code>docker exec -it 容器ID /bin/bash</code> 进入运行中的容器，开启一个新的终端</p>
-</li>
-<li>
-<p><code>docker attach 容器ID</code> 进入运行中的容器，进入执行中的终端</p>
-</li>
-<li>
-<p><code>docker cp 容器ID:容器路径 主机路径</code> 从容器内拷贝文件到主机上</p>
-</li>
-<li>
-<p><code>docker run -d --name nginx01 -p 主机端口:容器端口 nginx</code> 启动 nginx 容器</p>
-</li>
-<li>
-<p><code>docker run -it -v 主机路径:容器路径 centos /bin/bash</code> 挂载数据卷</p>
-</li>
-<li>
-<p><code>docker volume ls</code> 查看所有数据卷</p>
-<blockquote>
-<ul>
-<li><code>-v 容器路径</code> 匿名挂载</li>
-<li><code>-v 卷名:容器路径</code> 具名挂载</li>
-<li><code>-v 主机路径:容器路径</code> 指定路径挂载</li>
-<li><code>--volume-from 容器</code> 容器数据共享</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Web3</title>
       <link>https://www.matrixtheone.ga/web/blockChain/DAPP/Web3/</link>
       <guid>https://www.matrixtheone.ga/web/blockChain/DAPP/Web3/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Web3</source>
       <category>DAPP</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-connectors"> 1. connectors</h2>
 <div><pre><code><span>import</span> <span>{</span> InjectedConnector <span>}</span> <span>from</span> <span>'@web3-react/injected-connector'</span>
 <span>import</span> <span>{</span> WalletConnectConnector <span>}</span> <span>from</span> <span>'@web3-react/walletconnect-connector'</span>
@@ -919,11 +796,134 @@
 ]]></content:encoded>
     </item>
     <item>
+      <title>区块链</title>
+      <link>https://www.matrixtheone.ga/web/blockChain/</link>
+      <guid>https://www.matrixtheone.ga/web/blockChain/</guid>
+      <source url="https://www.matrixtheone.ga/web/rss.xml">区块链</source>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
+      <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/黑客帝国.webp')">
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Solidity</title>
+      <link>https://www.matrixtheone.ga/web/blockChain/Solidity/</link>
+      <guid>https://www.matrixtheone.ga/web/blockChain/Solidity/</guid>
+      <source url="https://www.matrixtheone.ga/web/rss.xml">Solidity</source>
+      <category>Solidity</category>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://www.matrixtheone.ga/web/command/Docker/</link>
+      <guid>https://www.matrixtheone.ga/web/command/Docker/</guid>
+      <source url="https://www.matrixtheone.ga/web/rss.xml">Docker</source>
+      <category>Command</category>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="reference"> <a href="https://docs.docker.com/reference/" target="_blank" rel="noopener noreferrer">reference</a></h2>
+<ul>
+<li>
+<p><code>docker version</code> 查看 docker 版本信息</p>
+</li>
+<li>
+<p><code>docker info</code> 查看 docker 的系统信息，包含镜像和容器数量</p>
+</li>
+<li>
+<p><code>docker pull 镜像名称:版本</code> 拉取镜像</p>
+</li>
+<li>
+<p><code>docker rmi -f 镜像ID</code> 删除指定镜像</p>
+</li>
+<li>
+<p><code>docker rmi -f 镜像ID 镜像ID</code> 删除多个镜像</p>
+</li>
+<li>
+<p><code>docker rmi -f $(docker images -aq)</code> 删除全部镜像</p>
+</li>
+<li>
+<p><code>docker ps</code> 查看运行中的容器</p>
+</li>
+<li>
+<p><code>docker ps -a</code> 查看包含历史运行过的容器</p>
+</li>
+<li>
+<p><code>docker run tomcat</code> 以 tomcat 镜像运行容器，<code>docker run -it tomcat /bin/bash</code> 运行并进入容器</p>
+<blockquote>
+<ul>
+<li><code>-d</code> 后台方式运行</li>
+<li><code>-it</code> 使用交互式运行</li>
+<li><code>-p</code> 端口映射，主机端口:容器端口</li>
+<li><code>-v</code> 挂载数据卷，主机路径:容器路径</li>
+<li><code>-e</code> 环境配置</li>
+<li><code>exit</code> 停止运行并退出容器</li>
+<li><code>Ctrl + P + Q</code> 不停止运行退出容器</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><code>docker rm 容器ID</code> 删除已停止的容器</p>
+</li>
+<li>
+<p><code>docker rm -f 容器ID</code> 删除运行中/已停止的容器</p>
+</li>
+<li>
+<p><code>docker rm -f $(docker ps -aq)</code> 删除全部容器</p>
+</li>
+<li>
+<p><code>docker ps -a -q|xargs docker rm</code> 删除全部容器</p>
+</li>
+<li>
+<p><code>docker start 容器ID</code> 启动容器</p>
+</li>
+<li>
+<p><code>docker restart 容器ID</code> 重新启动容器</p>
+</li>
+<li>
+<p><code>docker stop 容器ID</code> 停止运行的容器</p>
+</li>
+<li>
+<p><code>docker kill 容器ID</code> 杀死运行的容器</p>
+</li>
+<li>
+<p><code>docker top 容器ID</code> 查看容器中进程的信息</p>
+</li>
+<li>
+<p><code>docker inspect 镜像ID/容器ID</code> 查看镜像/容器的元数据</p>
+</li>
+<li>
+<p><code>docker exec -it 容器ID /bin/bash</code> 进入运行中的容器，开启一个新的终端</p>
+</li>
+<li>
+<p><code>docker attach 容器ID</code> 进入运行中的容器，进入执行中的终端</p>
+</li>
+<li>
+<p><code>docker cp 容器ID:容器路径 主机路径</code> 从容器内拷贝文件到主机上</p>
+</li>
+<li>
+<p><code>docker run -d --name nginx01 -p 主机端口:容器端口 nginx</code> 启动 nginx 容器</p>
+</li>
+<li>
+<p><code>docker run -it -v 主机路径:容器路径 centos /bin/bash</code> 挂载数据卷</p>
+</li>
+<li>
+<p><code>docker volume ls</code> 查看所有数据卷</p>
+<blockquote>
+<ul>
+<li><code>-v 容器路径</code> 匿名挂载</li>
+<li><code>-v 卷名:容器路径</code> 具名挂载</li>
+<li><code>-v 主机路径:容器路径</code> 指定路径挂载</li>
+<li><code>--volume-from 容器</code> 容器数据共享</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>Blog Home</title>
       <link>https://www.matrixtheone.ga/web/intro/</link>
       <guid>https://www.matrixtheone.ga/web/intro/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Blog Home</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>魔法边框</title>
@@ -931,7 +931,7 @@
       <guid>https://www.matrixtheone.ga/web/magic/Border/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">魔法边框</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[
           <div
             id="code-demo-639c5f01"
@@ -1059,7 +1059,7 @@
       <guid>https://www.matrixtheone.ga/web/magic/Drag-Switch/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">拖拽切换</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[
           <div
             id="code-demo-305bf33d"
@@ -1141,7 +1141,7 @@
       <guid>https://www.matrixtheone.ga/web/magic/Ground-Glass/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">毛玻璃</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h3 id="backdrop-filter-blur"> backdrop-filter: blur()</h3>
 <blockquote>
 <p>透明度 + 模糊，火狐默认无效，移动端兼容性不大友好</p>
@@ -1394,7 +1394,7 @@
       <guid>https://www.matrixtheone.ga/web/magic/Image-Shadow/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">图像阴影</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>利用 filter 制造伪阴影</p>
 </blockquote>
@@ -1453,7 +1453,7 @@
       <guid>https://www.matrixtheone.ga/web/magic/Neon/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">霓虹灯</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[
           <div
             id="code-demo-01089fb6"
@@ -1586,7 +1586,7 @@ section::after</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/magic/QR-Code/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">二维码</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[
           <div
             id="code-demo-f65656fe"
@@ -1738,7 +1738,7 @@ section::after</span> <span>{</span>
       <link>https://www.matrixtheone.ga/web/magic/</link>
       <guid>https://www.matrixtheone.ga/web/magic/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">前端特效</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/银翼杀手2049.webp')">
 ]]></content:encoded>
     </item>
@@ -1748,7 +1748,7 @@ section::after</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/magic/Reflect/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">倒影动效</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[
           <div
             id="code-demo-36a7379d"
@@ -1966,7 +1966,7 @@ section:hover::before</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/magic/Rule-Shadow/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">规则阴影</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h3 id="clip-path-polygon"> clip-path: polygon()</h3>
 <blockquote>
 <p><a href="https://www.zhangxinxu.com/wordpress/2016/05/css3-filter-drop-shadow-vs-box-shadow/" target="_blank" rel="noopener noreferrer">drop-shadow 可以穿透元素的透明部分</a></p>
@@ -2019,7 +2019,7 @@ section:hover::before</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/magic/Scroll-Parallax/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">滚动视差</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h3 id="transform-style-preserve-3d"> transform-style: preserve-3d</h3>
 <blockquote>
 <p>3D 空间图片视距较远离正常平面</p>
@@ -2181,7 +2181,7 @@ section:hover::before</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/magic/Scroll-Snap/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">滚动贴合</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[
           <div
             id="code-demo-20c7991b"
@@ -2331,7 +2331,7 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
       <guid>https://www.matrixtheone.ga/web/magic/Text-Fault/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">文字故障</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[
           <div
             id="code-demo-676cd1fe"
@@ -2474,7 +2474,7 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
       <guid>https://www.matrixtheone.ga/web/magic/Text-Flow/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">文字流光</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[
           <div
             id="code-demo-a10dac26"
@@ -2633,7 +2633,7 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
       <guid>https://www.matrixtheone.ga/web/magic/Typing-Effect/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">打字效果</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[
           <div
             id="code-demo-20387d5e"
@@ -2682,12 +2682,74 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
 ]]></content:encoded>
     </item>
     <item>
+      <title>图片主色</title>
+      <link>https://www.matrixtheone.ga/web/magic/Theme-Color/</link>
+      <guid>https://www.matrixtheone.ga/web/magic/Theme-Color/</guid>
+      <source url="https://www.matrixtheone.ga/web/rss.xml">图片主色</source>
+      <category>CSS</category>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>伪主色，放大模糊中间色调</p>
+</blockquote>
+
+          <div
+            id="code-demo-22f9ca27"
+           
+  
+ data-title=""
+
+            data-code="%7B%22html%22%3A%22%3Cmain%3E%5Cn%20%20%3Csection%3E%3C%2Fsection%3E%5Cn%3C%2Fmain%3E%5Cn%22%2C%22css%22%3A%22main%20%7B%5Cn%20%20height%3A%20400px%3B%5Cn%20%20position%3A%20relative%3B%5Cn%20%20display%3A%20grid%3B%5Cn%20%20place-items%3A%20center%3B%5Cn%20%20overflow%3A%20hidden%3B%5Cn%7D%5Cn%5Cnmain%3A%3Abefore%20%7B%5Cn%20%20content%3A%20''%3B%5Cn%20%20position%3A%20absolute%3B%5Cn%20%20z-index%3A%20-1%3B%5Cn%20%20top%3A%200%3B%5Cn%20%20right%3A%200%3B%5Cn%20%20bottom%3A%200%3B%5Cn%20%20left%3A%200%3B%5Cn%20%20background%3A%20url(..%2F..%2Fimages%2FWives%2FBingBing-7.webp)%20center%2Fcover%20no-repeat%3B%5Cn%20%20filter%3A%20blur(50px)%3B%5Cn%20%20transform%3A%20scale(3)%3B%5Cn%7D%5Cn%5Cnsection%20%7B%5Cn%20%20width%3A%2070%25%3B%5Cn%20%20height%3A%2080%25%3B%5Cn%20%20border-radius%3A%2010px%3B%5Cn%20%20box-shadow%3A%200%200%2012px%204px%20rgba(255%2C%20255%2C%20255%2C%200.3)%3B%5Cn%20%20background%3A%20url(..%2F..%2Fimages%2FWives%2FBingBing-7.webp)%20center%2Fcover%20no-repeat%3B%5Cn%7D%5Cn%22%7D"
+          >
+              
+              <div>
+                <div>
+<div><pre><code><span><span><span>&lt;</span>main</span><span>></span></span>
+  <span><span><span>&lt;</span>section</span><span>></span></span><span><span><span>&lt;/</span>section</span><span>></span></span>
+<span><span><span>&lt;/</span>main</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><pre><code><span>main</span> <span>{</span>
+  <span>height</span><span>:</span> 400px<span>;</span>
+  <span>position</span><span>:</span> relative<span>;</span>
+  <span>display</span><span>:</span> grid<span>;</span>
+  <span>place-items</span><span>:</span> center<span>;</span>
+  <span>overflow</span><span>:</span> hidden<span>;</span>
+<span>}</span>
+
+<span>main::before</span> <span>{</span>
+  <span>content</span><span>:</span> <span>''</span><span>;</span>
+  <span>position</span><span>:</span> absolute<span>;</span>
+  <span>z-index</span><span>:</span> -1<span>;</span>
+  <span>top</span><span>:</span> 0<span>;</span>
+  <span>right</span><span>:</span> 0<span>;</span>
+  <span>bottom</span><span>:</span> 0<span>;</span>
+  <span>left</span><span>:</span> 0<span>;</span>
+  <span>background</span><span>:</span> <span><span>url</span><span>(</span>../../images/Wives/BingBing-7.webp<span>)</span></span> center/cover no-repeat<span>;</span>
+  <span>filter</span><span>:</span> <span>blur</span><span>(</span>50px<span>)</span><span>;</span>
+  <span>transform</span><span>:</span> <span>scale</span><span>(</span>3<span>)</span><span>;</span>
+<span>}</span>
+
+<span>section</span> <span>{</span>
+  <span>width</span><span>:</span> 70%<span>;</span>
+  <span>height</span><span>:</span> 80%<span>;</span>
+  <span>border-radius</span><span>:</span> 10px<span>;</span>
+  <span>box-shadow</span><span>:</span> 0 0 12px 4px <span>rgba</span><span>(</span>255<span>,</span> 255<span>,</span> 255<span>,</span> 0.3<span>)</span><span>;</span>
+  <span>background</span><span>:</span> <span><span>url</span><span>(</span>../../images/Wives/BingBing-7.webp<span>)</span></span> center/cover no-repeat<span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br></div></div>
+            </div>
+          </div>
+          
+        </div>
+]]></content:encoded>
+    </item>
+    <item>
       <title>浏览器</title>
       <link>https://www.matrixtheone.ga/web/memo/Browser/</link>
       <guid>https://www.matrixtheone.ga/web/memo/Browser/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">浏览器</source>
       <category>浏览器</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-url-到页面渲染"> 1. URL 到页面渲染</h2>
 <img :src="$withBase('/images/Browser/URL 到页面渲染.png')" loading="lazy">
 <ul>
@@ -2810,74 +2872,12 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
 ]]></content:encoded>
     </item>
     <item>
-      <title>图片主色</title>
-      <link>https://www.matrixtheone.ga/web/magic/Theme-Color/</link>
-      <guid>https://www.matrixtheone.ga/web/magic/Theme-Color/</guid>
-      <source url="https://www.matrixtheone.ga/web/rss.xml">图片主色</source>
-      <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>伪主色，放大模糊中间色调</p>
-</blockquote>
-
-          <div
-            id="code-demo-22f9ca27"
-           
-  
- data-title=""
-
-            data-code="%7B%22html%22%3A%22%3Cmain%3E%5Cn%20%20%3Csection%3E%3C%2Fsection%3E%5Cn%3C%2Fmain%3E%5Cn%22%2C%22css%22%3A%22main%20%7B%5Cn%20%20height%3A%20400px%3B%5Cn%20%20position%3A%20relative%3B%5Cn%20%20display%3A%20grid%3B%5Cn%20%20place-items%3A%20center%3B%5Cn%20%20overflow%3A%20hidden%3B%5Cn%7D%5Cn%5Cnmain%3A%3Abefore%20%7B%5Cn%20%20content%3A%20''%3B%5Cn%20%20position%3A%20absolute%3B%5Cn%20%20z-index%3A%20-1%3B%5Cn%20%20top%3A%200%3B%5Cn%20%20right%3A%200%3B%5Cn%20%20bottom%3A%200%3B%5Cn%20%20left%3A%200%3B%5Cn%20%20background%3A%20url(..%2F..%2Fimages%2FWives%2FBingBing-7.webp)%20center%2Fcover%20no-repeat%3B%5Cn%20%20filter%3A%20blur(50px)%3B%5Cn%20%20transform%3A%20scale(3)%3B%5Cn%7D%5Cn%5Cnsection%20%7B%5Cn%20%20width%3A%2070%25%3B%5Cn%20%20height%3A%2080%25%3B%5Cn%20%20border-radius%3A%2010px%3B%5Cn%20%20box-shadow%3A%200%200%2012px%204px%20rgba(255%2C%20255%2C%20255%2C%200.3)%3B%5Cn%20%20background%3A%20url(..%2F..%2Fimages%2FWives%2FBingBing-7.webp)%20center%2Fcover%20no-repeat%3B%5Cn%7D%5Cn%22%7D"
-          >
-              
-              <div>
-                <div>
-<div><pre><code><span><span><span>&lt;</span>main</span><span>></span></span>
-  <span><span><span>&lt;</span>section</span><span>></span></span><span><span><span>&lt;/</span>section</span><span>></span></span>
-<span><span><span>&lt;/</span>main</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><pre><code><span>main</span> <span>{</span>
-  <span>height</span><span>:</span> 400px<span>;</span>
-  <span>position</span><span>:</span> relative<span>;</span>
-  <span>display</span><span>:</span> grid<span>;</span>
-  <span>place-items</span><span>:</span> center<span>;</span>
-  <span>overflow</span><span>:</span> hidden<span>;</span>
-<span>}</span>
-
-<span>main::before</span> <span>{</span>
-  <span>content</span><span>:</span> <span>''</span><span>;</span>
-  <span>position</span><span>:</span> absolute<span>;</span>
-  <span>z-index</span><span>:</span> -1<span>;</span>
-  <span>top</span><span>:</span> 0<span>;</span>
-  <span>right</span><span>:</span> 0<span>;</span>
-  <span>bottom</span><span>:</span> 0<span>;</span>
-  <span>left</span><span>:</span> 0<span>;</span>
-  <span>background</span><span>:</span> <span><span>url</span><span>(</span>../../images/Wives/BingBing-7.webp<span>)</span></span> center/cover no-repeat<span>;</span>
-  <span>filter</span><span>:</span> <span>blur</span><span>(</span>50px<span>)</span><span>;</span>
-  <span>transform</span><span>:</span> <span>scale</span><span>(</span>3<span>)</span><span>;</span>
-<span>}</span>
-
-<span>section</span> <span>{</span>
-  <span>width</span><span>:</span> 70%<span>;</span>
-  <span>height</span><span>:</span> 80%<span>;</span>
-  <span>border-radius</span><span>:</span> 10px<span>;</span>
-  <span>box-shadow</span><span>:</span> 0 0 12px 4px <span>rgba</span><span>(</span>255<span>,</span> 255<span>,</span> 255<span>,</span> 0.3<span>)</span><span>;</span>
-  <span>background</span><span>:</span> <span><span>url</span><span>(</span>../../images/Wives/BingBing-7.webp<span>)</span></span> center/cover no-repeat<span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br></div></div>
-            </div>
-          </div>
-          
-        </div>
-]]></content:encoded>
-    </item>
-    <item>
       <title>CSS</title>
       <link>https://www.matrixtheone.ga/web/memo/CSS/</link>
       <guid>https://www.matrixtheone.ga/web/memo/CSS/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">CSS</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-bfc"> 1. BFC</h2>
 <ul>
 <li>
@@ -3143,7 +3143,7 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
       <guid>https://www.matrixtheone.ga/web/memo/Flutter/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Flutter</source>
       <category>Flutter</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>HTML</title>
@@ -3151,7 +3151,7 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
       <guid>https://www.matrixtheone.ga/web/memo/HTML/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">HTML</source>
       <category>HTML</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-defer-与-async"> 1. defer 与 async</h2>
 <ul>
 <li>
@@ -3240,7 +3240,7 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
       <guid>https://www.matrixtheone.ga/web/memo/Interview/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">面试</source>
       <category>面试</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-执行上下文"> 1. 执行上下文</h2>
 <div><pre><code><span>var</span> name <span>=</span> <span>'Smith'</span> <span>// 函数参数作用域或内部作用域有 name 声明，不会查找此处作用域上的 name</span>
 
@@ -3605,7 +3605,7 @@ console<span>.</span><span>log</span><span>(</span><span>'-------bfs--------'</s
       <guid>https://www.matrixtheone.ga/web/memo/JS/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JS</source>
       <category>JS 高级</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-判断方式"> 1. 判断方式</h2>
 <ul>
 <li>
@@ -4341,7 +4341,7 @@ Promise<span>.</span><span>resolve</span><span>(</span><span>6</span><span>)</sp
       <guid>https://www.matrixtheone.ga/web/memo/Network/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">网络</source>
       <category>网络</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-tcp"> 1. TCP</h2>
 <ul>
 <li>
@@ -4618,7 +4618,7 @@ Promise<span>.</span><span>resolve</span><span>(</span><span>6</span><span>)</sp
       <link>https://www.matrixtheone.ga/web/memo/</link>
       <guid>https://www.matrixtheone.ga/web/memo/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">前端备忘录</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/情书.webp')">
 ]]></content:encoded>
     </item>
@@ -4628,7 +4628,7 @@ Promise<span>.</span><span>resolve</span><span>(</span><span>6</span><span>)</sp
       <guid>https://www.matrixtheone.ga/web/memo/Rasengan/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">手搓螺旋丸</source>
       <category>手写代码</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-object-create"> 1. Object.create</h2>
 <ul>
 <li>2006 年，Douglas Crockford 写了一篇文章：<a href="https://www.crockford.com/javascript/prototypal.html" target="_blank" rel="noopener noreferrer">《JavaScript 中的原型式继承》</a>。</li>
@@ -5673,7 +5673,7 @@ Didact<span>.</span><span>render</span><span>(</span>element<span>,</span> conta
       <guid>https://www.matrixtheone.ga/web/memo/React/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">React</source>
       <category>React</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-宏观包结构"> 1. 宏观包结构</h2>
 <img :src="$withBase('/images/React/核心包关系图.png')" loading="lazy">
 <ul>
@@ -6453,7 +6453,7 @@ batchOfTasks <span>|=</span> task1 <span>// => 0b0000000000000000000000000000011
       <guid>https://www.matrixtheone.ga/web/memo/Structures-Algorithms/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">数据结构与算法</source>
       <category>数据结构与算法</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-中点"> 1. 中点</h2>
 <ul>
 <li><code>mid = L + ((R - L) &gt;&gt; 1)</code></li>
@@ -6858,7 +6858,7 @@ console<span>.</span><span>log</span><span>(</span>num2<span>,</span> num1 <span
       <guid>https://www.matrixtheone.ga/web/memo/Vue/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Vue</source>
       <category>Vue</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-数据响应式"> 1. 数据响应式</h2>
 <ul>
 <li>
@@ -7527,7 +7527,7 @@ Object<span>.</span><span>assign</span><span>(</span><span>this</span><span>.</s
       <guid>https://www.matrixtheone.ga/web/note/30SecondCode/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">30 秒代码</source>
       <category>30 秒代码</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-写入-json"> 1. 写入 JSON</h2>
 <div><pre><code><span>const</span> fs <span>=</span> <span>require</span><span>(</span><span>'fs'</span><span>)</span>
 
@@ -7932,7 +7932,7 @@ recorder<span>.</span><span>start</span><span>(</span><span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Advanced/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JS 高级</source>
       <category>JS 高级</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-防抖函数"> 1. 防抖函数</h2>
 <ul>
 <li>
@@ -8887,7 +8887,7 @@ light<span>.</span><span>init</span><span>(</span><span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/CSS/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">CSS</source>
       <category>CSS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-网页字体设计"> 1. <a href="https://www.bilibili.com/video/BV1b54y1Z7pu" target="_blank" rel="noopener noreferrer">网页字体设计</a></h2>
 <div><pre><code><span><span>@font-face</span></span> <span>{</span>
   <span>font-family</span><span>:</span> Emoji<span>;</span>
@@ -9240,7 +9240,7 @@ light<span>.</span><span>init</span><span>(</span><span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Electron/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Electron</source>
       <category>Electron</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-仅启动一个程序"> 1. 仅启动一个程序</h2>
 <div><pre><code><span>if</span> <span>(</span><span>!</span>app<span>.</span><span>requestSingleInstanceLock</span><span>(</span><span>)</span><span>)</span> <span>{</span>
   app<span>.</span><span>quit</span><span>(</span><span>)</span>
@@ -9343,7 +9343,7 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
       <guid>https://www.matrixtheone.ga/web/note/HTML/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">HTML</source>
       <category>HTML</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-移动端视口配置-并且不允许缩放"> 1. 移动端视口配置，并且不允许缩放</h2>
 <div><pre><code><span><span><span>&lt;</span>meta</span>
   <span>name</span><span><span>=</span><span>"</span>viewport<span>"</span></span>
@@ -9372,7 +9372,7 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
       <guid>https://www.matrixtheone.ga/web/note/Lint/Commit-Lint/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">CommitLint</source>
       <category>Lint</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-commitlintrc-js"> 1. .commitlintrc.js</h2>
 <div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
   <span>extends</span><span>:</span> <span>[</span><span>'@commitlint/config-conventional'</span><span>]</span><span>,</span>
@@ -9443,7 +9443,7 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
       <guid>https://www.matrixtheone.ga/web/note/Lint/Editor-Config/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">EditorConfig</source>
       <category>Lint</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-editorconfig"> 1. .editorconfig</h2>
 <div><pre><code><span># https://editorconfig.org</span>
 <span>root</span> <span><span>=</span> true</span>
@@ -9471,7 +9471,7 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
       <guid>https://www.matrixtheone.ga/web/note/Lint/Eslint-Ignore/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Eslintignore</source>
       <category>Lint</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-eslintignore"> 1. .eslintignore</h2>
 <div><pre><code><span>tmp</span>
 <span>docs</span>
@@ -9490,7 +9490,7 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
       <guid>https://www.matrixtheone.ga/web/note/Lint/Eslint/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Eslint</source>
       <category>Lint</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-eslintrc-js"> 1. .eslintrc.js</h2>
 <div><pre><code><span>const</span> tsRules <span>=</span> <span>require</span><span>(</span><span>'./rules/tsRules'</span><span>)</span>
 <span>const</span> vueRules <span>=</span> <span>require</span><span>(</span><span>'./rules/vueRules'</span><span>)</span>
@@ -9712,7 +9712,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/Lint/Git-Ignore/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Gitignore</source>
       <category>Lint</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-gitignore"> 1. .gitignore</h2>
 <div><pre><code><span>.node</span>
 <span>.idea</span>
@@ -9744,7 +9744,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/Lint/Npm/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Npm</source>
       <category>Lint</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>Prettier</title>
@@ -9752,7 +9752,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/Lint/Prettier/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Prettier</source>
       <category>Lint</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-prettierrc-js"> 1. .prettierrc.js</h2>
 <div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
   <span>semi</span><span>:</span> <span>false</span><span>,</span>
@@ -9795,7 +9795,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/Lint/Stylelint/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Stylelint</source>
       <category>Lint</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-stylelintrc-js"> 1. .stylelintrc.js</h2>
 <div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
   <span>extends</span><span>:</span> <span>[</span>
@@ -9866,7 +9866,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/Lint/TS-Config/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">TsConfig</source>
       <category>Lint</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-tsconfig-json"> 1. tsconfig.json</h2>
 <div><pre><code><span>{</span>
   <span>"compilerOptions"</span><span>:</span> <span>{</span>
@@ -9913,7 +9913,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/Next/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Next</source>
       <category>Next</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>Nginx</title>
@@ -9921,7 +9921,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/Nginx/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Nginx</source>
       <category>Nginx</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-http-缓存"> 1. HTTP 缓存</h2>
 <div><pre><code><span><span>server</span></span> <span>{</span>
   <span># 不缓存html</span>
@@ -10011,7 +10011,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/Node/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Node</source>
       <category>Node</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>Nuxt</title>
@@ -10019,14 +10019,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/Nuxt/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Nuxt</source>
       <category>Nuxt</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>项目笔记</title>
       <link>https://www.matrixtheone.ga/web/note/README%20copy/</link>
       <guid>https://www.matrixtheone.ga/web/note/README%20copy/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">项目笔记</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/水浒传.webp')">
 ]]></content:encoded>
     </item>
@@ -10035,7 +10035,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <link>https://www.matrixtheone.ga/web/note/</link>
       <guid>https://www.matrixtheone.ga/web/note/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">前端笔记</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/头文字D.webp')">
 ]]></content:encoded>
     </item>
@@ -10045,7 +10045,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/React/Business/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">业务</source>
       <category>React</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-扫码盒微信-支付宝支付"> 1. 扫码盒微信/支付宝支付</h2>
 <div><pre><code><span>import</span> React<span>,</span> <span>{</span> useEffect<span>,</span> useRef<span>,</span> useState <span>}</span> <span>from</span> <span>'react'</span>
 <span>import</span> <span>{</span> Input<span>,</span> message<span>,</span> Modal <span>}</span> <span>from</span> <span>'antd'</span>
@@ -10198,7 +10198,7 @@ window<span>.</span><span>addEventListener</span><span>(</span><span>'devtoolsch
       <guid>https://www.matrixtheone.ga/web/note/React/Components/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Components</source>
       <category>React</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-protable"> 1. ProTable</h2>
 <ul>
 <li>基于 Ant-Pro 封装，新增删除最后一项自动翻页、参数字段名称转换，修复 ProTable 清空时为空字符串和空数组的 BUG。</li>
@@ -10798,7 +10798,7 @@ export default Tinymce
       <guid>https://www.matrixtheone.ga/web/note/React/Config/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Config</source>
       <category>React</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-umi-排除-antd-打包"> 1. Umi 排除 Antd 打包</h2>
 <ul>
 <li>externalAntd.js</li>
@@ -10879,7 +10879,7 @@ pagePath<span>.</span><span>map</span><span>(</span><span>path</span> <span>=></
       <link>https://www.matrixtheone.ga/web/note/React/</link>
       <guid>https://www.matrixtheone.ga/web/note/React/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">React</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/星际穿越.webp')">
 ]]></content:encoded>
     </item>
@@ -10889,7 +10889,7 @@ pagePath<span>.</span><span>map</span><span>(</span><span>path</span> <span>=></
       <guid>https://www.matrixtheone.ga/web/note/TS/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">TS</source>
       <category>TS</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-类型查看展开"> 1. <a href="https://stackoverflow.com/questions/57683303/how-can-i-see-the-full-expanded-contract-of-a-typescript-type/57683652" target="_blank" rel="noopener noreferrer">类型查看展开</a></h2>
 <div><pre><code><span>type</span> <span>Expand<span>&lt;</span><span>T</span><span>></span></span> <span>=</span> <span>T</span> <span>extends</span> <span><span>infer</span></span> <span>O</span> <span>?</span> <span>{</span> <span>[</span><span>K</span> <span>in</span> <span>keyof</span> <span>O</span><span>]</span><span>:</span> <span>O</span><span>[</span><span>K</span><span>]</span> <span>}</span> <span>:</span> <span>never</span>
 
@@ -11180,7 +11180,7 @@ todo<span>.</span>completed <span>=</span> <span>true</span> <span>// OK</span>
       <guid>https://www.matrixtheone.ga/web/note/Uni-App/App/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">APP</source>
       <category>App</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-android-证书生成网址"> 1. Android 证书生成网址</h2>
 <ul>
 <li>
@@ -11252,7 +11252,7 @@ app<span>.</span><span>$mount</span><span>(</span><span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Uni-App/Config/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Config</source>
       <category>Uni App</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-环境配置"> 1. 环境配置</h2>
 <ul>
 <li>
@@ -11362,7 +11362,7 @@ module<span>.</span>exports <span>=</span> <span>UNI_ENV</span>
       <guid>https://www.matrixtheone.ga/web/note/Uni-App/H5/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">H5</source>
       <category>H5</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-h5-调用百度地图-api-跨域"> 1. H5 调用百度地图 api 跨域</h2>
 <ul>
 <li>
@@ -11549,7 +11549,7 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Uni-App/Memo/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">备忘录</source>
       <category>Uni App</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-webview"> 1. WebView</h2>
 <ul>
 <li>空地址会导致 WebView 错误跳转，使用 v-if 解决。</li>
@@ -11623,7 +11623,7 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Uni-App/Mini-Program/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">小程序</source>
       <category>小程序</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-解决-onreachbottom-350ms-频繁触发"> 1. 解决 onReachBottom 350ms 频繁触发</h2>
 <div><pre><code><span>onReachBottom</span><span>(</span><span>)</span> <span>{</span>
   <span>setTimeout</span><span>(</span><span>this</span><span>.</span>loadSaleInfo<span>,</span> <span>400</span><span>)</span>
@@ -11820,7 +11820,7 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
       <link>https://www.matrixtheone.ga/web/note/Uni-App/</link>
       <guid>https://www.matrixtheone.ga/web/note/Uni-App/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Uni-App</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/盗梦空间.webp')">
 ]]></content:encoded>
     </item>
@@ -11830,7 +11830,7 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Uni-App/Utils/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Utils</source>
       <category>Uni App</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-fly-请求封装"> 1. Fly 请求封装</h2>
 <ul>
 <li><a href="https://wendux.github.io/dist/#/doc/flyio/readme" target="_blank" rel="noopener noreferrer">DOC</a></li>
@@ -12034,7 +12034,7 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Utils/Browser/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Browser</source>
       <category>Utils</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-获取设备类型"> 1. 获取设备类型</h2>
 <div><pre><code><span>/**
  * @return {string} Mobile | Desktop
@@ -12069,7 +12069,7 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Utils/Common/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Common</source>
       <category>Utils</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-await-错误处理"> 1. await 错误处理</h2>
 <div><pre><code><span>/**
  * @param {Promise&lt;any>} promise
@@ -12089,7 +12089,7 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Utils/Document/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Document</source>
       <category>Utils</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-检测内容是否溢出"> 1. 检测内容是否溢出</h2>
 <div><pre><code><span>/**
  * @param {Element} element
@@ -12110,7 +12110,7 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Utils/Download/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Download</source>
       <category>Utils</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-下载文件"> 1. 下载文件</h2>
 <div><pre><code><span>/**
  * @param {string} url 下载链接
@@ -12157,7 +12157,7 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Utils/Numeral/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Numeral</source>
       <category>Utils</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-四舍五入"> 1. 四舍五入</h2>
 <div><pre><code><span>/**
  * @param {number | string} num 值
@@ -12212,7 +12212,7 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
       <guid>https://www.matrixtheone.ga/web/note/Utils/Request/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Request</source>
       <category>Utils</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-request"> 1. Request</h2>
 <ul>
 <li><a href="https://axios-http.com/zh/docs/intro" target="_blank" rel="noopener noreferrer">Axios</a></li>
@@ -12378,7 +12378,7 @@ request<span>.</span>interceptors<span>.</span>response<span>.</span><span>use</
       <guid>https://www.matrixtheone.ga/web/note/Utils/Store/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Store</source>
       <category>Utils</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-store"> 1. Store</h2>
 <ul>
 <li>新增有效期设置，<a href="https://localforage.docschina.org/" target="_blank" rel="noopener noreferrer">localforage</a></li>
@@ -12433,7 +12433,7 @@ request<span>.</span>interceptors<span>.</span>response<span>.</span><span>use</
       <guid>https://www.matrixtheone.ga/web/note/Vue/Business/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">业务</source>
       <category>Vue</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-json-导出为-excel"> 1. JSON 导出为 Excel</h2>
 <div><pre><code><span>import</span> <span>{</span> export_json_to_excel <span>as</span> exportJsonToExcel <span>}</span> <span>from</span> <span>'@/plugins/Export2Excel'</span>
 
@@ -12523,7 +12523,7 @@ request<span>.</span>interceptors<span>.</span>response<span>.</span><span>use</
       <guid>https://www.matrixtheone.ga/web/note/Vue/Config/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Config</source>
       <category>Vue</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-index-html"> 1. index.html</h2>
 <div><pre><code><span><span>&lt;!</span><span>DOCTYPE</span> <span>html</span><span>></span></span>
 <span><span><span>&lt;</span>html</span> <span>lang</span><span><span>=</span><span>"</span>zh-cmn-Hans<span>"</span></span><span>></span></span>
@@ -12725,7 +12725,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <link>https://www.matrixtheone.ga/web/note/Vue/</link>
       <guid>https://www.matrixtheone.ga/web/note/Vue/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Vue</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/黑暗骑士.webp')">
 ]]></content:encoded>
     </item>
@@ -12735,7 +12735,7 @@ module<span>.</span>exports <span>=</span> <span>{</span>
       <guid>https://www.matrixtheone.ga/web/note/Vue/Utils/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Utils</source>
       <category>Vue</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-directive"> 1. directive</h2>
 <ul>
 <li>
@@ -12841,7 +12841,7 @@ Object<span>.</span><span>keys</span><span>(</span>directives<span>)</span><span
       <guid>https://www.matrixtheone.ga/web/note/Webpack/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Webpack</source>
       <category>Webpack</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-webpack-配置"> 1. Webpack 配置</h2>
 <ul>
 <li>
@@ -13607,35 +13607,35 @@ module<span>.</span>exports <span>=</span> hooks
       <link>https://www.matrixtheone.ga/web/note/books/Algorithms/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/Algorithms/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">算法（第四版）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>区块链开发实战</title>
       <link>https://www.matrixtheone.ga/web/note/books/Blockchain/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/Blockchain/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">区块链开发实战</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>CSS 权威指南（上）</title>
       <link>https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol1/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol1/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">CSS 权威指南（上）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>CSS 权威指南（下）</title>
       <link>https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol2/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol2/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">CSS 权威指南（下）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>CSS 揭秘</title>
       <link>https://www.matrixtheone.ga/web/note/books/CSS-Secrets/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/CSS-Secrets/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">CSS 揭秘</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-尽量减少代码重复"> 1. 尽量减少代码重复</h2>
 <ul>
 <li>代码易维护 vs 代码量少</li>
@@ -14646,7 +14646,7 @@ dd</span> <span>{</span>
       <link>https://www.matrixtheone.ga/web/note/books/CSS-World/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/CSS-World/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">CSS 世界</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-了解-css-世界中的-未定义行为"> 1. 了解 CSS 世界中的 “未定义行为”</h2>
 <ul>
 <li>像<code>&lt;a&gt;</code>、<code>&lt;button&gt;</code>这样的元素，当我们使用键盘进行 Tab 键切换的时候，是可以被 focus 的，表现为虚框或者外发光，这类元素称为 “焦点元素”。非焦点元素指没有设置 tabindex 属性的<code>&lt;div&gt;</code>、<code>&lt;span&gt;</code>等普通元素。</li>
@@ -15561,28 +15561,28 @@ root<span>.</span>style<span>.</span>borderRight <span>=</span> <span>''</span>
       <link>https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol1/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol1/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">漫画算法 - 小灰的算法之旅</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>漫画算法 - 小灰的算法进阶</title>
       <link>https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol2/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol2/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">漫画算法 - 小灰的算法进阶</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>深入理解 JavaScript</title>
       <link>https://www.matrixtheone.ga/web/note/books/Depth-JS/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/Depth-JS/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">深入理解 JavaScript</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>JavaScript 轻量级函数式编程</title>
       <link>https://www.matrixtheone.ga/web/note/books/Functional-Light-JS/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/Functional-Light-JS/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JavaScript 轻量级函数式编程</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-管理函数的输入"> 1. 管理函数的输入</h2>
 <ul>
 <li>偏函数：偏函数严格来讲是一个减少函数参数个数的过程。</li>
@@ -15947,7 +15947,7 @@ person<span>.</span>lastUpdated <span>=</span> Date<span>.</span><span>now</span
       <link>https://www.matrixtheone.ga/web/note/books/Grokking-Algorithms/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/Grokking-Algorithms/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">算法图解</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-算法简介"> 1. 算法简介</h2>
 <ul>
 <li>
@@ -16085,7 +16085,7 @@ person<span>.</span>lastUpdated <span>=</span> Date<span>.</span><span>now</span
       <link>https://www.matrixtheone.ga/web/note/books/HTTP/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/HTTP/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">图解 HTTP</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-网络基础-tcp-ip"> 1. 网络基础 TCP/IP</h2>
 <ul>
 <li>通常使用的网络（包括互联网）是在 TCP/IP 协议族的基础上运作的，而 HTTP 属于它内部的一个子集。</li>
@@ -17059,7 +17059,7 @@ print <span>MAIL</span> <span>"From: info@example.com\n"</span><span>;</span>
       <link>https://www.matrixtheone.ga/web/note/books/How-JavaScript-Works/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/How-JavaScript-Works/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JavaScript 悟道</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-数值"> 1. 数值</h2>
 <ul>
 <li>JavaScript 的浮点数并不是 IEEE 754 标准的完全实现。Java 的浮点数实现用的是 IEEE 754 的一个子集，而 JavaScript 用的则是该子集的子集，所有 JavaScript 的 number 类型与 Java 的 double 类型非常相似，都是 64 位的浮点数类型。一个 number 类型包含 1 位符号位（sign）、11 位指数位以及 53 位有效位数。有些神奇的编码能将 65 位数据装进 64 位内存中。</li>
@@ -17160,7 +17160,7 @@ r <span>=</span> <span>4</span> <span>-</span> <span>(</span><span>-</span><span
       <link>https://www.matrixtheone.ga/web/note/books/JS-Algorithms/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/JS-Algorithms/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">学习 JavaScript 数据结构与算法（第三版）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-栈数据结构"> 1. 栈数据结构</h2>
 <ul>
 <li>
@@ -19462,14 +19462,14 @@ r <span>=</span> <span>4</span> <span>-</span> <span>(</span><span>-</span><span
       <link>https://www.matrixtheone.ga/web/note/books/JS-DOM/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/JS-DOM/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JavaScript DOM 编程艺术（第二版）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>JavaScript 设计模式与开发实践</title>
       <link>https://www.matrixtheone.ga/web/note/books/JS-Design-Develop/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/JS-Design-Develop/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JavaScript 设计模式与开发实践</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-高阶函数实现-aop"> 1. 高阶函数实现 AOP</h2>
 <div><pre><code><span>Function</span><span>.</span>prototype<span>.</span><span>before</span> <span>=</span> <span>function</span><span>(</span><span>beforefn</span><span>)</span> <span>{</span>
   <span>var</span> __self <span>=</span> <span>this</span> <span>// 保存原函数的引用</span>
@@ -20785,30 +20785,30 @@ light<span>.</span><span>init</span><span>(</span><span>)</span>
       <link>https://www.matrixtheone.ga/web/note/books/JS-Essence/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/JS-Essence/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JavaScript 语言精粹与编程实践（第三版）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
-    </item>
-    <item>
-      <title>JavaScript 权威指南（第七版）</title>
-      <link>https://www.matrixtheone.ga/web/note/books/JS-Guide/</link>
-      <guid>https://www.matrixtheone.ga/web/note/books/JS-Guide/</guid>
-      <source url="https://www.matrixtheone.ga/web/rss.xml">JavaScript 权威指南（第七版）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>JavaScript 忍者秘籍（第二版）</title>
       <link>https://www.matrixtheone.ga/web/note/books/JS-Ninja-Secrets/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/JS-Ninja-Secrets/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JavaScript 忍者秘籍（第二版）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="有点可惜"> 有点可惜......</h1>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>JavaScript 权威指南（第七版）</title>
+      <link>https://www.matrixtheone.ga/web/note/books/JS-Guide/</link>
+      <guid>https://www.matrixtheone.ga/web/note/books/JS-Guide/</guid>
+      <source url="https://www.matrixtheone.ga/web/rss.xml">JavaScript 权威指南（第七版）</source>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>JavaScript 高级程序设计（第四版）</title>
       <link>https://www.matrixtheone.ga/web/note/books/JS-Programming/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/JS-Programming/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JavaScript 高级程序设计（第四版）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-html-中的-javascript"> 1. HTML 中的 JavaScript</h2>
 <ul>
 <li>
@@ -21766,7 +21766,7 @@ location<span>.</span><span>reload</span><span>(</span><span>true</span><span>)<
       <link>https://www.matrixtheone.ga/web/note/books/JS-RegExp/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/JS-RegExp/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JavaScript 正则表达式迷你书（1.1版）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-两种模糊匹配"> 1. 两种模糊匹配</h2>
 <ul>
 <li>
@@ -22443,7 +22443,7 @@ console<span>.</span><span>log</span><span>(</span>result<span>)</span>
       <link>https://www.matrixtheone.ga/web/note/books/Mostly-Adequate-Guide/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/Mostly-Adequate-Guide/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">函数式编程指北</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-纯函数的好处"> 1. 纯函数的好处</h2>
 <ul>
 <li>
@@ -22618,14 +22618,14 @@ console<span>.</span><span>log</span><span>(</span>result<span>)</span>
       <link>https://www.matrixtheone.ga/web/note/books/Node/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/Node/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">深入浅出 Node.js</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>书籍阅读</title>
       <link>https://www.matrixtheone.ga/web/note/books/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">书籍阅读</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/红楼梦.webp')">
 ]]></content:encoded>
     </item>
@@ -22634,7 +22634,7 @@ console<span>.</span><span>log</span><span>(</span>result<span>)</span>
       <link>https://www.matrixtheone.ga/web/note/books/React-Design/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/React-Design/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">React 设计原理</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-前端框架原理概览"> 1. 前端框架原理概览</h2>
 <ul>
 <li>
@@ -23010,7 +23010,7 @@ window<span>.</span>app <span>=</span> <span>schedule</span><span>(</span><span>
       <link>https://www.matrixtheone.ga/web/note/books/TCP-IP/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/TCP-IP/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">图解 TCP/IP</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-计算机与网络发展的-7-个阶段"> 1. 计算机与网络发展的 7 个阶段</h2>
 <img :src="$withBase('/images/TCP-IP/计算机使用模式的演变.png')" loading="lazy">
 <h2 id="_2-协议"> 2. 协议</h2>
@@ -23170,11 +23170,422 @@ window<span>.</span>app <span>=</span> <span>schedule</span><span>(</span><span>
 ]]></content:encoded>
     </item>
     <item>
+      <title>你不知道的 JS（中）</title>
+      <link>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol2/</link>
+      <guid>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol2/</guid>
+      <source url="https://www.matrixtheone.ga/web/rss.xml">你不知道的 JS（中）</source>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="_1-类型"> 1. 类型</h2>
+<ul>
+<li>
+<p>很多开发人员将 undefined 和 undeclared 混为一谈，但在 JavaScript 中它们是两码事。undefined 是值的一种，undeclared 则表示变量还没有被声明过。</p>
+</li>
+<li>
+<p>遗憾的是，JavaScript 却将它们混为一谈，在我们试图访问 “undeclared” 变量时这样报错: ReferenceError: a is not defined，并且 typeof 对 undefined 和 undeclared 变量都返回 “undefined”。</p>
+</li>
+<li>
+<p>然而，通过 typeof 的安全防范机制（阻止报错）来检查 undeclared 变量，有时是个不错的办法。</p>
+</li>
+</ul>
+<h2 id="_2-数字有效语法"> 2. 数字有效语法</h2>
+<div><pre><code><span>(</span><span>7</span><span>)</span><span>.</span><span>toFixed</span><span>(</span><span>2</span><span>)</span>
+<span>7.0</span><span>.</span><span>toFixed</span><span>(</span><span>2</span><span>)</span>
+<span>7.</span><span>.</span><span>toFixed</span><span>(</span><span>2</span><span>)</span>
+<span>7</span> <span>.</span><span>toFixed</span><span>(</span><span>2</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_3-零值"> 3. 零值</h2>
+<div><pre><code><span>var</span> a <span>=</span> <span>0</span> <span>/</span> <span>-</span><span>3</span>
+
+a<span>.</span><span>toString</span><span>(</span><span>)</span> <span>// '0'</span>
+a <span>+</span> <span>''</span> <span>// '0'</span>
+<span>String</span><span>(</span>a<span>)</span> <span>// '0'</span>
+
+<span>JSON</span><span>.</span><span>stringify</span><span>(</span><span>-</span><span>0</span><span>)</span> <span>// '0'</span>
+<span>JSON</span><span>.</span><span>parse</span><span>(</span><span>'-0'</span><span>)</span> <span>// -0</span>
+
+<span>+</span><span>'-0'</span> <span>// -0</span>
+<span>Number</span><span>(</span><span>'-0'</span><span>)</span> <span>// -0</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h2 id="_4-特殊等式"> 4. 特殊等式</h2>
+<ul>
+<li>能使用 == 和 === 时就尽量不要使用 Object.is(..)，因为前者效率更高、更为通用。Object.is(..)主要用来处理那些特殊的相等比较（-0 与 NaN）。</li>
+</ul>
+<h2 id="_5-array"> 5. Array</h2>
+<ul>
+<li>
+<p>Array 与 new Array 效果一样，不带时它会被自动补上。</p>
+</li>
+<li>
+<p>永远不要创建和使用空单元数组。</p>
+<blockquote>
+<p>空单元数组（无可迭代元素）</p>
+</blockquote>
+<div><pre><code><span>Array</span><span>(</span><span>7</span><span>)</span>
+
+<span>var</span> a <span>=</span> <span>[</span><span>]</span>
+a<span>.</span>length <span>=</span> <span>7</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><blockquote>
+<p>快速创建指定长度数组</p>
+</blockquote>
+<div><pre><code><span>Array</span><span>.</span><span>apply</span><span>(</span><span>null</span><span>,</span> <span>{</span> <span>length</span><span>:</span> <span>7</span> <span>}</span><span>)</span>
+
+<span>Array</span><span>(</span><span>7</span><span>)</span><span>.</span><span>fill</span><span>(</span><span>7</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+</ul>
+<h2 id="_6-假值"> 6. 假值</h2>
+<ul>
+<li>
+<p>我们经常通过将 document.all 强制类型转换为布尔值（比如在 if 语句中）来判断浏览器是否是老版本的 IE。IE 自诞生之日起就始终遵循浏览器标准，较其他浏览器更为有力地推动了 Web 的发展。</p>
+</li>
+<li>
+<p>以下为假值。</p>
+<blockquote>
+<ul>
+<li>undefined</li>
+<li>null</li>
+<li>+0、-0、0n、-0n 和 NaN</li>
+<li>''</li>
+<li>浏览器中的 document.all 等假值对象</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="_7-奇特的-运算符"> 7. 奇特的 ~ 运算符</h2>
+<ul>
+<li>
+<p>字位反转是个很晦涩的主题，JavaScript 开发人员一般很少需要关心到字位级别。</p>
+</li>
+<li>
+<p>对 ~ 还可以有另外一种诠释，源自早期的计算机科学和离散数学：~ 返回 2 的补码。这样一来问题就清楚多了!</p>
+</li>
+<li>
+<p>~x 大致等同于 -(x+1)。很奇怪，但相对更容易说明问题。</p>
+</li>
+</ul>
+<div><pre><code><span>var</span> a <span>=</span> <span>'Hello World'</span>
+
+<span>~</span>a<span>.</span><span>indexOf</span><span>(</span><span>'lo'</span><span>)</span> <span>// -(3 + 1) 真值</span>
+<span>~</span>a<span>.</span><span>indexOf</span><span>(</span><span>'ol'</span><span>)</span> <span>// -(-1 + 1) 假值</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_8-字位截除"> 8. 字位截除</h2>
+<ul>
+<li>
+<p>它只适用于 32 位数字，更重要的是它对负数的处理与 Math.floor(..)不同。</p>
+</li>
+<li>
+<p>~~x 能将值截除为一个 32 位整数，x | 0 也可以。~~x 优先级更高，x | 0 更简洁。</p>
+</li>
+</ul>
+<div><pre><code>Math<span>.</span><span>floor</span><span>(</span><span>43.96</span><span>)</span> <span>// 43</span>
+Math<span>.</span><span>floor</span><span>(</span><span>-</span><span>43.96</span><span>)</span> <span>// -44</span>
+
+<span>~</span><span>~</span><span>43.96</span> <span>// 43</span>
+<span>~</span><span>~</span><span>-</span><span>43.96</span> <span>// -43</span>
+
+<span>43.96</span> <span>|</span> <span>0</span> <span>// 43</span>
+<span>-</span><span>43.96</span> <span>|</span> <span>0</span> <span>// -43</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h2 id="_9-显示解析数字字符串"> 9. 显示解析数字字符串</h2>
+<ul>
+<li>
+<p>parseInt(1/0, 19) 实际上是 parseInt(&quot;Infinity&quot;, 19)。 第一个字符是 &quot;I&quot;，以 19 为基数时值为 18。第二个字符 &quot;n&quot; 不是一个有效的数字字符，解析到此为止，和 &quot;42px&quot; 中的 &quot;p&quot; 一样。</p>
+</li>
+<li>
+<p>最后的结果是 18，而非 Infinity 或者报错。所以理解其中的工作原理对于我们学习 JavaScript 是非常重要的。</p>
+</li>
+<li>
+<p>此外还有一些看起来奇怪但实际上解释得通的例子。</p>
+</li>
+</ul>
+<div><pre><code><span>parseInt</span><span>(</span><span>1</span> <span>/</span> <span>0</span><span>,</span> <span>19</span><span>)</span> <span>// 18</span>
+
+<span>parseInt</span><span>(</span><span>0.000008</span><span>)</span> <span>// 0 （'0'来自于'0.000008'）</span>
+<span>parseInt</span><span>(</span><span>0.0000008</span><span>)</span> <span>// 8 （'8'来自于'8e-7'）</span>
+<span>parseInt</span><span>(</span><span>false</span><span>,</span> <span>16</span><span>)</span> <span>// 250 （'fa'来自于'false'）</span>
+<span>parseInt</span><span>(</span>parseInt<span>,</span> <span>16</span><span>)</span> <span>// 15 （'f'来自于'function..'）</span>
+
+<span>parseInt</span><span>(</span><span>'0x10'</span><span>)</span> <span>// 16</span>
+<span>parseInt</span><span>(</span><span>'103'</span><span>,</span> <span>2</span><span>)</span> <span>// 2</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h2 id="_10-字符串和数字之间的隐式强制类型转换"> 10. 字符串和数字之间的隐式强制类型转换</h2>
+<div><pre><code><span>[</span><span>]</span> <span>+</span> <span>{</span><span>}</span> <span>// '[object Object]'，相当于：'' + '[object Object]'</span>
+
+<span>{</span><span>}</span> <span>+</span> <span>[</span><span>]</span> <span>// 0，第一个 {..} 会被认为是区块语句而不是对象字面量，相当于：+[]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="_11-相等比较"> 11. 相等比较</h2>
+<ul>
+<li>布尔值会先转换为数字再比较。</li>
+</ul>
+<div><pre><code><span>7</span> <span>==</span> <span>true</span> <span>// false</span>
+<span>7</span> <span>==</span> <span>false</span> <span>// false</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><ul>
+<li>null 与 undefined '==' 比较相等，与其他假值都不相等。</li>
+</ul>
+<div><pre><code><span>null</span> <span>==</span> <span>undefined</span> <span>// true</span>
+<span>null</span> <span>==</span> <span>''</span> <span>||</span> <span>null</span> <span>==</span> <span>0</span> <span>||</span> <span>null</span> <span>==</span> <span>false</span> <span>// false</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><ul>
+<li>
+<p>因为没有对应的封装对象，所以 null 和 undefined 不能够被封装（boxed），Object(null) 和 Object(undefined) 均返回一个常规对象。</p>
+</li>
+<li>
+<p>NaN 能够被封装为数字封装对象，但拆封之后 NaN == NaN 返回 false，因为 NaN 不等于 NaN。</p>
+</li>
+</ul>
+<div><pre><code><span>'abc'</span> <span>==</span> <span>Object</span><span>(</span><span>'abc'</span><span>)</span> <span>// true，拆封调用toString方法</span>
+<span>null</span> <span>==</span> <span>Object</span><span>(</span><span>null</span><span>)</span> <span>// false，不能够被封装</span>
+<span>undefined</span> <span>==</span> <span>Object</span><span>(</span><span>undefined</span><span>)</span> <span>// false，不能够被封装</span>
+<span>NaN</span> <span>==</span> <span>Object</span><span>(</span><span>NaN</span><span>)</span> <span>// false，与自身不等</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><ul>
+<li>极端情况</li>
+</ul>
+<div><pre><code><span>[</span><span>]</span> <span>==</span> <span>!</span><span>[</span><span>]</span> <span>// true，转换过程：[] -> '' -> 0，![] -> false -> 0</span>
+
+<span>''</span> <span>==</span> <span>[</span><span>null</span><span>]</span> <span>// true</span>
+
+<span>0</span> <span>==</span> <span>'\n'</span> <span>||</span> <span>0</span> <span>==</span> <span>'  '</span> <span>// true</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><ul>
+<li>
+<p>ES5 规范 11.8.5 节定义了 “抽象关系比较”（abstract relational comparison），分为两个部分：比较双方都是字符串（后半部分）和其他情况（前半部分）。</p>
+</li>
+<li>
+<p>该算法仅针对 a &lt; b，a = '' &gt; b 会被处理为 b &lt; a。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>42</span><span>]</span> <span>&lt;</span> <span>[</span><span>'43'</span><span>]</span> <span>// true，转为数字再比较</span>
+
+<span>[</span><span>'42'</span><span>]</span> <span>&lt;</span> <span>[</span><span>'043'</span><span>]</span> <span>// false，都为字符串，比较字母顺序</span>
+
+<span>{</span><span>}</span> <span>&lt;</span> <span>{</span><span>}</span> <span>// false，字符串 '[object Object]' 比较</span>
+<span>{</span><span>}</span> <span>==</span> <span>{</span><span>}</span> <span>// false，内存地址比较</span>
+<span>{</span><span>}</span> <span>></span> <span>{</span><span>}</span> <span>// false，字符串 '[object Object]' 比较</span>
+
+<span>{</span><span>}</span> <span>&lt;=</span> <span>{</span><span>}</span> <span>// true，根据规则为 {} > {} 比较结果的反转</span>
+<span>{</span><span>}</span> <span>>=</span> <span>{</span><span>}</span> <span>// true，根据规则为 {} &lt; {} 比较结果的反转</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><img :src="$withBase('/images/You-Don’t-Know-JS/相等比较.png')" loading="lazy">
+<h2 id="_12-语句的结果值"> 12. 语句的结果值</h2>
+<ul>
+<li>
+<p>从技术角度来解释要更复杂一些。ES5 规范 12.2 节中的变量声明（VariableDeclaration）算法实际上有一个返回值（是一个包含所声明变量名称的字符串，很奇特吧？），但是这个值被变量语句（VariableStatement）算法屏蔽掉了（for..in 循环除外），最后返回结果为空（undefined）。</p>
+</li>
+<li>
+<p>如果你用开发控制台（或者 JavaScript REPL——read/evaluate/print/loop 工具）调试过代码，应该会看到很多语句的返回值显示为 undefined，只是你可能从未探究过其中的原因，其实控制台中显示的就是语句的结果值。</p>
+</li>
+</ul>
+<div><pre><code><span>var</span> b
+<span>if</span> <span>(</span><span>true</span><span>)</span> <span>{</span>
+  b <span>=</span> <span>4</span> <span>+</span> <span>38</span>
+<span>}</span>
+<span>// 控制台打印42</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><ul>
+<li>可以使用万恶的 eval(..) （又读作“evil”）来获得结果值。</li>
+</ul>
+<div><pre><code><span>var</span> a<span>,</span> b
+a <span>=</span> <span>eval</span><span>(</span><span>'if (true) { b = 4 + 38; }'</span><span>)</span>
+a <span>// 42</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="_13-表达式的副作用"> 13. 表达式的副作用</h2>
+<ul>
+<li>
+<p>++a++ 会产生 ReferenceError 错误，因为运算符需要将产生的副作用赋值给一个变量。以 ++a++ 为例，它首先执行 a++ （根据运算符优先级），返回 42，然后执行 ++42，这时会产生 ReferenceError 错误，因为 ++ 无法直接在 42 这样的值上产生副作用。</p>
+</li>
+<li>
+<p>a = 42 中的 = 运算符看起来没有副作用，实际上它的结果值是 42，它的副作用是将 42 赋值给 a。</p>
+</li>
+</ul>
+<div><pre><code><span>var</span> a
+a <span>=</span> <span>42</span> <span>// 42</span>
+a <span>// 42</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><ul>
+<li>链式赋值常常被误用，例如 var a = b = 42，看似和前面的例子差不多，实则不然。如果变量 b 没有在作用域中象 var b 这样声明过，则 var a = b =42 不会对变量 b 进行声明。在严格模式中这样会产生错误，或者会无意中创建一个全局变量。</li>
+</ul>
+<h2 id="_14-上下文规则"> 14. 上下文规则</h2>
+<ul>
+<li>
+<p>标签语句（非 goto）。</p>
+<blockquote>
+<p>contine foo 并不是指 “跳转到标签 foo 所在位置继续执行”，而是 “执行 foo 循环的下一轮循环”。</p>
+</blockquote>
+<div><pre><code><span>// 标签为foo的循环</span>
+<span>foo</span><span>:</span> <span>for</span> <span>(</span><span>var</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>4</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+  <span>for</span> <span>(</span><span>var</span> j <span>=</span> <span>0</span><span>;</span> j <span>&lt;</span> <span>4</span><span>;</span> j<span>++</span><span>)</span> <span>{</span>
+    <span>// 如果j和i相等，继续外层循环</span>
+    <span>if</span> <span>(</span>j <span>==</span> i<span>)</span> <span>{</span>
+      <span>// 跳转到foo的下一个循环</span>
+      <span>continue</span> foo
+    <span>}</span>
+    <span>// 跳过奇数结果</span>
+    <span>if</span> <span>(</span><span>(</span>j <span>*</span> i<span>)</span> <span>%</span> <span>2</span> <span>==</span> <span>1</span><span>)</span> <span>{</span>
+      <span>// 继续内层循环（没有标签的）</span>
+      <span>continue</span>
+    <span>}</span>
+    console<span>.</span><span>log</span><span>(</span>i<span>,</span> j<span>)</span>
+  <span>}</span>
+<span>}</span>
+<span>// 1 0</span>
+<span>// 2 0</span>
+<span>// 2 1</span>
+<span>// 3 0</span>
+<span>// 3 2</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><blockquote>
+<p>break foo 不是指 “跳转到标签 foo 所在位置继续执行”，而是 “跳出标签 foo 所在的循环 / 代码块，继续执行后面的代码”。</p>
+</blockquote>
+<div><pre><code><span>// 标签为foo的循环</span>
+<span>foo</span><span>:</span> <span>for</span> <span>(</span><span>var</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>4</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+  <span>for</span> <span>(</span><span>var</span> j <span>=</span> <span>0</span><span>;</span> j <span>&lt;</span> <span>4</span><span>;</span> j<span>++</span><span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>i <span>*</span> j <span>>=</span> <span>3</span><span>)</span> <span>{</span>
+      console<span>.</span><span>log</span><span>(</span><span>'stopping!'</span><span>,</span> i<span>,</span> j<span>)</span>
+      <span>break</span> foo
+    <span>}</span>
+    console<span>.</span><span>log</span><span>(</span>i<span>,</span> j<span>)</span>
+  <span>}</span>
+<span>}</span>
+<span>// 0 0</span>
+<span>// 0 1</span>
+<span>// 0 2</span>
+<span>// 0 3</span>
+<span>// 1 0</span>
+<span>// 1 1</span>
+<span>// 1 2</span>
+<span>// 停止！ 1 3</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div></li>
+<li>
+<p>JSON 被普遍认为是 JavaScript 语言的一个真子集， {&quot;a&quot;:42} 这样的 JSON 字符串会被当作合法的 JavaScript 代码（请注意 JSON 属性名必须使用双引号！）。其实不是！如果在控制台中输入 {&quot;a&quot;:42} 会报错。因为标签不允许使用双引号，所以 &quot;a&quot; 并不是一个合法的标签，因此后面不能带 : 。</p>
+<blockquote>
+<ul>
+<li>JSON 的确是 JavaScript 语法的一个子集，但是 JSON 本身并不是合法的 JavaScript 语法。</li>
+<li>这里存在一个十分常见的误区，即如果通过 <code>&lt;script src=..&gt;</code> 标签加载 JavaScript 文件，其中只包含 JSON 数据（比如某个 API 返回的结果），那它就会被当作合法的 JavaScript 代码来解析，只不过其内容无法被程序代码访问到。JSON-P（将 JSON 数据封装为函数调用，比如 foo({&quot;a&quot;:42}) ）通过将 JSON 数据传递给函数来实现对其的访问。</li>
+<li>{&quot;a&quot;:42} 作为 JSON 值没有任何问题，但是在作为代码执行时会产生错误，因为它会被当作一个带有非法标签的语句块来执行。foo({&quot;a&quot;:42}) 就没有这个问题，因为 {&quot;a&quot;:42} 在这里是一个传递给 foo(..) 的对象常量。所以准确地说，JSON-P 能将 JSON 转换为合法的 JavaScript 语法。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>else if 和可选代码块。</p>
+<blockquote>
+<p>很多人误以为 JavaScript 中有 else if，因为我们可以这样来写代码。</p>
+</blockquote>
+<div><pre><code><span>if</span> <span>(</span>a<span>)</span> <span>{</span>
+  <span>// ..</span>
+<span>}</span> <span>else</span> <span>if</span> <span>(</span>b<span>)</span> <span>{</span>
+  <span>// ..</span>
+<span>}</span> <span>else</span> <span>{</span>
+  <span>// ..</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><blockquote>
+<ul>
+<li>事实上 JavaScript 没有 else if，但 if 和 else 只包含单条语句的时候可以省略代码块的 { }。</li>
+<li>我们经常用到的 else if 实际上是这样的。</li>
+</ul>
+</blockquote>
+<div><pre><code><span>if</span> <span>(</span>a<span>)</span> <span>{</span>
+  <span>// ..</span>
+<span>}</span> <span>else</span> <span>{</span>
+  <span>if</span> <span>(</span>b<span>)</span> <span>{</span>
+    <span>// ..</span>
+  <span>}</span> <span>else</span> <span>{</span>
+    <span>// ..</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><blockquote>
+<p>else if 极为常见，能省掉一层代码缩进，所以很受青睐。但这只是我们自己发明的用法，切勿想当然地认为这些都属于 JavaScript 语法的范畴。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="_15-try-finally"> 15. try..finally</h2>
+<ul>
+<li>这里 return 42 先执行，并将 foo() 函数的返回值设置为 42。然后 try 执行完毕，接着执行 finally。最后 foo() 函数执行完毕，console.log(..) 显示返回值。</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  <span>try</span> <span>{</span>
+    <span>return</span> <span>42</span>
+  <span>}</span> <span>finally</span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span><span>'Hello'</span><span>)</span>
+  <span>}</span>
+  console<span>.</span><span>log</span><span>(</span><span>'never runs'</span><span>)</span>
+<span>}</span>
+console<span>.</span><span>log</span><span>(</span><span>foo</span><span>(</span><span>)</span><span>)</span>
+<span>// Hello</span>
+<span>// 42</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><ul>
+<li>finally 中的 return 会覆盖 try 和 catch 中 return 的返回值。</li>
+</ul>
+<h2 id="_16-混合环境-javascript"> 16. 混合环境 JavaScript</h2>
+<ul>
+<li>由于浏览器演进的历史遗留问题，在创建带有 id 属性的 DOM 元素时也会创建同名的全局变量。</li>
+</ul>
+<div><pre><code><span><span><span>&lt;</span>div</span> <span>id</span><span><span>=</span><span>"</span>foo<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>div</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code><span>if</span> <span>(</span><span>typeof</span> foo <span>==</span> <span>'undefined'</span><span>)</span> <span>{</span>
+  foo <span>=</span> <span>42</span> <span>// 永远也不会运行</span>
+<span>}</span>
+console<span>.</span><span>log</span><span>(</span>foo<span>)</span> <span>// HTML元素</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_17-异步控制台"> 17. 异步控制台</h2>
+<ul>
+<li>
+<p>并没有什么规范或一组需求指定 console.* 方法族如何工作 —— 它们并不是 JavaScript 正式的一部分，而是由宿主环境添加到 JavaScript 中的。</p>
+</li>
+<li>
+<p>因此，不同的浏览器和 JavaScript 环境可以按照自己的意愿来实现，有时候这会引起混淆。尤其要提出的是，在某些条件下，某些浏览器的 console.log(..) 并不会把传入的内容立即输出。出现这种情况的主要原因是，在许多程序（不只是 JavaScript）中，I/O 是非常低速的阻塞部分。所以，（从页面 /UI 的角度来说）浏览器在后台异步处理控制台 I/O 能够提高性能，这时用户甚至可能根本意识不到其发生。</p>
+</li>
+</ul>
+<div><pre><code><span>var</span> a <span>=</span> <span>{</span>
+  <span>index</span><span>:</span> <span>1</span><span>,</span>
+<span>}</span>
+<span>// 然后</span>
+console<span>.</span><span>log</span><span>(</span>a<span>)</span> <span>// ?? =>  { index: 2 }</span>
+<span>// 再然后</span>
+a<span>.</span>index<span>++</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_18-并行线程与并发"> 18. 并行线程与并发</h2>
+<ul>
+<li>
+<p>并行计算最常见的工具就是进程和线程。进程和线程独立运行，并可能同时运行：在不同的处理器，甚至不同的计算机上，但多个线程能够共享单个进程的内存。</p>
+</li>
+<li>
+<p>两个或多个 “进程” 同时执行就出现了并发，不管组成它们的单个运算是否并行执行（在独立的处理器或处理器核心上同时运行）。可以把并发看作 “进程” 级（或者任务级）的并行，与运算级的并行（不同处理器上的线程）相对。</p>
+</li>
+</ul>
+<h2 id="_19-不是所有的引擎都类似"> 19. 不是所有的引擎都类似</h2>
+<ul>
+<li>过去把多个字符串值放在一个数组中，然后在数组上调用 join(&quot;&quot;) 来连接这些值比直接用 + 连接这些值要快。这一点的历史原因是微妙的，涉及字符串值在内存中如何存储和管理这样的内部实现细节。</li>
+</ul>
+<h2 id="_20-尾调用优化-你不知道的-js-下"> 20. 尾调用优化（<a href="/note/books/You-Don’t-Know-JS-Vol3/#_4-尾调用">你不知道的 JS（下）</a>）</h2>
+<ul>
+<li>简单地说，尾调用就是一个出现在另一个函数 “结尾” 处的函数调用。这个调用结束后就没有其余事情要做了（除了可能要返回结果值）。</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>x</span><span>)</span> <span>{</span>
+  <span>return</span> x
+<span>}</span>
+<span>function</span> <span>bar</span><span>(</span><span>y</span><span>)</span> <span>{</span>
+  <span>return</span> <span>foo</span><span>(</span>y <span>+</span> <span>1</span><span>)</span> <span>// 尾调用</span>
+<span>}</span>
+<span>function</span> <span>baz</span><span>(</span><span>)</span> <span>{</span>
+  <span>return</span> <span>1</span> <span>+</span> <span>bar</span><span>(</span><span>40</span><span>)</span> <span>// 非尾调用</span>
+<span>}</span>
+<span>baz</span><span>(</span><span>)</span> <span>// 42</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>你不知道的 JS（下）</title>
       <link>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol3/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol3/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">你不知道的 JS（下）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-迭代器"> 1. 迭代器</h2>
 <ul>
 <li>每次在这个 arr 值上调用位于 Symbol.iterator 的方法时，都会产生一个全新的迭代器。多数结构都是这么实现的，包括所有 JavaScript 内置数据结构。</li>
@@ -23301,108 +23712,11 @@ it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 
     </item>
     <item>
       <title>Array</title>
-      <link>https://www.matrixtheone.ga/web/note/js/Array-1/</link>
-      <guid>https://www.matrixtheone.ga/web/note/js/Array-1/</guid>
-      <source url="https://www.matrixtheone.ga/web/rss.xml">Array</source>
-      <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
-      <content:encoded><![CDATA[<div><p>提示</p>
-<p>会改变原数组</p>
-</div>
-<h2 id="_1-unshift-any-push-any"> 1. unshift(any...) &amp; push(any...)</h2>
-<ul>
-<li>在数组首/尾添加数据，返回添加后数组的长度。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>unshift</span><span>(</span><span>0</span><span>)</span> <span>// => 6</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>unshift</span><span>(</span><span>0</span><span>,</span> <span>7</span><span>)</span> <span>// => 7</span>
-
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>push</span><span>(</span><span>6</span><span>)</span> <span>// => 6</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>push</span><span>(</span><span>6</span><span>,</span> <span>7</span><span>)</span> <span>// => 7</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="_2-shift-pop"> 2. shift() &amp; pop()</h2>
-<ul>
-<li>删除数组第一项/最后一项，返回删除的值。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>shift</span><span>(</span><span>)</span> <span>// => 1</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>pop</span><span>(</span><span>)</span> <span>// => 5</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="_3-splice-startindex-length-additem"> 3. splice(startIndex, length, addItem...)</h2>
-<ul>
-<li>
-<p>可用于数组的增删改操作，返回删除项组成的数组。</p>
-</li>
-<li>
-<p>若删除长度未指定，删除至结束，负数反序计算。开始索引溢出，或删除长度为负数，等同于未操作数组</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>3</span><span>)</span> <span>// => [4, 5]</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>-</span><span>2</span><span>,</span> <span>1</span><span>)</span> <span>// => [4]</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>3</span><span>,</span> <span>2</span><span>,</span> <span>'jack'</span><span>,</span> <span>'love'</span><span>)</span> <span>// => [4, 5]</span>
-
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>6</span><span>)</span> <span>// => []</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>)</span> <span>// => []</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_4-reverse"> 4. reverse()</h2>
-<ul>
-<li>翻转数组。</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>reverse</span><span>(</span><span>)</span>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="_5-sort-comparefunction"> 5. sort(compareFunction)</h2>
-<ul>
-<li>
-<p>默认把所有元素先转换为 String 再排序，按照第一个字符的 ASCII 值排序。</p>
-</li>
-<li>
-<p>compareFunction（比较器）：返回负数时，第一个参数排在前面；返回正数时，第二个参数排在前面。</p>
-</li>
-<li>
-<p>ECMAScript 没有定义用哪个排序算法，所以浏览器厂商可以自行去实现算法。自 ES10（EcmaScript 2019）起，规范要求 Array.prototype.sort 为稳定排序。</p>
-<blockquote>
-<ul>
-<li>Mozilla Firefox 使用归并排序作为 Array.prototype.sort 的实现（归并排序是稳定的）。</li>
-<li>Chrome 在 V8 引擎 7.0 版本前使用了一个快速排序的变体：插入排序和快速排序结合的排序算法。数组长度不超过 10 时，使用插入排序（在数组长度较短时插入排序更有效率），长度超过 10 使用优化的快速排序（快速排序是不稳定的）。在 7.0 版本之后采用了一种混合排序算法 TimSort：在数据量小的子数组中使用插入排序，然后再使用归并排序将有序的子数组进行合并排序。</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>)</span> <span>// => [15, 2, 3, 7]</span>
-<span>// 升序</span>
-<span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>(</span><span>a<span>,</span> b</span><span>)</span> <span>=></span> a <span>-</span> b<span>)</span> <span>// => [2, 3, 7, 15]</span>
-<span>// 降序</span>
-<span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>(</span><span>a<span>,</span> b</span><span>)</span> <span>=></span> b <span>-</span> a<span>)</span> <span>// => [15, 7, 3, 2]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><ul>
-<li>
-<p><a href="https://github.com/mqyqingfeng/Blog/issues/52" target="_blank" rel="noopener noreferrer">JavaScript 专题之解读 v8 排序源码 - 冴羽</a></p>
-</li>
-<li>
-<p><a href="https://www.pzijun.cn/blog/1/1.8.html#v8-%E7%A7%8D%E7%9A%84-array-prototype-sort" target="_blank" rel="noopener noreferrer">讲下 V8 sort 的大概思路，并手写一个 sort 的实现 - 前端瓶子君</a></p>
-</li>
-</ul>
-<h2 id="_6-copywithin-targetindex-beginindex-endindex"> 6. copyWithin(targetIndex, beginIndex, endIndex)</h2>
-<ul>
-<li>
-<p>从数组中复制一部分到数组的另一个位置，覆盖这个位置原来的值。</p>
-</li>
-<li>
-<p>未指定开始索引，开始索引则为 0，未指定结束索引，则截取自末尾（包含开始索引，不包含结束索引）。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>copyWithin</span><span>(</span><span>2</span><span>)</span> <span>// => [1, 2, 1, 2, 3]</span>
-
-<span>// 将索引位置 [1, 3) 的项，替换到索引位置为 [2, (2 + 3 - 1)) 的项上</span>
-<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>copyWithin</span><span>(</span><span>2</span><span>,</span> <span>1</span><span>,</span> <span>3</span><span>)</span> <span>// => [1, 2, 2, 3, 5]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Array</title>
       <link>https://www.matrixtheone.ga/web/note/js/Array-2/</link>
       <guid>https://www.matrixtheone.ga/web/note/js/Array-2/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Array</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-array-any-array-of-any"> 1. Array(any...) &amp; Array.of(any...)</h2>
 <ul>
 <li>
@@ -23672,12 +23986,109 @@ Array<span>.</span><span>from</span><span>(</span><span>{</span> <span>length</s
 <div><span>1</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>Array</title>
+      <link>https://www.matrixtheone.ga/web/note/js/Array-1/</link>
+      <guid>https://www.matrixtheone.ga/web/note/js/Array-1/</guid>
+      <source url="https://www.matrixtheone.ga/web/rss.xml">Array</source>
+      <category>JS 基础</category>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
+      <content:encoded><![CDATA[<div><p>提示</p>
+<p>会改变原数组</p>
+</div>
+<h2 id="_1-unshift-any-push-any"> 1. unshift(any...) &amp; push(any...)</h2>
+<ul>
+<li>在数组首/尾添加数据，返回添加后数组的长度。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>unshift</span><span>(</span><span>0</span><span>)</span> <span>// => 6</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>unshift</span><span>(</span><span>0</span><span>,</span> <span>7</span><span>)</span> <span>// => 7</span>
+
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>push</span><span>(</span><span>6</span><span>)</span> <span>// => 6</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>push</span><span>(</span><span>6</span><span>,</span> <span>7</span><span>)</span> <span>// => 7</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="_2-shift-pop"> 2. shift() &amp; pop()</h2>
+<ul>
+<li>删除数组第一项/最后一项，返回删除的值。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>shift</span><span>(</span><span>)</span> <span>// => 1</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>pop</span><span>(</span><span>)</span> <span>// => 5</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="_3-splice-startindex-length-additem"> 3. splice(startIndex, length, addItem...)</h2>
+<ul>
+<li>
+<p>可用于数组的增删改操作，返回删除项组成的数组。</p>
+</li>
+<li>
+<p>若删除长度未指定，删除至结束，负数反序计算。开始索引溢出，或删除长度为负数，等同于未操作数组</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>3</span><span>)</span> <span>// => [4, 5]</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>-</span><span>2</span><span>,</span> <span>1</span><span>)</span> <span>// => [4]</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>3</span><span>,</span> <span>2</span><span>,</span> <span>'jack'</span><span>,</span> <span>'love'</span><span>)</span> <span>// => [4, 5]</span>
+
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>6</span><span>)</span> <span>// => []</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>splice</span><span>(</span><span>1</span><span>,</span> <span>-</span><span>1</span><span>)</span> <span>// => []</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_4-reverse"> 4. reverse()</h2>
+<ul>
+<li>翻转数组。</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>reverse</span><span>(</span><span>)</span>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="_5-sort-comparefunction"> 5. sort(compareFunction)</h2>
+<ul>
+<li>
+<p>默认把所有元素先转换为 String 再排序，按照第一个字符的 ASCII 值排序。</p>
+</li>
+<li>
+<p>compareFunction（比较器）：返回负数时，第一个参数排在前面；返回正数时，第二个参数排在前面。</p>
+</li>
+<li>
+<p>ECMAScript 没有定义用哪个排序算法，所以浏览器厂商可以自行去实现算法。自 ES10（EcmaScript 2019）起，规范要求 Array.prototype.sort 为稳定排序。</p>
+<blockquote>
+<ul>
+<li>Mozilla Firefox 使用归并排序作为 Array.prototype.sort 的实现（归并排序是稳定的）。</li>
+<li>Chrome 在 V8 引擎 7.0 版本前使用了一个快速排序的变体：插入排序和快速排序结合的排序算法。数组长度不超过 10 时，使用插入排序（在数组长度较短时插入排序更有效率），长度超过 10 使用优化的快速排序（快速排序是不稳定的）。在 7.0 版本之后采用了一种混合排序算法 TimSort：在数据量小的子数组中使用插入排序，然后再使用归并排序将有序的子数组进行合并排序。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>)</span> <span>// => [15, 2, 3, 7]</span>
+<span>// 升序</span>
+<span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>(</span><span>a<span>,</span> b</span><span>)</span> <span>=></span> a <span>-</span> b<span>)</span> <span>// => [2, 3, 7, 15]</span>
+<span>// 降序</span>
+<span>[</span><span>2</span><span>,</span> <span>7</span><span>,</span> <span>3</span><span>,</span> <span>15</span><span>]</span><span>.</span><span>sort</span><span>(</span><span>(</span><span>a<span>,</span> b</span><span>)</span> <span>=></span> b <span>-</span> a<span>)</span> <span>// => [15, 7, 3, 2]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><ul>
+<li>
+<p><a href="https://github.com/mqyqingfeng/Blog/issues/52" target="_blank" rel="noopener noreferrer">JavaScript 专题之解读 v8 排序源码 - 冴羽</a></p>
+</li>
+<li>
+<p><a href="https://www.pzijun.cn/blog/1/1.8.html#v8-%E7%A7%8D%E7%9A%84-array-prototype-sort" target="_blank" rel="noopener noreferrer">讲下 V8 sort 的大概思路，并手写一个 sort 的实现 - 前端瓶子君</a></p>
+</li>
+</ul>
+<h2 id="_6-copywithin-targetindex-beginindex-endindex"> 6. copyWithin(targetIndex, beginIndex, endIndex)</h2>
+<ul>
+<li>
+<p>从数组中复制一部分到数组的另一个位置，覆盖这个位置原来的值。</p>
+</li>
+<li>
+<p>未指定开始索引，开始索引则为 0，未指定结束索引，则截取自末尾（包含开始索引，不包含结束索引）。</p>
+</li>
+</ul>
+<div><pre><code><span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>copyWithin</span><span>(</span><span>2</span><span>)</span> <span>// => [1, 2, 1, 2, 3]</span>
+
+<span>// 将索引位置 [1, 3) 的项，替换到索引位置为 [2, (2 + 3 - 1)) 的项上</span>
+<span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>,</span> <span>4</span><span>,</span> <span>5</span><span>]</span><span>.</span><span>copyWithin</span><span>(</span><span>2</span><span>,</span> <span>1</span><span>,</span> <span>3</span><span>)</span> <span>// => [1, 2, 2, 3, 5]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>奇技淫巧</title>
       <link>https://www.matrixtheone.ga/web/note/js/Arts/</link>
       <guid>https://www.matrixtheone.ga/web/note/js/Arts/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">奇技淫巧</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-巧用位运算符"> 1. 巧用位运算符</h2>
 <ul>
 <li>
@@ -23757,7 +24168,7 @@ account <span>&amp;=</span> <span>~</span>Delete <span>// => 7</span>
       <guid>https://www.matrixtheone.ga/web/note/js/BigInt/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">BigInt</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-bigint-int"> 1. BigInt(int)</h2>
 <ul>
 <li>可以使用构造函数（BigInt() ）和字面量（7n）创建 bigint 类型表示整数。
@@ -23825,7 +24236,7 @@ BigInt<span>.</span><span>asUintN</span><span>(</span><span>64</span><span>,</sp
       <guid>https://www.matrixtheone.ga/web/note/js/Built-In/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">内置对象</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-json"> 1. JSON</h2>
 <ul>
 <li>
@@ -24876,7 +25287,7 @@ formData<span>.</span><span>entries</span><span>(</span><span>)</span><span>.</s
       <guid>https://www.matrixtheone.ga/web/note/js/Class/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Class</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-class"> 1. class</h2>
 <ul>
 <li>
@@ -25111,7 +25522,7 @@ xfq<span>.</span><span>versailles</span><span>(</span><span>)</span> <span>// =>
       <guid>https://www.matrixtheone.ga/web/note/js/Function/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Function</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-function-args-functionbody"> 1. Function(args..., functionBody)</h2>
 <ul>
 <li>构造函数创建匿名函数。前面参数会成为匿名函数的形参，最后一个参数会成为匿名函数的可执行体（Vue 中的 render 函数的形成方式）。</li>
@@ -25582,7 +25993,7 @@ xiaohu<span>.</span><span>getHarm</span><span>(</span><span>)</span> <span>// =>
       <guid>https://www.matrixtheone.ga/web/note/js/Number/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Number</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-number-any"> 1. Number(any)</h2>
 <ul>
 <li>构造函数创建数字。</li>
@@ -25771,7 +26182,7 @@ Number<span>.</span><span>isSafeInteger</span><span>(</span>Number<span>.</span>
       <guid>https://www.matrixtheone.ga/web/note/js/Object/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Object</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-object-any"> 1. Object(any)</h2>
 <ul>
 <li>
@@ -26243,7 +26654,7 @@ Object<span>.</span><span>isFrozen</span><span>(</span>foo<span>.</span>harem<sp
       <guid>https://www.matrixtheone.ga/web/note/js/Others/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">其他</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-for-in"> 1. for in</h2>
 <ul>
 <li>for in 遍历除 symbol 类型外的可枚举属性，会进行原型链查找。</li>
@@ -26458,7 +26869,7 @@ console<span>.</span><span>log</span><span>(</span>ary<span>)</span> <span>// =>
       <link>https://www.matrixtheone.ga/web/note/js/</link>
       <guid>https://www.matrixtheone.ga/web/note/js/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">JS 基础</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<img :src="$withBase('/images/Movie/三国演义.webp')">
 ]]></content:encoded>
     </item>
@@ -26468,7 +26879,7 @@ console<span>.</span><span>log</span><span>(</span>ary<span>)</span> <span>// =>
       <guid>https://www.matrixtheone.ga/web/note/js/String/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">String</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-string-any"> 1. String(any)</h2>
 <ul>
 <li>构造函数创建字符串。</li>
@@ -26740,7 +27151,7 @@ str<span>.</span><span>trimRight</span><span>(</span><span>)</span> <span>// => 
       <guid>https://www.matrixtheone.ga/web/note/js/Symbol/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Symbol</source>
       <category>JS 基础</category>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-symbol-string"> 1. Symbol(string)</h2>
 <ul>
 <li>传入一个描述符返回 symbol 唯一值，不可枚举。</li>
@@ -26765,429 +27176,18 @@ Symbol<span>.</span><span>keyFor</span><span>(</span><span>Symbol</span><span>(<
 <div><span>1</span><br><span>2</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>你不知道的 JS（中）</title>
-      <link>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol2/</link>
-      <guid>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol2/</guid>
-      <source url="https://www.matrixtheone.ga/web/rss.xml">你不知道的 JS（中）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="_1-类型"> 1. 类型</h2>
-<ul>
-<li>
-<p>很多开发人员将 undefined 和 undeclared 混为一谈，但在 JavaScript 中它们是两码事。undefined 是值的一种，undeclared 则表示变量还没有被声明过。</p>
-</li>
-<li>
-<p>遗憾的是，JavaScript 却将它们混为一谈，在我们试图访问 “undeclared” 变量时这样报错: ReferenceError: a is not defined，并且 typeof 对 undefined 和 undeclared 变量都返回 “undefined”。</p>
-</li>
-<li>
-<p>然而，通过 typeof 的安全防范机制（阻止报错）来检查 undeclared 变量，有时是个不错的办法。</p>
-</li>
-</ul>
-<h2 id="_2-数字有效语法"> 2. 数字有效语法</h2>
-<div><pre><code><span>(</span><span>7</span><span>)</span><span>.</span><span>toFixed</span><span>(</span><span>2</span><span>)</span>
-<span>7.0</span><span>.</span><span>toFixed</span><span>(</span><span>2</span><span>)</span>
-<span>7.</span><span>.</span><span>toFixed</span><span>(</span><span>2</span><span>)</span>
-<span>7</span> <span>.</span><span>toFixed</span><span>(</span><span>2</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_3-零值"> 3. 零值</h2>
-<div><pre><code><span>var</span> a <span>=</span> <span>0</span> <span>/</span> <span>-</span><span>3</span>
-
-a<span>.</span><span>toString</span><span>(</span><span>)</span> <span>// '0'</span>
-a <span>+</span> <span>''</span> <span>// '0'</span>
-<span>String</span><span>(</span>a<span>)</span> <span>// '0'</span>
-
-<span>JSON</span><span>.</span><span>stringify</span><span>(</span><span>-</span><span>0</span><span>)</span> <span>// '0'</span>
-<span>JSON</span><span>.</span><span>parse</span><span>(</span><span>'-0'</span><span>)</span> <span>// -0</span>
-
-<span>+</span><span>'-0'</span> <span>// -0</span>
-<span>Number</span><span>(</span><span>'-0'</span><span>)</span> <span>// -0</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h2 id="_4-特殊等式"> 4. 特殊等式</h2>
-<ul>
-<li>能使用 == 和 === 时就尽量不要使用 Object.is(..)，因为前者效率更高、更为通用。Object.is(..)主要用来处理那些特殊的相等比较（-0 与 NaN）。</li>
-</ul>
-<h2 id="_5-array"> 5. Array</h2>
-<ul>
-<li>
-<p>Array 与 new Array 效果一样，不带时它会被自动补上。</p>
-</li>
-<li>
-<p>永远不要创建和使用空单元数组。</p>
-<blockquote>
-<p>空单元数组（无可迭代元素）</p>
-</blockquote>
-<div><pre><code><span>Array</span><span>(</span><span>7</span><span>)</span>
-
-<span>var</span> a <span>=</span> <span>[</span><span>]</span>
-a<span>.</span>length <span>=</span> <span>7</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><blockquote>
-<p>快速创建指定长度数组</p>
-</blockquote>
-<div><pre><code><span>Array</span><span>.</span><span>apply</span><span>(</span><span>null</span><span>,</span> <span>{</span> <span>length</span><span>:</span> <span>7</span> <span>}</span><span>)</span>
-
-<span>Array</span><span>(</span><span>7</span><span>)</span><span>.</span><span>fill</span><span>(</span><span>7</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
-</ul>
-<h2 id="_6-假值"> 6. 假值</h2>
-<ul>
-<li>
-<p>我们经常通过将 document.all 强制类型转换为布尔值（比如在 if 语句中）来判断浏览器是否是老版本的 IE。IE 自诞生之日起就始终遵循浏览器标准，较其他浏览器更为有力地推动了 Web 的发展。</p>
-</li>
-<li>
-<p>以下为假值。</p>
-<blockquote>
-<ul>
-<li>undefined</li>
-<li>null</li>
-<li>+0、-0、0n、-0n 和 NaN</li>
-<li>''</li>
-<li>浏览器中的 document.all 等假值对象</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h2 id="_7-奇特的-运算符"> 7. 奇特的 ~ 运算符</h2>
-<ul>
-<li>
-<p>字位反转是个很晦涩的主题，JavaScript 开发人员一般很少需要关心到字位级别。</p>
-</li>
-<li>
-<p>对 ~ 还可以有另外一种诠释，源自早期的计算机科学和离散数学：~ 返回 2 的补码。这样一来问题就清楚多了!</p>
-</li>
-<li>
-<p>~x 大致等同于 -(x+1)。很奇怪，但相对更容易说明问题。</p>
-</li>
-</ul>
-<div><pre><code><span>var</span> a <span>=</span> <span>'Hello World'</span>
-
-<span>~</span>a<span>.</span><span>indexOf</span><span>(</span><span>'lo'</span><span>)</span> <span>// -(3 + 1) 真值</span>
-<span>~</span>a<span>.</span><span>indexOf</span><span>(</span><span>'ol'</span><span>)</span> <span>// -(-1 + 1) 假值</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_8-字位截除"> 8. 字位截除</h2>
-<ul>
-<li>
-<p>它只适用于 32 位数字，更重要的是它对负数的处理与 Math.floor(..)不同。</p>
-</li>
-<li>
-<p>~~x 能将值截除为一个 32 位整数，x | 0 也可以。~~x 优先级更高，x | 0 更简洁。</p>
-</li>
-</ul>
-<div><pre><code>Math<span>.</span><span>floor</span><span>(</span><span>43.96</span><span>)</span> <span>// 43</span>
-Math<span>.</span><span>floor</span><span>(</span><span>-</span><span>43.96</span><span>)</span> <span>// -44</span>
-
-<span>~</span><span>~</span><span>43.96</span> <span>// 43</span>
-<span>~</span><span>~</span><span>-</span><span>43.96</span> <span>// -43</span>
-
-<span>43.96</span> <span>|</span> <span>0</span> <span>// 43</span>
-<span>-</span><span>43.96</span> <span>|</span> <span>0</span> <span>// -43</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h2 id="_9-显示解析数字字符串"> 9. 显示解析数字字符串</h2>
-<ul>
-<li>
-<p>parseInt(1/0, 19) 实际上是 parseInt(&quot;Infinity&quot;, 19)。 第一个字符是 &quot;I&quot;，以 19 为基数时值为 18。第二个字符 &quot;n&quot; 不是一个有效的数字字符，解析到此为止，和 &quot;42px&quot; 中的 &quot;p&quot; 一样。</p>
-</li>
-<li>
-<p>最后的结果是 18，而非 Infinity 或者报错。所以理解其中的工作原理对于我们学习 JavaScript 是非常重要的。</p>
-</li>
-<li>
-<p>此外还有一些看起来奇怪但实际上解释得通的例子。</p>
-</li>
-</ul>
-<div><pre><code><span>parseInt</span><span>(</span><span>1</span> <span>/</span> <span>0</span><span>,</span> <span>19</span><span>)</span> <span>// 18</span>
-
-<span>parseInt</span><span>(</span><span>0.000008</span><span>)</span> <span>// 0 （'0'来自于'0.000008'）</span>
-<span>parseInt</span><span>(</span><span>0.0000008</span><span>)</span> <span>// 8 （'8'来自于'8e-7'）</span>
-<span>parseInt</span><span>(</span><span>false</span><span>,</span> <span>16</span><span>)</span> <span>// 250 （'fa'来自于'false'）</span>
-<span>parseInt</span><span>(</span>parseInt<span>,</span> <span>16</span><span>)</span> <span>// 15 （'f'来自于'function..'）</span>
-
-<span>parseInt</span><span>(</span><span>'0x10'</span><span>)</span> <span>// 16</span>
-<span>parseInt</span><span>(</span><span>'103'</span><span>,</span> <span>2</span><span>)</span> <span>// 2</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h2 id="_10-字符串和数字之间的隐式强制类型转换"> 10. 字符串和数字之间的隐式强制类型转换</h2>
-<div><pre><code><span>[</span><span>]</span> <span>+</span> <span>{</span><span>}</span> <span>// '[object Object]'，相当于：'' + '[object Object]'</span>
-
-<span>{</span><span>}</span> <span>+</span> <span>[</span><span>]</span> <span>// 0，第一个 {..} 会被认为是区块语句而不是对象字面量，相当于：+[]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="_11-相等比较"> 11. 相等比较</h2>
-<ul>
-<li>布尔值会先转换为数字再比较。</li>
-</ul>
-<div><pre><code><span>7</span> <span>==</span> <span>true</span> <span>// false</span>
-<span>7</span> <span>==</span> <span>false</span> <span>// false</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><ul>
-<li>null 与 undefined '==' 比较相等，与其他假值都不相等。</li>
-</ul>
-<div><pre><code><span>null</span> <span>==</span> <span>undefined</span> <span>// true</span>
-<span>null</span> <span>==</span> <span>''</span> <span>||</span> <span>null</span> <span>==</span> <span>0</span> <span>||</span> <span>null</span> <span>==</span> <span>false</span> <span>// false</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><ul>
-<li>
-<p>因为没有对应的封装对象，所以 null 和 undefined 不能够被封装（boxed），Object(null) 和 Object(undefined) 均返回一个常规对象。</p>
-</li>
-<li>
-<p>NaN 能够被封装为数字封装对象，但拆封之后 NaN == NaN 返回 false，因为 NaN 不等于 NaN。</p>
-</li>
-</ul>
-<div><pre><code><span>'abc'</span> <span>==</span> <span>Object</span><span>(</span><span>'abc'</span><span>)</span> <span>// true，拆封调用toString方法</span>
-<span>null</span> <span>==</span> <span>Object</span><span>(</span><span>null</span><span>)</span> <span>// false，不能够被封装</span>
-<span>undefined</span> <span>==</span> <span>Object</span><span>(</span><span>undefined</span><span>)</span> <span>// false，不能够被封装</span>
-<span>NaN</span> <span>==</span> <span>Object</span><span>(</span><span>NaN</span><span>)</span> <span>// false，与自身不等</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><ul>
-<li>极端情况</li>
-</ul>
-<div><pre><code><span>[</span><span>]</span> <span>==</span> <span>!</span><span>[</span><span>]</span> <span>// true，转换过程：[] -> '' -> 0，![] -> false -> 0</span>
-
-<span>''</span> <span>==</span> <span>[</span><span>null</span><span>]</span> <span>// true</span>
-
-<span>0</span> <span>==</span> <span>'\n'</span> <span>||</span> <span>0</span> <span>==</span> <span>'  '</span> <span>// true</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><ul>
-<li>
-<p>ES5 规范 11.8.5 节定义了 “抽象关系比较”（abstract relational comparison），分为两个部分：比较双方都是字符串（后半部分）和其他情况（前半部分）。</p>
-</li>
-<li>
-<p>该算法仅针对 a &lt; b，a = '' &gt; b 会被处理为 b &lt; a。</p>
-</li>
-</ul>
-<div><pre><code><span>[</span><span>42</span><span>]</span> <span>&lt;</span> <span>[</span><span>'43'</span><span>]</span> <span>// true，转为数字再比较</span>
-
-<span>[</span><span>'42'</span><span>]</span> <span>&lt;</span> <span>[</span><span>'043'</span><span>]</span> <span>// false，都为字符串，比较字母顺序</span>
-
-<span>{</span><span>}</span> <span>&lt;</span> <span>{</span><span>}</span> <span>// false，字符串 '[object Object]' 比较</span>
-<span>{</span><span>}</span> <span>==</span> <span>{</span><span>}</span> <span>// false，内存地址比较</span>
-<span>{</span><span>}</span> <span>></span> <span>{</span><span>}</span> <span>// false，字符串 '[object Object]' 比较</span>
-
-<span>{</span><span>}</span> <span>&lt;=</span> <span>{</span><span>}</span> <span>// true，根据规则为 {} > {} 比较结果的反转</span>
-<span>{</span><span>}</span> <span>>=</span> <span>{</span><span>}</span> <span>// true，根据规则为 {} &lt; {} 比较结果的反转</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><img :src="$withBase('/images/You-Don’t-Know-JS/相等比较.png')" loading="lazy">
-<h2 id="_12-语句的结果值"> 12. 语句的结果值</h2>
-<ul>
-<li>
-<p>从技术角度来解释要更复杂一些。ES5 规范 12.2 节中的变量声明（VariableDeclaration）算法实际上有一个返回值（是一个包含所声明变量名称的字符串，很奇特吧？），但是这个值被变量语句（VariableStatement）算法屏蔽掉了（for..in 循环除外），最后返回结果为空（undefined）。</p>
-</li>
-<li>
-<p>如果你用开发控制台（或者 JavaScript REPL——read/evaluate/print/loop 工具）调试过代码，应该会看到很多语句的返回值显示为 undefined，只是你可能从未探究过其中的原因，其实控制台中显示的就是语句的结果值。</p>
-</li>
-</ul>
-<div><pre><code><span>var</span> b
-<span>if</span> <span>(</span><span>true</span><span>)</span> <span>{</span>
-  b <span>=</span> <span>4</span> <span>+</span> <span>38</span>
-<span>}</span>
-<span>// 控制台打印42</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><ul>
-<li>可以使用万恶的 eval(..) （又读作“evil”）来获得结果值。</li>
-</ul>
-<div><pre><code><span>var</span> a<span>,</span> b
-a <span>=</span> <span>eval</span><span>(</span><span>'if (true) { b = 4 + 38; }'</span><span>)</span>
-a <span>// 42</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="_13-表达式的副作用"> 13. 表达式的副作用</h2>
-<ul>
-<li>
-<p>++a++ 会产生 ReferenceError 错误，因为运算符需要将产生的副作用赋值给一个变量。以 ++a++ 为例，它首先执行 a++ （根据运算符优先级），返回 42，然后执行 ++42，这时会产生 ReferenceError 错误，因为 ++ 无法直接在 42 这样的值上产生副作用。</p>
-</li>
-<li>
-<p>a = 42 中的 = 运算符看起来没有副作用，实际上它的结果值是 42，它的副作用是将 42 赋值给 a。</p>
-</li>
-</ul>
-<div><pre><code><span>var</span> a
-a <span>=</span> <span>42</span> <span>// 42</span>
-a <span>// 42</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><ul>
-<li>链式赋值常常被误用，例如 var a = b = 42，看似和前面的例子差不多，实则不然。如果变量 b 没有在作用域中象 var b 这样声明过，则 var a = b =42 不会对变量 b 进行声明。在严格模式中这样会产生错误，或者会无意中创建一个全局变量。</li>
-</ul>
-<h2 id="_14-上下文规则"> 14. 上下文规则</h2>
-<ul>
-<li>
-<p>标签语句（非 goto）。</p>
-<blockquote>
-<p>contine foo 并不是指 “跳转到标签 foo 所在位置继续执行”，而是 “执行 foo 循环的下一轮循环”。</p>
-</blockquote>
-<div><pre><code><span>// 标签为foo的循环</span>
-<span>foo</span><span>:</span> <span>for</span> <span>(</span><span>var</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>4</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-  <span>for</span> <span>(</span><span>var</span> j <span>=</span> <span>0</span><span>;</span> j <span>&lt;</span> <span>4</span><span>;</span> j<span>++</span><span>)</span> <span>{</span>
-    <span>// 如果j和i相等，继续外层循环</span>
-    <span>if</span> <span>(</span>j <span>==</span> i<span>)</span> <span>{</span>
-      <span>// 跳转到foo的下一个循环</span>
-      <span>continue</span> foo
-    <span>}</span>
-    <span>// 跳过奇数结果</span>
-    <span>if</span> <span>(</span><span>(</span>j <span>*</span> i<span>)</span> <span>%</span> <span>2</span> <span>==</span> <span>1</span><span>)</span> <span>{</span>
-      <span>// 继续内层循环（没有标签的）</span>
-      <span>continue</span>
-    <span>}</span>
-    console<span>.</span><span>log</span><span>(</span>i<span>,</span> j<span>)</span>
-  <span>}</span>
-<span>}</span>
-<span>// 1 0</span>
-<span>// 2 0</span>
-<span>// 2 1</span>
-<span>// 3 0</span>
-<span>// 3 2</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><blockquote>
-<p>break foo 不是指 “跳转到标签 foo 所在位置继续执行”，而是 “跳出标签 foo 所在的循环 / 代码块，继续执行后面的代码”。</p>
-</blockquote>
-<div><pre><code><span>// 标签为foo的循环</span>
-<span>foo</span><span>:</span> <span>for</span> <span>(</span><span>var</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>4</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-  <span>for</span> <span>(</span><span>var</span> j <span>=</span> <span>0</span><span>;</span> j <span>&lt;</span> <span>4</span><span>;</span> j<span>++</span><span>)</span> <span>{</span>
-    <span>if</span> <span>(</span>i <span>*</span> j <span>>=</span> <span>3</span><span>)</span> <span>{</span>
-      console<span>.</span><span>log</span><span>(</span><span>'stopping!'</span><span>,</span> i<span>,</span> j<span>)</span>
-      <span>break</span> foo
-    <span>}</span>
-    console<span>.</span><span>log</span><span>(</span>i<span>,</span> j<span>)</span>
-  <span>}</span>
-<span>}</span>
-<span>// 0 0</span>
-<span>// 0 1</span>
-<span>// 0 2</span>
-<span>// 0 3</span>
-<span>// 1 0</span>
-<span>// 1 1</span>
-<span>// 1 2</span>
-<span>// 停止！ 1 3</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div></li>
-<li>
-<p>JSON 被普遍认为是 JavaScript 语言的一个真子集， {&quot;a&quot;:42} 这样的 JSON 字符串会被当作合法的 JavaScript 代码（请注意 JSON 属性名必须使用双引号！）。其实不是！如果在控制台中输入 {&quot;a&quot;:42} 会报错。因为标签不允许使用双引号，所以 &quot;a&quot; 并不是一个合法的标签，因此后面不能带 : 。</p>
-<blockquote>
-<ul>
-<li>JSON 的确是 JavaScript 语法的一个子集，但是 JSON 本身并不是合法的 JavaScript 语法。</li>
-<li>这里存在一个十分常见的误区，即如果通过 <code>&lt;script src=..&gt;</code> 标签加载 JavaScript 文件，其中只包含 JSON 数据（比如某个 API 返回的结果），那它就会被当作合法的 JavaScript 代码来解析，只不过其内容无法被程序代码访问到。JSON-P（将 JSON 数据封装为函数调用，比如 foo({&quot;a&quot;:42}) ）通过将 JSON 数据传递给函数来实现对其的访问。</li>
-<li>{&quot;a&quot;:42} 作为 JSON 值没有任何问题，但是在作为代码执行时会产生错误，因为它会被当作一个带有非法标签的语句块来执行。foo({&quot;a&quot;:42}) 就没有这个问题，因为 {&quot;a&quot;:42} 在这里是一个传递给 foo(..) 的对象常量。所以准确地说，JSON-P 能将 JSON 转换为合法的 JavaScript 语法。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>else if 和可选代码块。</p>
-<blockquote>
-<p>很多人误以为 JavaScript 中有 else if，因为我们可以这样来写代码。</p>
-</blockquote>
-<div><pre><code><span>if</span> <span>(</span>a<span>)</span> <span>{</span>
-  <span>// ..</span>
-<span>}</span> <span>else</span> <span>if</span> <span>(</span>b<span>)</span> <span>{</span>
-  <span>// ..</span>
-<span>}</span> <span>else</span> <span>{</span>
-  <span>// ..</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><blockquote>
-<ul>
-<li>事实上 JavaScript 没有 else if，但 if 和 else 只包含单条语句的时候可以省略代码块的 { }。</li>
-<li>我们经常用到的 else if 实际上是这样的。</li>
-</ul>
-</blockquote>
-<div><pre><code><span>if</span> <span>(</span>a<span>)</span> <span>{</span>
-  <span>// ..</span>
-<span>}</span> <span>else</span> <span>{</span>
-  <span>if</span> <span>(</span>b<span>)</span> <span>{</span>
-    <span>// ..</span>
-  <span>}</span> <span>else</span> <span>{</span>
-    <span>// ..</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><blockquote>
-<p>else if 极为常见，能省掉一层代码缩进，所以很受青睐。但这只是我们自己发明的用法，切勿想当然地认为这些都属于 JavaScript 语法的范畴。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="_15-try-finally"> 15. try..finally</h2>
-<ul>
-<li>这里 return 42 先执行，并将 foo() 函数的返回值设置为 42。然后 try 执行完毕，接着执行 finally。最后 foo() 函数执行完毕，console.log(..) 显示返回值。</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  <span>try</span> <span>{</span>
-    <span>return</span> <span>42</span>
-  <span>}</span> <span>finally</span> <span>{</span>
-    console<span>.</span><span>log</span><span>(</span><span>'Hello'</span><span>)</span>
-  <span>}</span>
-  console<span>.</span><span>log</span><span>(</span><span>'never runs'</span><span>)</span>
-<span>}</span>
-console<span>.</span><span>log</span><span>(</span><span>foo</span><span>(</span><span>)</span><span>)</span>
-<span>// Hello</span>
-<span>// 42</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><ul>
-<li>finally 中的 return 会覆盖 try 和 catch 中 return 的返回值。</li>
-</ul>
-<h2 id="_16-混合环境-javascript"> 16. 混合环境 JavaScript</h2>
-<ul>
-<li>由于浏览器演进的历史遗留问题，在创建带有 id 属性的 DOM 元素时也会创建同名的全局变量。</li>
-</ul>
-<div><pre><code><span><span><span>&lt;</span>div</span> <span>id</span><span><span>=</span><span>"</span>foo<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>div</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br></div></div><div><pre><code><span>if</span> <span>(</span><span>typeof</span> foo <span>==</span> <span>'undefined'</span><span>)</span> <span>{</span>
-  foo <span>=</span> <span>42</span> <span>// 永远也不会运行</span>
-<span>}</span>
-console<span>.</span><span>log</span><span>(</span>foo<span>)</span> <span>// HTML元素</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_17-异步控制台"> 17. 异步控制台</h2>
-<ul>
-<li>
-<p>并没有什么规范或一组需求指定 console.* 方法族如何工作 —— 它们并不是 JavaScript 正式的一部分，而是由宿主环境添加到 JavaScript 中的。</p>
-</li>
-<li>
-<p>因此，不同的浏览器和 JavaScript 环境可以按照自己的意愿来实现，有时候这会引起混淆。尤其要提出的是，在某些条件下，某些浏览器的 console.log(..) 并不会把传入的内容立即输出。出现这种情况的主要原因是，在许多程序（不只是 JavaScript）中，I/O 是非常低速的阻塞部分。所以，（从页面 /UI 的角度来说）浏览器在后台异步处理控制台 I/O 能够提高性能，这时用户甚至可能根本意识不到其发生。</p>
-</li>
-</ul>
-<div><pre><code><span>var</span> a <span>=</span> <span>{</span>
-  <span>index</span><span>:</span> <span>1</span><span>,</span>
-<span>}</span>
-<span>// 然后</span>
-console<span>.</span><span>log</span><span>(</span>a<span>)</span> <span>// ?? =>  { index: 2 }</span>
-<span>// 再然后</span>
-a<span>.</span>index<span>++</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_18-并行线程与并发"> 18. 并行线程与并发</h2>
-<ul>
-<li>
-<p>并行计算最常见的工具就是进程和线程。进程和线程独立运行，并可能同时运行：在不同的处理器，甚至不同的计算机上，但多个线程能够共享单个进程的内存。</p>
-</li>
-<li>
-<p>两个或多个 “进程” 同时执行就出现了并发，不管组成它们的单个运算是否并行执行（在独立的处理器或处理器核心上同时运行）。可以把并发看作 “进程” 级（或者任务级）的并行，与运算级的并行（不同处理器上的线程）相对。</p>
-</li>
-</ul>
-<h2 id="_19-不是所有的引擎都类似"> 19. 不是所有的引擎都类似</h2>
-<ul>
-<li>过去把多个字符串值放在一个数组中，然后在数组上调用 join(&quot;&quot;) 来连接这些值比直接用 + 连接这些值要快。这一点的历史原因是微妙的，涉及字符串值在内存中如何存储和管理这样的内部实现细节。</li>
-</ul>
-<h2 id="_20-尾调用优化-你不知道的-js-下"> 20. 尾调用优化（<a href="/note/books/You-Don’t-Know-JS-Vol3/#_4-尾调用">你不知道的 JS（下）</a>）</h2>
-<ul>
-<li>简单地说，尾调用就是一个出现在另一个函数 “结尾” 处的函数调用。这个调用结束后就没有其余事情要做了（除了可能要返回结果值）。</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>x</span><span>)</span> <span>{</span>
-  <span>return</span> x
-<span>}</span>
-<span>function</span> <span>bar</span><span>(</span><span>y</span><span>)</span> <span>{</span>
-  <span>return</span> <span>foo</span><span>(</span>y <span>+</span> <span>1</span><span>)</span> <span>// 尾调用</span>
-<span>}</span>
-<span>function</span> <span>baz</span><span>(</span><span>)</span> <span>{</span>
-  <span>return</span> <span>1</span> <span>+</span> <span>bar</span><span>(</span><span>40</span><span>)</span> <span>// 非尾调用</span>
-<span>}</span>
-<span>baz</span><span>(</span><span>)</span> <span>// 42</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>Three.js 开发指南</title>
       <link>https://www.matrixtheone.ga/web/note/books/Three/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/Three/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">Three.js 开发指南</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
     </item>
     <item>
       <title>你不知道的 JS（上）</title>
       <link>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol1/</link>
       <guid>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol1/</guid>
       <source url="https://www.matrixtheone.ga/web/rss.xml">你不知道的 JS（上）</source>
-      <pubDate>Thu, 20 Apr 2023 15:22:45 GMT</pubDate>
+      <pubDate>Sun, 23 Apr 2023 15:49:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1-编译原理"> 1. 编译原理</h2>
 <ul>
 <li>
