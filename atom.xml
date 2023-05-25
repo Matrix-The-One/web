@@ -6,7 +6,7 @@
   <author>
     <name>coderljw</name>
   </author>
-  <updated>2023-05-24T16:11:49.590Z</updated>
+  <updated>2023-05-25T15:16:01.853Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.matrixtheone.ga/web/atom.xml"/>
   <link rel="alternate" href="https://www.matrixtheone.ga/web/"/>
@@ -30,10 +30,10 @@
   <category term="Lint"/>
   <category term="Next"/>
   <category term="Nginx"/>
-  <category term="Nuxt"/>
   <category term="Node"/>
-  <category term="App"/>
+  <category term="Nuxt"/>
   <category term="TS"/>
+  <category term="App"/>
   <category term="Uni App"/>
   <category term="H5"/>
   <category term="小程序"/>
@@ -47,7 +47,7 @@
     <title type="html">基本概念</title>
     <id>https://www.matrixtheone.ga/web/blockChain/Basic/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/Basic/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-base58"> 1. Base58</h2>
 <p>Base58 是用于比特币（Bitcoin）中使用的一种独特的编码方式，主要用于产生 Bitcoin 的钱包地址。相比 Base64，Base58 不使用数字 &quot;0&quot;，字母大写 &quot;O&quot;，字母大写 &quot;I&quot;，和字母小写 &quot;l&quot;，以及 &quot;+&quot; 和 &quot;/&quot; 符号。</p>
 <ul>
@@ -315,14 +315,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Config</title>
     <id>https://www.matrixtheone.ga/web/blockChain/DAPP/Config/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/DAPP/Config/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-config"> 1. config</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/69888765/getting-netlify-build-error-when-importing-web3-in-nextjs-application-error" target="_blank" rel="noopener noreferrer">SSR 忽略 electron</a>。</li>
@@ -605,14 +605,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">DAPP</title>
     <id>https://www.matrixtheone.ga/web/blockChain/DAPP/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/DAPP/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/不能说的秘密.webp')">
 ]]></content>
     <author>
@@ -621,14 +621,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Utils</title>
     <id>https://www.matrixtheone.ga/web/blockChain/DAPP/Utils/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/DAPP/Utils/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-comparetoken"> 1. compareToken</h2>
 <ul>
 <li>判断代币是否足够。</li>
@@ -651,14 +651,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Web3</title>
     <id>https://www.matrixtheone.ga/web/blockChain/DAPP/Web3/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/DAPP/Web3/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-connectors"> 1. connectors</h2>
 <div><pre><code><span>import</span> <span>{</span> InjectedConnector <span>}</span> <span>from</span> <span>'@web3-react/injected-connector'</span>
 <span>import</span> <span>{</span> WalletConnectConnector <span>}</span> <span>from</span> <span>'@web3-react/walletconnect-connector'</span>
@@ -830,14 +830,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Solidity</title>
     <id>https://www.matrixtheone.ga/web/blockChain/Solidity/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/Solidity/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -845,14 +845,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Docker</title>
     <id>https://www.matrixtheone.ga/web/command/Docker/</id>
     <link href="https://www.matrixtheone.ga/web/command/Docker/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="reference"> <a href="https://docs.docker.com/reference/" target="_blank" rel="noopener noreferrer">reference</a></h2>
 <ul>
 <li>
@@ -958,28 +958,28 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Blog Home</title>
     <id>https://www.matrixtheone.ga/web/intro/</id>
     <link href="https://www.matrixtheone.ga/web/intro/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>人的梦想，是不会结束的！</rights>
   </entry>
   <entry>
     <title type="html">区块链</title>
     <id>https://www.matrixtheone.ga/web/blockChain/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/黑客帝国.webp')">
 ]]></content>
     <author>
@@ -988,14 +988,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">魔法边框</title>
     <id>https://www.matrixtheone.ga/web/magic/Border/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Border/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-639c5f01"
@@ -1123,14 +1123,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">拖拽切换</title>
     <id>https://www.matrixtheone.ga/web/magic/Drag-Switch/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Drag-Switch/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-305bf33d"
@@ -1212,14 +1212,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">毛玻璃</title>
     <id>https://www.matrixtheone.ga/web/magic/Ground-Glass/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Ground-Glass/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h3 id="backdrop-filter-blur"> backdrop-filter: blur()</h3>
 <blockquote>
 <p>透明度 + 模糊，火狐默认无效，移动端兼容性不大友好</p>
@@ -1472,14 +1472,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">图像阴影</title>
     <id>https://www.matrixtheone.ga/web/magic/Image-Shadow/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Image-Shadow/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>利用 filter 制造伪阴影</p>
 </blockquote>
@@ -1538,14 +1538,154 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">霓虹灯</title>
+    <id>https://www.matrixtheone.ga/web/magic/Neon/</id>
+    <link href="https://www.matrixtheone.ga/web/magic/Neon/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <content type="html"><![CDATA[
+          <div
+            id="code-demo-01089fb6"
+           
+  
+ data-title=""
+
+            data-code="%7B%22html%22%3A%22%3Cmain%3E%5Cn%20%20%3Cspan%3EMagic%3C%2Fspan%3E%5Cn%3C%2Fmain%3E%5Cn%22%2C%22css%22%3A%22main%20%7B%5Cn%20%20height%3A%20400px%3B%5Cn%20%20background%3A%20%23000%3B%5Cn%20%20display%3A%20grid%3B%5Cn%20%20place-items%3A%20center%3B%5Cn%7D%5Cn%5Cnspan%20%7B%5Cn%20%20font-family%3A%20'Lobster'%3B%5Cn%20%20font-size%3A%2010vmin%3B%5Cn%20%20text-align%3A%20center%3B%5Cn%20%20cursor%3A%20pointer%3B%5Cn%20%20letter-spacing%3A%204px%3B%5Cn%20%20user-select%3A%20none%3B%5Cn%20%20color%3A%20%23fff%3B%5Cn%20%20filter%3A%20brightness(110%25)%3B%20%2F*%20%E4%BA%AE%E5%BA%A6%20*%2F%5Cn%20%20text-shadow%3A%200%200%205px%20var(--color-white)%2C%200%200%2010px%20var(--color-white)%2C%5Cn%20%20%20%200%200%2015px%20var(--color-white)%2C%200%200%2020px%20var(--color-red)%2C%5Cn%20%20%20%200%200%2035px%20var(--color-red)%2C%200%200%2040px%20var(--color-red)%2C%5Cn%20%20%20%200%200%2050px%20var(--color-red)%2C%200%200%2075px%20var(--color-red)%3B%5Cn%5Cn%20%20--color-white%3A%20%23fff%3B%5Cn%20%20--color-red%3A%20%23e91e63%3B%5Cn%7D%5Cn%5Cnspan%3Ahover%20%7B%5Cn%20%20color%3A%20var(--color-white)%3B%5Cn%20%20animation%3A%20neon%201.5s%20ease-in-out%20infinite%20alternate%3B%5Cn%7D%5Cn%5Cn%40keyframes%20neon%20%7B%5Cn%20%20to%20%7B%5Cn%20%20%20%20text-shadow%3A%200%200%2010px%20var(--color-white)%2C%200%200%2020px%20var(--color-white)%2C%5Cn%20%20%20%20%20%200%200%2030px%20var(--color-white)%2C%200%200%2040px%20var(--color-red)%2C%5Cn%20%20%20%20%20%200%200%2070px%20var(--color-red)%2C%200%200%2080px%20var(--color-red)%2C%5Cn%20%20%20%20%20%200%200%20100px%20var(--color-red)%2C%200%200%20150px%20var(--color-red)%3B%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D"
+          >
+              
+              <div>
+                <div>
+<div><pre><code><span><span><span>&lt;</span>main</span><span>></span></span>
+  <span><span><span>&lt;</span>span</span><span>></span></span>Magic<span><span><span>&lt;/</span>span</span><span>></span></span>
+<span><span><span>&lt;/</span>main</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><pre><code><span>main</span> <span>{</span>
+  <span>height</span><span>:</span> 400px<span>;</span>
+  <span>background</span><span>:</span> #000<span>;</span>
+  <span>display</span><span>:</span> grid<span>;</span>
+  <span>place-items</span><span>:</span> center<span>;</span>
+<span>}</span>
+
+<span>span</span> <span>{</span>
+  <span>font-family</span><span>:</span> <span>'Lobster'</span><span>;</span>
+  <span>font-size</span><span>:</span> 10vmin<span>;</span>
+  <span>text-align</span><span>:</span> center<span>;</span>
+  <span>cursor</span><span>:</span> pointer<span>;</span>
+  <span>letter-spacing</span><span>:</span> 4px<span>;</span>
+  <span>user-select</span><span>:</span> none<span>;</span>
+  <span>color</span><span>:</span> #fff<span>;</span>
+  <span>filter</span><span>:</span> <span>brightness</span><span>(</span>110%<span>)</span><span>;</span> <span>/* 亮度 */</span>
+  <span>text-shadow</span><span>:</span> 0 0 5px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span> 0 0 10px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span>
+    0 0 15px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span> 0 0 20px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span>
+    0 0 35px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span> 0 0 40px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span>
+    0 0 50px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span> 0 0 75px <span>var</span><span>(</span>--color-red<span>)</span><span>;</span>
+
+  <span>--color-white</span><span>:</span> #fff<span>;</span>
+  <span>--color-red</span><span>:</span> #e91e63<span>;</span>
+<span>}</span>
+
+<span>span:hover</span> <span>{</span>
+  <span>color</span><span>:</span> <span>var</span><span>(</span>--color-white<span>)</span><span>;</span>
+  <span>animation</span><span>:</span> neon 1.5s ease-in-out infinite alternate<span>;</span>
+<span>}</span>
+
+<span><span>@keyframes</span> neon</span> <span>{</span>
+  <span>to</span> <span>{</span>
+    <span>text-shadow</span><span>:</span> 0 0 10px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span> 0 0 20px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span>
+      0 0 30px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span> 0 0 40px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span>
+      0 0 70px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span> 0 0 80px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span>
+      0 0 100px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span> 0 0 150px <span>var</span><span>(</span>--color-red<span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div>
+            </div>
+          </div>
+          
+        </div>
+
+          <div
+            id="code-demo-b681e42a"
+           
+  
+ data-title=""
+
+            data-code="%7B%22html%22%3A%22%3Cmain%3E%5Cn%20%20%3Csection%3E%3C%2Fsection%3E%5Cn%3C%2Fmain%3E%5Cn%22%2C%22css%22%3A%22main%20%7B%5Cn%20%20height%3A%20400px%3B%5Cn%20%20display%3A%20grid%3B%5Cn%20%20place-items%3A%20center%3B%5Cn%20%20background%3A%20%23000%3B%5Cn%7D%5Cn%5Cnsection%20%7B%5Cn%20%20width%3A%20200px%3B%5Cn%20%20height%3A%20200px%3B%5Cn%20%20position%3A%20relative%3B%5Cn%7D%5Cn%5Cnsection%3A%3Abefore%2C%5Cnsection%3A%3Aafter%20%7B%5Cn%20%20content%3A%20'%20'%3B%5Cn%20%20position%3A%20absolute%3B%5Cn%20%20top%3A%200%3B%5Cn%20%20left%3A%200%3B%5Cn%20%20bottom%3A%200%3B%5Cn%20%20right%3A%200%3B%5Cn%20%20border-radius%3A%2050%25%3B%5Cn%20%20border-top%3A%2010px%20solid%20%23fff%3B%5Cn%20%20filter%3A%20drop-shadow(0%200%202px%20var(--colorA))%20drop-shadow(0%200%205px%20var(--colorA))%5Cn%20%20%20%20drop-shadow(0%200%2010px%20var(--colorA))%20drop-shadow(0%200%2020px%20var(--colorA))%3B%5Cn%20%20animation%3A%20rotate%203s%20infinite%20linear%3B%5Cn%7D%5Cn%5Cnsection%3A%3Abefore%20%7B%5Cn%20%20--colorA%3A%20%23b78eff%3B%5Cn%7D%5Cn%5Cnsection%3A%3Aafter%20%7B%5Cn%20%20--colorA%3A%20%23ffec41%3B%5Cn%20%20animation-delay%3A%20-1.5s%3B%5Cn%7D%5Cn%5Cn%40keyframes%20rotate%20%7B%5Cn%20%20100%25%20%7B%5Cn%20%20%20%20transform%3A%20rotate(360deg)%3B%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D"
+          >
+              
+              <div>
+                <div>
+<div><pre><code><span><span><span>&lt;</span>main</span><span>></span></span>
+  <span><span><span>&lt;</span>section</span><span>></span></span><span><span><span>&lt;/</span>section</span><span>></span></span>
+<span><span><span>&lt;/</span>main</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><pre><code><span>main</span> <span>{</span>
+  <span>height</span><span>:</span> 400px<span>;</span>
+  <span>display</span><span>:</span> grid<span>;</span>
+  <span>place-items</span><span>:</span> center<span>;</span>
+  <span>background</span><span>:</span> #000<span>;</span>
+<span>}</span>
+
+<span>section</span> <span>{</span>
+  <span>width</span><span>:</span> 200px<span>;</span>
+  <span>height</span><span>:</span> 200px<span>;</span>
+  <span>position</span><span>:</span> relative<span>;</span>
+<span>}</span>
+
+<span>section::before,
+section::after</span> <span>{</span>
+  <span>content</span><span>:</span> <span>' '</span><span>;</span>
+  <span>position</span><span>:</span> absolute<span>;</span>
+  <span>top</span><span>:</span> 0<span>;</span>
+  <span>left</span><span>:</span> 0<span>;</span>
+  <span>bottom</span><span>:</span> 0<span>;</span>
+  <span>right</span><span>:</span> 0<span>;</span>
+  <span>border-radius</span><span>:</span> 50%<span>;</span>
+  <span>border-top</span><span>:</span> 10px solid #fff<span>;</span>
+  <span>filter</span><span>:</span> <span>drop-shadow</span><span>(</span>0 0 2px <span>var</span><span>(</span>--colorA<span>)</span><span>)</span> <span>drop-shadow</span><span>(</span>0 0 5px <span>var</span><span>(</span>--colorA<span>)</span><span>)</span>
+    <span>drop-shadow</span><span>(</span>0 0 10px <span>var</span><span>(</span>--colorA<span>)</span><span>)</span> <span>drop-shadow</span><span>(</span>0 0 20px <span>var</span><span>(</span>--colorA<span>)</span><span>)</span><span>;</span>
+  <span>animation</span><span>:</span> rotate 3s infinite linear<span>;</span>
+<span>}</span>
+
+<span>section::before</span> <span>{</span>
+  <span>--colorA</span><span>:</span> #b78eff<span>;</span>
+<span>}</span>
+
+<span>section::after</span> <span>{</span>
+  <span>--colorA</span><span>:</span> #ffec41<span>;</span>
+  <span>animation-delay</span><span>:</span> -1.5s<span>;</span>
+<span>}</span>
+
+<span><span>@keyframes</span> rotate</span> <span>{</span>
+  <span>100%</span> <span>{</span>
+    <span>transform</span><span>:</span> <span>rotate</span><span>(</span>360deg<span>)</span><span>;</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br></div></div>
+            </div>
+          </div>
+          
+        </div>
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <category term="CSS"/>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">二维码</title>
     <id>https://www.matrixtheone.ga/web/magic/QR-Code/</id>
     <link href="https://www.matrixtheone.ga/web/magic/QR-Code/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-f65656fe"
@@ -1698,154 +1838,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">霓虹灯</title>
-    <id>https://www.matrixtheone.ga/web/magic/Neon/</id>
-    <link href="https://www.matrixtheone.ga/web/magic/Neon/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <content type="html"><![CDATA[
-          <div
-            id="code-demo-01089fb6"
-           
-  
- data-title=""
-
-            data-code="%7B%22html%22%3A%22%3Cmain%3E%5Cn%20%20%3Cspan%3EMagic%3C%2Fspan%3E%5Cn%3C%2Fmain%3E%5Cn%22%2C%22css%22%3A%22main%20%7B%5Cn%20%20height%3A%20400px%3B%5Cn%20%20background%3A%20%23000%3B%5Cn%20%20display%3A%20grid%3B%5Cn%20%20place-items%3A%20center%3B%5Cn%7D%5Cn%5Cnspan%20%7B%5Cn%20%20font-family%3A%20'Lobster'%3B%5Cn%20%20font-size%3A%2010vmin%3B%5Cn%20%20text-align%3A%20center%3B%5Cn%20%20cursor%3A%20pointer%3B%5Cn%20%20letter-spacing%3A%204px%3B%5Cn%20%20user-select%3A%20none%3B%5Cn%20%20color%3A%20%23fff%3B%5Cn%20%20filter%3A%20brightness(110%25)%3B%20%2F*%20%E4%BA%AE%E5%BA%A6%20*%2F%5Cn%20%20text-shadow%3A%200%200%205px%20var(--color-white)%2C%200%200%2010px%20var(--color-white)%2C%5Cn%20%20%20%200%200%2015px%20var(--color-white)%2C%200%200%2020px%20var(--color-red)%2C%5Cn%20%20%20%200%200%2035px%20var(--color-red)%2C%200%200%2040px%20var(--color-red)%2C%5Cn%20%20%20%200%200%2050px%20var(--color-red)%2C%200%200%2075px%20var(--color-red)%3B%5Cn%5Cn%20%20--color-white%3A%20%23fff%3B%5Cn%20%20--color-red%3A%20%23e91e63%3B%5Cn%7D%5Cn%5Cnspan%3Ahover%20%7B%5Cn%20%20color%3A%20var(--color-white)%3B%5Cn%20%20animation%3A%20neon%201.5s%20ease-in-out%20infinite%20alternate%3B%5Cn%7D%5Cn%5Cn%40keyframes%20neon%20%7B%5Cn%20%20to%20%7B%5Cn%20%20%20%20text-shadow%3A%200%200%2010px%20var(--color-white)%2C%200%200%2020px%20var(--color-white)%2C%5Cn%20%20%20%20%20%200%200%2030px%20var(--color-white)%2C%200%200%2040px%20var(--color-red)%2C%5Cn%20%20%20%20%20%200%200%2070px%20var(--color-red)%2C%200%200%2080px%20var(--color-red)%2C%5Cn%20%20%20%20%20%200%200%20100px%20var(--color-red)%2C%200%200%20150px%20var(--color-red)%3B%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D"
-          >
-              
-              <div>
-                <div>
-<div><pre><code><span><span><span>&lt;</span>main</span><span>></span></span>
-  <span><span><span>&lt;</span>span</span><span>></span></span>Magic<span><span><span>&lt;/</span>span</span><span>></span></span>
-<span><span><span>&lt;/</span>main</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><pre><code><span>main</span> <span>{</span>
-  <span>height</span><span>:</span> 400px<span>;</span>
-  <span>background</span><span>:</span> #000<span>;</span>
-  <span>display</span><span>:</span> grid<span>;</span>
-  <span>place-items</span><span>:</span> center<span>;</span>
-<span>}</span>
-
-<span>span</span> <span>{</span>
-  <span>font-family</span><span>:</span> <span>'Lobster'</span><span>;</span>
-  <span>font-size</span><span>:</span> 10vmin<span>;</span>
-  <span>text-align</span><span>:</span> center<span>;</span>
-  <span>cursor</span><span>:</span> pointer<span>;</span>
-  <span>letter-spacing</span><span>:</span> 4px<span>;</span>
-  <span>user-select</span><span>:</span> none<span>;</span>
-  <span>color</span><span>:</span> #fff<span>;</span>
-  <span>filter</span><span>:</span> <span>brightness</span><span>(</span>110%<span>)</span><span>;</span> <span>/* 亮度 */</span>
-  <span>text-shadow</span><span>:</span> 0 0 5px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span> 0 0 10px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span>
-    0 0 15px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span> 0 0 20px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span>
-    0 0 35px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span> 0 0 40px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span>
-    0 0 50px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span> 0 0 75px <span>var</span><span>(</span>--color-red<span>)</span><span>;</span>
-
-  <span>--color-white</span><span>:</span> #fff<span>;</span>
-  <span>--color-red</span><span>:</span> #e91e63<span>;</span>
-<span>}</span>
-
-<span>span:hover</span> <span>{</span>
-  <span>color</span><span>:</span> <span>var</span><span>(</span>--color-white<span>)</span><span>;</span>
-  <span>animation</span><span>:</span> neon 1.5s ease-in-out infinite alternate<span>;</span>
-<span>}</span>
-
-<span><span>@keyframes</span> neon</span> <span>{</span>
-  <span>to</span> <span>{</span>
-    <span>text-shadow</span><span>:</span> 0 0 10px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span> 0 0 20px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span>
-      0 0 30px <span>var</span><span>(</span>--color-white<span>)</span><span>,</span> 0 0 40px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span>
-      0 0 70px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span> 0 0 80px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span>
-      0 0 100px <span>var</span><span>(</span>--color-red<span>)</span><span>,</span> 0 0 150px <span>var</span><span>(</span>--color-red<span>)</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div>
-            </div>
-          </div>
-          
-        </div>
-
-          <div
-            id="code-demo-b681e42a"
-           
-  
- data-title=""
-
-            data-code="%7B%22html%22%3A%22%3Cmain%3E%5Cn%20%20%3Csection%3E%3C%2Fsection%3E%5Cn%3C%2Fmain%3E%5Cn%22%2C%22css%22%3A%22main%20%7B%5Cn%20%20height%3A%20400px%3B%5Cn%20%20display%3A%20grid%3B%5Cn%20%20place-items%3A%20center%3B%5Cn%20%20background%3A%20%23000%3B%5Cn%7D%5Cn%5Cnsection%20%7B%5Cn%20%20width%3A%20200px%3B%5Cn%20%20height%3A%20200px%3B%5Cn%20%20position%3A%20relative%3B%5Cn%7D%5Cn%5Cnsection%3A%3Abefore%2C%5Cnsection%3A%3Aafter%20%7B%5Cn%20%20content%3A%20'%20'%3B%5Cn%20%20position%3A%20absolute%3B%5Cn%20%20top%3A%200%3B%5Cn%20%20left%3A%200%3B%5Cn%20%20bottom%3A%200%3B%5Cn%20%20right%3A%200%3B%5Cn%20%20border-radius%3A%2050%25%3B%5Cn%20%20border-top%3A%2010px%20solid%20%23fff%3B%5Cn%20%20filter%3A%20drop-shadow(0%200%202px%20var(--colorA))%20drop-shadow(0%200%205px%20var(--colorA))%5Cn%20%20%20%20drop-shadow(0%200%2010px%20var(--colorA))%20drop-shadow(0%200%2020px%20var(--colorA))%3B%5Cn%20%20animation%3A%20rotate%203s%20infinite%20linear%3B%5Cn%7D%5Cn%5Cnsection%3A%3Abefore%20%7B%5Cn%20%20--colorA%3A%20%23b78eff%3B%5Cn%7D%5Cn%5Cnsection%3A%3Aafter%20%7B%5Cn%20%20--colorA%3A%20%23ffec41%3B%5Cn%20%20animation-delay%3A%20-1.5s%3B%5Cn%7D%5Cn%5Cn%40keyframes%20rotate%20%7B%5Cn%20%20100%25%20%7B%5Cn%20%20%20%20transform%3A%20rotate(360deg)%3B%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D"
-          >
-              
-              <div>
-                <div>
-<div><pre><code><span><span><span>&lt;</span>main</span><span>></span></span>
-  <span><span><span>&lt;</span>section</span><span>></span></span><span><span><span>&lt;/</span>section</span><span>></span></span>
-<span><span><span>&lt;/</span>main</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><pre><code><span>main</span> <span>{</span>
-  <span>height</span><span>:</span> 400px<span>;</span>
-  <span>display</span><span>:</span> grid<span>;</span>
-  <span>place-items</span><span>:</span> center<span>;</span>
-  <span>background</span><span>:</span> #000<span>;</span>
-<span>}</span>
-
-<span>section</span> <span>{</span>
-  <span>width</span><span>:</span> 200px<span>;</span>
-  <span>height</span><span>:</span> 200px<span>;</span>
-  <span>position</span><span>:</span> relative<span>;</span>
-<span>}</span>
-
-<span>section::before,
-section::after</span> <span>{</span>
-  <span>content</span><span>:</span> <span>' '</span><span>;</span>
-  <span>position</span><span>:</span> absolute<span>;</span>
-  <span>top</span><span>:</span> 0<span>;</span>
-  <span>left</span><span>:</span> 0<span>;</span>
-  <span>bottom</span><span>:</span> 0<span>;</span>
-  <span>right</span><span>:</span> 0<span>;</span>
-  <span>border-radius</span><span>:</span> 50%<span>;</span>
-  <span>border-top</span><span>:</span> 10px solid #fff<span>;</span>
-  <span>filter</span><span>:</span> <span>drop-shadow</span><span>(</span>0 0 2px <span>var</span><span>(</span>--colorA<span>)</span><span>)</span> <span>drop-shadow</span><span>(</span>0 0 5px <span>var</span><span>(</span>--colorA<span>)</span><span>)</span>
-    <span>drop-shadow</span><span>(</span>0 0 10px <span>var</span><span>(</span>--colorA<span>)</span><span>)</span> <span>drop-shadow</span><span>(</span>0 0 20px <span>var</span><span>(</span>--colorA<span>)</span><span>)</span><span>;</span>
-  <span>animation</span><span>:</span> rotate 3s infinite linear<span>;</span>
-<span>}</span>
-
-<span>section::before</span> <span>{</span>
-  <span>--colorA</span><span>:</span> #b78eff<span>;</span>
-<span>}</span>
-
-<span>section::after</span> <span>{</span>
-  <span>--colorA</span><span>:</span> #ffec41<span>;</span>
-  <span>animation-delay</span><span>:</span> -1.5s<span>;</span>
-<span>}</span>
-
-<span><span>@keyframes</span> rotate</span> <span>{</span>
-  <span>100%</span> <span>{</span>
-    <span>transform</span><span>:</span> <span>rotate</span><span>(</span>360deg<span>)</span><span>;</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br></div></div>
-            </div>
-          </div>
-          
-        </div>
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <category term="CSS"/>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">前端特效</title>
     <id>https://www.matrixtheone.ga/web/magic/</id>
     <link href="https://www.matrixtheone.ga/web/magic/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/银翼杀手2049.webp')">
 ]]></content>
     <author>
@@ -1854,14 +1854,14 @@ section::after</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">倒影动效</title>
     <id>https://www.matrixtheone.ga/web/magic/Reflect/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Reflect/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-36a7379d"
@@ -2079,14 +2079,14 @@ section:hover::before</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">规则阴影</title>
     <id>https://www.matrixtheone.ga/web/magic/Rule-Shadow/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Rule-Shadow/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h3 id="clip-path-polygon"> clip-path: polygon()</h3>
 <blockquote>
 <p><a href="https://www.zhangxinxu.com/wordpress/2016/05/css3-filter-drop-shadow-vs-box-shadow/" target="_blank" rel="noopener noreferrer">drop-shadow 可以穿透元素的透明部分</a></p>
@@ -2139,14 +2139,14 @@ section:hover::before</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">滚动视差</title>
     <id>https://www.matrixtheone.ga/web/magic/Scroll-Parallax/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Scroll-Parallax/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h3 id="transform-style-preserve-3d"> transform-style: preserve-3d</h3>
 <blockquote>
 <p>3D 空间图片视距较远离正常平面</p>
@@ -2308,14 +2308,14 @@ section:hover::before</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">滚动贴合</title>
     <id>https://www.matrixtheone.ga/web/magic/Scroll-Snap/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Scroll-Snap/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-20c7991b"
@@ -2465,14 +2465,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">文字故障</title>
     <id>https://www.matrixtheone.ga/web/magic/Text-Fault/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Text-Fault/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-676cd1fe"
@@ -2615,14 +2615,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">文字流光</title>
     <id>https://www.matrixtheone.ga/web/magic/Text-Flow/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Text-Flow/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-a10dac26"
@@ -2781,75 +2781,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">打字效果</title>
-    <id>https://www.matrixtheone.ga/web/magic/Typing-Effect/</id>
-    <link href="https://www.matrixtheone.ga/web/magic/Typing-Effect/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <content type="html"><![CDATA[
-          <div
-            id="code-demo-20387d5e"
-           
-  
- data-title=""
-
-            data-code="%7B%22html%22%3A%22%3Cp%3E%E5%89%8D%E5%A4%A9%E7%9C%8B%E5%88%B0%E4%BA%86%E5%B0%8F%E5%85%94%E5%AD%90%EF%BC%8C%E6%98%A8%E5%A4%A9%E6%98%AF%E5%B0%8F%E9%B9%BF%EF%BC%8C%E4%BB%8A%E5%A4%A9%E6%98%AF%E4%BD%A0%3C%2Fp%3E%5Cn%22%2C%22css%22%3A%22p%20%7B%5Cn%20%20width%3A%2019em%3B%5Cn%20%20font-size%3A%2018px%3B%5Cn%20%20color%3A%20%23ffb8c4ff%3B%5Cn%20%20overflow%3A%20hidden%3B%5Cn%20%20user-select%3A%20none%3B%5Cn%20%20white-space%3A%20nowrap%3B%5Cn%20%20border-right%3A%200.2em%20solid%20transparent%3B%20%2F*%20%E7%A9%BA%E5%87%BA%E4%B8%8E%E6%96%87%E6%9C%AC%E7%9A%84%E9%97%B4%E8%B7%9D%20*%2F%5Cn%20%20animation%3A%20typing%205s%20steps(19%2C%20end)%2C%20blink-caret%200.75s%20step-end%20infinite%3B%5Cn%7D%5Cn%5Cn%40keyframes%20typing%20%7B%5Cn%20%20from%20%7B%5Cn%20%20%20%20width%3A%200%3B%5Cn%20%20%7D%5Cn%7D%5Cn%5Cn%40keyframes%20blink-caret%20%7B%5Cn%20%20to%20%7B%5Cn%20%20%20%20box-shadow%3A%200.1em%200%200%200%20transparent%3B%5Cn%20%20%7D%5Cn%20%2050%25%20%7B%5Cn%20%20%20%20box-shadow%3A%200.1em%200%200%200%3B%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D"
-          >
-              
-              <div>
-                <div>
-<div><pre><code><span><span><span>&lt;</span>p</span><span>></span></span>前天看到了小兔子，昨天是小鹿，今天是你<span><span><span>&lt;/</span>p</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br></div></div><div><pre><code><span>p</span> <span>{</span>
-  <span>width</span><span>:</span> 19em<span>;</span>
-  <span>font-size</span><span>:</span> 18px<span>;</span>
-  <span>color</span><span>:</span> #ffb8c4ff<span>;</span>
-  <span>overflow</span><span>:</span> hidden<span>;</span>
-  <span>user-select</span><span>:</span> none<span>;</span>
-  <span>white-space</span><span>:</span> nowrap<span>;</span>
-  <span>border-right</span><span>:</span> 0.2em solid transparent<span>;</span> <span>/* 空出与文本的间距 */</span>
-  <span>animation</span><span>:</span> typing 5s <span>steps</span><span>(</span>19<span>,</span> end<span>)</span><span>,</span> blink-caret 0.75s step-end infinite<span>;</span>
-<span>}</span>
-
-<span><span>@keyframes</span> typing</span> <span>{</span>
-  <span>from</span> <span>{</span>
-    <span>width</span><span>:</span> 0<span>;</span>
-  <span>}</span>
-<span>}</span>
-
-<span><span>@keyframes</span> blink-caret</span> <span>{</span>
-  <span>to</span> <span>{</span>
-    <span>box-shadow</span><span>:</span> 0.1em 0 0 0 transparent<span>;</span>
-  <span>}</span>
-  <span>50%</span> <span>{</span>
-    <span>box-shadow</span><span>:</span> 0.1em 0 0 0<span>;</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br></div></div>
-            </div>
-          </div>
-          
-        </div>
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <category term="CSS"/>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">图片主色</title>
     <id>https://www.matrixtheone.ga/web/magic/Theme-Color/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Theme-Color/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>伪主色，放大模糊中间色调</p>
 </blockquote>
@@ -2911,14 +2850,75 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">打字效果</title>
+    <id>https://www.matrixtheone.ga/web/magic/Typing-Effect/</id>
+    <link href="https://www.matrixtheone.ga/web/magic/Typing-Effect/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <content type="html"><![CDATA[
+          <div
+            id="code-demo-20387d5e"
+           
+  
+ data-title=""
+
+            data-code="%7B%22html%22%3A%22%3Cp%3E%E5%89%8D%E5%A4%A9%E7%9C%8B%E5%88%B0%E4%BA%86%E5%B0%8F%E5%85%94%E5%AD%90%EF%BC%8C%E6%98%A8%E5%A4%A9%E6%98%AF%E5%B0%8F%E9%B9%BF%EF%BC%8C%E4%BB%8A%E5%A4%A9%E6%98%AF%E4%BD%A0%3C%2Fp%3E%5Cn%22%2C%22css%22%3A%22p%20%7B%5Cn%20%20width%3A%2019em%3B%5Cn%20%20font-size%3A%2018px%3B%5Cn%20%20color%3A%20%23ffb8c4ff%3B%5Cn%20%20overflow%3A%20hidden%3B%5Cn%20%20user-select%3A%20none%3B%5Cn%20%20white-space%3A%20nowrap%3B%5Cn%20%20border-right%3A%200.2em%20solid%20transparent%3B%20%2F*%20%E7%A9%BA%E5%87%BA%E4%B8%8E%E6%96%87%E6%9C%AC%E7%9A%84%E9%97%B4%E8%B7%9D%20*%2F%5Cn%20%20animation%3A%20typing%205s%20steps(19%2C%20end)%2C%20blink-caret%200.75s%20step-end%20infinite%3B%5Cn%7D%5Cn%5Cn%40keyframes%20typing%20%7B%5Cn%20%20from%20%7B%5Cn%20%20%20%20width%3A%200%3B%5Cn%20%20%7D%5Cn%7D%5Cn%5Cn%40keyframes%20blink-caret%20%7B%5Cn%20%20to%20%7B%5Cn%20%20%20%20box-shadow%3A%200.1em%200%200%200%20transparent%3B%5Cn%20%20%7D%5Cn%20%2050%25%20%7B%5Cn%20%20%20%20box-shadow%3A%200.1em%200%200%200%3B%5Cn%20%20%7D%5Cn%7D%5Cn%22%7D"
+          >
+              
+              <div>
+                <div>
+<div><pre><code><span><span><span>&lt;</span>p</span><span>></span></span>前天看到了小兔子，昨天是小鹿，今天是你<span><span><span>&lt;/</span>p</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code><span>p</span> <span>{</span>
+  <span>width</span><span>:</span> 19em<span>;</span>
+  <span>font-size</span><span>:</span> 18px<span>;</span>
+  <span>color</span><span>:</span> #ffb8c4ff<span>;</span>
+  <span>overflow</span><span>:</span> hidden<span>;</span>
+  <span>user-select</span><span>:</span> none<span>;</span>
+  <span>white-space</span><span>:</span> nowrap<span>;</span>
+  <span>border-right</span><span>:</span> 0.2em solid transparent<span>;</span> <span>/* 空出与文本的间距 */</span>
+  <span>animation</span><span>:</span> typing 5s <span>steps</span><span>(</span>19<span>,</span> end<span>)</span><span>,</span> blink-caret 0.75s step-end infinite<span>;</span>
+<span>}</span>
+
+<span><span>@keyframes</span> typing</span> <span>{</span>
+  <span>from</span> <span>{</span>
+    <span>width</span><span>:</span> 0<span>;</span>
+  <span>}</span>
+<span>}</span>
+
+<span><span>@keyframes</span> blink-caret</span> <span>{</span>
+  <span>to</span> <span>{</span>
+    <span>box-shadow</span><span>:</span> 0.1em 0 0 0 transparent<span>;</span>
+  <span>}</span>
+  <span>50%</span> <span>{</span>
+    <span>box-shadow</span><span>:</span> 0.1em 0 0 0<span>;</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br></div></div>
+            </div>
+          </div>
+          
+        </div>
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <category term="CSS"/>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">浏览器</title>
     <id>https://www.matrixtheone.ga/web/memo/Browser/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Browser/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-url-到页面渲染"> 1. URL 到页面渲染</h2>
 <img :src="$withBase('/images/Browser/URL 到页面渲染.png')" loading="lazy">
 <ul>
@@ -3046,14 +3046,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS</title>
     <id>https://www.matrixtheone.ga/web/memo/CSS/</id>
     <link href="https://www.matrixtheone.ga/web/memo/CSS/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-bfc"> 1. BFC</h2>
 <ul>
 <li>
@@ -3319,14 +3319,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Flutter</title>
     <id>https://www.matrixtheone.ga/web/memo/Flutter/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Flutter/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -3334,14 +3334,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">HTML</title>
     <id>https://www.matrixtheone.ga/web/memo/HTML/</id>
     <link href="https://www.matrixtheone.ga/web/memo/HTML/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-defer-与-async"> 1. defer 与 async</h2>
 <ul>
 <li>
@@ -3430,14 +3430,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">面试</title>
     <id>https://www.matrixtheone.ga/web/memo/Interview/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Interview/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-执行上下文"> 1. 执行上下文</h2>
 <div><pre><code><span>var</span> name <span>=</span> <span>'Smith'</span> <span>// 函数参数作用域或内部作用域有 name 声明，不会查找此处作用域上的 name</span>
 
@@ -3802,14 +3802,14 @@ console<span>.</span><span>log</span><span>(</span><span>'-------bfs--------'</s
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JS</title>
     <id>https://www.matrixtheone.ga/web/memo/JS/</id>
     <link href="https://www.matrixtheone.ga/web/memo/JS/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-判断方式"> 1. 判断方式</h2>
 <ul>
 <li>
@@ -4545,14 +4545,14 @@ Promise<span>.</span><span>resolve</span><span>(</span><span>6</span><span>)</sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">网络</title>
     <id>https://www.matrixtheone.ga/web/memo/Network/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Network/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-tcp"> 1. TCP</h2>
 <ul>
 <li>
@@ -4833,14 +4833,30 @@ Promise<span>.</span><span>resolve</span><span>(</span><span>6</span><span>)</sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">前端备忘录</title>
+    <id>https://www.matrixtheone.ga/web/memo/</id>
+    <link href="https://www.matrixtheone.ga/web/memo/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/情书.webp')">
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">手搓螺旋丸</title>
     <id>https://www.matrixtheone.ga/web/memo/Rasengan/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Rasengan/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-object-create"> 1. Object.create</h2>
 <ul>
 <li>2006 年，Douglas Crockford 写了一篇文章：<a href="https://www.crockford.com/javascript/prototypal.html" target="_blank" rel="noopener noreferrer">《JavaScript 中的原型式继承》</a>。</li>
@@ -5885,30 +5901,14 @@ Didact<span>.</span><span>render</span><span>(</span>element<span>,</span> conta
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">前端备忘录</title>
-    <id>https://www.matrixtheone.ga/web/memo/</id>
-    <link href="https://www.matrixtheone.ga/web/memo/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/情书.webp')">
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">React</title>
     <id>https://www.matrixtheone.ga/web/memo/React/</id>
     <link href="https://www.matrixtheone.ga/web/memo/React/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-宏观包结构"> 1. 宏观包结构</h2>
 <img :src="$withBase('/images/React/核心包关系图.png')" loading="lazy">
 <ul>
@@ -6688,14 +6688,14 @@ batchOfTasks <span>|=</span> task1 <span>// => 0b0000000000000000000000000000011
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">数据结构与算法</title>
     <id>https://www.matrixtheone.ga/web/memo/Structures-Algorithms/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Structures-Algorithms/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-中点"> 1. 中点</h2>
 <ul>
 <li><code>mid = L + ((R - L) &gt;&gt; 1)</code></li>
@@ -7100,14 +7100,14 @@ console<span>.</span><span>log</span><span>(</span>num2<span>,</span> num1 <span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Vue</title>
     <id>https://www.matrixtheone.ga/web/memo/Vue/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Vue/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-数据响应式"> 1. 数据响应式</h2>
 <ul>
 <li>
@@ -7776,14 +7776,14 @@ Object<span>.</span><span>assign</span><span>(</span><span>this</span><span>.</s
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">30 秒代码</title>
     <id>https://www.matrixtheone.ga/web/note/30SecondCode/</id>
     <link href="https://www.matrixtheone.ga/web/note/30SecondCode/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-写入-json"> 1. 写入 JSON</h2>
 <div><pre><code><span>const</span> fs <span>=</span> <span>require</span><span>(</span><span>'fs'</span><span>)</span>
 
@@ -8188,14 +8188,14 @@ recorder<span>.</span><span>start</span><span>(</span><span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JS 高级</title>
     <id>https://www.matrixtheone.ga/web/note/Advanced/</id>
     <link href="https://www.matrixtheone.ga/web/note/Advanced/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-防抖函数"> 1. 防抖函数</h2>
 <ul>
 <li>
@@ -9150,14 +9150,14 @@ light<span>.</span><span>init</span><span>(</span><span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS</title>
     <id>https://www.matrixtheone.ga/web/note/CSS/</id>
     <link href="https://www.matrixtheone.ga/web/note/CSS/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-网页字体设计"> 1. <a href="https://www.bilibili.com/video/BV1b54y1Z7pu" target="_blank" rel="noopener noreferrer">网页字体设计</a></h2>
 <div><pre><code><span><span>@font-face</span></span> <span>{</span>
   <span>font-family</span><span>:</span> Emoji<span>;</span>
@@ -9510,14 +9510,14 @@ light<span>.</span><span>init</span><span>(</span><span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Electron</title>
     <id>https://www.matrixtheone.ga/web/note/Electron/</id>
     <link href="https://www.matrixtheone.ga/web/note/Electron/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-仅启动一个程序"> 1. 仅启动一个程序</h2>
 <div><pre><code><span>if</span> <span>(</span><span>!</span>app<span>.</span><span>requestSingleInstanceLock</span><span>(</span><span>)</span><span>)</span> <span>{</span>
   app<span>.</span><span>quit</span><span>(</span><span>)</span>
@@ -9620,14 +9620,14 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">HTML</title>
     <id>https://www.matrixtheone.ga/web/note/HTML/</id>
     <link href="https://www.matrixtheone.ga/web/note/HTML/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-移动端视口配置-并且不允许缩放"> 1. 移动端视口配置，并且不允许缩放</h2>
 <div><pre><code><span><span><span>&lt;</span>meta</span>
   <span>name</span><span><span>=</span><span>"</span>viewport<span>"</span></span>
@@ -9656,14 +9656,14 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CommitLint</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Commit-Lint/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Commit-Lint/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-commitlintrc-js"> 1. .commitlintrc.js</h2>
 <div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
   <span>extends</span><span>:</span> <span>[</span><span>'@commitlint/config-conventional'</span><span>]</span><span>,</span>
@@ -9734,14 +9734,14 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">EditorConfig</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Editor-Config/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Editor-Config/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-editorconfig"> 1. .editorconfig</h2>
 <div><pre><code><span># https://editorconfig.org</span>
 <span>root</span> <span><span>=</span> true</span>
@@ -9769,14 +9769,14 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Eslintignore</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Eslint-Ignore/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Eslint-Ignore/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-eslintignore"> 1. .eslintignore</h2>
 <div><pre><code><span>tmp</span>
 <span>docs</span>
@@ -9795,14 +9795,14 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Eslint</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Eslint/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Eslint/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-eslintrc-js"> 1. .eslintrc.js</h2>
 <div><pre><code><span>const</span> tsRules <span>=</span> <span>require</span><span>(</span><span>'./rules/tsRules'</span><span>)</span>
 <span>const</span> vueRules <span>=</span> <span>require</span><span>(</span><span>'./rules/vueRules'</span><span>)</span>
@@ -10024,14 +10024,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Gitignore</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Git-Ignore/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Git-Ignore/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-gitignore"> 1. .gitignore</h2>
 <div><pre><code><span>.node</span>
 <span>.idea</span>
@@ -10063,14 +10063,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Npm</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Npm/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Npm/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -10078,14 +10078,64 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">Prettier</title>
+    <id>https://www.matrixtheone.ga/web/note/Lint/Prettier/</id>
+    <link href="https://www.matrixtheone.ga/web/note/Lint/Prettier/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-prettierrc-js"> 1. .prettierrc.js</h2>
+<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
+  <span>semi</span><span>:</span> <span>false</span><span>,</span>
+  <span>singleQuote</span><span>:</span> <span>true</span><span>,</span>
+  <span>jsxSingleQuote</span><span>:</span> <span>true</span><span>,</span>
+  <span>endOfLine</span><span>:</span> <span>'lf'</span><span>,</span>
+  <span>proseWrap</span><span>:</span> <span>'never'</span><span>,</span>
+  <span>arrowParens</span><span>:</span> <span>'always'</span><span>,</span>
+  <span>trailingComma</span><span>:</span> <span>'all'</span><span>,</span>
+  <span>plugins</span><span>:</span> <span>[</span>
+    require<span>.</span><span>resolve</span><span>(</span><span>'prettier-plugin-packagejson'</span><span>)</span><span>,</span>
+    require<span>.</span><span>resolve</span><span>(</span><span>'@trivago/prettier-plugin-sort-imports'</span><span>)</span><span>,</span>
+  <span>]</span><span>,</span>
+  <span>importOrderSortSpecifiers</span><span>:</span> <span>true</span><span>,</span>
+  <span>importOrderCaseInsensitive</span><span>:</span> <span>true</span><span>,</span>
+  <span>importOrder</span><span>:</span> <span>[</span>
+    <span>'^(react|vue)(.*)$'</span><span>,</span>
+    <span>'^umi(.*)$'</span><span>,</span>
+    <span>'^antd(.*)$'</span><span>,</span>
+    <span>'^@?ant-design(.*)$'</span><span>,</span>
+    <span>'^@?element(.*)$'</span><span>,</span>
+    <span>'&lt;THIRD_PARTY_MODULES>'</span><span>,</span>
+    <span>'^@/components(.*)$'</span><span>,</span>
+    <span>'^@/models(.*)$'</span><span>,</span>
+    <span>'^@/assets(.*)$'</span><span>,</span>
+    <span>'^@/common(.*)$'</span><span>,</span>
+    <span>'^@/constant(.*)$'</span><span>,</span>
+    <span>'^@/services(.*)$'</span><span>,</span>
+    <span>'^@/hooks(.*)$'</span><span>,</span>
+    <span>'^@/utils(.*)$'</span><span>,</span>
+    <span>'^@/(.*)$'</span><span>,</span>
+  <span>]</span><span>,</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br></div></div>]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <category term="Lint"/>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Stylelint</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Stylelint/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Stylelint/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-stylelintrc-js"> 1. .stylelintrc.js</h2>
 <div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
   <span>extends</span><span>:</span> <span>[</span>
@@ -10156,64 +10206,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">Prettier</title>
-    <id>https://www.matrixtheone.ga/web/note/Lint/Prettier/</id>
-    <link href="https://www.matrixtheone.ga/web/note/Lint/Prettier/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-prettierrc-js"> 1. .prettierrc.js</h2>
-<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
-  <span>semi</span><span>:</span> <span>false</span><span>,</span>
-  <span>singleQuote</span><span>:</span> <span>true</span><span>,</span>
-  <span>jsxSingleQuote</span><span>:</span> <span>true</span><span>,</span>
-  <span>endOfLine</span><span>:</span> <span>'lf'</span><span>,</span>
-  <span>proseWrap</span><span>:</span> <span>'never'</span><span>,</span>
-  <span>arrowParens</span><span>:</span> <span>'always'</span><span>,</span>
-  <span>trailingComma</span><span>:</span> <span>'all'</span><span>,</span>
-  <span>plugins</span><span>:</span> <span>[</span>
-    require<span>.</span><span>resolve</span><span>(</span><span>'prettier-plugin-packagejson'</span><span>)</span><span>,</span>
-    require<span>.</span><span>resolve</span><span>(</span><span>'@trivago/prettier-plugin-sort-imports'</span><span>)</span><span>,</span>
-  <span>]</span><span>,</span>
-  <span>importOrderSortSpecifiers</span><span>:</span> <span>true</span><span>,</span>
-  <span>importOrderCaseInsensitive</span><span>:</span> <span>true</span><span>,</span>
-  <span>importOrder</span><span>:</span> <span>[</span>
-    <span>'^(react|vue)(.*)$'</span><span>,</span>
-    <span>'^umi(.*)$'</span><span>,</span>
-    <span>'^antd(.*)$'</span><span>,</span>
-    <span>'^@?ant-design(.*)$'</span><span>,</span>
-    <span>'^@?element(.*)$'</span><span>,</span>
-    <span>'&lt;THIRD_PARTY_MODULES>'</span><span>,</span>
-    <span>'^@/components(.*)$'</span><span>,</span>
-    <span>'^@/models(.*)$'</span><span>,</span>
-    <span>'^@/assets(.*)$'</span><span>,</span>
-    <span>'^@/common(.*)$'</span><span>,</span>
-    <span>'^@/constant(.*)$'</span><span>,</span>
-    <span>'^@/services(.*)$'</span><span>,</span>
-    <span>'^@/hooks(.*)$'</span><span>,</span>
-    <span>'^@/utils(.*)$'</span><span>,</span>
-    <span>'^@/(.*)$'</span><span>,</span>
-  <span>]</span><span>,</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br></div></div>]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <category term="Lint"/>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">TsConfig</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/TS-Config/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/TS-Config/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-tsconfig-json"> 1. tsconfig.json</h2>
 <div><pre><code><span>{</span>
   <span>"compilerOptions"</span><span>:</span> <span>{</span>
@@ -10260,14 +10260,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Next</title>
     <id>https://www.matrixtheone.ga/web/note/Next/</id>
     <link href="https://www.matrixtheone.ga/web/note/Next/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -10275,14 +10275,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Nginx</title>
     <id>https://www.matrixtheone.ga/web/note/Nginx/</id>
     <link href="https://www.matrixtheone.ga/web/note/Nginx/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-http-缓存"> 1. HTTP 缓存</h2>
 <div><pre><code><span><span>server</span></span> <span>{</span>
   <span># 不缓存html</span>
@@ -10372,29 +10372,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">Nuxt</title>
-    <id>https://www.matrixtheone.ga/web/note/Nuxt/</id>
-    <link href="https://www.matrixtheone.ga/web/note/Nuxt/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <category term="Nuxt"/>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Node</title>
     <id>https://www.matrixtheone.ga/web/note/Node/</id>
     <link href="https://www.matrixtheone.ga/web/note/Node/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -10402,14 +10387,29 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">Nuxt</title>
+    <id>https://www.matrixtheone.ga/web/note/Nuxt/</id>
+    <link href="https://www.matrixtheone.ga/web/note/Nuxt/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <category term="Nuxt"/>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">项目笔记</title>
     <id>https://www.matrixtheone.ga/web/note/README%20copy/</id>
     <link href="https://www.matrixtheone.ga/web/note/README%20copy/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/水浒传.webp')">
 ]]></content>
     <author>
@@ -10418,14 +10418,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">前端笔记</title>
     <id>https://www.matrixtheone.ga/web/note/</id>
     <link href="https://www.matrixtheone.ga/web/note/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/头文字D.webp')">
 ]]></content>
     <author>
@@ -10434,14 +10434,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">业务</title>
     <id>https://www.matrixtheone.ga/web/note/React/Business/</id>
     <link href="https://www.matrixtheone.ga/web/note/React/Business/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-扫码盒微信-支付宝支付"> 1. 扫码盒微信/支付宝支付</h2>
 <div><pre><code><span>import</span> React<span>,</span> <span>{</span> useEffect<span>,</span> useRef<span>,</span> useState <span>}</span> <span>from</span> <span>'react'</span>
 <span>import</span> <span>{</span> Input<span>,</span> message<span>,</span> Modal <span>}</span> <span>from</span> <span>'antd'</span>
@@ -10594,14 +10594,14 @@ window<span>.</span><span>addEventListener</span><span>(</span><span>'devtoolsch
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Components</title>
     <id>https://www.matrixtheone.ga/web/note/React/Components/</id>
     <link href="https://www.matrixtheone.ga/web/note/React/Components/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-protable"> 1. ProTable</h2>
 <ul>
 <li>基于 Ant-Pro 封装，新增删除最后一项自动翻页、参数字段名称转换，修复 ProTable 清空时为空字符串和空数组的 BUG。</li>
@@ -11201,14 +11201,14 @@ export default Tinymce
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Config</title>
     <id>https://www.matrixtheone.ga/web/note/React/Config/</id>
     <link href="https://www.matrixtheone.ga/web/note/React/Config/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-umi-排除-antd-打包"> 1. Umi 排除 Antd 打包</h2>
 <ul>
 <li>externalAntd.js</li>
@@ -11290,14 +11290,14 @@ pagePath<span>.</span><span>map</span><span>(</span><span>path</span> <span>=></
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Hooks</title>
     <id>https://www.matrixtheone.ga/web/note/React/Hooks/</id>
     <link href="https://www.matrixtheone.ga/web/note/React/Hooks/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-antd-table-自适应屏幕高度"> 1. Antd-Table 自适应屏幕高度</h2>
 <div><pre><code><span>import</span> <span>{</span> useEffect<span>,</span> useRef <span>}</span> <span>from</span> <span>'react'</span>
 <span>import</span> <span>{</span> isObject <span>}</span> <span>from</span> <span>'lodash'</span>
@@ -11434,14 +11434,14 @@ pagePath<span>.</span><span>map</span><span>(</span><span>path</span> <span>=></
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">React</title>
     <id>https://www.matrixtheone.ga/web/note/React/</id>
     <link href="https://www.matrixtheone.ga/web/note/React/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/星际穿越.webp')">
 ]]></content>
     <author>
@@ -11450,93 +11450,14 @@ pagePath<span>.</span><span>map</span><span>(</span><span>path</span> <span>=></
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">APP</title>
-    <id>https://www.matrixtheone.ga/web/note/Uni-App/App/</id>
-    <link href="https://www.matrixtheone.ga/web/note/Uni-App/App/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-android-证书生成网址"> 1. Android 证书生成网址</h2>
-<ul>
-<li>
-<ol>
-<li><a href="https://www.yunedit.com/" target="_blank" rel="noopener noreferrer">香蕉云编</a></li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li><a href="http://www.applicationloader.net/appuploader/keystore.php" target="_blank" rel="noopener noreferrer">applicationloader</a></li>
-</ol>
-</li>
-</ul>
-<h2 id="_2-版本更新-plugin"> 2. 版本更新 <a href="https://ext.dcloud.net.cn/plugin?id=4405" target="_blank" rel="noopener noreferrer">plugin</a></h2>
-<ul>
-<li>
-<p>main.js。</p>
-<div><pre><code><span>import</span> Version <span>from</span> <span>'./js_sdk/swfq-notification-progress/notification/version'</span>
-
-<span>Vue</span><span>.</span>prototype<span>.</span>Version <span>=</span> Version
-
-<span>const</span> app <span>=</span> <span>new</span> <span>Vue</span><span>(</span><span>{</span>
-  <span>...</span>App<span>,</span>
-  store<span>,</span>
-  Version<span>,</span>
-<span>}</span><span>)</span>
-app<span>.</span><span>$mount</span><span>(</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div></li>
-<li>
-<p>home.vue。</p>
-<blockquote>
-<p>在 Vuex 获取/存储新版本信息（newestVersion）。</p>
-</blockquote>
-<div><pre><code><span>/**
- * @description: 检测版本
- * @author: ljw
- */</span>
-<span>detectionVersion</span><span>(</span><span>)</span> <span>{</span>
-  <span>const</span> <span>{</span> ios_version_code<span>,</span> android_version_code <span>}</span> <span>=</span> <span>this</span><span>.</span>newestVersion
-  <span>if</span> <span>(</span>uni<span>.</span><span>getSystemInfoSync</span><span>(</span><span>)</span><span>.</span>platform <span>===</span> <span>'android'</span><span>)</span> <span>{</span>
-    <span>if</span> <span>(</span>plus<span>.</span>runtime<span>.</span>versionCode <span>&lt;</span> android_version_code<span>)</span>
-      <span>this</span><span>.</span>visible <span>=</span> <span>true</span>
-  <span>}</span> <span>else</span> <span>{</span>
-    <span>if</span> <span>(</span>plus<span>.</span>runtime<span>.</span>versionCode <span>&lt;</span> ios_version_code<span>)</span> <span>this</span><span>.</span>visible <span>=</span> <span>true</span>
-  <span>}</span>
-<span>}</span><span>,</span>
-<span>/**
- * @description: 下载新版本
- * @author: ljw
- */</span>
-<span>downloadApp</span><span>(</span><span>)</span> <span>{</span>
-  <span>const</span> <span>{</span> ios_url<span>,</span> android_url <span>}</span> <span>=</span> <span>this</span><span>.</span>newestVersion
-  <span>this</span><span>.</span>visible <span>=</span> <span>false</span>
-  <span>if</span> <span>(</span>uni<span>.</span><span>getSystemInfoSync</span><span>(</span><span>)</span><span>.</span>platform <span>===</span> <span>'android'</span><span>)</span> <span>{</span>
-    <span>this</span><span>.</span>Version<span>.</span><span>downloadApkAndShowProgressForUpdate</span><span>(</span>android_url<span>)</span>
-  <span>}</span> <span>else</span> <span>{</span>
-    plus<span>.</span>runtime<span>.</span><span>openURL</span><span>(</span>ios_url<span>)</span>
-  <span>}</span>
-<span>}</span><span>,</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div></li>
-</ul>
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <category term="App"/>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">TS</title>
     <id>https://www.matrixtheone.ga/web/note/TS/</id>
     <link href="https://www.matrixtheone.ga/web/note/TS/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-类型查看展开"> 1. <a href="https://stackoverflow.com/questions/57683303/how-can-i-see-the-full-expanded-contract-of-a-typescript-type/57683652" target="_blank" rel="noopener noreferrer">类型查看展开</a></h2>
 <div><pre><code><span>type</span> <span>Expand<span>&lt;</span><span>T</span><span>></span></span> <span>=</span> <span>T</span> <span>extends</span> <span><span>infer</span></span> <span>O</span> <span>?</span> <span>{</span> <span>[</span><span>K</span> <span>in</span> <span>keyof</span> <span>O</span><span>]</span><span>:</span> <span>O</span><span>[</span><span>K</span><span>]</span> <span>}</span> <span>:</span> <span>never</span>
 
@@ -11827,14 +11748,93 @@ todo<span>.</span>completed <span>=</span> <span>true</span> <span>// OK</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">APP</title>
+    <id>https://www.matrixtheone.ga/web/note/Uni-App/App/</id>
+    <link href="https://www.matrixtheone.ga/web/note/Uni-App/App/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-android-证书生成网址"> 1. Android 证书生成网址</h2>
+<ul>
+<li>
+<ol>
+<li><a href="https://www.yunedit.com/" target="_blank" rel="noopener noreferrer">香蕉云编</a></li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li><a href="http://www.applicationloader.net/appuploader/keystore.php" target="_blank" rel="noopener noreferrer">applicationloader</a></li>
+</ol>
+</li>
+</ul>
+<h2 id="_2-版本更新-plugin"> 2. 版本更新 <a href="https://ext.dcloud.net.cn/plugin?id=4405" target="_blank" rel="noopener noreferrer">plugin</a></h2>
+<ul>
+<li>
+<p>main.js。</p>
+<div><pre><code><span>import</span> Version <span>from</span> <span>'./js_sdk/swfq-notification-progress/notification/version'</span>
+
+<span>Vue</span><span>.</span>prototype<span>.</span>Version <span>=</span> Version
+
+<span>const</span> app <span>=</span> <span>new</span> <span>Vue</span><span>(</span><span>{</span>
+  <span>...</span>App<span>,</span>
+  store<span>,</span>
+  Version<span>,</span>
+<span>}</span><span>)</span>
+app<span>.</span><span>$mount</span><span>(</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div></li>
+<li>
+<p>home.vue。</p>
+<blockquote>
+<p>在 Vuex 获取/存储新版本信息（newestVersion）。</p>
+</blockquote>
+<div><pre><code><span>/**
+ * @description: 检测版本
+ * @author: ljw
+ */</span>
+<span>detectionVersion</span><span>(</span><span>)</span> <span>{</span>
+  <span>const</span> <span>{</span> ios_version_code<span>,</span> android_version_code <span>}</span> <span>=</span> <span>this</span><span>.</span>newestVersion
+  <span>if</span> <span>(</span>uni<span>.</span><span>getSystemInfoSync</span><span>(</span><span>)</span><span>.</span>platform <span>===</span> <span>'android'</span><span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>plus<span>.</span>runtime<span>.</span>versionCode <span>&lt;</span> android_version_code<span>)</span>
+      <span>this</span><span>.</span>visible <span>=</span> <span>true</span>
+  <span>}</span> <span>else</span> <span>{</span>
+    <span>if</span> <span>(</span>plus<span>.</span>runtime<span>.</span>versionCode <span>&lt;</span> ios_version_code<span>)</span> <span>this</span><span>.</span>visible <span>=</span> <span>true</span>
+  <span>}</span>
+<span>}</span><span>,</span>
+<span>/**
+ * @description: 下载新版本
+ * @author: ljw
+ */</span>
+<span>downloadApp</span><span>(</span><span>)</span> <span>{</span>
+  <span>const</span> <span>{</span> ios_url<span>,</span> android_url <span>}</span> <span>=</span> <span>this</span><span>.</span>newestVersion
+  <span>this</span><span>.</span>visible <span>=</span> <span>false</span>
+  <span>if</span> <span>(</span>uni<span>.</span><span>getSystemInfoSync</span><span>(</span><span>)</span><span>.</span>platform <span>===</span> <span>'android'</span><span>)</span> <span>{</span>
+    <span>this</span><span>.</span>Version<span>.</span><span>downloadApkAndShowProgressForUpdate</span><span>(</span>android_url<span>)</span>
+  <span>}</span> <span>else</span> <span>{</span>
+    plus<span>.</span>runtime<span>.</span><span>openURL</span><span>(</span>ios_url<span>)</span>
+  <span>}</span>
+<span>}</span><span>,</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div></li>
+</ul>
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <category term="App"/>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Config</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/Config/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/Config/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-环境配置"> 1. 环境配置</h2>
 <ul>
 <li>
@@ -11944,14 +11944,14 @@ module<span>.</span>exports <span>=</span> <span>UNI_ENV</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">H5</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/H5/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/H5/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-h5-调用百度地图-api-跨域"> 1. H5 调用百度地图 api 跨域</h2>
 <ul>
 <li>
@@ -12138,14 +12138,14 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">备忘录</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/Memo/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/Memo/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-webview"> 1. WebView</h2>
 <ul>
 <li>空地址会导致 WebView 错误跳转，使用 v-if 解决。</li>
@@ -12219,14 +12219,14 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">小程序</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/Mini-Program/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/Mini-Program/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-解决-onreachbottom-350ms-频繁触发"> 1. 解决 onReachBottom 350ms 频繁触发</h2>
 <div><pre><code><span>onReachBottom</span><span>(</span><span>)</span> <span>{</span>
   <span>setTimeout</span><span>(</span><span>this</span><span>.</span>loadSaleInfo<span>,</span> <span>400</span><span>)</span>
@@ -12424,14 +12424,14 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Uni-App</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/盗梦空间.webp')">
 ]]></content>
     <author>
@@ -12440,56 +12440,14 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">Browser</title>
-    <id>https://www.matrixtheone.ga/web/note/Utils/Browser/</id>
-    <link href="https://www.matrixtheone.ga/web/note/Utils/Browser/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-获取设备类型"> 1. 获取设备类型</h2>
-<div><pre><code><span>/**
- * @return {string} Mobile | Desktop
- */</span>
-<span>export</span> <span>const</span> <span>getDeviceType</span> <span>=</span> <span>(</span><span>)</span> <span>=></span>
-  <span><span>/</span><span>Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini</span><span>/</span><span>i</span></span><span>.</span><span>test</span><span>(</span>
-    navigator<span>.</span>userAgent<span>,</span>
-  <span>)</span>
-    <span>?</span> <span>'Mobile'</span>
-    <span>:</span> <span>'Desktop'</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h2 id="_2-检测浏览器是否刷新"> 2. 检测浏览器是否刷新</h2>
-<div><pre><code><span>/**
- * @return {boolean} true | false
- */</span>
-<span>export</span> <span>const</span> <span>checkReload</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>return</span> <span>(</span>
-    window<span>.</span>performance<span>.</span>navigation<span>?.</span>type <span>===</span> <span>1</span> <span>||</span>
-    <span>(</span>
-      window<span>.</span>performance<span>.</span><span>getEntriesByType</span><span>(</span>
-        <span>'navigation'</span><span>,</span>
-      <span>)</span><span>[</span><span>0</span><span>]</span> <span>as</span> PerformanceNavigationTiming
-    <span>)</span><span>?.</span>type <span>===</span> <span>'reload'</span>
-  <span>)</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <category term="Utils"/>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Utils</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/Utils/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/Utils/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-fly-请求封装"> 1. Fly 请求封装</h2>
 <ul>
 <li><a href="https://wendux.github.io/dist/#/doc/flyio/readme" target="_blank" rel="noopener noreferrer">DOC</a></li>
@@ -12693,14 +12651,56 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">Browser</title>
+    <id>https://www.matrixtheone.ga/web/note/Utils/Browser/</id>
+    <link href="https://www.matrixtheone.ga/web/note/Utils/Browser/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-获取设备类型"> 1. 获取设备类型</h2>
+<div><pre><code><span>/**
+ * @return {string} Mobile | Desktop
+ */</span>
+<span>export</span> <span>const</span> <span>getDeviceType</span> <span>=</span> <span>(</span><span>)</span> <span>=></span>
+  <span><span>/</span><span>Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini</span><span>/</span><span>i</span></span><span>.</span><span>test</span><span>(</span>
+    navigator<span>.</span>userAgent<span>,</span>
+  <span>)</span>
+    <span>?</span> <span>'Mobile'</span>
+    <span>:</span> <span>'Desktop'</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h2 id="_2-检测浏览器是否刷新"> 2. 检测浏览器是否刷新</h2>
+<div><pre><code><span>/**
+ * @return {boolean} true | false
+ */</span>
+<span>export</span> <span>const</span> <span>checkReload</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>return</span> <span>(</span>
+    window<span>.</span>performance<span>.</span>navigation<span>?.</span>type <span>===</span> <span>1</span> <span>||</span>
+    <span>(</span>
+      window<span>.</span>performance<span>.</span><span>getEntriesByType</span><span>(</span>
+        <span>'navigation'</span><span>,</span>
+      <span>)</span><span>[</span><span>0</span><span>]</span> <span>as</span> PerformanceNavigationTiming
+    <span>)</span><span>?.</span>type <span>===</span> <span>'reload'</span>
+  <span>)</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <category term="Utils"/>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Common</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Common/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Common/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-await-错误处理"> 1. await 错误处理</h2>
 <div><pre><code><span>/**
  * @param {Promise&lt;any>} promise
@@ -12720,14 +12720,14 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Document</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Document/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Document/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-检测内容是否溢出"> 1. 检测内容是否溢出</h2>
 <div><pre><code><span>/**
  * @param {Element} element
@@ -12748,14 +12748,14 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Download</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Download/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Download/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-下载文件"> 1. 下载文件</h2>
 <div><pre><code><span>/**
  * @param {string} url 下载链接
@@ -12802,14 +12802,76 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">Numeral</title>
+    <id>https://www.matrixtheone.ga/web/note/Utils/Numeral/</id>
+    <link href="https://www.matrixtheone.ga/web/note/Utils/Numeral/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-四舍五入"> 1. 四舍五入</h2>
+<div><pre><code><span>/**
+ * @param {number | string} num 值
+ * @param {number} reserved 保留位数，默认值：2
+ * @return {string} string
+ */</span>
+<span>export</span> <span>const</span> <span>round</span> <span>=</span> <span>(</span>num<span>?</span><span>:</span> <span>number</span> <span>|</span> <span>string</span><span>,</span> reserved<span>:</span> <span>number</span> <span>=</span> <span>2</span><span>)</span> <span>=></span> <span>{</span>
+  <span>const</span> pureNum <span>=</span> <span>Number</span><span>(</span>num<span>)</span>
+  <span>if</span> <span>(</span><span>!</span>num <span>||</span> Number<span>.</span><span>isNaN</span><span>(</span>pureNum<span>)</span><span>)</span> <span>return</span> num<span>?.</span><span>toString</span><span>(</span><span>)</span> <span>||</span> <span>''</span>
+
+  <span>return</span> <span>(</span>
+    Math<span>.</span><span>round</span><span>(</span>pureNum <span>*</span> Math<span>.</span><span>pow</span><span>(</span><span>10</span><span>,</span> reserved<span>)</span><span>)</span> <span>/</span> Math<span>.</span><span>pow</span><span>(</span><span>10</span><span>,</span> reserved<span>)</span>
+  <span>)</span><span>.</span><span>toFixed</span><span>(</span>reserved<span>)</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h2 id="_2-单位格式化"> 2. 单位格式化</h2>
+<div><pre><code><span>import</span> <span>{</span> round <span>}</span> <span>from</span> <span>'lodash'</span>
+
+<span>/**
+ * @param {number | string} num 值
+ * @param {number} reserved 保留位数，默认值：2
+ * @return {string} string
+ */</span>
+<span>export</span> <span>const</span> <span>monetization</span> <span>=</span> <span>(</span>num<span>?</span><span>:</span> <span>number</span> <span>|</span> <span>string</span><span>,</span> reserved<span>:</span> <span>number</span> <span>=</span> <span>2</span><span>)</span> <span>=></span> <span>{</span>
+  <span>const</span> pureNum <span>=</span> <span>Number</span><span>(</span>num<span>)</span>
+  <span>if</span> <span>(</span><span>!</span>num <span>||</span> Number<span>.</span><span>isNaN</span><span>(</span>pureNum<span>)</span><span>)</span> <span>return</span> num<span>?.</span><span>toString</span><span>(</span><span>)</span> <span>||</span> <span>''</span>
+
+  <span>const</span> <span>{</span> length <span>}</span> <span>=</span> Number<span>.</span><span>parseInt</span><span>(</span>pureNum<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>.</span><span>toString</span><span>(</span><span>)</span>
+  <span>switch</span> <span>(</span><span>true</span><span>)</span> <span>{</span>
+    <span>case</span> length <span>></span> <span>12</span><span>:</span>
+      <span>return</span> <span>convertUnit</span><span>(</span><span>12</span><span>,</span> <span>'万亿'</span><span>)</span>
+    <span>case</span> length <span>></span> <span>8</span><span>:</span>
+      <span>return</span> <span>convertUnit</span><span>(</span><span>8</span><span>,</span> <span>'亿'</span><span>)</span>
+    <span>case</span> length <span>></span> <span>4</span><span>:</span>
+      <span>return</span> <span>convertUnit</span><span>(</span><span>4</span><span>,</span> <span>'万'</span><span>)</span>
+    <span>default</span><span>:</span>
+      <span>return</span> <span>round</span><span>(</span>pureNum<span>,</span> reserved<span>)</span><span>.</span><span>toString</span><span>(</span><span>)</span>
+  <span>}</span>
+
+  <span>function</span> <span>convertUnit</span><span>(</span>digit<span>:</span> <span>number</span><span>,</span> unit<span>:</span> <span>string</span> <span>=</span> <span>''</span><span>)</span> <span>{</span>
+    <span>const</span> divisor <span>=</span> pureNum <span>/</span> Math<span>.</span><span>pow</span><span>(</span><span>10</span><span>,</span> digit<span>)</span>
+    <span>return</span> <span><span>`</span><span><span>${</span><span>round</span><span>(</span>divisor<span>,</span> reserved<span>)</span><span>}</span></span><span><span>${</span>unit<span>}</span></span><span>`</span></span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br></div></div><h2 id="_3-numeraljs"> 3. <a href="http://numeraljs.com/" target="_blank" rel="noopener noreferrer">numeraljs</a></h2>
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <category term="Utils"/>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Request</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Request/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Request/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-request"> 1. Request</h2>
 <ul>
 <li><a href="https://axios-http.com/zh/docs/intro" target="_blank" rel="noopener noreferrer">Axios</a></li>
@@ -12975,76 +13037,14 @@ request<span>.</span>interceptors<span>.</span>response<span>.</span><span>use</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">Numeral</title>
-    <id>https://www.matrixtheone.ga/web/note/Utils/Numeral/</id>
-    <link href="https://www.matrixtheone.ga/web/note/Utils/Numeral/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-四舍五入"> 1. 四舍五入</h2>
-<div><pre><code><span>/**
- * @param {number | string} num 值
- * @param {number} reserved 保留位数，默认值：2
- * @return {string} string
- */</span>
-<span>export</span> <span>const</span> <span>round</span> <span>=</span> <span>(</span>num<span>?</span><span>:</span> <span>number</span> <span>|</span> <span>string</span><span>,</span> reserved<span>:</span> <span>number</span> <span>=</span> <span>2</span><span>)</span> <span>=></span> <span>{</span>
-  <span>const</span> pureNum <span>=</span> <span>Number</span><span>(</span>num<span>)</span>
-  <span>if</span> <span>(</span><span>!</span>num <span>||</span> Number<span>.</span><span>isNaN</span><span>(</span>pureNum<span>)</span><span>)</span> <span>return</span> num<span>?.</span><span>toString</span><span>(</span><span>)</span> <span>||</span> <span>''</span>
-
-  <span>return</span> <span>(</span>
-    Math<span>.</span><span>round</span><span>(</span>pureNum <span>*</span> Math<span>.</span><span>pow</span><span>(</span><span>10</span><span>,</span> reserved<span>)</span><span>)</span> <span>/</span> Math<span>.</span><span>pow</span><span>(</span><span>10</span><span>,</span> reserved<span>)</span>
-  <span>)</span><span>.</span><span>toFixed</span><span>(</span>reserved<span>)</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h2 id="_2-单位格式化"> 2. 单位格式化</h2>
-<div><pre><code><span>import</span> <span>{</span> round <span>}</span> <span>from</span> <span>'lodash'</span>
-
-<span>/**
- * @param {number | string} num 值
- * @param {number} reserved 保留位数，默认值：2
- * @return {string} string
- */</span>
-<span>export</span> <span>const</span> <span>monetization</span> <span>=</span> <span>(</span>num<span>?</span><span>:</span> <span>number</span> <span>|</span> <span>string</span><span>,</span> reserved<span>:</span> <span>number</span> <span>=</span> <span>2</span><span>)</span> <span>=></span> <span>{</span>
-  <span>const</span> pureNum <span>=</span> <span>Number</span><span>(</span>num<span>)</span>
-  <span>if</span> <span>(</span><span>!</span>num <span>||</span> Number<span>.</span><span>isNaN</span><span>(</span>pureNum<span>)</span><span>)</span> <span>return</span> num<span>?.</span><span>toString</span><span>(</span><span>)</span> <span>||</span> <span>''</span>
-
-  <span>const</span> <span>{</span> length <span>}</span> <span>=</span> Number<span>.</span><span>parseInt</span><span>(</span>pureNum<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>.</span><span>toString</span><span>(</span><span>)</span>
-  <span>switch</span> <span>(</span><span>true</span><span>)</span> <span>{</span>
-    <span>case</span> length <span>></span> <span>12</span><span>:</span>
-      <span>return</span> <span>convertUnit</span><span>(</span><span>12</span><span>,</span> <span>'万亿'</span><span>)</span>
-    <span>case</span> length <span>></span> <span>8</span><span>:</span>
-      <span>return</span> <span>convertUnit</span><span>(</span><span>8</span><span>,</span> <span>'亿'</span><span>)</span>
-    <span>case</span> length <span>></span> <span>4</span><span>:</span>
-      <span>return</span> <span>convertUnit</span><span>(</span><span>4</span><span>,</span> <span>'万'</span><span>)</span>
-    <span>default</span><span>:</span>
-      <span>return</span> <span>round</span><span>(</span>pureNum<span>,</span> reserved<span>)</span><span>.</span><span>toString</span><span>(</span><span>)</span>
-  <span>}</span>
-
-  <span>function</span> <span>convertUnit</span><span>(</span>digit<span>:</span> <span>number</span><span>,</span> unit<span>:</span> <span>string</span> <span>=</span> <span>''</span><span>)</span> <span>{</span>
-    <span>const</span> divisor <span>=</span> pureNum <span>/</span> Math<span>.</span><span>pow</span><span>(</span><span>10</span><span>,</span> digit<span>)</span>
-    <span>return</span> <span><span>`</span><span><span>${</span><span>round</span><span>(</span>divisor<span>,</span> reserved<span>)</span><span>}</span></span><span><span>${</span>unit<span>}</span></span><span>`</span></span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br></div></div><h2 id="_3-numeraljs"> 3. <a href="http://numeraljs.com/" target="_blank" rel="noopener noreferrer">numeraljs</a></h2>
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <category term="Utils"/>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Store</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Store/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Store/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-store"> 1. Store</h2>
 <ul>
 <li>新增有效期设置，<a href="https://localforage.docschina.org/" target="_blank" rel="noopener noreferrer">localforage</a></li>
@@ -13099,14 +13099,14 @@ request<span>.</span>interceptors<span>.</span>response<span>.</span><span>use</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">业务</title>
     <id>https://www.matrixtheone.ga/web/note/Vue/Business/</id>
     <link href="https://www.matrixtheone.ga/web/note/Vue/Business/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-json-导出为-excel"> 1. JSON 导出为 Excel</h2>
 <div><pre><code><span>import</span> <span>{</span> export_json_to_excel <span>as</span> exportJsonToExcel <span>}</span> <span>from</span> <span>'@/plugins/Export2Excel'</span>
 
@@ -13196,14 +13196,14 @@ request<span>.</span>interceptors<span>.</span>response<span>.</span><span>use</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Config</title>
     <id>https://www.matrixtheone.ga/web/note/Vue/Config/</id>
     <link href="https://www.matrixtheone.ga/web/note/Vue/Config/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-index-html"> 1. index.html</h2>
 <div><pre><code><span><span>&lt;!</span><span>DOCTYPE</span> <span>html</span><span>></span></span>
 <span><span><span>&lt;</span>html</span> <span>lang</span><span><span>=</span><span>"</span>zh-cmn-Hans<span>"</span></span><span>></span></span>
@@ -13406,14 +13406,30 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">Vue</title>
+    <id>https://www.matrixtheone.ga/web/note/Vue/</id>
+    <link href="https://www.matrixtheone.ga/web/note/Vue/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/黑暗骑士.webp')">
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Utils</title>
     <id>https://www.matrixtheone.ga/web/note/Vue/Utils/</id>
     <link href="https://www.matrixtheone.ga/web/note/Vue/Utils/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-directive"> 1. directive</h2>
 <ul>
 <li>
@@ -13519,30 +13535,14 @@ Object<span>.</span><span>keys</span><span>(</span>directives<span>)</span><span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">Vue</title>
-    <id>https://www.matrixtheone.ga/web/note/Vue/</id>
-    <link href="https://www.matrixtheone.ga/web/note/Vue/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/黑暗骑士.webp')">
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Webpack</title>
     <id>https://www.matrixtheone.ga/web/note/Webpack/</id>
     <link href="https://www.matrixtheone.ga/web/note/Webpack/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-webpack-配置"> 1. Webpack 配置</h2>
 <ul>
 <li>
@@ -14309,70 +14309,70 @@ module<span>.</span>exports <span>=</span> hooks
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">算法（第四版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/Algorithms/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Algorithms/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">区块链开发实战</title>
     <id>https://www.matrixtheone.ga/web/note/books/Blockchain/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Blockchain/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS 权威指南（上）</title>
     <id>https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol1/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol1/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS 权威指南（下）</title>
     <id>https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol2/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol2/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS 揭秘</title>
     <id>https://www.matrixtheone.ga/web/note/books/CSS-Secrets/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/CSS-Secrets/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-尽量减少代码重复"> 1. 尽量减少代码重复</h2>
 <ul>
 <li>代码易维护 vs 代码量少</li>
@@ -15383,14 +15383,28 @@ dd</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">漫画算法 - 小灰的算法之旅</title>
+    <id>https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol1/</id>
+    <link href="https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol1/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS 世界</title>
     <id>https://www.matrixtheone.ga/web/note/books/CSS-World/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/CSS-World/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-了解-css-世界中的-未定义行为"> 1. 了解 CSS 世界中的 “未定义行为”</h2>
 <ul>
 <li>像<code>&lt;a&gt;</code>、<code>&lt;button&gt;</code>这样的元素，当我们使用键盘进行 Tab 键切换的时候，是可以被 focus 的，表现为虚框或者外发光，这类元素称为 “焦点元素”。非焦点元素指没有设置 tabindex 属性的<code>&lt;div&gt;</code>、<code>&lt;span&gt;</code>等普通元素。</li>
@@ -16305,56 +16319,187 @@ root<span>.</span>style<span>.</span>borderRight <span>=</span> <span>''</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">漫画算法 - 小灰的算法进阶</title>
     <id>https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol2/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol2/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">漫画算法 - 小灰的算法之旅</title>
-    <id>https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol1/</id>
-    <link href="https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol1/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">深入理解 JavaScript</title>
     <id>https://www.matrixtheone.ga/web/note/books/Depth-JS/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Depth-JS/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">算法图解</title>
+    <id>https://www.matrixtheone.ga/web/note/books/Grokking-Algorithms/</id>
+    <link href="https://www.matrixtheone.ga/web/note/books/Grokking-Algorithms/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-算法简介"> 1. 算法简介</h2>
+<ul>
+<li>
+<p>大 O 表示法是一种特殊的表示法，指出了算法的速度有多快。</p>
+</li>
+<li>
+<p>大 O 表示法指的并非以秒为单位的速度。大 O 表示法让你能够比较操作数，它指出了算法运行时间的增速。</p>
+</li>
+<li>
+<p>一些常见的大 O 运行时间。</p>
+<ol>
+<li>O(log n)，也叫对数时间，这样的算法包括二分查找。</li>
+<li>O(n)，也叫线性时间，这样的算法包括简单查找。</li>
+<li>O(n * log n)，这样的算法包括第 4 章将介绍的快速排序 —— 一种速度较快的排序算法。</li>
+<li>O(n 2 )，这样的算法包括第 2 章将介绍的选择排序 —— 一种速度较慢的排序算法。</li>
+<li>O(n!)，这样的算法包括接下来将介绍的旅行商问题的解决方案 —— 一种非常慢的算法。</li>
+</ol>
+</li>
+<li>
+<p>小结：</p>
+<ol>
+<li>二分查找的速度比简单查找快得多。</li>
+<li>O(log n)比 O(n)快。需要搜索的元素越多，前者比后者就快得越多。</li>
+<li>算法运行时间并不以秒为单位。</li>
+<li>算法运行时间是从其增速的角度度量的。</li>
+<li>算法运行时间用大 O 表示法表示。</li>
+</ol>
+</li>
+</ul>
+<h2 id="_2-选择排序"> 2. 选择排序</h2>
+<ul>
+<li>
+<p>小结：</p>
+<ol>
+<li>数组的元素都在一起。</li>
+<li>链表的元素是分开的，其中每个元素都存储了下一个元素的地址。</li>
+<li>数组的读取速度很快。</li>
+<li>链表的插入和删除速度很快。</li>
+</ol>
+</li>
+</ul>
+<h2 id="_3-快速排序"> 3. 快速排序</h2>
+<ul>
+<li>
+<p>小结：</p>
+<ol>
+<li>D&amp;C 将问题逐步分解。使用 D&amp;C 处理列表时，基线条件很可能是空数组或只包含一个元素的数组。</li>
+<li>实现快速排序时，请随机地选择用作基准值的元素。快速排序的平均运行时间为 O(n log n)。</li>
+<li>大 O 表示法中的常量有时候事关重大，这就是快速排序比合并排序快的原因所在。</li>
+</ol>
+</li>
+</ul>
+<h2 id="_4-散列表"> 4. 散列表</h2>
+<ul>
+<li>
+<p>小结：</p>
+<ol>
+<li>冲突很糟糕，你应使用可以最大限度减少冲突的散列函数。</li>
+<li>散列表的查找、插入和删除速度都非常快。</li>
+<li>散列表适合用于模拟映射关系。</li>
+<li>一旦填装因子超过 0.7，就该调整散列表的长度。</li>
+<li>散列表可用于缓存数据（例如，在 Web 服务器上）。</li>
+<li>散列表非常适合用于防止重复。</li>
+</ol>
+</li>
+</ul>
+<h2 id="_5-广度优先搜索"> 5. 广度优先搜索</h2>
+<ul>
+<li>
+<p>广度优先搜索让你能够找出两样东西之间的最短距离，不过最短距离的含义有很多！</p>
+</li>
+<li>
+<p>小结：</p>
+<ol>
+<li>广度优先搜索指出是否有从 A 到 B 的路径。</li>
+<li>如果有，广度优先搜索将找出最短路径。</li>
+<li>面临类似于寻找最短路径的问题时，可尝试使用图来建立模型，再使用广度优先搜索来解决问题。</li>
+<li>你需要按加入顺序检查搜索列表中的人，否则找到的就不是最短路径，因此搜索列表必须是队列。</li>
+<li>对于检查过的人，务必不要再去检查，否则可能导致无限循环。</li>
+</ol>
+</li>
+</ul>
+<h2 id="_6-狄克斯特拉算法"> 6. 狄克斯特拉算法</h2>
+<ul>
+<li>
+<p>狄克斯特拉算法背后的关键理念：找出图中最便宜的节点，并确保没有到该节点的更便宜的路径！</p>
+</li>
+<li>
+<p>不能将狄克斯特拉算法用于包含负权边的图。在包含负权边的图中，要找出最短路径，可使用另一种算法 —— 贝尔曼 - 福德算法。</p>
+</li>
+<li>
+<p>小结：</p>
+<ol>
+<li>广度优先搜索用于在非加权图中查找最短路径。</li>
+<li>狄克斯特拉算法用于在加权图中查找最短路径。</li>
+<li>仅当权重为正时狄克斯特拉算法才管用。</li>
+<li>如果图中包含负权边，请使用贝尔曼 - 福德算法。</li>
+</ol>
+</li>
+</ul>
+<h2 id="_7-贪婪算法"> 7. 贪婪算法</h2>
+<p>贪婪算法：每步都采取最优的做法。</p>
+<ul>
+<li>
+<p>小结：</p>
+<ol>
+<li>贪婪算法寻找局部最优解，企图以这种方式获得全局最优解。</li>
+<li>对于 NP 完全问题，还没有找到快速解决方案。</li>
+<li>面临 NP 完全问题时，最佳的做法是使用近似算法。</li>
+<li>贪婪算法易于实现、运行速度快，是不错的近似算法。</li>
+</ol>
+</li>
+</ul>
+<h2 id="_8-动态规划"> 8. 动态规划</h2>
+<ul>
+<li>
+<p>动态规划先解决子问题，再逐步解决大问题。</p>
+</li>
+<li>
+<p>小结：</p>
+<ol>
+<li>需要在给定约束条件下优化某种指标时，动态规划很有用。</li>
+<li>问题可分解为离散子问题时，可使用动态规划来解决。</li>
+<li>每种动态规划解决方案都涉及网格。</li>
+<li>单元格中的值通常就是你要优化的值。</li>
+<li>每个单元格都是一个子问题，因此你需要考虑如何将问题分解为子问题。</li>
+<li>没有放之四海皆准的计算动态规划解决方案的公式。</li>
+</ol>
+</li>
+</ul>
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 轻量级函数式编程</title>
     <id>https://www.matrixtheone.ga/web/note/books/Functional-Light-JS/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Functional-Light-JS/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-管理函数的输入"> 1. 管理函数的输入</h2>
 <ul>
 <li>偏函数：偏函数严格来讲是一个减少函数参数个数的过程。</li>
@@ -16719,267 +16864,14 @@ person<span>.</span>lastUpdated <span>=</span> Date<span>.</span><span>now</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">算法图解</title>
-    <id>https://www.matrixtheone.ga/web/note/books/Grokking-Algorithms/</id>
-    <link href="https://www.matrixtheone.ga/web/note/books/Grokking-Algorithms/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-算法简介"> 1. 算法简介</h2>
-<ul>
-<li>
-<p>大 O 表示法是一种特殊的表示法，指出了算法的速度有多快。</p>
-</li>
-<li>
-<p>大 O 表示法指的并非以秒为单位的速度。大 O 表示法让你能够比较操作数，它指出了算法运行时间的增速。</p>
-</li>
-<li>
-<p>一些常见的大 O 运行时间。</p>
-<ol>
-<li>O(log n)，也叫对数时间，这样的算法包括二分查找。</li>
-<li>O(n)，也叫线性时间，这样的算法包括简单查找。</li>
-<li>O(n * log n)，这样的算法包括第 4 章将介绍的快速排序 —— 一种速度较快的排序算法。</li>
-<li>O(n 2 )，这样的算法包括第 2 章将介绍的选择排序 —— 一种速度较慢的排序算法。</li>
-<li>O(n!)，这样的算法包括接下来将介绍的旅行商问题的解决方案 —— 一种非常慢的算法。</li>
-</ol>
-</li>
-<li>
-<p>小结：</p>
-<ol>
-<li>二分查找的速度比简单查找快得多。</li>
-<li>O(log n)比 O(n)快。需要搜索的元素越多，前者比后者就快得越多。</li>
-<li>算法运行时间并不以秒为单位。</li>
-<li>算法运行时间是从其增速的角度度量的。</li>
-<li>算法运行时间用大 O 表示法表示。</li>
-</ol>
-</li>
-</ul>
-<h2 id="_2-选择排序"> 2. 选择排序</h2>
-<ul>
-<li>
-<p>小结：</p>
-<ol>
-<li>数组的元素都在一起。</li>
-<li>链表的元素是分开的，其中每个元素都存储了下一个元素的地址。</li>
-<li>数组的读取速度很快。</li>
-<li>链表的插入和删除速度很快。</li>
-</ol>
-</li>
-</ul>
-<h2 id="_3-快速排序"> 3. 快速排序</h2>
-<ul>
-<li>
-<p>小结：</p>
-<ol>
-<li>D&amp;C 将问题逐步分解。使用 D&amp;C 处理列表时，基线条件很可能是空数组或只包含一个元素的数组。</li>
-<li>实现快速排序时，请随机地选择用作基准值的元素。快速排序的平均运行时间为 O(n log n)。</li>
-<li>大 O 表示法中的常量有时候事关重大，这就是快速排序比合并排序快的原因所在。</li>
-</ol>
-</li>
-</ul>
-<h2 id="_4-散列表"> 4. 散列表</h2>
-<ul>
-<li>
-<p>小结：</p>
-<ol>
-<li>冲突很糟糕，你应使用可以最大限度减少冲突的散列函数。</li>
-<li>散列表的查找、插入和删除速度都非常快。</li>
-<li>散列表适合用于模拟映射关系。</li>
-<li>一旦填装因子超过 0.7，就该调整散列表的长度。</li>
-<li>散列表可用于缓存数据（例如，在 Web 服务器上）。</li>
-<li>散列表非常适合用于防止重复。</li>
-</ol>
-</li>
-</ul>
-<h2 id="_5-广度优先搜索"> 5. 广度优先搜索</h2>
-<ul>
-<li>
-<p>广度优先搜索让你能够找出两样东西之间的最短距离，不过最短距离的含义有很多！</p>
-</li>
-<li>
-<p>小结：</p>
-<ol>
-<li>广度优先搜索指出是否有从 A 到 B 的路径。</li>
-<li>如果有，广度优先搜索将找出最短路径。</li>
-<li>面临类似于寻找最短路径的问题时，可尝试使用图来建立模型，再使用广度优先搜索来解决问题。</li>
-<li>你需要按加入顺序检查搜索列表中的人，否则找到的就不是最短路径，因此搜索列表必须是队列。</li>
-<li>对于检查过的人，务必不要再去检查，否则可能导致无限循环。</li>
-</ol>
-</li>
-</ul>
-<h2 id="_6-狄克斯特拉算法"> 6. 狄克斯特拉算法</h2>
-<ul>
-<li>
-<p>狄克斯特拉算法背后的关键理念：找出图中最便宜的节点，并确保没有到该节点的更便宜的路径！</p>
-</li>
-<li>
-<p>不能将狄克斯特拉算法用于包含负权边的图。在包含负权边的图中，要找出最短路径，可使用另一种算法 —— 贝尔曼 - 福德算法。</p>
-</li>
-<li>
-<p>小结：</p>
-<ol>
-<li>广度优先搜索用于在非加权图中查找最短路径。</li>
-<li>狄克斯特拉算法用于在加权图中查找最短路径。</li>
-<li>仅当权重为正时狄克斯特拉算法才管用。</li>
-<li>如果图中包含负权边，请使用贝尔曼 - 福德算法。</li>
-</ol>
-</li>
-</ul>
-<h2 id="_7-贪婪算法"> 7. 贪婪算法</h2>
-<p>贪婪算法：每步都采取最优的做法。</p>
-<ul>
-<li>
-<p>小结：</p>
-<ol>
-<li>贪婪算法寻找局部最优解，企图以这种方式获得全局最优解。</li>
-<li>对于 NP 完全问题，还没有找到快速解决方案。</li>
-<li>面临 NP 完全问题时，最佳的做法是使用近似算法。</li>
-<li>贪婪算法易于实现、运行速度快，是不错的近似算法。</li>
-</ol>
-</li>
-</ul>
-<h2 id="_8-动态规划"> 8. 动态规划</h2>
-<ul>
-<li>
-<p>动态规划先解决子问题，再逐步解决大问题。</p>
-</li>
-<li>
-<p>小结：</p>
-<ol>
-<li>需要在给定约束条件下优化某种指标时，动态规划很有用。</li>
-<li>问题可分解为离散子问题时，可使用动态规划来解决。</li>
-<li>每种动态规划解决方案都涉及网格。</li>
-<li>单元格中的值通常就是你要优化的值。</li>
-<li>每个单元格都是一个子问题，因此你需要考虑如何将问题分解为子问题。</li>
-<li>没有放之四海皆准的计算动态规划解决方案的公式。</li>
-</ol>
-</li>
-</ul>
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">JavaScript 悟道</title>
-    <id>https://www.matrixtheone.ga/web/note/books/How-JavaScript-Works/</id>
-    <link href="https://www.matrixtheone.ga/web/note/books/How-JavaScript-Works/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-数值"> 1. 数值</h2>
-<ul>
-<li>JavaScript 的浮点数并不是 IEEE 754 标准的完全实现。Java 的浮点数实现用的是 IEEE 754 的一个子集，而 JavaScript 用的则是该子集的子集，所有 JavaScript 的 number 类型与 Java 的 double 类型非常相似，都是 64 位的浮点数类型。一个 number 类型包含 1 位符号位（sign）、11 位指数位以及 53 位有效位数。有些神奇的编码能将 65 位数据装进 64 位内存中。</li>
-</ul>
-<h2 id="_2-运算符"> 2. 运算符</h2>
-<ul>
-<li>JavaScript 并不存在取模运算，只有取余运算。取余运算的正负取决于被除数，而取模则取决于除数（<a href="https://www.zhihu.com/question/30526656" target="_blank" rel="noopener noreferrer">知乎</a>）。</li>
-</ul>
-<div><pre><code><span>4</span> <span>/</span> <span>-</span><span>3</span> <span>=</span> <span>-</span><span>1.333</span><span>.</span><span>.</span><span>.3</span><span>.</span><span>.3</span> <span>// 不能整除</span>
-<span>// 取模商为 -2（向负无穷取整），取余商为  -1（向0取整）</span>
-
-r <span>=</span> <span>4</span> <span>-</span> <span>(</span><span>-</span><span>2</span> <span>*</span> <span>-</span><span>3</span><span>)</span> <span>=</span> <span>2</span>
-r <span>=</span> <span>4</span> <span>-</span> <span>(</span><span>-</span><span>1</span> <span>*</span> <span>-</span><span>3</span><span>)</span> <span>=</span> <span>1</span>
-<span>// 取模结果为 2，取余结果为 1</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_3-怪兽-来了"> 3. “怪兽” 来了</h2>
-<div><pre><code><span>function</span> <span>deconstruct</span><span>(</span><span>number</span><span>)</span> <span>{</span>
-  <span>// 数值 = 符号位 * 系数 * (2 ** 指数)</span>
-  <span>let</span> sign <span>=</span> <span>1</span>
-  <span>let</span> coefficient <span>=</span> number
-  <span>let</span> exponent <span>=</span> <span>0</span>
-
-  <span>if</span> <span>(</span>coefficient <span>&lt;</span> <span>0</span><span>)</span> <span>{</span>
-    coefficient <span>=</span> <span>-</span>coefficient
-    sign <span>=</span> <span>-</span><span>1</span>
-  <span>}</span>
-
-  <span>// 磨光系数（Number.isFinite(value)函数会在值为NaN、Infinity或者-Infinity的时候返回false）</span>
-  <span>if</span> <span>(</span>Number<span>.</span><span>isFinite</span><span>(</span>number<span>)</span> <span>&amp;&amp;</span> number <span>!==</span> <span>0</span><span>)</span> <span>{</span>
-    <span>// -1128 就是 Number.MIN_VALUE 的指数减去有效位数再减去奖励位的结果</span>
-    exponent <span>=</span> <span>-</span><span>1128</span>
-    <span>let</span> reduction <span>=</span> coefficient
-    <span>while</span> <span>(</span>reduction <span>!==</span> <span>0</span><span>)</span> <span>{</span>
-      exponent <span>+=</span> <span>1</span>
-      reduction <span>/=</span> <span>2</span>
-    <span>}</span>
-
-    <span>// 磨光指数</span>
-    reduction <span>=</span> exponent
-    <span>while</span> <span>(</span>reduction <span>></span> <span>0</span><span>)</span> <span>{</span>
-      coefficient <span>/=</span> <span>2</span>
-      reduction <span>-=</span> <span>1</span>
-    <span>}</span>
-    <span>while</span> <span>(</span>reduction <span>&lt;</span> <span>0</span><span>)</span> <span>{</span>
-      coefficient <span>*=</span> <span>2</span>
-      reduction <span>+=</span> <span>1</span>
-    <span>}</span>
-  <span>}</span>
-
-  <span>return</span> <span>{</span>
-    sign<span>,</span>
-    coefficient<span>,</span>
-    exponent<span>,</span>
-    number<span>,</span>
-  <span>}</span>
-<span>}</span>
-
-<span>// 计算值（不要用JS引擎，用科学计算器）</span>
-<span>const</span> scienceValue <span>=</span> sign <span>*</span> coefficient <span>*</span> <span>2</span> <span>**</span> exponent<span>,</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br></div></div><h2 id="_4-高精度整数、浮点数、有理数"> 4. 高精度整数、浮点数、有理数</h2>
-<ul>
-<li>硬核，啃不动，先打入冷宫！</li>
-</ul>
-<h2 id="_5-关系运算符"> 5. 关系运算符</h2>
-<ul>
-<li>
-<p>除非你肯定值得大小在安全整数范围内，否则不要通过 === 的条件判断来结束循环。即使在安全整数范围内，我也还是推荐使用 &gt;=、&lt;=、&gt;、&lt;。</p>
-</li>
-<li>
-<p>答应我，永远不要用这两个运算符（== 和 !=）。答应我，务必使用 === 和 !==（答应他！答应他！）。</p>
-</li>
-</ul>
-<h2 id="_6-非"> 6. 非</h2>
-<ul>
-<li>德·摩根定律可用于简化逻辑表达式。</li>
-</ul>
-<div><pre><code><span>!</span><span>(</span>p <span>&amp;&amp;</span> q<span>)</span> <span>===</span> <span>!</span>p <span>||</span> <span>!</span>q
-<span>!</span><span>(</span>p <span>||</span> q<span>)</span> <span>===</span> <span>!</span>p <span>&amp;&amp;</span> <span>!</span>q
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="_7-数组"> 7. 数组</h2>
-<ul>
-<li>
-<p>数组有一个神奇的 length 属性。该属性并不是指数组中元素的数量，而是指数组元素的最高序数加 1。</p>
-</li>
-<li>
-<p>sort 方法有一个比较严重的问题，那就是缺乏稳定性。在比较两个相等值的时候（比较函数会返回 0），如果排序方法将这两个值排在它们原来的位置上，则可以说该排序方法是稳定的。</p>
-<blockquote>
-<p>想象一下，你正在对姓名进行排序：先判断姓的顺序，若姓相同再判断名的顺序。如果 sort 方法稳定，我们就可以这么做：先对姓排一遍序，结束后再对名排一遍序。可惜的是 JavaScript 并不具备该稳定性，第二遍排序会把第一遍已排好的姓打乱。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="吾非天选之子-neo"> 吾非天选之子 —— NEO</h2>
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">图解 HTTP</title>
     <id>https://www.matrixtheone.ga/web/note/books/HTTP/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/HTTP/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-网络基础-tcp-ip"> 1. 网络基础 TCP/IP</h2>
 <ul>
 <li>通常使用的网络（包括互联网）是在 TCP/IP 协议族的基础上运作的，而 HTTP 属于它内部的一个子集。</li>
@@ -17953,14 +17845,122 @@ print <span>MAIL</span> <span>"From: info@example.com\n"</span><span>;</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">JavaScript 悟道</title>
+    <id>https://www.matrixtheone.ga/web/note/books/How-JavaScript-Works/</id>
+    <link href="https://www.matrixtheone.ga/web/note/books/How-JavaScript-Works/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-数值"> 1. 数值</h2>
+<ul>
+<li>JavaScript 的浮点数并不是 IEEE 754 标准的完全实现。Java 的浮点数实现用的是 IEEE 754 的一个子集，而 JavaScript 用的则是该子集的子集，所有 JavaScript 的 number 类型与 Java 的 double 类型非常相似，都是 64 位的浮点数类型。一个 number 类型包含 1 位符号位（sign）、11 位指数位以及 53 位有效位数。有些神奇的编码能将 65 位数据装进 64 位内存中。</li>
+</ul>
+<h2 id="_2-运算符"> 2. 运算符</h2>
+<ul>
+<li>JavaScript 并不存在取模运算，只有取余运算。取余运算的正负取决于被除数，而取模则取决于除数（<a href="https://www.zhihu.com/question/30526656" target="_blank" rel="noopener noreferrer">知乎</a>）。</li>
+</ul>
+<div><pre><code><span>4</span> <span>/</span> <span>-</span><span>3</span> <span>=</span> <span>-</span><span>1.333</span><span>.</span><span>.</span><span>.3</span><span>.</span><span>.3</span> <span>// 不能整除</span>
+<span>// 取模商为 -2（向负无穷取整），取余商为  -1（向0取整）</span>
+
+r <span>=</span> <span>4</span> <span>-</span> <span>(</span><span>-</span><span>2</span> <span>*</span> <span>-</span><span>3</span><span>)</span> <span>=</span> <span>2</span>
+r <span>=</span> <span>4</span> <span>-</span> <span>(</span><span>-</span><span>1</span> <span>*</span> <span>-</span><span>3</span><span>)</span> <span>=</span> <span>1</span>
+<span>// 取模结果为 2，取余结果为 1</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_3-怪兽-来了"> 3. “怪兽” 来了</h2>
+<div><pre><code><span>function</span> <span>deconstruct</span><span>(</span><span>number</span><span>)</span> <span>{</span>
+  <span>// 数值 = 符号位 * 系数 * (2 ** 指数)</span>
+  <span>let</span> sign <span>=</span> <span>1</span>
+  <span>let</span> coefficient <span>=</span> number
+  <span>let</span> exponent <span>=</span> <span>0</span>
+
+  <span>if</span> <span>(</span>coefficient <span>&lt;</span> <span>0</span><span>)</span> <span>{</span>
+    coefficient <span>=</span> <span>-</span>coefficient
+    sign <span>=</span> <span>-</span><span>1</span>
+  <span>}</span>
+
+  <span>// 磨光系数（Number.isFinite(value)函数会在值为NaN、Infinity或者-Infinity的时候返回false）</span>
+  <span>if</span> <span>(</span>Number<span>.</span><span>isFinite</span><span>(</span>number<span>)</span> <span>&amp;&amp;</span> number <span>!==</span> <span>0</span><span>)</span> <span>{</span>
+    <span>// -1128 就是 Number.MIN_VALUE 的指数减去有效位数再减去奖励位的结果</span>
+    exponent <span>=</span> <span>-</span><span>1128</span>
+    <span>let</span> reduction <span>=</span> coefficient
+    <span>while</span> <span>(</span>reduction <span>!==</span> <span>0</span><span>)</span> <span>{</span>
+      exponent <span>+=</span> <span>1</span>
+      reduction <span>/=</span> <span>2</span>
+    <span>}</span>
+
+    <span>// 磨光指数</span>
+    reduction <span>=</span> exponent
+    <span>while</span> <span>(</span>reduction <span>></span> <span>0</span><span>)</span> <span>{</span>
+      coefficient <span>/=</span> <span>2</span>
+      reduction <span>-=</span> <span>1</span>
+    <span>}</span>
+    <span>while</span> <span>(</span>reduction <span>&lt;</span> <span>0</span><span>)</span> <span>{</span>
+      coefficient <span>*=</span> <span>2</span>
+      reduction <span>+=</span> <span>1</span>
+    <span>}</span>
+  <span>}</span>
+
+  <span>return</span> <span>{</span>
+    sign<span>,</span>
+    coefficient<span>,</span>
+    exponent<span>,</span>
+    number<span>,</span>
+  <span>}</span>
+<span>}</span>
+
+<span>// 计算值（不要用JS引擎，用科学计算器）</span>
+<span>const</span> scienceValue <span>=</span> sign <span>*</span> coefficient <span>*</span> <span>2</span> <span>**</span> exponent<span>,</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br></div></div><h2 id="_4-高精度整数、浮点数、有理数"> 4. 高精度整数、浮点数、有理数</h2>
+<ul>
+<li>硬核，啃不动，先打入冷宫！</li>
+</ul>
+<h2 id="_5-关系运算符"> 5. 关系运算符</h2>
+<ul>
+<li>
+<p>除非你肯定值得大小在安全整数范围内，否则不要通过 === 的条件判断来结束循环。即使在安全整数范围内，我也还是推荐使用 &gt;=、&lt;=、&gt;、&lt;。</p>
+</li>
+<li>
+<p>答应我，永远不要用这两个运算符（== 和 !=）。答应我，务必使用 === 和 !==（答应他！答应他！）。</p>
+</li>
+</ul>
+<h2 id="_6-非"> 6. 非</h2>
+<ul>
+<li>德·摩根定律可用于简化逻辑表达式。</li>
+</ul>
+<div><pre><code><span>!</span><span>(</span>p <span>&amp;&amp;</span> q<span>)</span> <span>===</span> <span>!</span>p <span>||</span> <span>!</span>q
+<span>!</span><span>(</span>p <span>||</span> q<span>)</span> <span>===</span> <span>!</span>p <span>&amp;&amp;</span> <span>!</span>q
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="_7-数组"> 7. 数组</h2>
+<ul>
+<li>
+<p>数组有一个神奇的 length 属性。该属性并不是指数组中元素的数量，而是指数组元素的最高序数加 1。</p>
+</li>
+<li>
+<p>sort 方法有一个比较严重的问题，那就是缺乏稳定性。在比较两个相等值的时候（比较函数会返回 0），如果排序方法将这两个值排在它们原来的位置上，则可以说该排序方法是稳定的。</p>
+<blockquote>
+<p>想象一下，你正在对姓名进行排序：先判断姓的顺序，若姓相同再判断名的顺序。如果 sort 方法稳定，我们就可以这么做：先对姓排一遍序，结束后再对名排一遍序。可惜的是 JavaScript 并不具备该稳定性，第二遍排序会把第一遍已排好的姓打乱。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="吾非天选之子-neo"> 吾非天选之子 —— NEO</h2>
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">学习 JavaScript 数据结构与算法（第三版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Algorithms/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Algorithms/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-栈数据结构"> 1. 栈数据结构</h2>
 <ul>
 <li>
@@ -20262,14 +20262,28 @@ print <span>MAIL</span> <span>"From: info@example.com\n"</span><span>;</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">JavaScript DOM 编程艺术（第二版）</title>
+    <id>https://www.matrixtheone.ga/web/note/books/JS-DOM/</id>
+    <link href="https://www.matrixtheone.ga/web/note/books/JS-DOM/"/>
+    <updated>2023-05-25T15:14:10.000Z</updated>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 设计模式与开发实践</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Design-Develop/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Design-Develop/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-高阶函数实现-aop"> 1. 高阶函数实现 AOP</h2>
 <div><pre><code><span>Function</span><span>.</span>prototype<span>.</span><span>before</span> <span>=</span> <span>function</span><span>(</span><span>beforefn</span><span>)</span> <span>{</span>
   <span>var</span> __self <span>=</span> <span>this</span> <span>// 保存原函数的引用</span>
@@ -21585,28 +21599,14 @@ light<span>.</span><span>init</span><span>(</span><span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">JavaScript DOM 编程艺术（第二版）</title>
-    <id>https://www.matrixtheone.ga/web/note/books/JS-DOM/</id>
-    <link href="https://www.matrixtheone.ga/web/note/books/JS-DOM/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 语言精粹与编程实践（第三版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Essence/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Essence/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-表达式运算-序列检测"> 1. 表达式运算 - 序列检测</h2>
 <ul>
 <li>
@@ -21714,28 +21714,28 @@ console<span>.</span><span>log</span><span>(</span>s1 <span>></span> <span>NaN</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 权威指南（第七版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Guide/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Guide/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 忍者秘籍（第二版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Ninja-Secrets/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Ninja-Secrets/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h1 id="有点可惜"> 有点可惜......</h1>
 ]]></content>
     <author>
@@ -21744,14 +21744,14 @@ console<span>.</span><span>log</span><span>(</span>s1 <span>></span> <span>NaN</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 高级程序设计（第四版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Programming/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Programming/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-html-中的-javascript"> 1. HTML 中的 JavaScript</h2>
 <ul>
 <li>
@@ -22709,14 +22709,14 @@ location<span>.</span><span>reload</span><span>(</span><span>true</span><span>)<
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 正则表达式迷你书（1.1版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-RegExp/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-RegExp/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-两种模糊匹配"> 1. 两种模糊匹配</h2>
 <ul>
 <li>
@@ -23393,14 +23393,14 @@ console<span>.</span><span>log</span><span>(</span>result<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">函数式编程指北</title>
     <id>https://www.matrixtheone.ga/web/note/books/Mostly-Adequate-Guide/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Mostly-Adequate-Guide/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-纯函数的好处"> 1. 纯函数的好处</h2>
 <ul>
 <li>
@@ -23575,28 +23575,28 @@ console<span>.</span><span>log</span><span>(</span>result<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">深入浅出 Node.js</title>
     <id>https://www.matrixtheone.ga/web/note/books/Node/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Node/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">书籍阅读</title>
     <id>https://www.matrixtheone.ga/web/note/books/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/红楼梦.webp')">
 ]]></content>
     <author>
@@ -23605,14 +23605,14 @@ console<span>.</span><span>log</span><span>(</span>result<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">React 设计原理</title>
     <id>https://www.matrixtheone.ga/web/note/books/React-Design/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/React-Design/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-前端框架原理概览"> 1. 前端框架原理概览</h2>
 <ul>
 <li>
@@ -23988,14 +23988,14 @@ window<span>.</span>app <span>=</span> <span>schedule</span><span>(</span><span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">你不知道的 JS（中）</title>
     <id>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol2/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol2/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-类型"> 1. 类型</h2>
 <ul>
 <li>
@@ -24406,14 +24406,14 @@ a<span>.</span>index<span>++</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">你不知道的 JS（下）</title>
     <id>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol3/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol3/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-迭代器"> 1. 迭代器</h2>
 <ul>
 <li>每次在这个 arr 值上调用位于 Symbol.iterator 的方法时，都会产生一个全新的迭代器。多数结构都是这么实现的，包括所有 JavaScript 内置数据结构。</li>
@@ -24543,14 +24543,14 @@ it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Array</title>
     <id>https://www.matrixtheone.ga/web/note/js/Array-1/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Array-1/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<div><p>提示</p>
 <p>会改变原数组</p>
 </div>
@@ -24647,14 +24647,14 @@ it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Array</title>
     <id>https://www.matrixtheone.ga/web/note/js/Array-2/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Array-2/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-array-any-array-of-any"> 1. Array(any...) &amp; Array.of(any...)</h2>
 <ul>
 <li>
@@ -24929,14 +24929,14 @@ Array<span>.</span><span>from</span><span>(</span><span>{</span> <span>length</s
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">奇技淫巧</title>
     <id>https://www.matrixtheone.ga/web/note/js/Arts/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Arts/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-巧用位运算符"> 1. 巧用位运算符</h2>
 <ul>
 <li>
@@ -25016,14 +25016,14 @@ account <span>&amp;=</span> <span>~</span>Delete <span>// => 7</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">BigInt</title>
     <id>https://www.matrixtheone.ga/web/note/js/BigInt/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/BigInt/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-bigint-int"> 1. BigInt(int)</h2>
 <ul>
 <li>可以使用构造函数（BigInt() ）和字面量（7n）创建 bigint 类型表示整数。
@@ -25091,14 +25091,14 @@ BigInt<span>.</span><span>asUintN</span><span>(</span><span>64</span><span>,</sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">内置对象</title>
     <id>https://www.matrixtheone.ga/web/note/js/Built-In/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Built-In/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-json"> 1. JSON</h2>
 <ul>
 <li>
@@ -26149,14 +26149,14 @@ formData<span>.</span><span>entries</span><span>(</span><span>)</span><span>.</s
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Class</title>
     <id>https://www.matrixtheone.ga/web/note/js/Class/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Class/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-class"> 1. class</h2>
 <ul>
 <li>
@@ -26391,14 +26391,14 @@ xfq<span>.</span><span>versailles</span><span>(</span><span>)</span> <span>// =>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Function</title>
     <id>https://www.matrixtheone.ga/web/note/js/Function/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Function/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-function-args-functionbody"> 1. Function(args..., functionBody)</h2>
 <ul>
 <li>构造函数创建匿名函数。前面参数会成为匿名函数的形参，最后一个参数会成为匿名函数的可执行体（Vue 中的 render 函数的形成方式）。</li>
@@ -26417,7 +26417,23 @@ xfq<span>.</span><span>versailles</span><span>(</span><span>)</span> <span>// =>
 
 foo<span><span>`</span><span>try call </span><span><span>${</span>foo<span>.</span>name<span>}</span></span><span> </span><span><span>${</span><span>'徐扶墙'</span><span>}</span></span><span>`</span></span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_2-getter-setter"> 2. getter &amp; setter</h2>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ul>
+<li>自执行匿名函数。</li>
+</ul>
+<div><pre><code><span>// prettier-ignore</span>
+<span>(</span><span>function</span> <span>(</span><span>)</span> <span>{</span>
+  <span>return</span> <span>'徐扶墙'</span>
+<span>}</span><span>(</span><span>)</span><span>)</span>
+
+<span>(</span><span>function</span> <span>(</span><span>)</span> <span>{</span>
+  <span>return</span> <span>'徐扶墙'</span>
+<span>}</span><span>)</span><span>(</span><span>)</span>
+
+<span>void</span> <span>(</span><span>function</span> <span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>'徐扶墙'</span><span>)</span>
+<span>}</span><span>)</span><span>(</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h2 id="_2-getter-setter"> 2. getter &amp; setter</h2>
 <ul>
 <li>
 <p>获取/设置对象属性值时触发的函数。</p>
@@ -26498,9 +26514,9 @@ foo<span>.</span><span>say</span><span>.</span><span>bind</span><span>(</span>ba
 <blockquote>
 <p>Function.prototype.call.apply(self, [obj, ...args]) 相当于 self.call(obj, ...args) 相当于 obj.self(...args)。转换到下方代码示意为 foo.push(6)。</p>
 </blockquote>
-<div><pre><code><span>Function</span><span>.</span>prototype<span>.</span><span>uncurrying</span> <span>=</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
+<div><pre><code><span>Function</span><span>.</span>prototype<span>.</span><span>uncurrying</span> <span>=</span> <span>function</span> <span>(</span><span>)</span> <span>{</span>
   <span>const</span> self <span>=</span> <span>this</span>
-  <span>return</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
+  <span>return</span> <span>function</span> <span>(</span><span>)</span> <span>{</span>
     <span>return</span> <span>Function</span><span>.</span>prototype<span>.</span><span>call</span><span>.</span><span>apply</span><span>(</span>self<span>,</span> arguments<span>)</span>
   <span>}</span>
 <span>}</span>
@@ -26659,7 +26675,7 @@ gen<span>.</span><span>next</span><span>(</span><span>)</span> <span>// => {valu
       <span>if</span> <span>(</span>result<span>.</span>done<span>)</span> <span>return</span> <span>resolve</span><span>(</span>result<span>.</span>value<span>)</span>
       result<span>.</span>value<span>.</span><span>then</span><span>(</span>
         <span>data</span> <span>=></span> <span>next</span><span>(</span>data<span>)</span><span>,</span>
-        <span>err</span> <span>=></span> <span>reject</span><span>(</span>err<span>)</span>
+        <span>err</span> <span>=></span> <span>reject</span><span>(</span>err<span>)</span><span>,</span>
       <span>)</span>
     <span>}</span>
     <span>next</span><span>(</span><span>)</span>
@@ -26879,14 +26895,14 @@ xiaohu<span>.</span><span>getHarm</span><span>(</span><span>)</span> <span>// =>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Number</title>
     <id>https://www.matrixtheone.ga/web/note/js/Number/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Number/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-number-any"> 1. Number(any)</h2>
 <ul>
 <li>构造函数创建数字。</li>
@@ -27075,14 +27091,14 @@ Number<span>.</span><span>isSafeInteger</span><span>(</span>Number<span>.</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Object</title>
     <id>https://www.matrixtheone.ga/web/note/js/Object/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Object/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-object-any"> 1. Object(any)</h2>
 <ul>
 <li>
@@ -27554,14 +27570,14 @@ Object<span>.</span><span>isFrozen</span><span>(</span>foo<span>.</span>harem<sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">其他</title>
     <id>https://www.matrixtheone.ga/web/note/js/Others/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Others/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-for-in"> 1. for in</h2>
 <ul>
 <li>for in 遍历除 symbol 类型外的可枚举属性，会进行原型链查找。</li>
@@ -27731,10 +27747,17 @@ console<span>.</span><span>log</span><span>(</span>num<span>)</span> <span>// =>
 <li>
 <p>通过 eval() 定义的任何变量和函数都不会被提升，这是因为在解析代码的时候，它们是被包含在一个字符串中的，它们只是在 eval() 执行的时候才会被创建。</p>
 </li>
+<li>
+<p>使用 eval() 执行一批语句时，将返回 “最后执行到的、有返回值的” 那条语句的值。</p>
+</li>
 </ul>
 <div><pre><code><span>eval</span><span>(</span><span>"console.log('执行代码')"</span><span>)</span> <span>// => "执行代码"</span>
+
+<span>eval</span><span>(</span><span>"1 + 2; const x = 5; ; function foo() {}"</span><span>)</span> <span>// => 3</span>
+
+<span>eval</span><span>(</span><span>"1 + 2; const x = 5; ; function foo() {}; 7"</span><span>)</span> <span>// => 7</span>
 </code></pre>
-<div><span>1</span><br></div></div><h2 id="_7-label"> 7. label</h2>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><h2 id="_7-label"> 7. label</h2>
 <ul>
 <li>为程序定义位置，可以使用 continue/break 跳到该位置。</li>
 </ul>
@@ -27777,14 +27800,14 @@ console<span>.</span><span>log</span><span>(</span>ary<span>)</span> <span>// =>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JS 基础</title>
     <id>https://www.matrixtheone.ga/web/note/js/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/三国演义.webp')">
 ]]></content>
     <author>
@@ -27793,14 +27816,14 @@ console<span>.</span><span>log</span><span>(</span>ary<span>)</span> <span>// =>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">String</title>
     <id>https://www.matrixtheone.ga/web/note/js/String/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/String/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-string-any"> 1. String(any)</h2>
 <ul>
 <li>构造函数创建字符串。</li>
@@ -28072,14 +28095,14 @@ str<span>.</span><span>trimRight</span><span>(</span><span>)</span> <span>// => 
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Symbol</title>
     <id>https://www.matrixtheone.ga/web/note/js/Symbol/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Symbol/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-symbol-string"> 1. Symbol(string)</h2>
 <ul>
 <li>传入一个描述符返回 symbol 唯一值，不可枚举。</li>
@@ -28109,14 +28132,14 @@ Symbol<span>.</span><span>keyFor</span><span>(</span><span>Symbol</span><span>(<
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">你不知道的 JS（上）</title>
     <id>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol1/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol1/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-编译原理"> 1. 编译原理</h2>
 <ul>
 <li>
@@ -28397,14 +28420,14 @@ console<span>.</span><span>log</span><span>(</span>bar<span>.</span>a<span>)</sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">图解 TCP/IP</title>
     <id>https://www.matrixtheone.ga/web/note/books/TCP-IP/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/TCP-IP/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-计算机与网络发展的-7-个阶段"> 1. 计算机与网络发展的 7 个阶段</h2>
 <img :src="$withBase('/images/TCP-IP/计算机使用模式的演变.png')" loading="lazy">
 <h2 id="_2-协议"> 2. 协议</h2>
@@ -28568,21 +28591,21 @@ console<span>.</span><span>log</span><span>(</span>bar<span>.</span>a<span>)</sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Three.js 开发指南</title>
     <id>https://www.matrixtheone.ga/web/note/books/Three/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Three/"/>
-    <updated>2023-05-24T16:10:00.000Z</updated>
+    <updated>2023-05-25T15:14:10.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-05-24T16:10:00.000Z</published>
+    <published>2023-05-25T15:14:10.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
 </feed>
