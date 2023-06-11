@@ -6,12 +6,12 @@
   <author>
     <name>coderljw</name>
   </author>
-  <updated>2023-06-08T13:52:07.821Z</updated>
+  <updated>2023-06-11T15:38:09.389Z</updated>
   <generator>@mr-hope/vuepress-plugin-feed</generator>
   <link rel="self" href="https://www.matrixtheone.ga/web/atom.xml"/>
   <link rel="alternate" href="https://www.matrixtheone.ga/web/"/>
-  <category term="区块链"/>
   <category term="DAPP"/>
+  <category term="区块链"/>
   <category term="Solidity"/>
   <category term="Command"/>
   <category term="CSS"/>
@@ -44,301 +44,10 @@
     <name>coderljw</name>
   </contributor>
   <entry>
-    <title type="html">基本概念</title>
-    <id>https://www.matrixtheone.ga/web/blockChain/Basic/</id>
-    <link href="https://www.matrixtheone.ga/web/blockChain/Basic/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-base58"> 1. Base58</h2>
-<p>Base58 是用于比特币（Bitcoin）中使用的一种独特的编码方式，主要用于产生 Bitcoin 的钱包地址。相比 Base64，Base58 不使用数字 &quot;0&quot;，字母大写 &quot;O&quot;，字母大写 &quot;I&quot;，和字母小写 &quot;l&quot;，以及 &quot;+&quot; 和 &quot;/&quot; 符号。</p>
-<ul>
-<li><a href="https://zh.wikipedia.org/wiki/Base58" target="_blank" rel="noopener noreferrer">Base58 - 维基百科</a></li>
-</ul>
-<h2 id="_2-哈希碰撞"> 2. 哈希碰撞</h2>
-<div><pre><code><span>const</span> <span>calculate</span> <span>=</span> <span>(</span><span>d<span>,</span> n</span><span>)</span> <span>=></span> <span>{</span>
-  <span>const</span> exponent <span>=</span> <span>(</span><span>-</span>n <span>*</span> <span>(</span>n <span>-</span> <span>1</span><span>)</span><span>)</span> <span>/</span> <span>(</span><span>2</span> <span>*</span> d<span>)</span>
-  <span>return</span> <span>1</span> <span>-</span> Math<span>.</span><span>E</span> <span>**</span> exponent
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><ul>
-<li><a href="https://www.ruanyifeng.com/blog/2018/09/hash-collision-and-birthday-attack.html" target="_blank" rel="noopener noreferrer">哈希碰撞与生日攻击 - 阮一峰</a></li>
-</ul>
-<h2 id="_3-数字签名"> 3. 数字签名</h2>
-<ul>
-<li>
-<p>数字签名的三个作用：防伪造，防篡改，防抵赖。</p>
-</li>
-<li>
-<p>比特币采用的 ECDSA 签名算法需要一个私钥和公钥组成的秘钥对：私钥本质上就是一个 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.8141em;"></span><span>1</span><span>～</span><span><span>2</span><span><span><span><span style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>256</span></span></span></span></span></span></span></span></span></span></span></span> 的随机数，公钥是由私钥根据 ECDSA 算法推算出来的，通过私钥可以很容易推算出公钥，所以不必保存公钥，但是，通过公钥无法反推私钥，只能暴力破解。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1311929746325537" target="_blank" rel="noopener noreferrer">P2P 交易原理 - 廖雪峰</a></p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207687429747616" target="_blank" rel="noopener noreferrer">签名 - 廖雪峰</a></p>
-</li>
-<li>
-<p><a href="https://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html" target="_blank" rel="noopener noreferrer">数字签名是什么？ - 阮一峰</a></p>
-</li>
-</ul>
-<h2 id="_4-公私钥与地址"> 4. 公私钥与地址</h2>
-<ul>
-<li>
-<p>比特币的公钥是根据私钥由 ECDSA 算法推算出来的，公钥有压缩和非压缩两种表示方法，可互相转换。比特币的地址是公钥哈希的编码，并不是公钥本身，通过公钥可推导出地址。通过地址不可推导出公钥，通过公钥不可推导出私钥。</p>
-<img :src="$withBase('/images/Block-Chain/比特币地址生成.png')" loading="lazy">
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1210215537429856" target="_blank" rel="noopener noreferrer">公钥和地址 - 廖雪峰</a></p>
-</li>
-<li>
-<p><a href="http://www.gobittest.appspot.com/Address" target="_blank" rel="noopener noreferrer">Addresses - Bitcoin Tests</a></p>
-</li>
-</ul>
-<h2 id="_5-比特币支付"> 5. 比特币支付</h2>
-<ul>
-<li>
-<p>比特币支付的本质是由程序触发的数字资产转移。比特币的支付脚本就是对输入的两个数据视作签名和公钥，然后先验证公钥哈希是否与地址相同，再根据公钥验证签名，这种标准脚本称之为 P2PKH（Pay to Public Key Hash）脚本。</p>
-</li>
-<li>
-<p>由此催生出了智能合约：当一个预先编好的条件被触发时，智能合约可以自动执行相应的程序，自动完成数字资产的转移。保险、贷款等金融活动在将来都可以以智能合约的形式执行。智能合约以程序来替代传统的纸质文件条款，并由计算机强制执行，将具有更高的更低的信任成本和运营成本。</p>
-</li>
-<li>
-<p>多重签名可以实现 N 个人持有私钥，其中 M 个人同意即可花费资金的功能。多重签名降低了单个私钥丢失的风险。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1311929802948641" target="_blank" rel="noopener noreferrer">可编程支付原理 - 廖雪峰</a></p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207315329092960" target="_blank" rel="noopener noreferrer">多重签名 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_6-utxo"> 6. UTXO</h2>
-<ul>
-<li>
-<p>比特币区块链使用 UTXO 模型，它没有账户这个概念。重建整个地址-余额数据库需要扫描整个区块链，并按每个交易依次更新记录，即可得到当前状态。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298275932480" target="_blank" rel="noopener noreferrer">UTXO 模型 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_7-merkle-tree"> 7. Merkle Tree</h2>
-<ul>
-<li>
-<p>梅克尔树是一种二叉树，能快速检查和归纳大量数据，可用于验证区块中交易记录的完整性，保证所有交易的不可篡改。</p>
-</li>
-<li>
-<p>Merkle Root 为 Merkle Tree 顶点，存储在区块头中。</p>
-<img :src="$withBase('/images/Block-Chain/Merkle Tree.png')" loading="lazy">
-</li>
-</ul>
-<h2 id="_8-segwit-地址"> 8. Segwit 地址</h2>
-<ul>
-<li>
-<p>Segwit 地址又称隔离见证地址。比特币延展性攻击的原因是 ECDSA 签名总是有两个有效签名，且可以相互计算。</p>
-</li>
-<li>
-<p>要解决延展性攻击的问题，有两个办法，一是对交易签名进行归一化（Normalize）。因为 ECDSA 签名后总有两个有效的签名 (r, s) 和 (r, -s mod N)，那只接受数值较小的那个签名，为此比特币引入了一个 SCRIPT_VERIFY_LOW_S 标志仅接受较小值的签名。</p>
-</li>
-<li>
-<p>另一个办法是把签名数据移到交易之外，这样交易本身的哈希就不会变化。不含签名的交易计算出的哈希称为 wtxid，为此引入了一种新的隔离见证地址。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207366165169216" target="_blank" rel="noopener noreferrer">Segwit 地址 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_9-分叉"> 9. 分叉</h2>
-<ul>
-<li>
-<p>伪·软分叉（不分叉）：旧节点接受新区块，新节点也接受旧区块。</p>
-</li>
-<li>
-<p>真·软分叉：旧节点接受新区块，新节点不接受旧区块。</p>
-<blockquote>
-<ol>
-<li>其实没分叉：新节点算力超过 50%。</li>
-<li>确实分叉了：新节点算力不到 50%。</li>
-</ol>
-</blockquote>
-</li>
-<li>
-<p>硬分叉：旧节点不接受新区块。</p>
-</li>
-<li>
-<p><a href="https://learnblockchain.cn/article/849" target="_blank" rel="noopener noreferrer">关于扩容与分叉（上）- maxdeath</a></p>
-</li>
-</ul>
-<h2 id="_10-隔离见证"> 10. 隔离见证</h2>
-<ul>
-<li>
-<p>比特币的格式里，允许用脚本来替换签名。签名大概占了交易大小的 2/3 空间（约 150 字节）。</p>
-</li>
-<li>
-<p>隔离见证区块：每笔交易都被分成了两部分：交易和见证（签名）。交易部分只有 100 字节左右，于是一个 1MB 的区块里面能放 10000 笔交易（原来是 4000 笔）。所有的见证部分，大约 1.5MB - 2MB，都被扔到了后面。</p>
-</li>
-<li>
-<p>特点：</p>
-<blockquote>
-<ul>
-<li>是软分叉甚至不分叉。</li>
-<li>理论上来讲可能提高 2-3 倍的交易量。</li>
-<li>支持闪电网络，可以将一部分交易挪到链下进行，减轻主链的负担。</li>
-<li>会降低比特币的安全性。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p><a href="https://learnblockchain.cn/article/849#%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81" target="_blank" rel="noopener noreferrer">隔离见证 - maxdeath</a></p>
-</li>
-<li>
-<p><a href="https://learnblockchain.cn/article/850" target="_blank" rel="noopener noreferrer">关于扩容与分叉（下）- maxdeath</a></p>
-</li>
-</ul>
-<h2 id="_11-hd-钱包"> 11. HD 钱包</h2>
-<ul>
-<li>
-<p>HD 钱包采用分层确定性算法通过根扩展私钥计算所有层级的所有子扩展私钥，继而得到扩展公钥和地址。</p>
-</li>
-<li>
-<p>可以通过普通衍生和硬化衍生两种方式计算扩展子私钥，后者更安全，但对应的扩展公钥无法计算硬化衍生的子扩展公钥。</p>
-</li>
-<li>
-<p>通过扩展公钥可以在没有扩展私钥的前提下计算所有普通子扩展公钥，此特性可实现观察钱包。</p>
-</li>
-<li>
-<p>HD 钱包通过 Bloom Filter 可以高效监控链上的所有地址，并根据是否是本地管理的地址决定如何计算钱包余额。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298278803712" target="_blank" rel="noopener noreferrer">HD 钱包 - 廖雪峰</a></p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1364939807653921" target="_blank" rel="noopener noreferrer">地址监控 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_12-助记词"> 12. 助记词</h2>
-<ul>
-<li>
-<p>BIP-39 规范通过使用助记词 + 口令来生成 HD 钱包的种子，用户只需记忆助记词和口令即可随时恢复 HD 钱包。生成助记词的过程是计算机随机产生的，用户只要记住这些助记词，就可以根据助记词推算出 HD 钱包的种子。</p>
-</li>
-<li>
-<p>助记词的意义就是作为私钥的备份。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207320517404448" target="_blank" rel="noopener noreferrer">助记词 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_13-以太坊"> 13. 以太坊</h2>
-<ul>
-<li>
-<p>以太坊采用账户余额模型，通常情况下一个以太坊地址已够用。如果要生成多个地址，可继续派生 m/44'/60'/0'/0/1、m/44'/60'/0'/0/2 等。</p>
-</li>
-<li>
-<p>以太坊的私钥和公钥采用和比特币一样的 ECDSA 算法和 secp256k1 曲线，并且可以复用比特币的 HD 钱包助记词。</p>
-</li>
-<li>
-<p>比特币每隔 2015 个区块调整挖矿难度。以太坊每个区块都会调整挖矿难度。</p>
-<blockquote>
-<p>比特币设计时本来打算每 2016 个区块调整一次难度，也就是两周一次，但是由于第一版代码的一个 bug，实际调整周期是 2015 个区块。</p>
-</blockquote>
-</li>
-<li>
-<p>地址生成。</p>
-<img :src="$withBase('/images/Block-Chain/以太坊地址生成.png')" loading="lazy">
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298477260480" target="_blank" rel="noopener noreferrer">以太坊/账户 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_14-智能合约"> 14. 智能合约</h2>
-<ul>
-<li>
-<p>所谓智能合约，就是一种运行在区块链上的程序（用脚本更形象点）。以太坊通过 EVM 虚拟机执行智能合约代码。</p>
-</li>
-<li>
-<p>合约被部署后将自动获得一个地址，并可像外部账户一样存取 Ether，还可以存储状态数据。只能被动地被外部账户调用，但在执行时可以调用其他合约的公共函数。</p>
-</li>
-<li>
-<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207297939801024" target="_blank" rel="noopener noreferrer">智能合约 - 廖雪峰</a></p>
-</li>
-</ul>
-<h2 id="_15-术语"> 15. 术语</h2>
-<ul>
-<li>
-<p>手续费 = GasUsed * GasPrice</p>
-</li>
-<li>
-<p>GasUsed：Gas 实际消耗量。</p>
-<blockquote>
-<ul>
-<li>区块：所有交易消耗的 Gas 总量。</li>
-<li>交易：实际消耗的 Gas。一笔普通转账交易固定消耗 21000 Gas，也是最小 Gas 消耗量。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>GasPrice：Gas 消耗单价，用户交易前设置，矿工可根据 GasPrice 选择是否打包。</p>
-</li>
-<li>
-<p>GasLimit：Gas 可消耗上限。</p>
-<blockquote>
-<ul>
-<li>区块：所有交易 Gas 消耗上限，防止无法停止（死循环）的合约来阻塞网络。每个区块的矿工可调整区块 GasLimit，任意加减 1/2024（0.0976%）。</li>
-<li>交易：用户设置交易可消耗的 Gas 上限。如果实际 Gas 消耗超出用户设置的 GasLimit，那么该交易失败，消耗的 Gas 不会返还（消耗了算力）。如果实际 Gas 消耗小于用户设置的 GasLimit，那么超出的 Gas 会返还用户。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>Nonce：随机数。</p>
-<blockquote>
-<ul>
-<li>区块：工作量证明，也就是猜出的一个正确答案，代表挖矿成功。</li>
-<li>账户：防止多重交易（双花），交易自增长（消息调用不会增长）。如果用户自定义交易 Nonce 大于账户 Nonce + 1，那么交易会失败。如果一个区块上用户有两个交易的 Nonce 相同（自增长 Nonce），矿工可选择一笔交易打包，另一笔交易丢弃。矿工当然会选 GasPrice 高的那笔哟，这样可以在上一笔交易打包前，发出另一笔 Nonce 一样，但 GasPrice 较高的交易，来取消上一笔交易（看手速与运气的时候了）。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p>代币标准：如果同一个集合的两个物品具有不同的特征，那么这两个物品是非同质的，而同质是指某个部分或数量可以被另一个同等部分或数量所代替。</p>
-<blockquote>
-<ul>
-<li>ERC20：同质代币（BNB 等），可置换、可细分。</li>
-<li>ERC721：非同质代币（CryptoKitties 等），不可置换、不可细分（Token 最小单位 1）。</li>
-</ul>
-</blockquote>
-</li>
-<li>
-<p><a href="https://learnblockchain.cn/2018/01/11/guide" target="_blank" rel="noopener noreferrer">区块链技术入门学习指引 - Tiny 熊</a></p>
-</li>
-</ul>
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <category term="区块链"/>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">DAPP</title>
-    <id>https://www.matrixtheone.ga/web/blockChain/DAPP/</id>
-    <link href="https://www.matrixtheone.ga/web/blockChain/DAPP/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
-    <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/不能说的秘密.webp')">
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
     <title type="html">Config</title>
     <id>https://www.matrixtheone.ga/web/blockChain/DAPP/Config/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/DAPP/Config/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-config"> 1. config</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/69888765/getting-netlify-build-error-when-importing-web3-in-nextjs-application-error" target="_blank" rel="noopener noreferrer">SSR 忽略 electron</a>。</li>
@@ -621,14 +330,305 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">基本概念</title>
+    <id>https://www.matrixtheone.ga/web/blockChain/Basic/</id>
+    <link href="https://www.matrixtheone.ga/web/blockChain/Basic/"/>
+    <updated>2023-06-11T15:36:29.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-base58"> 1. Base58</h2>
+<p>Base58 是用于比特币（Bitcoin）中使用的一种独特的编码方式，主要用于产生 Bitcoin 的钱包地址。相比 Base64，Base58 不使用数字 &quot;0&quot;，字母大写 &quot;O&quot;，字母大写 &quot;I&quot;，和字母小写 &quot;l&quot;，以及 &quot;+&quot; 和 &quot;/&quot; 符号。</p>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/Base58" target="_blank" rel="noopener noreferrer">Base58 - 维基百科</a></li>
+</ul>
+<h2 id="_2-哈希碰撞"> 2. 哈希碰撞</h2>
+<div><pre><code><span>const</span> <span>calculate</span> <span>=</span> <span>(</span><span>d<span>,</span> n</span><span>)</span> <span>=></span> <span>{</span>
+  <span>const</span> exponent <span>=</span> <span>(</span><span>-</span>n <span>*</span> <span>(</span>n <span>-</span> <span>1</span><span>)</span><span>)</span> <span>/</span> <span>(</span><span>2</span> <span>*</span> d<span>)</span>
+  <span>return</span> <span>1</span> <span>-</span> Math<span>.</span><span>E</span> <span>**</span> exponent
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><ul>
+<li><a href="https://www.ruanyifeng.com/blog/2018/09/hash-collision-and-birthday-attack.html" target="_blank" rel="noopener noreferrer">哈希碰撞与生日攻击 - 阮一峰</a></li>
+</ul>
+<h2 id="_3-数字签名"> 3. 数字签名</h2>
+<ul>
+<li>
+<p>数字签名的三个作用：防伪造，防篡改，防抵赖。</p>
+</li>
+<li>
+<p>比特币采用的 ECDSA 签名算法需要一个私钥和公钥组成的秘钥对：私钥本质上就是一个 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.8141em;"></span><span>1</span><span>～</span><span><span>2</span><span><span><span><span style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span>256</span></span></span></span></span></span></span></span></span></span></span></span> 的随机数，公钥是由私钥根据 ECDSA 算法推算出来的，通过私钥可以很容易推算出公钥，所以不必保存公钥，但是，通过公钥无法反推私钥，只能暴力破解。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1311929746325537" target="_blank" rel="noopener noreferrer">P2P 交易原理 - 廖雪峰</a></p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207687429747616" target="_blank" rel="noopener noreferrer">签名 - 廖雪峰</a></p>
+</li>
+<li>
+<p><a href="https://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html" target="_blank" rel="noopener noreferrer">数字签名是什么？ - 阮一峰</a></p>
+</li>
+</ul>
+<h2 id="_4-公私钥与地址"> 4. 公私钥与地址</h2>
+<ul>
+<li>
+<p>比特币的公钥是根据私钥由 ECDSA 算法推算出来的，公钥有压缩和非压缩两种表示方法，可互相转换。比特币的地址是公钥哈希的编码，并不是公钥本身，通过公钥可推导出地址。通过地址不可推导出公钥，通过公钥不可推导出私钥。</p>
+<img :src="$withBase('/images/Block-Chain/比特币地址生成.png')" loading="lazy">
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1210215537429856" target="_blank" rel="noopener noreferrer">公钥和地址 - 廖雪峰</a></p>
+</li>
+<li>
+<p><a href="http://www.gobittest.appspot.com/Address" target="_blank" rel="noopener noreferrer">Addresses - Bitcoin Tests</a></p>
+</li>
+</ul>
+<h2 id="_5-比特币支付"> 5. 比特币支付</h2>
+<ul>
+<li>
+<p>比特币支付的本质是由程序触发的数字资产转移。比特币的支付脚本就是对输入的两个数据视作签名和公钥，然后先验证公钥哈希是否与地址相同，再根据公钥验证签名，这种标准脚本称之为 P2PKH（Pay to Public Key Hash）脚本。</p>
+</li>
+<li>
+<p>由此催生出了智能合约：当一个预先编好的条件被触发时，智能合约可以自动执行相应的程序，自动完成数字资产的转移。保险、贷款等金融活动在将来都可以以智能合约的形式执行。智能合约以程序来替代传统的纸质文件条款，并由计算机强制执行，将具有更高的更低的信任成本和运营成本。</p>
+</li>
+<li>
+<p>多重签名可以实现 N 个人持有私钥，其中 M 个人同意即可花费资金的功能。多重签名降低了单个私钥丢失的风险。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1311929802948641" target="_blank" rel="noopener noreferrer">可编程支付原理 - 廖雪峰</a></p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207315329092960" target="_blank" rel="noopener noreferrer">多重签名 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_6-utxo"> 6. UTXO</h2>
+<ul>
+<li>
+<p>比特币区块链使用 UTXO 模型，它没有账户这个概念。重建整个地址-余额数据库需要扫描整个区块链，并按每个交易依次更新记录，即可得到当前状态。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298275932480" target="_blank" rel="noopener noreferrer">UTXO 模型 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_7-merkle-tree"> 7. Merkle Tree</h2>
+<ul>
+<li>
+<p>梅克尔树是一种二叉树，能快速检查和归纳大量数据，可用于验证区块中交易记录的完整性，保证所有交易的不可篡改。</p>
+</li>
+<li>
+<p>Merkle Root 为 Merkle Tree 顶点，存储在区块头中。</p>
+<img :src="$withBase('/images/Block-Chain/Merkle Tree.png')" loading="lazy">
+</li>
+</ul>
+<h2 id="_8-segwit-地址"> 8. Segwit 地址</h2>
+<ul>
+<li>
+<p>Segwit 地址又称隔离见证地址。比特币延展性攻击的原因是 ECDSA 签名总是有两个有效签名，且可以相互计算。</p>
+</li>
+<li>
+<p>要解决延展性攻击的问题，有两个办法，一是对交易签名进行归一化（Normalize）。因为 ECDSA 签名后总有两个有效的签名 (r, s) 和 (r, -s mod N)，那只接受数值较小的那个签名，为此比特币引入了一个 SCRIPT_VERIFY_LOW_S 标志仅接受较小值的签名。</p>
+</li>
+<li>
+<p>另一个办法是把签名数据移到交易之外，这样交易本身的哈希就不会变化。不含签名的交易计算出的哈希称为 wtxid，为此引入了一种新的隔离见证地址。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207366165169216" target="_blank" rel="noopener noreferrer">Segwit 地址 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_9-分叉"> 9. 分叉</h2>
+<ul>
+<li>
+<p>伪·软分叉（不分叉）：旧节点接受新区块，新节点也接受旧区块。</p>
+</li>
+<li>
+<p>真·软分叉：旧节点接受新区块，新节点不接受旧区块。</p>
+<blockquote>
+<ol>
+<li>其实没分叉：新节点算力超过 50%。</li>
+<li>确实分叉了：新节点算力不到 50%。</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<p>硬分叉：旧节点不接受新区块。</p>
+</li>
+<li>
+<p><a href="https://learnblockchain.cn/article/849" target="_blank" rel="noopener noreferrer">关于扩容与分叉（上）- maxdeath</a></p>
+</li>
+</ul>
+<h2 id="_10-隔离见证"> 10. 隔离见证</h2>
+<ul>
+<li>
+<p>比特币的格式里，允许用脚本来替换签名。签名大概占了交易大小的 2/3 空间（约 150 字节）。</p>
+</li>
+<li>
+<p>隔离见证区块：每笔交易都被分成了两部分：交易和见证（签名）。交易部分只有 100 字节左右，于是一个 1MB 的区块里面能放 10000 笔交易（原来是 4000 笔）。所有的见证部分，大约 1.5MB - 2MB，都被扔到了后面。</p>
+</li>
+<li>
+<p>特点：</p>
+<blockquote>
+<ul>
+<li>是软分叉甚至不分叉。</li>
+<li>理论上来讲可能提高 2-3 倍的交易量。</li>
+<li>支持闪电网络，可以将一部分交易挪到链下进行，减轻主链的负担。</li>
+<li>会降低比特币的安全性。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><a href="https://learnblockchain.cn/article/849#%E9%9A%94%E7%A6%BB%E8%A7%81%E8%AF%81" target="_blank" rel="noopener noreferrer">隔离见证 - maxdeath</a></p>
+</li>
+<li>
+<p><a href="https://learnblockchain.cn/article/850" target="_blank" rel="noopener noreferrer">关于扩容与分叉（下）- maxdeath</a></p>
+</li>
+</ul>
+<h2 id="_11-hd-钱包"> 11. HD 钱包</h2>
+<ul>
+<li>
+<p>HD 钱包采用分层确定性算法通过根扩展私钥计算所有层级的所有子扩展私钥，继而得到扩展公钥和地址。</p>
+</li>
+<li>
+<p>可以通过普通衍生和硬化衍生两种方式计算扩展子私钥，后者更安全，但对应的扩展公钥无法计算硬化衍生的子扩展公钥。</p>
+</li>
+<li>
+<p>通过扩展公钥可以在没有扩展私钥的前提下计算所有普通子扩展公钥，此特性可实现观察钱包。</p>
+</li>
+<li>
+<p>HD 钱包通过 Bloom Filter 可以高效监控链上的所有地址，并根据是否是本地管理的地址决定如何计算钱包余额。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298278803712" target="_blank" rel="noopener noreferrer">HD 钱包 - 廖雪峰</a></p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1364939807653921" target="_blank" rel="noopener noreferrer">地址监控 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_12-助记词"> 12. 助记词</h2>
+<ul>
+<li>
+<p>BIP-39 规范通过使用助记词 + 口令来生成 HD 钱包的种子，用户只需记忆助记词和口令即可随时恢复 HD 钱包。生成助记词的过程是计算机随机产生的，用户只要记住这些助记词，就可以根据助记词推算出 HD 钱包的种子。</p>
+</li>
+<li>
+<p>助记词的意义就是作为私钥的备份。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207320517404448" target="_blank" rel="noopener noreferrer">助记词 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_13-以太坊"> 13. 以太坊</h2>
+<ul>
+<li>
+<p>以太坊采用账户余额模型，通常情况下一个以太坊地址已够用。如果要生成多个地址，可继续派生 m/44'/60'/0'/0/1、m/44'/60'/0'/0/2 等。</p>
+</li>
+<li>
+<p>以太坊的私钥和公钥采用和比特币一样的 ECDSA 算法和 secp256k1 曲线，并且可以复用比特币的 HD 钱包助记词。</p>
+</li>
+<li>
+<p>比特币每隔 2015 个区块调整挖矿难度。以太坊每个区块都会调整挖矿难度。</p>
+<blockquote>
+<p>比特币设计时本来打算每 2016 个区块调整一次难度，也就是两周一次，但是由于第一版代码的一个 bug，实际调整周期是 2015 个区块。</p>
+</blockquote>
+</li>
+<li>
+<p>地址生成。</p>
+<img :src="$withBase('/images/Block-Chain/以太坊地址生成.png')" loading="lazy">
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207298477260480" target="_blank" rel="noopener noreferrer">以太坊/账户 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_14-智能合约"> 14. 智能合约</h2>
+<ul>
+<li>
+<p>所谓智能合约，就是一种运行在区块链上的程序（用脚本更形象点）。以太坊通过 EVM 虚拟机执行智能合约代码。</p>
+</li>
+<li>
+<p>合约被部署后将自动获得一个地址，并可像外部账户一样存取 Ether，还可以存储状态数据。只能被动地被外部账户调用，但在执行时可以调用其他合约的公共函数。</p>
+</li>
+<li>
+<p><a href="https://www.liaoxuefeng.com/wiki/1207298049439968/1207297939801024" target="_blank" rel="noopener noreferrer">智能合约 - 廖雪峰</a></p>
+</li>
+</ul>
+<h2 id="_15-术语"> 15. 术语</h2>
+<ul>
+<li>
+<p>手续费 = GasUsed * GasPrice</p>
+</li>
+<li>
+<p>GasUsed：Gas 实际消耗量。</p>
+<blockquote>
+<ul>
+<li>区块：所有交易消耗的 Gas 总量。</li>
+<li>交易：实际消耗的 Gas。一笔普通转账交易固定消耗 21000 Gas，也是最小 Gas 消耗量。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>GasPrice：Gas 消耗单价，用户交易前设置，矿工可根据 GasPrice 选择是否打包。</p>
+</li>
+<li>
+<p>GasLimit：Gas 可消耗上限。</p>
+<blockquote>
+<ul>
+<li>区块：所有交易 Gas 消耗上限，防止无法停止（死循环）的合约来阻塞网络。每个区块的矿工可调整区块 GasLimit，任意加减 1/2024（0.0976%）。</li>
+<li>交易：用户设置交易可消耗的 Gas 上限。如果实际 Gas 消耗超出用户设置的 GasLimit，那么该交易失败，消耗的 Gas 不会返还（消耗了算力）。如果实际 Gas 消耗小于用户设置的 GasLimit，那么超出的 Gas 会返还用户。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>Nonce：随机数。</p>
+<blockquote>
+<ul>
+<li>区块：工作量证明，也就是猜出的一个正确答案，代表挖矿成功。</li>
+<li>账户：防止多重交易（双花），交易自增长（消息调用不会增长）。如果用户自定义交易 Nonce 大于账户 Nonce + 1，那么交易会失败。如果一个区块上用户有两个交易的 Nonce 相同（自增长 Nonce），矿工可选择一笔交易打包，另一笔交易丢弃。矿工当然会选 GasPrice 高的那笔哟，这样可以在上一笔交易打包前，发出另一笔 Nonce 一样，但 GasPrice 较高的交易，来取消上一笔交易（看手速与运气的时候了）。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>代币标准：如果同一个集合的两个物品具有不同的特征，那么这两个物品是非同质的，而同质是指某个部分或数量可以被另一个同等部分或数量所代替。</p>
+<blockquote>
+<ul>
+<li>ERC20：同质代币（BNB 等），可置换、可细分。</li>
+<li>ERC721：非同质代币（CryptoKitties 等），不可置换、不可细分（Token 最小单位 1）。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><a href="https://learnblockchain.cn/2018/01/11/guide" target="_blank" rel="noopener noreferrer">区块链技术入门学习指引 - Tiny 熊</a></p>
+</li>
+</ul>
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <category term="区块链"/>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-06-11T15:36:29.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">DAPP</title>
+    <id>https://www.matrixtheone.ga/web/blockChain/DAPP/</id>
+    <link href="https://www.matrixtheone.ga/web/blockChain/DAPP/"/>
+    <updated>2023-06-11T15:36:29.000Z</updated>
+    <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/不能说的秘密.webp')">
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Utils</title>
     <id>https://www.matrixtheone.ga/web/blockChain/DAPP/Utils/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/DAPP/Utils/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-comparetoken"> 1. compareToken</h2>
 <ul>
 <li>判断代币是否足够。</li>
@@ -651,14 +651,30 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">区块链</title>
+    <id>https://www.matrixtheone.ga/web/blockChain/</id>
+    <link href="https://www.matrixtheone.ga/web/blockChain/"/>
+    <updated>2023-06-11T15:36:29.000Z</updated>
+    <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/黑客帝国.webp')">
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Web3</title>
     <id>https://www.matrixtheone.ga/web/blockChain/DAPP/Web3/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/DAPP/Web3/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-connectors"> 1. connectors</h2>
 <div><pre><code><span>import</span> <span>{</span> InjectedConnector <span>}</span> <span>from</span> <span>'@web3-react/injected-connector'</span>
 <span>import</span> <span>{</span> WalletConnectConnector <span>}</span> <span>from</span> <span>'@web3-react/walletconnect-connector'</span>
@@ -830,30 +846,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">区块链</title>
-    <id>https://www.matrixtheone.ga/web/blockChain/</id>
-    <link href="https://www.matrixtheone.ga/web/blockChain/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
-    <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/黑客帝国.webp')">
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Solidity</title>
     <id>https://www.matrixtheone.ga/web/blockChain/Solidity/</id>
     <link href="https://www.matrixtheone.ga/web/blockChain/Solidity/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -861,14 +861,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Docker</title>
     <id>https://www.matrixtheone.ga/web/command/Docker/</id>
     <link href="https://www.matrixtheone.ga/web/command/Docker/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="reference"> <a href="https://docs.docker.com/reference/" target="_blank" rel="noopener noreferrer">reference</a></h2>
 <ul>
 <li>
@@ -974,28 +974,28 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Blog Home</title>
     <id>https://www.matrixtheone.ga/web/intro/</id>
     <link href="https://www.matrixtheone.ga/web/intro/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>人的梦想，是不会结束的！</rights>
   </entry>
   <entry>
     <title type="html">魔法边框</title>
     <id>https://www.matrixtheone.ga/web/magic/Border/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Border/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-639c5f01"
@@ -1123,14 +1123,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">拖拽切换</title>
     <id>https://www.matrixtheone.ga/web/magic/Drag-Switch/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Drag-Switch/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-305bf33d"
@@ -1212,14 +1212,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">毛玻璃</title>
     <id>https://www.matrixtheone.ga/web/magic/Ground-Glass/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Ground-Glass/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h3 id="backdrop-filter-blur"> backdrop-filter: blur()</h3>
 <blockquote>
 <p>透明度 + 模糊，火狐默认无效，移动端兼容性不大友好</p>
@@ -1472,14 +1472,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">图像阴影</title>
     <id>https://www.matrixtheone.ga/web/magic/Image-Shadow/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Image-Shadow/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>利用 filter 制造伪阴影</p>
 </blockquote>
@@ -1538,14 +1538,14 @@
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">霓虹灯</title>
     <id>https://www.matrixtheone.ga/web/magic/Neon/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Neon/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-01089fb6"
@@ -1678,14 +1678,14 @@ section::after</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">二维码</title>
     <id>https://www.matrixtheone.ga/web/magic/QR-Code/</id>
     <link href="https://www.matrixtheone.ga/web/magic/QR-Code/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-f65656fe"
@@ -1838,14 +1838,14 @@ section::after</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">前端特效</title>
     <id>https://www.matrixtheone.ga/web/magic/</id>
     <link href="https://www.matrixtheone.ga/web/magic/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/银翼杀手2049.webp')">
 ]]></content>
     <author>
@@ -1854,14 +1854,14 @@ section::after</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">倒影动效</title>
     <id>https://www.matrixtheone.ga/web/magic/Reflect/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Reflect/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-36a7379d"
@@ -2079,14 +2079,14 @@ section:hover::before</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">规则阴影</title>
     <id>https://www.matrixtheone.ga/web/magic/Rule-Shadow/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Rule-Shadow/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h3 id="clip-path-polygon"> clip-path: polygon()</h3>
 <blockquote>
 <p><a href="https://www.zhangxinxu.com/wordpress/2016/05/css3-filter-drop-shadow-vs-box-shadow/" target="_blank" rel="noopener noreferrer">drop-shadow 可以穿透元素的透明部分</a></p>
@@ -2139,14 +2139,14 @@ section:hover::before</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">滚动视差</title>
     <id>https://www.matrixtheone.ga/web/magic/Scroll-Parallax/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Scroll-Parallax/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h3 id="transform-style-preserve-3d"> transform-style: preserve-3d</h3>
 <blockquote>
 <p>3D 空间图片视距较远离正常平面</p>
@@ -2308,14 +2308,14 @@ section:hover::before</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">滚动贴合</title>
     <id>https://www.matrixtheone.ga/web/magic/Scroll-Snap/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Scroll-Snap/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-20c7991b"
@@ -2465,14 +2465,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">文字故障</title>
     <id>https://www.matrixtheone.ga/web/magic/Text-Fault/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Text-Fault/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-676cd1fe"
@@ -2615,14 +2615,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">文字流光</title>
     <id>https://www.matrixtheone.ga/web/magic/Text-Flow/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Text-Flow/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-a10dac26"
@@ -2781,14 +2781,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">图片主色</title>
     <id>https://www.matrixtheone.ga/web/magic/Theme-Color/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Theme-Color/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>伪主色，放大模糊中间色调</p>
 </blockquote>
@@ -2850,14 +2850,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">打字效果</title>
     <id>https://www.matrixtheone.ga/web/magic/Typing-Effect/</id>
     <link href="https://www.matrixtheone.ga/web/magic/Typing-Effect/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[
           <div
             id="code-demo-20387d5e"
@@ -2911,14 +2911,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">浏览器</title>
     <id>https://www.matrixtheone.ga/web/memo/Browser/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Browser/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-url-到页面渲染"> 1. URL 到页面渲染</h2>
 <img :src="$withBase('/images/Browser/URL 到页面渲染.png')" loading="lazy">
 <ul>
@@ -3046,14 +3046,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS</title>
     <id>https://www.matrixtheone.ga/web/memo/CSS/</id>
     <link href="https://www.matrixtheone.ga/web/memo/CSS/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-bfc"> 1. BFC</h2>
 <ul>
 <li>
@@ -3319,14 +3319,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Flutter</title>
     <id>https://www.matrixtheone.ga/web/memo/Flutter/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Flutter/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -3334,14 +3334,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">HTML</title>
     <id>https://www.matrixtheone.ga/web/memo/HTML/</id>
     <link href="https://www.matrixtheone.ga/web/memo/HTML/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-defer-与-async"> 1. defer 与 async</h2>
 <ul>
 <li>
@@ -3430,14 +3430,14 @@ window<span>.</span>onresize <span>=</span> setDemoWidth
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">面试</title>
     <id>https://www.matrixtheone.ga/web/memo/Interview/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Interview/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-执行上下文"> 1. 执行上下文</h2>
 <div><pre><code><span>var</span> name <span>=</span> <span>'Smith'</span> <span>// 函数参数作用域或内部作用域有 name 声明，不会查找此处作用域上的 name</span>
 
@@ -3802,14 +3802,14 @@ console<span>.</span><span>log</span><span>(</span><span>'-------bfs--------'</s
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JS</title>
     <id>https://www.matrixtheone.ga/web/memo/JS/</id>
     <link href="https://www.matrixtheone.ga/web/memo/JS/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-判断方式"> 1. 判断方式</h2>
 <ul>
 <li>
@@ -4545,14 +4545,14 @@ Promise<span>.</span><span>resolve</span><span>(</span><span>6</span><span>)</sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">网络</title>
     <id>https://www.matrixtheone.ga/web/memo/Network/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Network/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-tcp"> 1. TCP</h2>
 <ul>
 <li>
@@ -4833,14 +4833,14 @@ Promise<span>.</span><span>resolve</span><span>(</span><span>6</span><span>)</sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">前端备忘录</title>
     <id>https://www.matrixtheone.ga/web/memo/</id>
     <link href="https://www.matrixtheone.ga/web/memo/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/情书.webp')">
 ]]></content>
     <author>
@@ -4849,14 +4849,14 @@ Promise<span>.</span><span>resolve</span><span>(</span><span>6</span><span>)</sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">手搓螺旋丸</title>
     <id>https://www.matrixtheone.ga/web/memo/Rasengan/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Rasengan/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-object-create"> 1. Object.create</h2>
 <ul>
 <li>2006 年，Douglas Crockford 写了一篇文章：<a href="https://www.crockford.com/javascript/prototypal.html" target="_blank" rel="noopener noreferrer">《JavaScript 中的原型式继承》</a>。</li>
@@ -5901,14 +5901,14 @@ Didact<span>.</span><span>render</span><span>(</span>element<span>,</span> conta
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">React</title>
     <id>https://www.matrixtheone.ga/web/memo/React/</id>
     <link href="https://www.matrixtheone.ga/web/memo/React/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-宏观包结构"> 1. 宏观包结构</h2>
 <img :src="$withBase('/images/React/核心包关系图.png')" loading="lazy">
 <ul>
@@ -6688,14 +6688,14 @@ batchOfTasks <span>|=</span> task1 <span>// => 0b0000000000000000000000000000011
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">数据结构与算法</title>
     <id>https://www.matrixtheone.ga/web/memo/Structures-Algorithms/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Structures-Algorithms/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-中点"> 1. 中点</h2>
 <ul>
 <li><code>mid = L + ((R - L) &gt;&gt; 1)</code></li>
@@ -7100,14 +7100,14 @@ console<span>.</span><span>log</span><span>(</span>num2<span>,</span> num1 <span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Vue</title>
     <id>https://www.matrixtheone.ga/web/memo/Vue/</id>
     <link href="https://www.matrixtheone.ga/web/memo/Vue/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-数据响应式"> 1. 数据响应式</h2>
 <ul>
 <li>
@@ -7776,14 +7776,14 @@ Object<span>.</span><span>assign</span><span>(</span><span>this</span><span>.</s
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">30 秒代码</title>
     <id>https://www.matrixtheone.ga/web/note/30SecondCode/</id>
     <link href="https://www.matrixtheone.ga/web/note/30SecondCode/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-写入-json"> 1. 写入 JSON</h2>
 <div><pre><code><span>const</span> fs <span>=</span> <span>require</span><span>(</span><span>'fs'</span><span>)</span>
 
@@ -8188,14 +8188,14 @@ recorder<span>.</span><span>start</span><span>(</span><span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JS 高级</title>
     <id>https://www.matrixtheone.ga/web/note/Advanced/</id>
     <link href="https://www.matrixtheone.ga/web/note/Advanced/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-防抖函数"> 1. 防抖函数</h2>
 <ul>
 <li>
@@ -9150,14 +9150,124 @@ light<span>.</span><span>init</span><span>(</span><span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">Electron</title>
+    <id>https://www.matrixtheone.ga/web/note/Electron/</id>
+    <link href="https://www.matrixtheone.ga/web/note/Electron/"/>
+    <updated>2023-06-11T15:36:29.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-仅启动一个程序"> 1. 仅启动一个程序</h2>
+<div><pre><code><span>if</span> <span>(</span><span>!</span>app<span>.</span><span>requestSingleInstanceLock</span><span>(</span><span>)</span><span>)</span> <span>{</span>
+  app<span>.</span><span>quit</span><span>(</span><span>)</span>
+  <span>return</span>
+<span>}</span>
+
+app<span>.</span><span>on</span><span>(</span><span>'second-instance'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>if</span> <span>(</span><span>!</span>mainWindow<span>)</span> <span>return</span>
+  <span>if</span> <span>(</span>mainWindow<span>.</span><span>isMinimized</span><span>(</span><span>)</span><span>)</span> mainWindow<span>.</span><span>restore</span><span>(</span><span>)</span>
+  mainWindow<span>.</span><span>focus</span><span>(</span><span>)</span>
+  mainWindow<span>.</span><span>show</span><span>(</span><span>)</span>
+<span>}</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h2 id="_2-点击关闭最小化程序"> 2. 点击关闭最小化程序</h2>
+<div><pre><code>mainWindow<span>.</span><span>on</span><span>(</span><span>'close'</span><span>,</span> e <span>=></span> <span>{</span>
+  e<span>.</span><span>preventDefault</span><span>(</span><span>)</span>
+  mainWindow<span>.</span><span>hide</span><span>(</span><span>)</span>
+<span>}</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_3-开机自启"> 3. 开机自启</h2>
+<div><pre><code><span>// 判断开机自启</span>
+app<span>.</span><span>getLoginItemSettings</span><span>(</span><span>{</span> args<span>:</span> <span>[</span><span>'--openAsHidden'</span><span>]</span> <span>}</span><span>)</span><span>.</span>openAtLogin
+
+<span>// 设置开机自启</span>
+app<span>.</span><span>setLoginItemSettings</span><span>(</span><span>{</span>
+  openAtLogin<span>,</span>
+  openAsHidden<span>:</span> <span>true</span><span>,</span>
+  args<span>:</span> <span>[</span><span>'--openAsHidden'</span><span>]</span><span>,</span>
+<span>}</span><span>)</span>
+
+<span>// 如果不是开机自启，最大化显示程序</span>
+mainWindow <span>=</span> <span>new</span> <span>BrowserWindow</span><span>(</span><span>{</span>
+  show<span>:</span> <span>false</span><span>,</span>
+<span>}</span><span>)</span>
+
+mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>if</span> <span>(</span><span>!</span>process<span>.</span>argv<span>.</span><span>includes</span><span>(</span><span>'--openAsHidden'</span><span>)</span><span>)</span> <span>{</span>
+    mainWindow<span>.</span><span>maximize</span><span>(</span><span>)</span>
+    mainWindow<span>.</span><span>show</span><span>(</span><span>)</span>
+  <span>}</span>
+<span>}</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><h2 id="_4-点击托盘"> 4. 点击托盘</h2>
+<div><pre><code>tray<span>.</span><span>on</span><span>(</span><span>'click'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>if</span> <span>(</span>mainWindow<span>.</span><span>isVisible</span><span>(</span><span>)</span><span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>mainWindow<span>.</span><span>isMinimized</span><span>(</span><span>)</span><span>)</span> <span>{</span>
+      mainWindow<span>.</span><span>restore</span><span>(</span><span>)</span>
+      mainWindow<span>.</span><span>focus</span><span>(</span><span>)</span>
+    <span>}</span> <span>else</span> <span>{</span>
+      mainWindow<span>.</span><span>focus</span><span>(</span><span>)</span>
+    <span>}</span>
+  <span>}</span> <span>else</span> <span>{</span>
+    mainWindow<span>.</span><span>maximize</span><span>(</span><span>)</span>
+    mainWindow<span>.</span><span>show</span><span>(</span><span>)</span>
+  <span>}</span>
+<span>}</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h2 id="_5-自动更新"> 5. 自动更新</h2>
+<div><pre><code><span>import</span> <span>type</span> <span>{</span> BrowserWindow <span>}</span> <span>from</span> <span>'electron'</span>
+<span>import</span> log <span>from</span> <span>'electron-log'</span>
+<span>import</span> <span>{</span> autoUpdater <span>}</span> <span>from</span> <span>'electron-updater'</span>
+
+<span>const</span> <span>setupUpdate</span> <span>=</span> <span>(</span>mainWindow<span>:</span> BrowserWindow<span>)</span> <span>=></span> <span>{</span>
+  log<span>.</span>transports<span>.</span>file<span>.</span>level <span>=</span> <span>'info'</span>
+  autoUpdater<span>.</span>logger <span>=</span> log
+  autoUpdater<span>.</span><span>checkForUpdatesAndNotify</span><span>(</span><span>)</span>
+
+  autoUpdater<span>.</span><span>on</span><span>(</span><span>'checking-for-update'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:checking'</span><span>)</span>
+  <span>}</span><span>)</span>
+
+  autoUpdater<span>.</span><span>on</span><span>(</span><span>'update-available'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:available'</span><span>,</span> <span>true</span><span>)</span>
+  <span>}</span><span>)</span>
+
+  autoUpdater<span>.</span><span>on</span><span>(</span><span>'update-not-available'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:available'</span><span>,</span> <span>false</span><span>)</span>
+  <span>}</span><span>)</span>
+
+  autoUpdater<span>.</span><span>on</span><span>(</span><span>'error'</span><span>,</span> error <span>=></span> <span>{</span>
+    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:error'</span><span>,</span> error<span>)</span>
+  <span>}</span><span>)</span>
+
+  autoUpdater<span>.</span><span>on</span><span>(</span><span>'download-progress'</span><span>,</span> <span>(</span><span>{</span> percent <span>}</span><span>)</span> <span>=></span> <span>{</span>
+    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:progress'</span><span>,</span> percent<span>)</span>
+  <span>}</span><span>)</span>
+
+  autoUpdater<span>.</span><span>on</span><span>(</span><span>'update-downloaded'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:downloaded'</span><span>)</span>
+  <span>}</span><span>)</span>
+<span>}</span>
+
+<span>export</span> <span>default</span> setupUpdate
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div>]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <category term="Electron"/>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS</title>
     <id>https://www.matrixtheone.ga/web/note/CSS/</id>
     <link href="https://www.matrixtheone.ga/web/note/CSS/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-网页字体设计"> 1. <a href="https://www.bilibili.com/video/BV1b54y1Z7pu" target="_blank" rel="noopener noreferrer">网页字体设计</a></h2>
 <div><pre><code><span><span>@font-face</span></span> <span>{</span>
   <span>font-family</span><span>:</span> Emoji<span>;</span>
@@ -9510,124 +9620,14 @@ light<span>.</span><span>init</span><span>(</span><span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">Electron</title>
-    <id>https://www.matrixtheone.ga/web/note/Electron/</id>
-    <link href="https://www.matrixtheone.ga/web/note/Electron/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-仅启动一个程序"> 1. 仅启动一个程序</h2>
-<div><pre><code><span>if</span> <span>(</span><span>!</span>app<span>.</span><span>requestSingleInstanceLock</span><span>(</span><span>)</span><span>)</span> <span>{</span>
-  app<span>.</span><span>quit</span><span>(</span><span>)</span>
-  <span>return</span>
-<span>}</span>
-
-app<span>.</span><span>on</span><span>(</span><span>'second-instance'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>if</span> <span>(</span><span>!</span>mainWindow<span>)</span> <span>return</span>
-  <span>if</span> <span>(</span>mainWindow<span>.</span><span>isMinimized</span><span>(</span><span>)</span><span>)</span> mainWindow<span>.</span><span>restore</span><span>(</span><span>)</span>
-  mainWindow<span>.</span><span>focus</span><span>(</span><span>)</span>
-  mainWindow<span>.</span><span>show</span><span>(</span><span>)</span>
-<span>}</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h2 id="_2-点击关闭最小化程序"> 2. 点击关闭最小化程序</h2>
-<div><pre><code>mainWindow<span>.</span><span>on</span><span>(</span><span>'close'</span><span>,</span> e <span>=></span> <span>{</span>
-  e<span>.</span><span>preventDefault</span><span>(</span><span>)</span>
-  mainWindow<span>.</span><span>hide</span><span>(</span><span>)</span>
-<span>}</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="_3-开机自启"> 3. 开机自启</h2>
-<div><pre><code><span>// 判断开机自启</span>
-app<span>.</span><span>getLoginItemSettings</span><span>(</span><span>{</span> args<span>:</span> <span>[</span><span>'--openAsHidden'</span><span>]</span> <span>}</span><span>)</span><span>.</span>openAtLogin
-
-<span>// 设置开机自启</span>
-app<span>.</span><span>setLoginItemSettings</span><span>(</span><span>{</span>
-  openAtLogin<span>,</span>
-  openAsHidden<span>:</span> <span>true</span><span>,</span>
-  args<span>:</span> <span>[</span><span>'--openAsHidden'</span><span>]</span><span>,</span>
-<span>}</span><span>)</span>
-
-<span>// 如果不是开机自启，最大化显示程序</span>
-mainWindow <span>=</span> <span>new</span> <span>BrowserWindow</span><span>(</span><span>{</span>
-  show<span>:</span> <span>false</span><span>,</span>
-<span>}</span><span>)</span>
-
-mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>if</span> <span>(</span><span>!</span>process<span>.</span>argv<span>.</span><span>includes</span><span>(</span><span>'--openAsHidden'</span><span>)</span><span>)</span> <span>{</span>
-    mainWindow<span>.</span><span>maximize</span><span>(</span><span>)</span>
-    mainWindow<span>.</span><span>show</span><span>(</span><span>)</span>
-  <span>}</span>
-<span>}</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><h2 id="_4-点击托盘"> 4. 点击托盘</h2>
-<div><pre><code>tray<span>.</span><span>on</span><span>(</span><span>'click'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>if</span> <span>(</span>mainWindow<span>.</span><span>isVisible</span><span>(</span><span>)</span><span>)</span> <span>{</span>
-    <span>if</span> <span>(</span>mainWindow<span>.</span><span>isMinimized</span><span>(</span><span>)</span><span>)</span> <span>{</span>
-      mainWindow<span>.</span><span>restore</span><span>(</span><span>)</span>
-      mainWindow<span>.</span><span>focus</span><span>(</span><span>)</span>
-    <span>}</span> <span>else</span> <span>{</span>
-      mainWindow<span>.</span><span>focus</span><span>(</span><span>)</span>
-    <span>}</span>
-  <span>}</span> <span>else</span> <span>{</span>
-    mainWindow<span>.</span><span>maximize</span><span>(</span><span>)</span>
-    mainWindow<span>.</span><span>show</span><span>(</span><span>)</span>
-  <span>}</span>
-<span>}</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h2 id="_5-自动更新"> 5. 自动更新</h2>
-<div><pre><code><span>import</span> <span>type</span> <span>{</span> BrowserWindow <span>}</span> <span>from</span> <span>'electron'</span>
-<span>import</span> log <span>from</span> <span>'electron-log'</span>
-<span>import</span> <span>{</span> autoUpdater <span>}</span> <span>from</span> <span>'electron-updater'</span>
-
-<span>const</span> <span>setupUpdate</span> <span>=</span> <span>(</span>mainWindow<span>:</span> BrowserWindow<span>)</span> <span>=></span> <span>{</span>
-  log<span>.</span>transports<span>.</span>file<span>.</span>level <span>=</span> <span>'info'</span>
-  autoUpdater<span>.</span>logger <span>=</span> log
-  autoUpdater<span>.</span><span>checkForUpdatesAndNotify</span><span>(</span><span>)</span>
-
-  autoUpdater<span>.</span><span>on</span><span>(</span><span>'checking-for-update'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:checking'</span><span>)</span>
-  <span>}</span><span>)</span>
-
-  autoUpdater<span>.</span><span>on</span><span>(</span><span>'update-available'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:available'</span><span>,</span> <span>true</span><span>)</span>
-  <span>}</span><span>)</span>
-
-  autoUpdater<span>.</span><span>on</span><span>(</span><span>'update-not-available'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:available'</span><span>,</span> <span>false</span><span>)</span>
-  <span>}</span><span>)</span>
-
-  autoUpdater<span>.</span><span>on</span><span>(</span><span>'error'</span><span>,</span> error <span>=></span> <span>{</span>
-    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:error'</span><span>,</span> error<span>)</span>
-  <span>}</span><span>)</span>
-
-  autoUpdater<span>.</span><span>on</span><span>(</span><span>'download-progress'</span><span>,</span> <span>(</span><span>{</span> percent <span>}</span><span>)</span> <span>=></span> <span>{</span>
-    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:progress'</span><span>,</span> percent<span>)</span>
-  <span>}</span><span>)</span>
-
-  autoUpdater<span>.</span><span>on</span><span>(</span><span>'update-downloaded'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    mainWindow<span>.</span>webContents<span>.</span><span>send</span><span>(</span><span>'update:downloaded'</span><span>)</span>
-  <span>}</span><span>)</span>
-<span>}</span>
-
-<span>export</span> <span>default</span> setupUpdate
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div>]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <category term="Electron"/>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">HTML</title>
     <id>https://www.matrixtheone.ga/web/note/HTML/</id>
     <link href="https://www.matrixtheone.ga/web/note/HTML/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-移动端视口配置-并且不允许缩放"> 1. 移动端视口配置，并且不允许缩放</h2>
 <div><pre><code><span><span><span>&lt;</span>meta</span>
   <span>name</span><span><span>=</span><span>"</span>viewport<span>"</span></span>
@@ -9656,14 +9656,14 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CommitLint</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Commit-Lint/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Commit-Lint/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-commitlintrc-js"> 1. .commitlintrc.js</h2>
 <div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
   <span>extends</span><span>:</span> <span>[</span><span>'@commitlint/config-conventional'</span><span>]</span><span>,</span>
@@ -9734,14 +9734,14 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">EditorConfig</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Editor-Config/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Editor-Config/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-editorconfig"> 1. .editorconfig</h2>
 <div><pre><code><span># https://editorconfig.org</span>
 <span>root</span> <span><span>=</span> true</span>
@@ -9769,14 +9769,14 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Eslintignore</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Eslint-Ignore/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Eslint-Ignore/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-eslintignore"> 1. .eslintignore</h2>
 <div><pre><code><span>tmp</span>
 <span>docs</span>
@@ -9795,14 +9795,14 @@ mainWindow<span>.</span><span>on</span><span>(</span><span>'ready-to-show'</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Eslint</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Eslint/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Eslint/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-eslintrc-js"> 1. .eslintrc.js</h2>
 <div><pre><code><span>const</span> tsRules <span>=</span> <span>require</span><span>(</span><span>'./rules/tsRules'</span><span>)</span>
 <span>const</span> vueRules <span>=</span> <span>require</span><span>(</span><span>'./rules/vueRules'</span><span>)</span>
@@ -10024,14 +10024,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Gitignore</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Git-Ignore/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Git-Ignore/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-gitignore"> 1. .gitignore</h2>
 <div><pre><code><span>.node</span>
 <span>.idea</span>
@@ -10063,14 +10063,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Npm</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Npm/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Npm/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -10078,14 +10078,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Prettier</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Prettier/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Prettier/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-prettierrc-js"> 1. .prettierrc.js</h2>
 <div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
   <span>semi</span><span>:</span> <span>false</span><span>,</span>
@@ -10128,14 +10128,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Stylelint</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/Stylelint/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/Stylelint/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-stylelintrc-js"> 1. .stylelintrc.js</h2>
 <div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
   <span>extends</span><span>:</span> <span>[</span>
@@ -10206,14 +10206,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">TsConfig</title>
     <id>https://www.matrixtheone.ga/web/note/Lint/TS-Config/</id>
     <link href="https://www.matrixtheone.ga/web/note/Lint/TS-Config/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-tsconfig-json"> 1. tsconfig.json</h2>
 <div><pre><code><span>{</span>
   <span>"compilerOptions"</span><span>:</span> <span>{</span>
@@ -10260,14 +10260,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Next</title>
     <id>https://www.matrixtheone.ga/web/note/Next/</id>
     <link href="https://www.matrixtheone.ga/web/note/Next/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -10275,14 +10275,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Nginx</title>
     <id>https://www.matrixtheone.ga/web/note/Nginx/</id>
     <link href="https://www.matrixtheone.ga/web/note/Nginx/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-http-缓存"> 1. HTTP 缓存</h2>
 <div><pre><code><span><span>server</span></span> <span>{</span>
   <span># 不缓存html</span>
@@ -10372,14 +10372,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Node</title>
     <id>https://www.matrixtheone.ga/web/note/Node/</id>
     <link href="https://www.matrixtheone.ga/web/note/Node/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -10387,14 +10387,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Nuxt</title>
     <id>https://www.matrixtheone.ga/web/note/Nuxt/</id>
     <link href="https://www.matrixtheone.ga/web/note/Nuxt/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
@@ -10402,30 +10402,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">项目笔记</title>
-    <id>https://www.matrixtheone.ga/web/note/README%20copy/</id>
-    <link href="https://www.matrixtheone.ga/web/note/README%20copy/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
-    <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/水浒传.webp')">
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">前端笔记</title>
     <id>https://www.matrixtheone.ga/web/note/</id>
     <link href="https://www.matrixtheone.ga/web/note/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/头文字D.webp')">
 ]]></content>
     <author>
@@ -10434,14 +10418,30 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">项目笔记</title>
+    <id>https://www.matrixtheone.ga/web/note/README%20copy/</id>
+    <link href="https://www.matrixtheone.ga/web/note/README%20copy/"/>
+    <updated>2023-06-11T15:36:29.000Z</updated>
+    <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/水浒传.webp')">
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">业务</title>
     <id>https://www.matrixtheone.ga/web/note/React/Business/</id>
     <link href="https://www.matrixtheone.ga/web/note/React/Business/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-扫码盒微信-支付宝支付"> 1. 扫码盒微信/支付宝支付</h2>
 <div><pre><code><span>import</span> React<span>,</span> <span>{</span> useEffect<span>,</span> useRef<span>,</span> useState <span>}</span> <span>from</span> <span>'react'</span>
 <span>import</span> <span>{</span> Input<span>,</span> message<span>,</span> Modal <span>}</span> <span>from</span> <span>'antd'</span>
@@ -10594,14 +10594,14 @@ window<span>.</span><span>addEventListener</span><span>(</span><span>'devtoolsch
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Components</title>
     <id>https://www.matrixtheone.ga/web/note/React/Components/</id>
     <link href="https://www.matrixtheone.ga/web/note/React/Components/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-protable"> 1. ProTable</h2>
 <ul>
 <li>基于 Ant-Pro 封装，新增删除最后一项自动翻页、参数字段名称转换，修复 ProTable 清空时为空字符串和空数组的 BUG。</li>
@@ -11201,14 +11201,14 @@ export default Tinymce
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Config</title>
     <id>https://www.matrixtheone.ga/web/note/React/Config/</id>
     <link href="https://www.matrixtheone.ga/web/note/React/Config/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-umi-排除-antd-打包"> 1. Umi 排除 Antd 打包</h2>
 <ul>
 <li>externalAntd.js</li>
@@ -11290,14 +11290,14 @@ pagePath<span>.</span><span>map</span><span>(</span><span>path</span> <span>=></
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Hooks</title>
     <id>https://www.matrixtheone.ga/web/note/React/Hooks/</id>
     <link href="https://www.matrixtheone.ga/web/note/React/Hooks/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-antd-table-自适应屏幕高度"> 1. Antd-Table 自适应屏幕高度</h2>
 <div><pre><code><span>import</span> <span>{</span> useContext<span>,</span> useEffect<span>,</span> useRef <span>}</span> <span>from</span> <span>'react'</span>
 <span>import</span> <span>{</span> ConfigProvider <span>}</span> <span>from</span> <span>'antd'</span>
@@ -11438,14 +11438,14 @@ pagePath<span>.</span><span>map</span><span>(</span><span>path</span> <span>=></
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">React</title>
     <id>https://www.matrixtheone.ga/web/note/React/</id>
     <link href="https://www.matrixtheone.ga/web/note/React/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/星际穿越.webp')">
 ]]></content>
     <author>
@@ -11454,14 +11454,14 @@ pagePath<span>.</span><span>map</span><span>(</span><span>path</span> <span>=></
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">TS</title>
     <id>https://www.matrixtheone.ga/web/note/TS/</id>
     <link href="https://www.matrixtheone.ga/web/note/TS/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-类型查看展开"> 1. <a href="https://stackoverflow.com/questions/57683303/how-can-i-see-the-full-expanded-contract-of-a-typescript-type/57683652" target="_blank" rel="noopener noreferrer">类型查看展开</a></h2>
 <div><pre><code><span>type</span> <span>Expand<span>&lt;</span><span>T</span><span>></span></span> <span>=</span> <span>T</span> <span>extends</span> <span><span>infer</span></span> <span>O</span> <span>?</span> <span>{</span> <span>[</span><span>K</span> <span>in</span> <span>keyof</span> <span>O</span><span>]</span><span>:</span> <span>O</span><span>[</span><span>K</span><span>]</span> <span>}</span> <span>:</span> <span>never</span>
 
@@ -11752,14 +11752,14 @@ todo<span>.</span>completed <span>=</span> <span>true</span> <span>// OK</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">APP</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/App/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/App/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-android-证书生成网址"> 1. Android 证书生成网址</h2>
 <ul>
 <li>
@@ -11831,14 +11831,14 @@ app<span>.</span><span>$mount</span><span>(</span><span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Config</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/Config/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/Config/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-环境配置"> 1. 环境配置</h2>
 <ul>
 <li>
@@ -11948,14 +11948,14 @@ module<span>.</span>exports <span>=</span> <span>UNI_ENV</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">H5</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/H5/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/H5/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-h5-调用百度地图-api-跨域"> 1. H5 调用百度地图 api 跨域</h2>
 <ul>
 <li>
@@ -12142,14 +12142,14 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">备忘录</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/Memo/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/Memo/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-webview"> 1. WebView</h2>
 <ul>
 <li>空地址会导致 WebView 错误跳转，使用 v-if 解决。</li>
@@ -12223,14 +12223,14 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">小程序</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/Mini-Program/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/Mini-Program/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-解决-onreachbottom-350ms-频繁触发"> 1. 解决 onReachBottom 350ms 频繁触发</h2>
 <div><pre><code><span>onReachBottom</span><span>(</span><span>)</span> <span>{</span>
   <span>setTimeout</span><span>(</span><span>this</span><span>.</span>loadSaleInfo<span>,</span> <span>400</span><span>)</span>
@@ -12428,14 +12428,14 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Uni-App</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/盗梦空间.webp')">
 ]]></content>
     <author>
@@ -12444,14 +12444,14 @@ Vue<span>.</span><span>use</span><span>(</span>VueJsonp<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Utils</title>
     <id>https://www.matrixtheone.ga/web/note/Uni-App/Utils/</id>
     <link href="https://www.matrixtheone.ga/web/note/Uni-App/Utils/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-fly-请求封装"> 1. Fly 请求封装</h2>
 <ul>
 <li><a href="https://wendux.github.io/dist/#/doc/flyio/readme" target="_blank" rel="noopener noreferrer">DOC</a></li>
@@ -12655,14 +12655,14 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Browser</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Browser/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Browser/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-获取设备类型"> 1. 获取设备类型</h2>
 <div><pre><code><span>/**
  * @return {string} Mobile | Desktop
@@ -12697,14 +12697,14 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Common</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Common/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Common/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-await-错误处理"> 1. await 错误处理</h2>
 <div><pre><code><span>/**
  * @param {Promise&lt;any>} promise
@@ -12724,14 +12724,14 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Document</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Document/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Document/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-检测内容是否溢出"> 1. 检测内容是否溢出</h2>
 <div><pre><code><span>/**
  * @param {Element} element
@@ -12752,14 +12752,14 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Download</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Download/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Download/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-下载文件"> 1. 下载文件</h2>
 <div><pre><code><span>/**
  * @param {string} url 下载链接
@@ -12806,14 +12806,14 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Numeral</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Numeral/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Numeral/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-四舍五入"> 1. 四舍五入</h2>
 <div><pre><code><span>/**
  * @param {number | string} num 值
@@ -12868,14 +12868,14 @@ Vue<span>.</span><span>use</span><span>(</span>helper<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Request</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Request/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Request/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-request"> 1. Request</h2>
 <ul>
 <li><a href="https://axios-http.com/zh/docs/intro" target="_blank" rel="noopener noreferrer">Axios</a></li>
@@ -13041,14 +13041,14 @@ request<span>.</span>interceptors<span>.</span>response<span>.</span><span>use</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Store</title>
     <id>https://www.matrixtheone.ga/web/note/Utils/Store/</id>
     <link href="https://www.matrixtheone.ga/web/note/Utils/Store/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-store"> 1. Store</h2>
 <ul>
 <li>新增有效期设置，<a href="https://localforage.docschina.org/" target="_blank" rel="noopener noreferrer">localforage</a></li>
@@ -13103,14 +13103,14 @@ request<span>.</span>interceptors<span>.</span>response<span>.</span><span>use</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">业务</title>
     <id>https://www.matrixtheone.ga/web/note/Vue/Business/</id>
     <link href="https://www.matrixtheone.ga/web/note/Vue/Business/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-json-导出为-excel"> 1. JSON 导出为 Excel</h2>
 <div><pre><code><span>import</span> <span>{</span> export_json_to_excel <span>as</span> exportJsonToExcel <span>}</span> <span>from</span> <span>'@/plugins/Export2Excel'</span>
 
@@ -13200,14 +13200,14 @@ request<span>.</span>interceptors<span>.</span>response<span>.</span><span>use</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Vue</title>
     <id>https://www.matrixtheone.ga/web/note/Vue/</id>
     <link href="https://www.matrixtheone.ga/web/note/Vue/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/黑暗骑士.webp')">
 ]]></content>
     <author>
@@ -13216,14 +13216,14 @@ request<span>.</span>interceptors<span>.</span>response<span>.</span><span>use</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Config</title>
     <id>https://www.matrixtheone.ga/web/note/Vue/Config/</id>
     <link href="https://www.matrixtheone.ga/web/note/Vue/Config/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-index-html"> 1. index.html</h2>
 <div><pre><code><span><span>&lt;!</span><span>DOCTYPE</span> <span>html</span><span>></span></span>
 <span><span><span>&lt;</span>html</span> <span>lang</span><span><span>=</span><span>"</span>zh-cmn-Hans<span>"</span></span><span>></span></span>
@@ -13426,127 +13426,14 @@ module<span>.</span>exports <span>=</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">Utils</title>
-    <id>https://www.matrixtheone.ga/web/note/Vue/Utils/</id>
-    <link href="https://www.matrixtheone.ga/web/note/Vue/Utils/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-directive"> 1. directive</h2>
-<ul>
-<li>
-<p>directives/index.js，在 main.js 中导入。</p>
-<div><pre><code><span>import</span> Vue <span>from</span> <span>'vue'</span>
-<span>import</span> <span>*</span> <span>as</span> directives <span>from</span> <span>'./directives'</span>
-
-<span>// 遍历后在全局定义指令</span>
-Object<span>.</span><span>keys</span><span>(</span>directives<span>)</span><span>.</span><span>forEach</span><span>(</span><span>item</span> <span>=></span> Vue<span>.</span><span>directive</span><span>(</span>item<span>,</span> directives<span>[</span>item<span>]</span><span>)</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div></li>
-<li>
-<p>directives/directives.js，指令集合。</p>
-<div><pre><code><span>/**
- * @description: 输入框自动聚焦
- */</span>
-<span>export</span> <span>const</span> focus <span>=</span> <span>{</span>
-  <span>inserted</span><span>:</span> <span>(</span><span>el<span>,</span> binding</span><span>)</span> <span>=></span> el<span>.</span><span>focus</span><span>(</span><span>)</span><span>,</span>
-<span>}</span>
-
-<span>/**
- * @description: 防抖指令
- * @param {Array[function, String?, Number?]} 执行函数、监听事件、间隔时间
- */</span>
-<span>export</span> <span>const</span> debounce <span>=</span> <span>{</span>
-  <span>inserted</span><span>(</span><span>el<span>,</span> binding</span><span>)</span> <span>{</span>
-    <span>const</span> <span>[</span>fn<span>,</span> event <span>=</span> <span>'click'</span><span>,</span> time <span>=</span> <span>500</span><span>]</span> <span>=</span> binding<span>.</span>value
-    <span>let</span> timer
-    el<span>.</span><span>addEventListener</span><span>(</span>event<span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-      timer <span>&amp;&amp;</span> <span>clearTimeout</span><span>(</span>timer<span>)</span>
-      timer <span>=</span> <span>setTimeout</span><span>(</span>fn<span>,</span> time<span>)</span>
-    <span>}</span><span>)</span>
-  <span>}</span><span>,</span>
-<span>}</span>
-
-<span>/**
- * @description: 节流指令
- * @param {Array[function, String?, Number?]} 执行函数、监听事件、间隔时间
- */</span>
-<span>export</span> <span>const</span> throttle <span>=</span> <span>{</span>
-  <span>inserted</span><span>(</span><span>el<span>,</span> binding</span><span>)</span> <span>{</span>
-    <span>const</span> <span>[</span>fn<span>,</span> event <span>=</span> <span>'click'</span><span>,</span> time <span>=</span> <span>1000</span><span>]</span> <span>=</span> binding<span>.</span>value
-    <span>let</span> preTime <span>=</span> <span>+</span><span>new</span> <span>Date</span><span>(</span><span>)</span>
-    el<span>.</span><span>addEventListener</span><span>(</span>event<span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-      <span>const</span> nowTime <span>=</span> <span>+</span><span>new</span> <span>Date</span><span>(</span><span>)</span>
-      <span>if</span> <span>(</span>nowTime <span>-</span> preTime <span>></span> time<span>)</span> <span>{</span>
-        <span>fn</span><span>(</span><span>)</span>
-        preTime <span>=</span> nowTime
-      <span>}</span>
-    <span>}</span><span>)</span>
-  <span>}</span><span>,</span>
-<span>}</span>
-
-<span>/**
- * @description: 图片懒加载(性能较差)
- * @param {String} binding.value 图片地址
- */</span>
-<span>export</span> <span>const</span> lazy <span>=</span> <span>{</span>
-  <span>inserted</span><span>(</span><span>el<span>,</span> binding</span><span>)</span> <span>{</span>
-    <span>function</span> <span>fun</span><span>(</span><span>)</span> <span>{</span>
-      <span>const</span> <span>H</span> <span>=</span> window<span>.</span>innerHeight
-      <span>const</span> st <span>=</span> document<span>.</span>body<span>.</span>scrollTop <span>||</span> document<span>.</span>documentElement<span>.</span>scrollTop
-      <span>// 预加载高度200px</span>
-      <span>if</span> <span>(</span>el<span>.</span>offsetTop <span>&lt;=</span> <span>H</span> <span>+</span> st <span>+</span> <span>200</span><span>)</span> <span>{</span>
-        el<span>.</span>src <span>=</span> binding<span>.</span>value <span>// 图片懒加载</span>
-        <span>// el.style.backgroundImage = `url(${binding.value})` // 背景图片懒加载</span>
-        window<span>.</span><span>removeEventListener</span><span>(</span><span>'scroll'</span><span>,</span> fun<span>)</span> <span>// 停止监听</span>
-      <span>}</span>
-    <span>}</span>
-    <span>fun</span><span>(</span><span>)</span>
-    window<span>.</span><span>addEventListener</span><span>(</span><span>'scroll'</span><span>,</span> fun<span>)</span> <span>// 开启监听</span>
-  <span>}</span><span>,</span>
-<span>}</span>
-
-<span>/**
- * @description: 图片懒加载(不兼容IE,性能好)
- * @param {String} binding.value 图片地址
- */</span>
-<span>export</span> <span>const</span> lazy <span>=</span> <span>{</span>
-  <span>inserted</span><span>(</span><span>el<span>,</span> binding</span><span>)</span> <span>{</span>
-    <span>const</span> io <span>=</span> <span>new</span> <span>IntersectionObserver</span><span>(</span>
-      <span>entries</span> <span>=></span> <span>{</span>
-        <span>const</span> en <span>=</span> entries<span>[</span><span>0</span><span>]</span>
-        <span>if</span> <span>(</span>en<span>.</span>isIntersecting<span>)</span> <span>{</span>
-          en<span>.</span>target<span>.</span>src <span>=</span> binding<span>.</span>value <span>// 图片懒加载</span>
-          <span>// en.target.style.backgroundImage = `url(${binding.value})` // 背景图片懒加载</span>
-          io<span>.</span><span>unobserve</span><span>(</span>en<span>.</span>target<span>)</span> <span>// 停止监听</span>
-        <span>}</span>
-      <span>}</span><span>,</span>
-      <span>{</span> <span>rootMargin</span><span>:</span> <span>'200px 0px'</span> <span>}</span> <span>// 预加载高度200px</span>
-    <span>)</span>
-    io<span>.</span><span>observe</span><span>(</span>el<span>)</span> <span>// 开启监听</span>
-  <span>}</span><span>,</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br><span>56</span><br><span>57</span><br><span>58</span><br><span>59</span><br><span>60</span><br><span>61</span><br><span>62</span><br><span>63</span><br><span>64</span><br><span>65</span><br><span>66</span><br><span>67</span><br><span>68</span><br><span>69</span><br><span>70</span><br><span>71</span><br><span>72</span><br><span>73</span><br><span>74</span><br><span>75</span><br><span>76</span><br><span>77</span><br><span>78</span><br><span>79</span><br><span>80</span><br><span>81</span><br></div></div></li>
-</ul>
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <category term="Vue"/>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Webpack</title>
     <id>https://www.matrixtheone.ga/web/note/Webpack/</id>
     <link href="https://www.matrixtheone.ga/web/note/Webpack/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-webpack-配置"> 1. Webpack 配置</h2>
 <ul>
 <li>
@@ -14313,70 +14200,183 @@ module<span>.</span>exports <span>=</span> hooks
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">Utils</title>
+    <id>https://www.matrixtheone.ga/web/note/Vue/Utils/</id>
+    <link href="https://www.matrixtheone.ga/web/note/Vue/Utils/"/>
+    <updated>2023-06-11T15:36:29.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-directive"> 1. directive</h2>
+<ul>
+<li>
+<p>directives/index.js，在 main.js 中导入。</p>
+<div><pre><code><span>import</span> Vue <span>from</span> <span>'vue'</span>
+<span>import</span> <span>*</span> <span>as</span> directives <span>from</span> <span>'./directives'</span>
+
+<span>// 遍历后在全局定义指令</span>
+Object<span>.</span><span>keys</span><span>(</span>directives<span>)</span><span>.</span><span>forEach</span><span>(</span><span>item</span> <span>=></span> Vue<span>.</span><span>directive</span><span>(</span>item<span>,</span> directives<span>[</span>item<span>]</span><span>)</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div></li>
+<li>
+<p>directives/directives.js，指令集合。</p>
+<div><pre><code><span>/**
+ * @description: 输入框自动聚焦
+ */</span>
+<span>export</span> <span>const</span> focus <span>=</span> <span>{</span>
+  <span>inserted</span><span>:</span> <span>(</span><span>el<span>,</span> binding</span><span>)</span> <span>=></span> el<span>.</span><span>focus</span><span>(</span><span>)</span><span>,</span>
+<span>}</span>
+
+<span>/**
+ * @description: 防抖指令
+ * @param {Array[function, String?, Number?]} 执行函数、监听事件、间隔时间
+ */</span>
+<span>export</span> <span>const</span> debounce <span>=</span> <span>{</span>
+  <span>inserted</span><span>(</span><span>el<span>,</span> binding</span><span>)</span> <span>{</span>
+    <span>const</span> <span>[</span>fn<span>,</span> event <span>=</span> <span>'click'</span><span>,</span> time <span>=</span> <span>500</span><span>]</span> <span>=</span> binding<span>.</span>value
+    <span>let</span> timer
+    el<span>.</span><span>addEventListener</span><span>(</span>event<span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+      timer <span>&amp;&amp;</span> <span>clearTimeout</span><span>(</span>timer<span>)</span>
+      timer <span>=</span> <span>setTimeout</span><span>(</span>fn<span>,</span> time<span>)</span>
+    <span>}</span><span>)</span>
+  <span>}</span><span>,</span>
+<span>}</span>
+
+<span>/**
+ * @description: 节流指令
+ * @param {Array[function, String?, Number?]} 执行函数、监听事件、间隔时间
+ */</span>
+<span>export</span> <span>const</span> throttle <span>=</span> <span>{</span>
+  <span>inserted</span><span>(</span><span>el<span>,</span> binding</span><span>)</span> <span>{</span>
+    <span>const</span> <span>[</span>fn<span>,</span> event <span>=</span> <span>'click'</span><span>,</span> time <span>=</span> <span>1000</span><span>]</span> <span>=</span> binding<span>.</span>value
+    <span>let</span> preTime <span>=</span> <span>+</span><span>new</span> <span>Date</span><span>(</span><span>)</span>
+    el<span>.</span><span>addEventListener</span><span>(</span>event<span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+      <span>const</span> nowTime <span>=</span> <span>+</span><span>new</span> <span>Date</span><span>(</span><span>)</span>
+      <span>if</span> <span>(</span>nowTime <span>-</span> preTime <span>></span> time<span>)</span> <span>{</span>
+        <span>fn</span><span>(</span><span>)</span>
+        preTime <span>=</span> nowTime
+      <span>}</span>
+    <span>}</span><span>)</span>
+  <span>}</span><span>,</span>
+<span>}</span>
+
+<span>/**
+ * @description: 图片懒加载(性能较差)
+ * @param {String} binding.value 图片地址
+ */</span>
+<span>export</span> <span>const</span> lazy <span>=</span> <span>{</span>
+  <span>inserted</span><span>(</span><span>el<span>,</span> binding</span><span>)</span> <span>{</span>
+    <span>function</span> <span>fun</span><span>(</span><span>)</span> <span>{</span>
+      <span>const</span> <span>H</span> <span>=</span> window<span>.</span>innerHeight
+      <span>const</span> st <span>=</span> document<span>.</span>body<span>.</span>scrollTop <span>||</span> document<span>.</span>documentElement<span>.</span>scrollTop
+      <span>// 预加载高度200px</span>
+      <span>if</span> <span>(</span>el<span>.</span>offsetTop <span>&lt;=</span> <span>H</span> <span>+</span> st <span>+</span> <span>200</span><span>)</span> <span>{</span>
+        el<span>.</span>src <span>=</span> binding<span>.</span>value <span>// 图片懒加载</span>
+        <span>// el.style.backgroundImage = `url(${binding.value})` // 背景图片懒加载</span>
+        window<span>.</span><span>removeEventListener</span><span>(</span><span>'scroll'</span><span>,</span> fun<span>)</span> <span>// 停止监听</span>
+      <span>}</span>
+    <span>}</span>
+    <span>fun</span><span>(</span><span>)</span>
+    window<span>.</span><span>addEventListener</span><span>(</span><span>'scroll'</span><span>,</span> fun<span>)</span> <span>// 开启监听</span>
+  <span>}</span><span>,</span>
+<span>}</span>
+
+<span>/**
+ * @description: 图片懒加载(不兼容IE,性能好)
+ * @param {String} binding.value 图片地址
+ */</span>
+<span>export</span> <span>const</span> lazy <span>=</span> <span>{</span>
+  <span>inserted</span><span>(</span><span>el<span>,</span> binding</span><span>)</span> <span>{</span>
+    <span>const</span> io <span>=</span> <span>new</span> <span>IntersectionObserver</span><span>(</span>
+      <span>entries</span> <span>=></span> <span>{</span>
+        <span>const</span> en <span>=</span> entries<span>[</span><span>0</span><span>]</span>
+        <span>if</span> <span>(</span>en<span>.</span>isIntersecting<span>)</span> <span>{</span>
+          en<span>.</span>target<span>.</span>src <span>=</span> binding<span>.</span>value <span>// 图片懒加载</span>
+          <span>// en.target.style.backgroundImage = `url(${binding.value})` // 背景图片懒加载</span>
+          io<span>.</span><span>unobserve</span><span>(</span>en<span>.</span>target<span>)</span> <span>// 停止监听</span>
+        <span>}</span>
+      <span>}</span><span>,</span>
+      <span>{</span> <span>rootMargin</span><span>:</span> <span>'200px 0px'</span> <span>}</span> <span>// 预加载高度200px</span>
+    <span>)</span>
+    io<span>.</span><span>observe</span><span>(</span>el<span>)</span> <span>// 开启监听</span>
+  <span>}</span><span>,</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br><span>56</span><br><span>57</span><br><span>58</span><br><span>59</span><br><span>60</span><br><span>61</span><br><span>62</span><br><span>63</span><br><span>64</span><br><span>65</span><br><span>66</span><br><span>67</span><br><span>68</span><br><span>69</span><br><span>70</span><br><span>71</span><br><span>72</span><br><span>73</span><br><span>74</span><br><span>75</span><br><span>76</span><br><span>77</span><br><span>78</span><br><span>79</span><br><span>80</span><br><span>81</span><br></div></div></li>
+</ul>
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <category term="Vue"/>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">算法（第四版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/Algorithms/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Algorithms/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">区块链开发实战</title>
     <id>https://www.matrixtheone.ga/web/note/books/Blockchain/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Blockchain/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS 权威指南（上）</title>
     <id>https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol1/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol1/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS 权威指南（下）</title>
     <id>https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol2/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/CSS-Guide-Vol2/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS 揭秘</title>
     <id>https://www.matrixtheone.ga/web/note/books/CSS-Secrets/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/CSS-Secrets/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-尽量减少代码重复"> 1. 尽量减少代码重复</h2>
 <ul>
 <li>代码易维护 vs 代码量少</li>
@@ -15387,14 +15387,14 @@ dd</span> <span>{</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">CSS 世界</title>
     <id>https://www.matrixtheone.ga/web/note/books/CSS-World/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/CSS-World/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-了解-css-世界中的-未定义行为"> 1. 了解 CSS 世界中的 “未定义行为”</h2>
 <ul>
 <li>像<code>&lt;a&gt;</code>、<code>&lt;button&gt;</code>这样的元素，当我们使用键盘进行 Tab 键切换的时候，是可以被 focus 的，表现为虚框或者外发光，这类元素称为 “焦点元素”。非焦点元素指没有设置 tabindex 属性的<code>&lt;div&gt;</code>、<code>&lt;span&gt;</code>等普通元素。</li>
@@ -16309,56 +16309,56 @@ root<span>.</span>style<span>.</span>borderRight <span>=</span> <span>''</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">漫画算法 - 小灰的算法之旅</title>
     <id>https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol1/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol1/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">漫画算法 - 小灰的算法进阶</title>
     <id>https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol2/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Cartoon-Algorithms-Vol2/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">深入理解 JavaScript</title>
     <id>https://www.matrixtheone.ga/web/note/books/Depth-JS/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Depth-JS/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 轻量级函数式编程</title>
     <id>https://www.matrixtheone.ga/web/note/books/Functional-Light-JS/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Functional-Light-JS/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-管理函数的输入"> 1. 管理函数的输入</h2>
 <ul>
 <li>偏函数：偏函数严格来讲是一个减少函数参数个数的过程。</li>
@@ -16723,14 +16723,14 @@ person<span>.</span>lastUpdated <span>=</span> Date<span>.</span><span>now</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">算法图解</title>
     <id>https://www.matrixtheone.ga/web/note/books/Grokking-Algorithms/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Grokking-Algorithms/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-算法简介"> 1. 算法简介</h2>
 <ul>
 <li>
@@ -16868,14 +16868,14 @@ person<span>.</span>lastUpdated <span>=</span> Date<span>.</span><span>now</span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">图解 HTTP</title>
     <id>https://www.matrixtheone.ga/web/note/books/HTTP/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/HTTP/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-网络基础-tcp-ip"> 1. 网络基础 TCP/IP</h2>
 <ul>
 <li>通常使用的网络（包括互联网）是在 TCP/IP 协议族的基础上运作的，而 HTTP 属于它内部的一个子集。</li>
@@ -17849,14 +17849,14 @@ print <span>MAIL</span> <span>"From: info@example.com\n"</span><span>;</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 悟道</title>
     <id>https://www.matrixtheone.ga/web/note/books/How-JavaScript-Works/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/How-JavaScript-Works/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-数值"> 1. 数值</h2>
 <ul>
 <li>JavaScript 的浮点数并不是 IEEE 754 标准的完全实现。Java 的浮点数实现用的是 IEEE 754 的一个子集，而 JavaScript 用的则是该子集的子集，所有 JavaScript 的 number 类型与 Java 的 double 类型非常相似，都是 64 位的浮点数类型。一个 number 类型包含 1 位符号位（sign）、11 位指数位以及 53 位有效位数。有些神奇的编码能将 65 位数据装进 64 位内存中。</li>
@@ -17957,14 +17957,14 @@ r <span>=</span> <span>4</span> <span>-</span> <span>(</span><span>-</span><span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">学习 JavaScript 数据结构与算法（第三版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Algorithms/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Algorithms/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-栈数据结构"> 1. 栈数据结构</h2>
 <ul>
 <li>
@@ -20266,28 +20266,28 @@ r <span>=</span> <span>4</span> <span>-</span> <span>(</span><span>-</span><span
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript DOM 编程艺术（第二版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-DOM/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-DOM/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 设计模式与开发实践</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Design-Develop/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Design-Develop/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-高阶函数实现-aop"> 1. 高阶函数实现 AOP</h2>
 <div><pre><code><span>Function</span><span>.</span>prototype<span>.</span><span>before</span> <span>=</span> <span>function</span><span>(</span><span>beforefn</span><span>)</span> <span>{</span>
   <span>var</span> __self <span>=</span> <span>this</span> <span>// 保存原函数的引用</span>
@@ -21603,14 +21603,14 @@ light<span>.</span><span>init</span><span>(</span><span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 语言精粹与编程实践（第三版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Essence/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Essence/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-表达式运算-序列检测"> 1. 表达式运算 - 序列检测</h2>
 <ul>
 <li>
@@ -21718,28 +21718,28 @@ console<span>.</span><span>log</span><span>(</span>s1 <span>></span> <span>NaN</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 权威指南（第七版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Guide/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Guide/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 忍者秘籍（第二版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Ninja-Secrets/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Ninja-Secrets/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h1 id="有点可惜"> 有点可惜......</h1>
 ]]></content>
     <author>
@@ -21748,14 +21748,14 @@ console<span>.</span><span>log</span><span>(</span>s1 <span>></span> <span>NaN</
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 高级程序设计（第四版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-Programming/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-Programming/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-html-中的-javascript"> 1. HTML 中的 JavaScript</h2>
 <ul>
 <li>
@@ -22712,14 +22712,14 @@ location<span>.</span><span>reload</span><span>(</span><span>true</span><span>)<
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JavaScript 正则表达式迷你书（1.1版）</title>
     <id>https://www.matrixtheone.ga/web/note/books/JS-RegExp/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/JS-RegExp/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-两种模糊匹配"> 1. 两种模糊匹配</h2>
 <ul>
 <li>
@@ -23396,14 +23396,14 @@ console<span>.</span><span>log</span><span>(</span>result<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">函数式编程指北</title>
     <id>https://www.matrixtheone.ga/web/note/books/Mostly-Adequate-Guide/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Mostly-Adequate-Guide/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-纯函数的好处"> 1. 纯函数的好处</h2>
 <ul>
 <li>
@@ -23578,28 +23578,28 @@ console<span>.</span><span>log</span><span>(</span>result<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">深入浅出 Node.js</title>
     <id>https://www.matrixtheone.ga/web/note/books/Node/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/Node/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <author>
       <name>coderljw</name>
     </author>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">书籍阅读</title>
     <id>https://www.matrixtheone.ga/web/note/books/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/红楼梦.webp')">
 ]]></content>
     <author>
@@ -23608,14 +23608,302 @@ console<span>.</span><span>log</span><span>(</span>result<span>)</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">你不知道的 JS（上）</title>
+    <id>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol1/</id>
+    <link href="https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol1/"/>
+    <updated>2023-06-11T15:36:29.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-编译原理"> 1. 编译原理</h2>
+<ul>
+<li>
+<p>编译：分词/词法分析 -&gt; 解析/语法分析 -&gt; 代码生成。</p>
+<blockquote>
+<p>分词/词法分析：将由字符组成的字符串分解成（对编程语言来说）有意义的代码块，这些代码块称为词法单元。</p>
+</blockquote>
+<div><pre><code>代码示意
+<span>var</span> a <span>=</span> <span>2</span><span>;</span>  分析为  <span>var</span>、a、<span>=</span>、<span>2</span>、<span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><blockquote>
+<p>解析/语法分析：将词法单元流（数组）转换成一个由元素逐级嵌套所组成的代表了程序语法结构的树（AST）。</p>
+</blockquote>
+<div><pre><code>可能的代码示意
+<span>VariableDeclaration</span><span>:</span> <span>{</span>
+  <span>Identifier</span><span>:</span> a<span>,</span>
+  <span>AssignmentExpression</span><span>:</span> <span>{</span>
+    <span>NumericLiteral</span><span>:</span> <span>2</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><blockquote>
+<p>代码生成：将 AST 转换为可执行代码的过程被称为代码生成。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="_2-lhs-与-rhs"> 2. LHS 与 RHS</h2>
+<ul>
+<li>
+<p>RHS 查询与简单地查找某个变量的值别无二致，而 LHS 查询则是试图找到变量的容器本身，从而可以对其赋值。</p>
+</li>
+<li>
+<p>最好将其理解为 “赋值操作的目标是谁（LHS）” 以及 “谁是赋值操作的源头（RHS）”。</p>
+</li>
+</ul>
+<h2 id="_3-编译器有话说小测验"> 3. 编译器有话说小测验</h2>
+<ul>
+<li>找出所有的 LHS 与 RHS 查询。</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>a</span><span>)</span> <span>{</span>
+  <span>var</span> b <span>=</span> a
+  <span>return</span> a <span>+</span> b
+<span>}</span>
+
+<span>var</span> c <span>=</span> <span>foo</span><span>(</span><span>2</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><blockquote>
+<ul>
+<li>LHS 查询（3 处）：c = ..、a = 2（隐式变量分配）、b = ..</li>
+<li>RHS 查询（4 处）：foo(2..、= a、a ..、.. b</li>
+</ul>
+</blockquote>
+<h2 id="_4-作用域是什么"> 4. 作用域是什么</h2>
+<ul>
+<li>
+<p>LHS 和 RHS 查询都会在当前执行作用域中开始，如果有需要（也就是说它们没有找到所需的标识符），就会向上级作用域继续查找目标标识符，这样每次上升一级作用域（一层楼），最后抵达全局作用域（顶层），无论找到或没找到都将停止。</p>
+</li>
+<li>
+<p>不成功的 RHS 引用会导致抛出 ReferenceError 异常。不成功的 LHS 引用会导致自动隐式地创建一个全局变量（非严格模式下），该变量使用 LHS 引用的目标作为标识符，或者抛出 ReferenceError 异常（严格模式下）。</p>
+</li>
+</ul>
+<h2 id="_5-词法作用域与动态作用域"> 5. 词法作用域与动态作用域</h2>
+<ul>
+<li>主要区别：词法作用域是在写代码或者说定义时确定的，而动态作用域是在运行时确定。（this 也是! ）词法作用域关注函数在何处声明，而动态作用域关注函数从何处调用。</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span>a<span>)</span> <span>// 词法作用域打印2，动态作用域打印3</span>
+<span>}</span>
+
+<span>function</span> <span>bar</span><span>(</span><span>)</span> <span>{</span>
+  <span>var</span> a <span>=</span> <span>3</span>
+  <span>foo</span><span>(</span><span>)</span>
+<span>}</span>
+
+<span>var</span> a <span>=</span> <span>2</span>
+<span>bar</span><span>(</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h2 id="_6-欺骗词法"> 6. 欺骗词法</h2>
+<ul>
+<li>
+<p>JavaScript 中有两个机制可以 “欺骗” 词法作用域: eval(..) 和 with。前者可以对一段包含一个或多个声明的 “代码” 字符串进行演算，并借此来修改已经存在的词法作用域（在运行时）。后者本质上是通过将一个对象的引用当作作用域来处理，将对象的属性当作作用域中的标识符来处理，从而创建了一个新的词法作用域（同样是在运行时）。</p>
+<ul>
+<li>eval()。</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>str<span>,</span> a</span><span>)</span> <span>{</span>
+  <span>eval</span><span>(</span>str<span>)</span>
+  console<span>.</span><span>log</span><span>(</span>a<span>,</span> b<span>)</span> <span>// 1, 3</span>
+<span>}</span>
+
+<span>var</span> b <span>=</span> <span>2</span>
+<span>foo</span><span>(</span><span>'var b = 3'</span><span>,</span> <span>1</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><ul>
+<li>with。</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>obj</span><span>)</span> <span>{</span>
+  <span>with</span> <span>(</span>obj<span>)</span> <span>{</span>
+    a <span>=</span> <span>2</span>
+  <span>}</span>
+<span>}</span>
+
+<span>var</span> o1 <span>=</span> <span>{</span>
+  <span>a</span><span>:</span> <span>3</span><span>,</span>
+<span>}</span>
+
+<span>var</span> o2 <span>=</span> <span>{</span>
+  <span>b</span><span>:</span> <span>3</span><span>,</span>
+<span>}</span>
+
+<span>foo</span><span>(</span>o1<span>)</span>
+console<span>.</span><span>log</span><span>(</span>o1<span>.</span>a<span>)</span> <span>// 2</span>
+
+<span>foo</span><span>(</span>o2<span>)</span>
+console<span>.</span><span>log</span><span>(</span>o2<span>.</span>a<span>)</span> <span>// undefined</span>
+console<span>.</span><span>log</span><span>(</span>a<span>)</span> <span>// 2 -> a被泄露到全局作用域上了！</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div></li>
+</ul>
+<h2 id="_7-立即执行函数表达式-iife"> 7. 立即执行函数表达式-IIFE</h2>
+<div><pre><code><span>;</span><span>(</span><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>777</span><span>)</span>
+<span>}</span><span>)</span><span>(</span><span>)</span>
+
+<span>;</span><span>(</span><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>777</span><span>)</span>
+<span>}</span><span>(</span><span>)</span><span>)</span>
+
+<span>!</span><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>777</span><span>)</span>
+<span>}</span><span>(</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h2 id="_8-try-catch"> 8. try / catch</h2>
+<ul>
+<li>catch 分句会创建一个块作用域，其中的声明的变量仅在 catch 内部有效。</li>
+</ul>
+<div><pre><code><span>try</span> <span>{</span>
+  <span>undefined</span><span>(</span><span>)</span>
+<span>}</span> <span>catch</span> <span>(</span>err<span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span>err<span>)</span>
+<span>}</span>
+
+console<span>.</span><span>log</span><span>(</span>err<span>)</span> <span>// ReferenceError: err is not defined</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_9-闭包"> 9. 闭包</h2>
+<ul>
+<li>
+<p>产生原因：我们在词法作用域的环境下写代码，而其中的函数也是值，可以随意传来传去。</p>
+</li>
+<li>
+<p>产生闭包：当函数可以记住并访问所在的词法作用域，即使函数是在当前词法作用域之外执行，这时就产生了闭包。</p>
+</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  <span>var</span> a <span>=</span> <span>1</span>
+  <span>// var b = 1</span>
+  <span>return</span> <span>function</span> <span>bar</span><span>(</span><span>)</span> <span>{</span>
+    <span>// debugger // b 被销毁</span>
+    a<span>++</span>
+    console<span>.</span><span>log</span><span>(</span>a<span>)</span>
+  <span>}</span>
+<span>}</span>
+
+<span>var</span> bar <span>=</span> <span>foo</span><span>(</span><span>)</span>
+<span>bar</span><span>(</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><div><pre><code><span>function</span> <span>wait</span><span>(</span><span>message</span><span>)</span> <span>{</span>
+  <span>setTimeout</span><span>(</span><span>function</span> <span>timer</span><span>(</span><span>)</span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span>message<span>)</span>
+  <span>}</span><span>,</span> <span>1000</span><span>)</span>
+<span>}</span>
+
+<span>wait</span><span>(</span><span>'Hello，closure！'</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_10-显示绑定"> 10. 显示绑定</h2>
+<ul>
+<li>如果你传入了一个原始值（字符串类型、布尔类型或者数字类型）来当作 this 的绑定对象，这个原始值会被转换成它的对象形式（也就是 new String(..)、new Boolean(..)、new Number(..)）。这通常被称为 “装箱”。</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>TheOne<span>)</span>
+<span>}</span>
+<span>Number</span><span>.</span>prototype<span>.</span>TheOne <span>=</span> <span>'NEO'</span>
+<span>String</span><span>.</span>prototype<span>.</span>TheOne <span>=</span> <span>'NEO'</span>
+<span>Boolean</span><span>.</span>prototype<span>.</span>TheOne <span>=</span> <span>'NEO'</span>
+<span>foo</span><span>.</span><span>call</span><span>(</span><span>7</span><span>)</span>
+<span>foo</span><span>.</span><span>apply</span><span>(</span><span>'Matrix'</span><span>)</span>
+<span>foo</span><span>.</span><span>bind</span><span>(</span><span>true</span><span>)</span>
+
+<span>7.</span><span>.</span>TheOne <span>// NEO</span>
+<span>'Matrix'</span><span>.</span>TheOne <span>// NEO</span>
+<span>true</span><span>.</span>TheOne <span>// NEO</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h2 id="_11-this-绑定规则"> 11. this 绑定规则</h2>
+<ul>
+<li>默认绑定</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>a<span>)</span> <span>// 2</span>
+<span>}</span>
+
+<span>var</span> a <span>=</span> <span>2</span>
+<span>foo</span><span>(</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ul>
+<li>隐式绑定</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>a<span>)</span> <span>// 2</span>
+<span>}</span>
+
+<span>var</span> obj <span>=</span> <span>{</span>
+  <span>a</span><span>:</span> <span>2</span><span>,</span>
+  <span>foo</span><span>:</span> foo<span>,</span>
+<span>}</span>
+
+obj<span>.</span><span>foo</span><span>(</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><ul>
+<li>显示绑定</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>a<span>)</span> <span>// 2</span>
+<span>}</span>
+
+<span>var</span> obj <span>=</span> <span>{</span>
+  <span>a</span><span>:</span> <span>2</span><span>,</span>
+<span>}</span>
+
+<span>foo</span><span>.</span><span>call</span><span>(</span>obj<span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><ul>
+<li>
+<p>new 绑定。</p>
+<ol>
+<li>创建（或者说构造）一个全新的对象。</li>
+<li>这个新对象会被执行[[Prototype]]连接。</li>
+<li>这个新对象会绑定到函数调用的 this。</li>
+<li>如果函数没有返回其他对象，那么 new 表达式中的函数调用会自动返回这个新对象。</li>
+</ol>
+</li>
+</ul>
+<div><pre><code><span>function</span> <span>Foo</span><span>(</span><span>a</span><span>)</span> <span>{</span>
+  <span>this</span><span>.</span>a <span>=</span> a
+<span>}</span>
+
+<span>var</span> bar <span>=</span> <span>new</span> <span>Foo</span><span>(</span><span>2</span><span>)</span>
+console<span>.</span><span>log</span><span>(</span>bar<span>.</span>a<span>)</span> <span>// 2</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_12-this-全面解析"> 12. this 全面解析</h2>
+<ul>
+<li>
+<p>如果要判断一个运行中函数的 this 绑定，就需要找到这个函数的直接调用位置。找到之后就可以顺序应用下面这四条规则来判断 this 的绑定对象。</p>
+<ol>
+<li>由 new 调用？绑定到新创建的对象。</li>
+<li>由 call 或者 apply（或者 bind）调用？绑定到指定的对象。</li>
+<li>由上下文对象调用？绑定到那个上下文对象。</li>
+<li>默认：在严格模式下绑定到 undefined, 否则绑定到全局对象。</li>
+</ol>
+</li>
+<li>
+<p>一定要注意，有些调用可能在无意中使用默认绑定规则。如果想 “更安全” 地忽略 this 绑定，你可以使用一个 DMZ 对象，比如 0 = object.create(null)，以保护全局对象。</p>
+</li>
+</ul>
+<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>a<span>)</span> <span>// 2</span>
+<span>}</span>
+
+<span>var</span> a <span>=</span> <span>2</span>
+<span>foo</span><span>.</span><span>call</span><span>(</span><span>null</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ul>
+<li>ES6 中的箭头函数并不会使用四条标准的绑定规则，而是根据当前的词法作用域来决定 this，具体来说，箭头函数会继承外层函数调用的 this 绑定（无论 this 绑定到什么）。这其实和 ES6 之前代码中的 self = this 机制一样。</li>
+</ul>
+<h2 id="_13-原型"> 13. 原型</h2>
+<img :src="$withBase('/images/JavaScript/原型链.png')" loading="lazy">]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">React 设计原理</title>
     <id>https://www.matrixtheone.ga/web/note/books/React-Design/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/React-Design/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-前端框架原理概览"> 1. 前端框架原理概览</h2>
 <ul>
 <li>
@@ -23991,14 +24279,14 @@ window<span>.</span>app <span>=</span> <span>schedule</span><span>(</span><span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">你不知道的 JS（中）</title>
     <id>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol2/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol2/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-类型"> 1. 类型</h2>
 <ul>
 <li>
@@ -24409,151 +24697,14 @@ a<span>.</span>index<span>++</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">你不知道的 JS（下）</title>
-    <id>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol3/</id>
-    <link href="https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol3/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-迭代器"> 1. 迭代器</h2>
-<ul>
-<li>每次在这个 arr 值上调用位于 Symbol.iterator 的方法时，都会产生一个全新的迭代器。多数结构都是这么实现的，包括所有 JavaScript 内置数据结构。</li>
-</ul>
-<div><pre><code><span>var</span> arr <span>=</span> <span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>]</span>
-<span>var</span> it <span>=</span> arr<span>[</span>Symbol<span>.</span>iterator<span>]</span><span>(</span><span>)</span>
-it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 1, done: false }</span>
-it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 2, done: false }</span>
-it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 3, done: false }</span>
-it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: undefined, done: true }</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ul>
-<li>自定义迭代器。</li>
-</ul>
-<div><pre><code><span>var</span> Fib <span>=</span> <span>{</span>
-  <span>[</span>Symbol<span>.</span>iterator<span>]</span><span>(</span><span>)</span> <span>{</span>
-    <span>var</span> n1 <span>=</span> <span>1</span><span>,</span>
-      n2 <span>=</span> <span>1</span>
-    <span>return</span> <span>{</span>
-      <span>// 使迭代器成为iterable</span>
-      <span>[</span>Symbol<span>.</span>iterator<span>]</span><span>(</span><span>)</span> <span>{</span>
-        <span>return</span> <span>this</span>
-      <span>}</span><span>,</span>
-      <span>next</span><span>(</span><span>)</span> <span>{</span>
-        <span>var</span> current <span>=</span> n2
-        n2 <span>=</span> n1
-        n1 <span>=</span> n1 <span>+</span> current
-        <span>return</span> <span>{</span> <span>value</span><span>:</span> current<span>,</span> <span>done</span><span>:</span> <span>false</span> <span>}</span>
-      <span>}</span><span>,</span>
-      <span>return</span><span>(</span>v<span>)</span> <span>{</span>
-        console<span>.</span><span>log</span><span>(</span><span>'Fibonacci sequence abandoned.'</span><span>)</span>
-        <span>return</span> <span>{</span> <span>value</span><span>:</span> v<span>,</span> <span>done</span><span>:</span> <span>true</span> <span>}</span>
-      <span>}</span><span>,</span>
-    <span>}</span>
-  <span>}</span><span>,</span>
-<span>}</span>
-<span>for</span> <span>(</span><span>var</span> v <span>of</span> Fib<span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span>v<span>)</span>
-  <span>if</span> <span>(</span>v <span>></span> <span>50</span><span>)</span> <span>break</span>
-<span>}</span>
-
-<span>// 1 1 2 3 5 8 13 21 34 55</span>
-<span>// Fibonacci sequence abandoned.</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br></div></div><ul>
-<li>迭代数字。</li>
-</ul>
-<div><pre><code><span>if</span> <span>(</span><span>!</span><span>Number</span><span>.</span>prototype<span>[</span>Symbol<span>.</span>iterator<span>]</span><span>)</span> <span>{</span>
-  Object<span>.</span><span>defineProperty</span><span>(</span><span>Number</span><span>.</span>prototype<span>,</span> Symbol<span>.</span>iterator<span>,</span> <span>{</span>
-    <span>writable</span><span>:</span> <span>true</span><span>,</span>
-    <span>configurable</span><span>:</span> <span>true</span><span>,</span>
-    <span>enumerable</span><span>:</span> <span>false</span><span>,</span>
-    <span>value</span><span>:</span> <span>function</span> <span>iterator</span><span>(</span><span>)</span> <span>{</span>
-      <span>var</span> i<span>,</span>
-        inc<span>,</span>
-        done <span>=</span> <span>false</span><span>,</span>
-        top <span>=</span> <span>+</span><span>this</span>
-      <span>// 正向还是反向迭代？</span>
-      inc <span>=</span> <span>1</span> <span>*</span> <span>(</span>top <span>&lt;</span> <span>0</span> <span>?</span> <span>-</span><span>1</span> <span>:</span> <span>1</span><span>)</span>
-      <span>return</span> <span>{</span>
-        <span>// 使得迭代器本身成为iterable!</span>
-        <span>[</span>Symbol<span>.</span>iterator<span>]</span><span>(</span><span>)</span> <span>{</span>
-          <span>return</span> <span>this</span>
-        <span>}</span><span>,</span>
-        <span>next</span><span>(</span><span>)</span> <span>{</span>
-          <span>if</span> <span>(</span><span>!</span>done<span>)</span> <span>{</span>
-            <span>// 初始迭代总是0</span>
-            <span>if</span> <span>(</span>i <span>==</span> <span>null</span><span>)</span> <span>{</span>
-              i <span>=</span> <span>0</span>
-            <span>}</span>
-            <span>// 正向迭代</span>
-            <span>else</span> <span>if</span> <span>(</span>top <span>>=</span> <span>0</span><span>)</span> <span>{</span>
-              i <span>=</span> Math<span>.</span><span>min</span><span>(</span>top<span>,</span> i <span>+</span> inc<span>)</span>
-            <span>}</span>
-            <span>// 反向迭代</span>
-            <span>else</span> <span>{</span>
-              i <span>=</span> Math<span>.</span><span>max</span><span>(</span>top<span>,</span> i <span>+</span> inc<span>)</span>
-            <span>}</span>
-            <span>// 本次迭代后结束？</span>
-            <span>if</span> <span>(</span>i <span>==</span> top<span>)</span> done <span>=</span> <span>true</span>
-            <span>return</span> <span>{</span> <span>value</span><span>:</span> i<span>,</span> <span>done</span><span>:</span> <span>false</span> <span>}</span>
-          <span>}</span> <span>else</span> <span>{</span>
-            <span>return</span> <span>{</span> <span>done</span><span>:</span> <span>true</span> <span>}</span>
-          <span>}</span>
-        <span>}</span><span>,</span>
-      <span>}</span>
-    <span>}</span><span>,</span>
-  <span>}</span><span>)</span>
-<span>}</span>
-
-<span>for</span> <span>(</span><span>var</span> i <span>of</span> <span>3</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span>i<span>)</span>
-<span>}</span>
-<span>// 0 1 2 3</span>
-<span>[</span><span>...</span><span>-</span><span>3</span><span>]</span> <span>// [0,-1,-2,-3]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br></div></div><h2 id="_2-模块"> 2. 模块</h2>
-<ul>
-<li>这里有一个很容易被忽略的重要细节：import 和 export 都必须出现在使用它们的最顶层作用域。举例来说，不能把 import 或 export 放在 if 条件中。它们必须出现在所有代码块和函数的外面。</li>
-</ul>
-<h2 id="_3-promise"> 3. Promise</h2>
-<ul>
-<li>Promise.all([]) 将会立即完成（没有完成值），Promise.race([]) 将会永远挂起。这是一个很奇怪的不一致，因此我建议，永远不要用空数组使用这些方法。</li>
-</ul>
-<h2 id="_4-尾调用"> 4. 尾调用</h2>
-<ul>
-<li>
-<p><a href="https://www.ruanyifeng.com/blog/2015/04/tail-call.html" target="_blank" rel="noopener noreferrer">阮一峰</a></p>
-</li>
-<li>
-<p>ES6 的尾调用优化只在严格模式下开启，正常模式是无效的。这是因为在正常模式下，函数内部有两个变量，可以跟踪函数的调用栈。</p>
-</li>
-<li>
-<p>尾调用优化发生时，函数的调用栈会改写，因此上面两个变量就会失真。严格模式禁用这两个变量，所以尾调用模式仅在严格模式下生效。</p>
-</li>
-</ul>
-<blockquote>
-<ul>
-<li>arguments：返回调用时函数的参数。</li>
-<li>func.caller：返回调用当前函数的那个函数。</li>
-</ul>
-</blockquote>
-]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Array</title>
     <id>https://www.matrixtheone.ga/web/note/js/Array-1/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Array-1/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<div><p>提示</p>
 <p>会改变原数组</p>
 </div>
@@ -24650,14 +24801,14 @@ it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Array</title>
     <id>https://www.matrixtheone.ga/web/note/js/Array-2/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Array-2/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-array-any-array-of-any"> 1. Array(any...) &amp; Array.of(any...)</h2>
 <ul>
 <li>
@@ -24932,14 +25083,151 @@ Array<span>.</span><span>from</span><span>(</span><span>{</span> <span>length</s
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">你不知道的 JS（下）</title>
+    <id>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol3/</id>
+    <link href="https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol3/"/>
+    <updated>2023-06-11T15:36:29.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="_1-迭代器"> 1. 迭代器</h2>
+<ul>
+<li>每次在这个 arr 值上调用位于 Symbol.iterator 的方法时，都会产生一个全新的迭代器。多数结构都是这么实现的，包括所有 JavaScript 内置数据结构。</li>
+</ul>
+<div><pre><code><span>var</span> arr <span>=</span> <span>[</span><span>1</span><span>,</span> <span>2</span><span>,</span> <span>3</span><span>]</span>
+<span>var</span> it <span>=</span> arr<span>[</span>Symbol<span>.</span>iterator<span>]</span><span>(</span><span>)</span>
+it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 1, done: false }</span>
+it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 2, done: false }</span>
+it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: 3, done: false }</span>
+it<span>.</span><span>next</span><span>(</span><span>)</span> <span>// { value: undefined, done: true }</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ul>
+<li>自定义迭代器。</li>
+</ul>
+<div><pre><code><span>var</span> Fib <span>=</span> <span>{</span>
+  <span>[</span>Symbol<span>.</span>iterator<span>]</span><span>(</span><span>)</span> <span>{</span>
+    <span>var</span> n1 <span>=</span> <span>1</span><span>,</span>
+      n2 <span>=</span> <span>1</span>
+    <span>return</span> <span>{</span>
+      <span>// 使迭代器成为iterable</span>
+      <span>[</span>Symbol<span>.</span>iterator<span>]</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> <span>this</span>
+      <span>}</span><span>,</span>
+      <span>next</span><span>(</span><span>)</span> <span>{</span>
+        <span>var</span> current <span>=</span> n2
+        n2 <span>=</span> n1
+        n1 <span>=</span> n1 <span>+</span> current
+        <span>return</span> <span>{</span> <span>value</span><span>:</span> current<span>,</span> <span>done</span><span>:</span> <span>false</span> <span>}</span>
+      <span>}</span><span>,</span>
+      <span>return</span><span>(</span>v<span>)</span> <span>{</span>
+        console<span>.</span><span>log</span><span>(</span><span>'Fibonacci sequence abandoned.'</span><span>)</span>
+        <span>return</span> <span>{</span> <span>value</span><span>:</span> v<span>,</span> <span>done</span><span>:</span> <span>true</span> <span>}</span>
+      <span>}</span><span>,</span>
+    <span>}</span>
+  <span>}</span><span>,</span>
+<span>}</span>
+<span>for</span> <span>(</span><span>var</span> v <span>of</span> Fib<span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span>v<span>)</span>
+  <span>if</span> <span>(</span>v <span>></span> <span>50</span><span>)</span> <span>break</span>
+<span>}</span>
+
+<span>// 1 1 2 3 5 8 13 21 34 55</span>
+<span>// Fibonacci sequence abandoned.</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br></div></div><ul>
+<li>迭代数字。</li>
+</ul>
+<div><pre><code><span>if</span> <span>(</span><span>!</span><span>Number</span><span>.</span>prototype<span>[</span>Symbol<span>.</span>iterator<span>]</span><span>)</span> <span>{</span>
+  Object<span>.</span><span>defineProperty</span><span>(</span><span>Number</span><span>.</span>prototype<span>,</span> Symbol<span>.</span>iterator<span>,</span> <span>{</span>
+    <span>writable</span><span>:</span> <span>true</span><span>,</span>
+    <span>configurable</span><span>:</span> <span>true</span><span>,</span>
+    <span>enumerable</span><span>:</span> <span>false</span><span>,</span>
+    <span>value</span><span>:</span> <span>function</span> <span>iterator</span><span>(</span><span>)</span> <span>{</span>
+      <span>var</span> i<span>,</span>
+        inc<span>,</span>
+        done <span>=</span> <span>false</span><span>,</span>
+        top <span>=</span> <span>+</span><span>this</span>
+      <span>// 正向还是反向迭代？</span>
+      inc <span>=</span> <span>1</span> <span>*</span> <span>(</span>top <span>&lt;</span> <span>0</span> <span>?</span> <span>-</span><span>1</span> <span>:</span> <span>1</span><span>)</span>
+      <span>return</span> <span>{</span>
+        <span>// 使得迭代器本身成为iterable!</span>
+        <span>[</span>Symbol<span>.</span>iterator<span>]</span><span>(</span><span>)</span> <span>{</span>
+          <span>return</span> <span>this</span>
+        <span>}</span><span>,</span>
+        <span>next</span><span>(</span><span>)</span> <span>{</span>
+          <span>if</span> <span>(</span><span>!</span>done<span>)</span> <span>{</span>
+            <span>// 初始迭代总是0</span>
+            <span>if</span> <span>(</span>i <span>==</span> <span>null</span><span>)</span> <span>{</span>
+              i <span>=</span> <span>0</span>
+            <span>}</span>
+            <span>// 正向迭代</span>
+            <span>else</span> <span>if</span> <span>(</span>top <span>>=</span> <span>0</span><span>)</span> <span>{</span>
+              i <span>=</span> Math<span>.</span><span>min</span><span>(</span>top<span>,</span> i <span>+</span> inc<span>)</span>
+            <span>}</span>
+            <span>// 反向迭代</span>
+            <span>else</span> <span>{</span>
+              i <span>=</span> Math<span>.</span><span>max</span><span>(</span>top<span>,</span> i <span>+</span> inc<span>)</span>
+            <span>}</span>
+            <span>// 本次迭代后结束？</span>
+            <span>if</span> <span>(</span>i <span>==</span> top<span>)</span> done <span>=</span> <span>true</span>
+            <span>return</span> <span>{</span> <span>value</span><span>:</span> i<span>,</span> <span>done</span><span>:</span> <span>false</span> <span>}</span>
+          <span>}</span> <span>else</span> <span>{</span>
+            <span>return</span> <span>{</span> <span>done</span><span>:</span> <span>true</span> <span>}</span>
+          <span>}</span>
+        <span>}</span><span>,</span>
+      <span>}</span>
+    <span>}</span><span>,</span>
+  <span>}</span><span>)</span>
+<span>}</span>
+
+<span>for</span> <span>(</span><span>var</span> i <span>of</span> <span>3</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span>i<span>)</span>
+<span>}</span>
+<span>// 0 1 2 3</span>
+<span>[</span><span>...</span><span>-</span><span>3</span><span>]</span> <span>// [0,-1,-2,-3]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br></div></div><h2 id="_2-模块"> 2. 模块</h2>
+<ul>
+<li>这里有一个很容易被忽略的重要细节：import 和 export 都必须出现在使用它们的最顶层作用域。举例来说，不能把 import 或 export 放在 if 条件中。它们必须出现在所有代码块和函数的外面。</li>
+</ul>
+<h2 id="_3-promise"> 3. Promise</h2>
+<ul>
+<li>Promise.all([]) 将会立即完成（没有完成值），Promise.race([]) 将会永远挂起。这是一个很奇怪的不一致，因此我建议，永远不要用空数组使用这些方法。</li>
+</ul>
+<h2 id="_4-尾调用"> 4. 尾调用</h2>
+<ul>
+<li>
+<p><a href="https://www.ruanyifeng.com/blog/2015/04/tail-call.html" target="_blank" rel="noopener noreferrer">阮一峰</a></p>
+</li>
+<li>
+<p>ES6 的尾调用优化只在严格模式下开启，正常模式是无效的。这是因为在正常模式下，函数内部有两个变量，可以跟踪函数的调用栈。</p>
+</li>
+<li>
+<p>尾调用优化发生时，函数的调用栈会改写，因此上面两个变量就会失真。严格模式禁用这两个变量，所以尾调用模式仅在严格模式下生效。</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>arguments：返回调用时函数的参数。</li>
+<li>func.caller：返回调用当前函数的那个函数。</li>
+</ul>
+</blockquote>
+]]></content>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">奇技淫巧</title>
     <id>https://www.matrixtheone.ga/web/note/js/Arts/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Arts/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-巧用位运算符"> 1. 巧用位运算符</h2>
 <ul>
 <li>
@@ -25033,14 +25321,14 @@ account <span>&amp;=</span> <span>~</span>Delete <span>// => 7</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">BigInt</title>
     <id>https://www.matrixtheone.ga/web/note/js/BigInt/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/BigInt/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-bigint-int"> 1. BigInt(int)</h2>
 <ul>
 <li>可以使用构造函数（BigInt() ）和字面量（7n）创建 bigint 类型表示整数。
@@ -25108,14 +25396,14 @@ BigInt<span>.</span><span>asUintN</span><span>(</span><span>64</span><span>,</sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">内置对象</title>
     <id>https://www.matrixtheone.ga/web/note/js/Built-In/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Built-In/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-json"> 1. JSON</h2>
 <ul>
 <li>
@@ -26166,14 +26454,14 @@ formData<span>.</span><span>entries</span><span>(</span><span>)</span><span>.</s
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Class</title>
     <id>https://www.matrixtheone.ga/web/note/js/Class/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Class/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-class"> 1. class</h2>
 <ul>
 <li>
@@ -26408,14 +26696,14 @@ xfq<span>.</span><span>versailles</span><span>(</span><span>)</span> <span>// =>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Function</title>
     <id>https://www.matrixtheone.ga/web/note/js/Function/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Function/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-function-args-functionbody"> 1. Function(args..., functionBody)</h2>
 <ul>
 <li>构造函数创建匿名函数。前面参数会成为匿名函数的形参，最后一个参数会成为匿名函数的可执行体（Vue 中的 render 函数的形成方式）。</li>
@@ -26912,14 +27200,14 @@ xiaohu<span>.</span><span>getHarm</span><span>(</span><span>)</span> <span>// =>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Number</title>
     <id>https://www.matrixtheone.ga/web/note/js/Number/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Number/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-number-any"> 1. Number(any)</h2>
 <ul>
 <li>构造函数创建数字。</li>
@@ -27108,14 +27396,14 @@ Number<span>.</span><span>isSafeInteger</span><span>(</span>Number<span>.</span>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Object</title>
     <id>https://www.matrixtheone.ga/web/note/js/Object/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Object/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-object-any"> 1. Object(any)</h2>
 <ul>
 <li>
@@ -27587,14 +27875,14 @@ Object<span>.</span><span>isFrozen</span><span>(</span>foo<span>.</span>harem<sp
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">其他</title>
     <id>https://www.matrixtheone.ga/web/note/js/Others/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Others/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-for-in"> 1. for in</h2>
 <ul>
 <li>for in 遍历除 symbol 类型外的可枚举属性，会进行原型链查找。</li>
@@ -27817,14 +28105,14 @@ console<span>.</span><span>log</span><span>(</span>ary<span>)</span> <span>// =>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">JS 基础</title>
     <id>https://www.matrixtheone.ga/web/note/js/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<img :src="$withBase('/images/Movie/三国演义.webp')">
 ]]></content>
     <author>
@@ -27833,302 +28121,14 @@ console<span>.</span><span>log</span><span>(</span>ary<span>)</span> <span>// =>
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">你不知道的 JS（上）</title>
-    <id>https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol1/</id>
-    <link href="https://www.matrixtheone.ga/web/note/books/You-Don%E2%80%99t-Know-JS-Vol1/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="_1-编译原理"> 1. 编译原理</h2>
-<ul>
-<li>
-<p>编译：分词/词法分析 -&gt; 解析/语法分析 -&gt; 代码生成。</p>
-<blockquote>
-<p>分词/词法分析：将由字符组成的字符串分解成（对编程语言来说）有意义的代码块，这些代码块称为词法单元。</p>
-</blockquote>
-<div><pre><code>代码示意
-<span>var</span> a <span>=</span> <span>2</span><span>;</span>  分析为  <span>var</span>、a、<span>=</span>、<span>2</span>、<span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><blockquote>
-<p>解析/语法分析：将词法单元流（数组）转换成一个由元素逐级嵌套所组成的代表了程序语法结构的树（AST）。</p>
-</blockquote>
-<div><pre><code>可能的代码示意
-<span>VariableDeclaration</span><span>:</span> <span>{</span>
-  <span>Identifier</span><span>:</span> a<span>,</span>
-  <span>AssignmentExpression</span><span>:</span> <span>{</span>
-    <span>NumericLiteral</span><span>:</span> <span>2</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><blockquote>
-<p>代码生成：将 AST 转换为可执行代码的过程被称为代码生成。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="_2-lhs-与-rhs"> 2. LHS 与 RHS</h2>
-<ul>
-<li>
-<p>RHS 查询与简单地查找某个变量的值别无二致，而 LHS 查询则是试图找到变量的容器本身，从而可以对其赋值。</p>
-</li>
-<li>
-<p>最好将其理解为 “赋值操作的目标是谁（LHS）” 以及 “谁是赋值操作的源头（RHS）”。</p>
-</li>
-</ul>
-<h2 id="_3-编译器有话说小测验"> 3. 编译器有话说小测验</h2>
-<ul>
-<li>找出所有的 LHS 与 RHS 查询。</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>a</span><span>)</span> <span>{</span>
-  <span>var</span> b <span>=</span> a
-  <span>return</span> a <span>+</span> b
-<span>}</span>
-
-<span>var</span> c <span>=</span> <span>foo</span><span>(</span><span>2</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><blockquote>
-<ul>
-<li>LHS 查询（3 处）：c = ..、a = 2（隐式变量分配）、b = ..</li>
-<li>RHS 查询（4 处）：foo(2..、= a、a ..、.. b</li>
-</ul>
-</blockquote>
-<h2 id="_4-作用域是什么"> 4. 作用域是什么</h2>
-<ul>
-<li>
-<p>LHS 和 RHS 查询都会在当前执行作用域中开始，如果有需要（也就是说它们没有找到所需的标识符），就会向上级作用域继续查找目标标识符，这样每次上升一级作用域（一层楼），最后抵达全局作用域（顶层），无论找到或没找到都将停止。</p>
-</li>
-<li>
-<p>不成功的 RHS 引用会导致抛出 ReferenceError 异常。不成功的 LHS 引用会导致自动隐式地创建一个全局变量（非严格模式下），该变量使用 LHS 引用的目标作为标识符，或者抛出 ReferenceError 异常（严格模式下）。</p>
-</li>
-</ul>
-<h2 id="_5-词法作用域与动态作用域"> 5. 词法作用域与动态作用域</h2>
-<ul>
-<li>主要区别：词法作用域是在写代码或者说定义时确定的，而动态作用域是在运行时确定。（this 也是! ）词法作用域关注函数在何处声明，而动态作用域关注函数从何处调用。</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span>a<span>)</span> <span>// 词法作用域打印2，动态作用域打印3</span>
-<span>}</span>
-
-<span>function</span> <span>bar</span><span>(</span><span>)</span> <span>{</span>
-  <span>var</span> a <span>=</span> <span>3</span>
-  <span>foo</span><span>(</span><span>)</span>
-<span>}</span>
-
-<span>var</span> a <span>=</span> <span>2</span>
-<span>bar</span><span>(</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h2 id="_6-欺骗词法"> 6. 欺骗词法</h2>
-<ul>
-<li>
-<p>JavaScript 中有两个机制可以 “欺骗” 词法作用域: eval(..) 和 with。前者可以对一段包含一个或多个声明的 “代码” 字符串进行演算，并借此来修改已经存在的词法作用域（在运行时）。后者本质上是通过将一个对象的引用当作作用域来处理，将对象的属性当作作用域中的标识符来处理，从而创建了一个新的词法作用域（同样是在运行时）。</p>
-<ul>
-<li>eval()。</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>str<span>,</span> a</span><span>)</span> <span>{</span>
-  <span>eval</span><span>(</span>str<span>)</span>
-  console<span>.</span><span>log</span><span>(</span>a<span>,</span> b<span>)</span> <span>// 1, 3</span>
-<span>}</span>
-
-<span>var</span> b <span>=</span> <span>2</span>
-<span>foo</span><span>(</span><span>'var b = 3'</span><span>,</span> <span>1</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><ul>
-<li>with。</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>obj</span><span>)</span> <span>{</span>
-  <span>with</span> <span>(</span>obj<span>)</span> <span>{</span>
-    a <span>=</span> <span>2</span>
-  <span>}</span>
-<span>}</span>
-
-<span>var</span> o1 <span>=</span> <span>{</span>
-  <span>a</span><span>:</span> <span>3</span><span>,</span>
-<span>}</span>
-
-<span>var</span> o2 <span>=</span> <span>{</span>
-  <span>b</span><span>:</span> <span>3</span><span>,</span>
-<span>}</span>
-
-<span>foo</span><span>(</span>o1<span>)</span>
-console<span>.</span><span>log</span><span>(</span>o1<span>.</span>a<span>)</span> <span>// 2</span>
-
-<span>foo</span><span>(</span>o2<span>)</span>
-console<span>.</span><span>log</span><span>(</span>o2<span>.</span>a<span>)</span> <span>// undefined</span>
-console<span>.</span><span>log</span><span>(</span>a<span>)</span> <span>// 2 -> a被泄露到全局作用域上了！</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div></li>
-</ul>
-<h2 id="_7-立即执行函数表达式-iife"> 7. 立即执行函数表达式-IIFE</h2>
-<div><pre><code><span>;</span><span>(</span><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span><span>777</span><span>)</span>
-<span>}</span><span>)</span><span>(</span><span>)</span>
-
-<span>;</span><span>(</span><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span><span>777</span><span>)</span>
-<span>}</span><span>(</span><span>)</span><span>)</span>
-
-<span>!</span><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span><span>777</span><span>)</span>
-<span>}</span><span>(</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h2 id="_8-try-catch"> 8. try / catch</h2>
-<ul>
-<li>catch 分句会创建一个块作用域，其中的声明的变量仅在 catch 内部有效。</li>
-</ul>
-<div><pre><code><span>try</span> <span>{</span>
-  <span>undefined</span><span>(</span><span>)</span>
-<span>}</span> <span>catch</span> <span>(</span>err<span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span>err<span>)</span>
-<span>}</span>
-
-console<span>.</span><span>log</span><span>(</span>err<span>)</span> <span>// ReferenceError: err is not defined</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_9-闭包"> 9. 闭包</h2>
-<ul>
-<li>
-<p>产生原因：我们在词法作用域的环境下写代码，而其中的函数也是值，可以随意传来传去。</p>
-</li>
-<li>
-<p>产生闭包：当函数可以记住并访问所在的词法作用域，即使函数是在当前词法作用域之外执行，这时就产生了闭包。</p>
-</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  <span>var</span> a <span>=</span> <span>1</span>
-  <span>// var b = 1</span>
-  <span>return</span> <span>function</span> <span>bar</span><span>(</span><span>)</span> <span>{</span>
-    <span>// debugger // b 被销毁</span>
-    a<span>++</span>
-    console<span>.</span><span>log</span><span>(</span>a<span>)</span>
-  <span>}</span>
-<span>}</span>
-
-<span>var</span> bar <span>=</span> <span>foo</span><span>(</span><span>)</span>
-<span>bar</span><span>(</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><div><pre><code><span>function</span> <span>wait</span><span>(</span><span>message</span><span>)</span> <span>{</span>
-  <span>setTimeout</span><span>(</span><span>function</span> <span>timer</span><span>(</span><span>)</span> <span>{</span>
-    console<span>.</span><span>log</span><span>(</span>message<span>)</span>
-  <span>}</span><span>,</span> <span>1000</span><span>)</span>
-<span>}</span>
-
-<span>wait</span><span>(</span><span>'Hello，closure！'</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_10-显示绑定"> 10. 显示绑定</h2>
-<ul>
-<li>如果你传入了一个原始值（字符串类型、布尔类型或者数字类型）来当作 this 的绑定对象，这个原始值会被转换成它的对象形式（也就是 new String(..)、new Boolean(..)、new Number(..)）。这通常被称为 “装箱”。</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>TheOne<span>)</span>
-<span>}</span>
-<span>Number</span><span>.</span>prototype<span>.</span>TheOne <span>=</span> <span>'NEO'</span>
-<span>String</span><span>.</span>prototype<span>.</span>TheOne <span>=</span> <span>'NEO'</span>
-<span>Boolean</span><span>.</span>prototype<span>.</span>TheOne <span>=</span> <span>'NEO'</span>
-<span>foo</span><span>.</span><span>call</span><span>(</span><span>7</span><span>)</span>
-<span>foo</span><span>.</span><span>apply</span><span>(</span><span>'Matrix'</span><span>)</span>
-<span>foo</span><span>.</span><span>bind</span><span>(</span><span>true</span><span>)</span>
-
-<span>7.</span><span>.</span>TheOne <span>// NEO</span>
-<span>'Matrix'</span><span>.</span>TheOne <span>// NEO</span>
-<span>true</span><span>.</span>TheOne <span>// NEO</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h2 id="_11-this-绑定规则"> 11. this 绑定规则</h2>
-<ul>
-<li>默认绑定</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>a<span>)</span> <span>// 2</span>
-<span>}</span>
-
-<span>var</span> a <span>=</span> <span>2</span>
-<span>foo</span><span>(</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ul>
-<li>隐式绑定</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>a<span>)</span> <span>// 2</span>
-<span>}</span>
-
-<span>var</span> obj <span>=</span> <span>{</span>
-  <span>a</span><span>:</span> <span>2</span><span>,</span>
-  <span>foo</span><span>:</span> foo<span>,</span>
-<span>}</span>
-
-obj<span>.</span><span>foo</span><span>(</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><ul>
-<li>显示绑定</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>a<span>)</span> <span>// 2</span>
-<span>}</span>
-
-<span>var</span> obj <span>=</span> <span>{</span>
-  <span>a</span><span>:</span> <span>2</span><span>,</span>
-<span>}</span>
-
-<span>foo</span><span>.</span><span>call</span><span>(</span>obj<span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><ul>
-<li>
-<p>new 绑定。</p>
-<ol>
-<li>创建（或者说构造）一个全新的对象。</li>
-<li>这个新对象会被执行[[Prototype]]连接。</li>
-<li>这个新对象会绑定到函数调用的 this。</li>
-<li>如果函数没有返回其他对象，那么 new 表达式中的函数调用会自动返回这个新对象。</li>
-</ol>
-</li>
-</ul>
-<div><pre><code><span>function</span> <span>Foo</span><span>(</span><span>a</span><span>)</span> <span>{</span>
-  <span>this</span><span>.</span>a <span>=</span> a
-<span>}</span>
-
-<span>var</span> bar <span>=</span> <span>new</span> <span>Foo</span><span>(</span><span>2</span><span>)</span>
-console<span>.</span><span>log</span><span>(</span>bar<span>.</span>a<span>)</span> <span>// 2</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="_12-this-全面解析"> 12. this 全面解析</h2>
-<ul>
-<li>
-<p>如果要判断一个运行中函数的 this 绑定，就需要找到这个函数的直接调用位置。找到之后就可以顺序应用下面这四条规则来判断 this 的绑定对象。</p>
-<ol>
-<li>由 new 调用？绑定到新创建的对象。</li>
-<li>由 call 或者 apply（或者 bind）调用？绑定到指定的对象。</li>
-<li>由上下文对象调用？绑定到那个上下文对象。</li>
-<li>默认：在严格模式下绑定到 undefined, 否则绑定到全局对象。</li>
-</ol>
-</li>
-<li>
-<p>一定要注意，有些调用可能在无意中使用默认绑定规则。如果想 “更安全” 地忽略 this 绑定，你可以使用一个 DMZ 对象，比如 0 = object.create(null)，以保护全局对象。</p>
-</li>
-</ul>
-<div><pre><code><span>function</span> <span>foo</span><span>(</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>a<span>)</span> <span>// 2</span>
-<span>}</span>
-
-<span>var</span> a <span>=</span> <span>2</span>
-<span>foo</span><span>.</span><span>call</span><span>(</span><span>null</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ul>
-<li>ES6 中的箭头函数并不会使用四条标准的绑定规则，而是根据当前的词法作用域来决定 this，具体来说，箭头函数会继承外层函数调用的 this 绑定（无论 this 绑定到什么）。这其实和 ES6 之前代码中的 self = this 机制一样。</li>
-</ul>
-<h2 id="_13-原型"> 13. 原型</h2>
-<img :src="$withBase('/images/JavaScript/原型链.png')" loading="lazy">]]></content>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">String</title>
     <id>https://www.matrixtheone.ga/web/note/js/String/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/String/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-string-any"> 1. String(any)</h2>
 <ul>
 <li>构造函数创建字符串。</li>
@@ -28400,14 +28400,14 @@ str<span>.</span><span>trimRight</span><span>(</span><span>)</span> <span>// => 
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">Symbol</title>
     <id>https://www.matrixtheone.ga/web/note/js/Symbol/</id>
     <link href="https://www.matrixtheone.ga/web/note/js/Symbol/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-symbol-string"> 1. Symbol(string)</h2>
 <ul>
 <li>传入一个描述符返回 symbol 唯一值，不可枚举。</li>
@@ -28437,14 +28437,28 @@ Symbol<span>.</span><span>keyFor</span><span>(</span><span>Symbol</span><span>(<
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
+    <rights>Copyright by coderljw</rights>
+  </entry>
+  <entry>
+    <title type="html">Three.js 开发指南</title>
+    <id>https://www.matrixtheone.ga/web/note/books/Three/</id>
+    <link href="https://www.matrixtheone.ga/web/note/books/Three/"/>
+    <updated>2023-06-11T15:36:29.000Z</updated>
+    <author>
+      <name>coderljw</name>
+    </author>
+    <contributor>
+      <name>coderljw</name>
+    </contributor>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
   <entry>
     <title type="html">图解 TCP/IP</title>
     <id>https://www.matrixtheone.ga/web/note/books/TCP-IP/</id>
     <link href="https://www.matrixtheone.ga/web/note/books/TCP-IP/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
+    <updated>2023-06-11T15:36:29.000Z</updated>
     <content type="html"><![CDATA[<h2 id="_1-计算机与网络发展的-7-个阶段"> 1. 计算机与网络发展的 7 个阶段</h2>
 <img :src="$withBase('/images/TCP-IP/计算机使用模式的演变.png')" loading="lazy">
 <h2 id="_2-协议"> 2. 协议</h2>
@@ -28607,21 +28621,7 @@ Symbol<span>.</span><span>keyFor</span><span>(</span><span>Symbol</span><span>(<
     <contributor>
       <name>coderljw</name>
     </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
-    <rights>Copyright by coderljw</rights>
-  </entry>
-  <entry>
-    <title type="html">Three.js 开发指南</title>
-    <id>https://www.matrixtheone.ga/web/note/books/Three/</id>
-    <link href="https://www.matrixtheone.ga/web/note/books/Three/"/>
-    <updated>2023-06-08T13:50:18.000Z</updated>
-    <author>
-      <name>coderljw</name>
-    </author>
-    <contributor>
-      <name>coderljw</name>
-    </contributor>
-    <published>2023-06-08T13:50:18.000Z</published>
+    <published>2023-06-11T15:36:29.000Z</published>
     <rights>Copyright by coderljw</rights>
   </entry>
 </feed>
